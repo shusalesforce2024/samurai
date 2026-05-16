@@ -153,6 +153,16 @@ private class OppContractInvoiceServiceTest {
     }
 
     @isTest
+    static void throwsErrorWhenOpportunityIdIsNull() {
+        try {
+            OppContractInvoiceController.createContractAndInvoice(null);
+            System.assert(false, 'Expected AuraHandledException');
+        } catch (AuraHandledException e) {
+            System.assert(String.isNotBlank(e.getMessage()));
+        }
+    }
+
+    @isTest
     static void throwsErrorWhenRecordsAlreadyCreated() {
         Account accountRecord = new Account(Name = 'Duplicate Test Account');
         insert accountRecord;
