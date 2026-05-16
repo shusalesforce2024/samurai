@@ -162,3 +162,556 @@
 | 業務影響あり | LWCアクションをレイアウトから一時撤去、対象ユーザ権限を外す | 15-30分 |
 | データ誤作成 | 作成された `Contract__c`、`Invoice__c`、`InvoiceLine__c`、freee側データを業務判断で取消/削除 | 30分以上 |
 
+## 12. 当日作業チェックリスト
+
+この章を上から順番に実施する。各行のチェック欄に結果を記録し、NGが出た場合は次工程へ進まない。
+
+| チェック | No | 作業 | 実施内容 | 完了条件 | 予定時間 |
+| --- | ---: | --- | --- | --- | --- |
+| [ ] | 1 | 作業開始宣言 | 関係者へ「Salesforce移行作業を開始します」と連絡する | 関係者が作業開始を認識している | 5分 |
+| [ ] | 2 | 対象org確認 | `sf org display --target-org <target-org>` を実行する | 表示された Username / Org ID が移行先と一致 | 5分 |
+| [ ] | 3 | ブランチ/作業フォルダ確認 | `pwd` と `git status --short` を確認する | `S:\SamuraiPOC\samurai` 配下で作業している | 5分 |
+| [ ] | 4 | 未反映変更確認 | `git status --short` の内容を確認する | 移行対象外の変更が混ざっていない | 10分 |
+| [ ] | 5 | dry-run実行 | 13章のdry-runコマンドを実行する | Deploy Status が `Succeeded` | 30-60分 |
+| [ ] | 6 | 本番デプロイ実行 | 13章の本番デプロイコマンドを実行する | Deploy Status が `Succeeded` | 30-60分 |
+| [ ] | 7 | Apexテスト確認 | Deploy結果またはApex Test結果を確認する | 失敗テスト0件、カバレッジ75%以上 | 15分 |
+| [ ] | 8 | Named Credential設定 | 14章に従い `Freee_iv` と `FreeeAPI` を作成/確認する | 2件とも有効、認証済み | 40-80分 |
+| [ ] | 9 | freee設定レコード作成 | 15章に従い `Freee_Configs__c` を作成/確認する | 設定レコードが1件以上存在 | 15分 |
+| [ ] | 10 | 勘定科目マッピング作成 | 16章に従い `Freee_Account_Item_Mappings__c` を作成/確認する | 請求で使うキー分の有効レコードが存在 | 20分 |
+| [ ] | 11 | 権限付与 | 17章に従い対象ユーザへ権限を付与する | 対象ユーザでレコード参照/アクション実行可能 | 45分 |
+| [ ] | 12 | 画面アクション配置 | 18章に従いLWCアクションを配置する | 対象画面にボタンが表示される | 30分 |
+| [ ] | 13 | 疎通確認 | 19章の業務シナリオを実行する | 全シナリオOK | 60-120分 |
+| [ ] | 14 | ログ確認 | `Freee_Sync_Log__c` と同期ステータスを確認する | 成功/失敗ログが期待通り記録される | 15分 |
+| [ ] | 15 | 完了判定 | 関係者へ結果を共有し、Go判定を得る | 業務担当/管理者が承認 | 15分 |
+| [ ] | 16 | 作業完了連絡 | 「Salesforce移行作業が完了しました」と連絡する | 完了連絡済み | 5分 |
+
+## 13. コマンド実行手順
+
+### 13.1 作業フォルダへ移動
+
+```powershell
+cd S:\SamuraiPOC\samurai
+```
+
+確認:
+
+```powershell
+pwd
+git status --short
+```
+
+判定:
+
+| 結果 | 対応 |
+| --- | --- |
+| `pwd` が `S:\SamuraiPOC\samurai` | OK |
+| 想定外の変更がある | 作業責任者へ確認。移行対象外ならデプロイ対象に含めない |
+| `ContractUpdate__c` 等の未追跡ファイルがある | 今回の移行対象か確認。対象外なら触らない |
+
+### 13.2 org確認
+
+```powershell
+sf org display --target-org <target-org>
+```
+
+例:
+
+```powershell
+sf org display --target-org shu.kawanami@samuraiarchitects.com.dev1
+```
+
+確認項目:
+
+| 項目 | 確認内容 |
+| --- | --- |
+| Username | 移行対象ユーザであること |
+| Org ID | 移行先orgのOrg IDであること |
+| Connected Status | Connectedであること |
+| Instance URL | 想定環境であること |
+
+### 13.3 dry-run
+
+初回移行または移行先にカスタムオブジェクトが未配置の場合、`classes` のみでは失敗する。必ず `force-app/main/default` 全体でdry-runする。
+
+```powershell
+sf project deploy start --source-dir force-app/main/default --target-org <target-org> --dry-run --test-level RunLocalTests --wait 60
+```
+
+例:
+
+```powershell
+sf project deploy start --source-dir force-app/main/default --target-org shu.kawanami@samuraiarchitects.com.dev1 --dry-run --test-level RunLocalTests --wait 60
+```
+
+成功条件:
+
+| 項目 | 成功条件 |
+| --- | --- |
+| Deploy Status | `Succeeded` |
+| Component Failures | 0件 |
+| Test Failures | 0件 |
+| Apex Coverage | 75%以上 |
+
+失敗時:
+
+| エラー例 | 原因 | 対応 |
+| --- | --- | --- |
+| `Invalid type: Quotation__c` | カスタムオブジェクトが未配置、またはclassesのみdeployしている | `force-app/main/default` 全体でdeployする |
+| `No such column UnitPrice__c on Product2` | Product2拡張項目が未配置 | Product2メタデータを含めてdeploy |
+| `INVALID_CROSS_REFERENCE_KEY` | 参照先メタデータやレイアウト対象が存在しない | 依存オブジェクト/項目/レコードタイプを確認 |
+| `Apex test failure` | テストデータまたはロジック不整合 | 失敗テスト名、行番号、エラー文を記録して修正 |
+| `INSERT_UPDATE_DELETE_NOT_ALLOWED_DURING_MAINTENANCE` | Salesforceメンテナンス中 | メンテナンス終了後に再実行 |
+
+### 13.4 本番デプロイ
+
+dry-run成功後に実施する。
+
+```powershell
+sf project deploy start --source-dir force-app/main/default --target-org <target-org> --test-level RunLocalTests --wait 60
+```
+
+Deploy IDを控える:
+
+| 項目 | 記録 |
+| --- | --- |
+| Deploy ID |  |
+| 実行者 |  |
+| 開始時刻 |  |
+| 終了時刻 |  |
+| 結果 |  |
+
+### 13.5 Deploy結果確認
+
+```powershell
+sf project deploy report --target-org <target-org> --use-most-recent
+```
+
+## 14. Named Credential設定手順
+
+ソース内にNamed Credentialメタデータは存在しないため、移行先orgで手動作成する。
+
+### 14.1 `Freee_iv`
+
+| 項目 | 設定値/方針 |
+| --- | --- |
+| Label | `Freee_iv` |
+| Name | `Freee_iv` |
+| URL | freee請求書/見積APIのベースURL。例: `https://api.freee.co.jp/api/1` |
+| 認証方式 | freee APIの契約/運用に合わせる。OAuth 2.0推奨 |
+| 用途 | `callout:Freee_iv/invoices`、`callout:Freee_iv/quotations` |
+
+画面操作:
+
+| No | 操作 |
+| ---: | --- |
+| 1 | Salesforce設定を開く |
+| 2 | Quick Findで `Named Credentials` を検索 |
+| 3 | 新規Named Credentialを作成 |
+| 4 | Label/Nameに `Freee_iv` を入力 |
+| 5 | URLにfreee APIベースURLを入力 |
+| 6 | 認証方式、External Credential、Principalを設定 |
+| 7 | 保存 |
+| 8 | 認証が必要な場合は認証フローを完了 |
+
+確認:
+
+| 確認項目 | OK条件 |
+| --- | --- |
+| Named Credential名 | `Freee_iv` と完全一致 |
+| Apex参照 | `FreeeInvoiceService`、`FreeeQuotationService` で使用 |
+| API URL | `/invoices` と `/quotations` が後続パスとして成立 |
+
+### 14.2 `FreeeAPI`
+
+| 項目 | 設定値/方針 |
+| --- | --- |
+| Label | `FreeeAPI` |
+| Name | `FreeeAPI` |
+| URL | freee APIベースURL。例: `https://api.freee.co.jp` |
+| 認証方式 | freee APIの契約/運用に合わせる。OAuth 2.0推奨 |
+| 用途 | `callout:FreeeAPI/api/1/partners` |
+
+確認:
+
+| 確認項目 | OK条件 |
+| --- | --- |
+| Named Credential名 | `FreeeAPI` と完全一致 |
+| Apex参照 | `FreeePartnerService` で使用 |
+| API URL | `/api/1/partners` が後続パスとして成立 |
+
+注意:
+
+| 注意点 | 内容 |
+| --- | --- |
+| `Freee_iv` と `FreeeAPI` のURL差 | Apexの後続パスが異なるため、URL末尾に `/api/1` を含めるかどうかを必ず確認する |
+| 認証ユーザ | 本番運用で期限切れになりにくい連携用ユーザ/連携用認証を使う |
+| Secret管理 | Client SecretやRefresh Tokenを手順書に直接記載しない。安全な保管場所から当日参照する |
+
+## 15. `Freee_Configs__c` 設定レコード作成手順
+
+Apexは `Freee_Config__mdt` ではなく `Freee_Configs__c` を参照する。必ず `Freee_Configs__c` に設定レコードを作成する。
+
+### 15.1 作成方法
+
+| 方法 | 手順 |
+| --- | --- |
+| 画面 | App Launcherで `Freee Configs` または `Freee_Configs__c` を開き、新規作成 |
+| Data Loader | `Freee_Configs__c` にCSV insert |
+| Developer Console | Anonymous Apexでinsert |
+
+### 15.2 入力項目
+
+| 項目API名 | 必須 | 入力例 | 説明 |
+| --- | --- | --- | --- |
+| `Name` | 推奨 | `Default` | `FreeePartnerFacade` は `Name='Default'` を優先取得 |
+| `Company_Id__c` | 必須 | `12562039` | freee会社ID |
+| `Template_Id__c` | 必須 | `4411743` | freee請求書テンプレートID |
+| `Quotation_Template_Id__c` | 見積では必須 | freee見積テンプレートID | 未設定だと見積作成でエラー |
+| `Invoice_Base_Url__c` | 必須 | `https://secure.freee.co.jp/invoices/` | Salesforce上に保存するfreee請求/見積URL生成用 |
+| `Payment_Type__c` | 任意 | `transfer` | 未設定時はmapperで `transfer` |
+| `Tax_Entry_Method__c` | 必須 | `out` / `exclusive` 等 | freee仕様に合わせる |
+| `Tax_Fraction__c` | 必須 | `omit` / `round_down` 等 | freee仕様に合わせる |
+| `Withholding__c` | 任意 | `out` 等 | 現行mapperでは直接使用なし |
+| `Withholding_Tax_Entry_Method__c` | 任意 | `out` | 未設定時は `out` |
+
+### 15.3 Anonymous Apex例
+
+値は本番用に置き換えてから実行する。
+
+```apex
+insert new Freee_Configs__c(
+    Name = 'Default',
+    Company_Id__c = '12562039',
+    Template_Id__c = '4411743',
+    Quotation_Template_Id__c = '<freee見積テンプレートID>',
+    Invoice_Base_Url__c = 'https://secure.freee.co.jp/invoices/',
+    Payment_Type__c = 'transfer',
+    Tax_Entry_Method__c = 'out',
+    Tax_Fraction__c = 'omit',
+    Withholding_Tax_Entry_Method__c = 'out'
+);
+```
+
+確認SOQL:
+
+```sql
+SELECT Id, Name, Company_Id__c, Template_Id__c, Quotation_Template_Id__c,
+       Invoice_Base_Url__c, Payment_Type__c, Tax_Entry_Method__c,
+       Tax_Fraction__c, Withholding_Tax_Entry_Method__c
+FROM Freee_Configs__c
+ORDER BY CreatedDate ASC
+```
+
+成功条件:
+
+| 条件 | 内容 |
+| --- | --- |
+| レコード件数 | 1件以上 |
+| `Company_Id__c` | 空でない、数値文字列 |
+| `Template_Id__c` | 空でない、数値文字列 |
+| `Quotation_Template_Id__c` | 見積連携する場合は空でない、数値文字列 |
+| `Invoice_Base_Url__c` | 空でない |
+
+## 16. `Freee_Account_Item_Mappings__c` 設定手順
+
+請求書作成時、`Invoice__c.Freee_Account_Item_Picklist__c` の値をキーに `Freee_Account_Item_Mappings__c` を検索する。
+
+### 16.1 必須レコード
+
+| 項目API名 | 必須 | 入力例 | 説明 |
+| --- | --- | --- | --- |
+| `Name` | 必須 | `Sales mapping` | 任意の管理名 |
+| `Key__c` | 必須 | `Sales` | `Invoice__c.Freee_Account_Item_Picklist__c` と一致させる |
+| `Freee_Account_Item_Id__c` | 必須 | `1033096369` | freee勘定科目ID |
+| `Is_Active__c` | 必須 | `true` | trueのみ検索対象 |
+
+### 16.2 Anonymous Apex例
+
+```apex
+insert new Freee_Account_Item_Mappings__c(
+    Name = 'Sales mapping',
+    Key__c = 'Sales',
+    Freee_Account_Item_Id__c = '1033096369',
+    Is_Active__c = true
+);
+```
+
+確認SOQL:
+
+```sql
+SELECT Id, Name, Key__c, Freee_Account_Item_Id__c, Is_Active__c
+FROM Freee_Account_Item_Mappings__c
+ORDER BY CreatedDate ASC
+```
+
+成功条件:
+
+| 条件 | 内容 |
+| --- | --- |
+| `Key__c` | 請求書で使う選択リスト値と完全一致 |
+| `Freee_Account_Item_Id__c` | 空でない、freee側に存在 |
+| `Is_Active__c` | true |
+
+## 17. 権限設定手順
+
+### 17.1 権限セット作成方針
+
+推奨は、既存プロファイルを直接変更せず、権限セットを作成して対象ユーザに割り当てる。
+
+| 権限セット名案 | 対象ユーザ | 目的 |
+| --- | --- | --- |
+| `Freee Integration User` | 営業/請求担当 | freee同期アクション利用 |
+| `Freee Integration Admin` | 管理者/運用担当 | freee設定、マッピング、ログ確認 |
+
+### 17.2 `Freee Integration User`
+
+| 対象 | 権限 |
+| --- | --- |
+| Account | Read, Edit |
+| Opportunity__c | Read, Create, Edit |
+| Quotation__c | Read, Create, Edit |
+| QuotationLine__c | Read, Create, Edit |
+| Invoice__c | Read, Create, Edit |
+| InvoiceLine__c | Read, Create, Edit |
+| Contract__c | Read, Create |
+| Product2 | Read |
+| Freee_Sync_Log__c | Read, Create |
+| Apex Classes | `FreeeInvoiceController`, `FreeeQuotationController`, `FreeePartnerController`, `OppContractInvoiceController` へのアクセス |
+
+### 17.3 `Freee Integration Admin`
+
+| 対象 | 権限 |
+| --- | --- |
+| Freee_Configs__c | Read, Create, Edit |
+| Freee_Account_Item_Mappings__c | Read, Create, Edit |
+| Freee_Sync_Log__c | Read, Create |
+| Named Credential関連 | 管理者権限または該当設定権限 |
+
+### 17.4 権限確認
+
+対象ユーザでログインし、以下を確認する。
+
+| 確認 | OK条件 |
+| --- | --- |
+| Account画面 | freee取引先同期ボタンが見える |
+| Invoice__c画面 | freee請求同期ボタンが見える |
+| Quotation__c画面 | freee見積同期ボタンが見える |
+| Opportunity__c画面 | 契約/請求作成ボタンが見える |
+| Freee_Sync_Log__c | 管理者がログを参照できる |
+
+## 18. Lightning画面アクション配置手順
+
+LWCは `lightning__RecordAction` として作成されている。対象オブジェクトのレコードページ/ページレイアウトに配置する。
+
+| LWC | Apex Controller | 配置対象 | 用途 |
+| --- | --- | --- | --- |
+| `freeePartnerSyncAction` | `FreeePartnerController.syncPartner` | Account | freee取引先作成 |
+| `freeeInvoiceAction` | `FreeeInvoiceController.createInvoice` | Invoice__c | freee請求書作成 |
+| `freeeQuotationAction` | `FreeeQuotationController.createQuotation` | Quotation__c | freee見積作成 |
+| `opportunityContractInvoiceAction` | `OppContractInvoiceController.createContractAndInvoice` | Opportunity__c | 商談から契約/請求作成 |
+
+画面操作:
+
+| No | 操作 |
+| ---: | --- |
+| 1 | Setup > Object Manager を開く |
+| 2 | 対象オブジェクトを選択 |
+| 3 | Buttons, Links, and Actions でLWC Record Actionが存在するか確認 |
+| 4 | Page Layouts または Lightning Record Pages を開く |
+| 5 | Salesforce Mobile and Lightning Experience Actions に対象アクションを配置 |
+| 6 | 保存、必要に応じてActivate |
+| 7 | 対象ユーザでレコードページを開き、ボタン表示を確認 |
+
+配置チェック:
+
+| チェック | 対象 | OK条件 |
+| --- | --- | --- |
+| [ ] | Account | `freeePartnerSyncAction` が表示される |
+| [ ] | Invoice__c | `freeeInvoiceAction` が表示される |
+| [ ] | Quotation__c | `freeeQuotationAction` が表示される |
+| [ ] | Opportunity__c | `opportunityContractInvoiceAction` が表示される |
+
+## 19. 疎通確認手順詳細
+
+### 19.1 freee取引先作成
+
+| 項目 | 内容 |
+| --- | --- |
+| 対象画面 | Account |
+| 前提 | `Freee_Partner_Id__c` が空 |
+| 操作 | freee取引先同期アクションを実行 |
+| 成功条件 | `Account.Freee_Partner_Id__c` にfreee取引先IDが保存される |
+| 失敗時確認 | Named Credential `FreeeAPI`、`Freee_Configs__c.Company_Id__c`、Apex権限 |
+
+確認SOQL:
+
+```sql
+SELECT Id, Name, Freee_Partner_Id__c
+FROM Account
+WHERE Id = '<対象AccountId>'
+```
+
+### 19.2 freee請求書作成
+
+| 項目 | 内容 |
+| --- | --- |
+| 対象画面 | Invoice__c |
+| 前提 | Accountに `Freee_Partner_Id__c`、Invoiceに `Billing_Date__c`、`Freee_Account_Item_Picklist__c`、InvoiceLineが存在 |
+| 操作 | freee請求同期アクションを実行 |
+| 成功条件 | `Freee_Invoice_Id__c`、`Freee_Invoice_Number__c`、`Freee_Invoice_URL__c`、`Freee_Sync_Status__c=Success`、`Sent_To_Freee__c=true` |
+| 失敗時確認 | `Freee_iv`、`Freee_Configs__c`、`Freee_Account_Item_Mappings__c`、明細の数量/単価/税率 |
+
+確認SOQL:
+
+```sql
+SELECT Id, Subject__c, Freee_Invoice_Id__c, Freee_Invoice_Number__c,
+       Freee_Invoice_URL__c, Freee_Sync_Status__c, Freee_Sync_Message__c,
+       Sent_To_Freee__c, Retry_Count__c
+FROM Invoice__c
+WHERE Id = '<対象InvoiceId>'
+```
+
+### 19.3 freee見積作成
+
+| 項目 | 内容 |
+| --- | --- |
+| 対象画面 | Quotation__c |
+| 前提 | Accountに `Freee_Partner_Id__c`、Quotationに `Issue_Date__c`、QuotationLineが存在、`Quotation_Template_Id__c` 設定済み |
+| 操作 | freee見積同期アクションを実行 |
+| 成功条件 | `Freee_Quotation_Id__c`、`Freee_Quotation_Number__c`、`Freee_Quotation_URL__c`、`Freee_Sync_Status__c=Success`、`Sent_To_Freee__c=true` |
+| 失敗時確認 | `Freee_iv`、`Quotation_Template_Id__c`、Accountのfreee取引先ID、明細の数量/単価/税率 |
+
+確認SOQL:
+
+```sql
+SELECT Id, Subject__c, Freee_Quotation_Id__c, Freee_Quotation_Number__c,
+       Freee_Quotation_URL__c, Freee_Sync_Status__c, Freee_Sync_Message__c,
+       Sent_To_Freee__c, Retry_Count__c
+FROM Quotation__c
+WHERE Id = '<対象QuotationId>'
+```
+
+### 19.4 商談から契約/請求作成
+
+| 項目 | 内容 |
+| --- | --- |
+| 対象画面 | Opportunity__c |
+| 前提 | `StageName__c=Closed Won`、`Account__c`、`StartDate__c` が設定済み |
+| 前提 | 対象商談に `Quotation_Status__c=Accepted` の見積が1件以上あり、見積明細が存在 |
+| 操作 | 契約/請求作成アクションを実行 |
+| 成功条件 | `Contract__c` 1件、`Invoice__c` 1件、`InvoiceLine__c` が見積明細数分作成 |
+| 失敗時確認 | 既存契約/請求の重複、Accepted見積の有無、見積明細の入力値 |
+
+確認SOQL:
+
+```sql
+SELECT Id, ContractName__c, Oppotunity__c, Status__c
+FROM Contract__c
+WHERE Oppotunity__c = '<対象OpportunityId>'
+```
+
+```sql
+SELECT Id, Subject__c, ParentOpportunity__c, ParentContract__c,
+       Freee_Account_Item_Picklist__c, TotalAmount__c
+FROM Invoice__c
+WHERE ParentOpportunity__c = '<対象OpportunityId>'
+```
+
+```sql
+SELECT Id, Invoice__c, Description__c, Quantity__c, Unit_Price__c, Tax_Rate__c, Line_Amount__c
+FROM InvoiceLine__c
+WHERE Invoice__c = '<対象InvoiceId>'
+ORDER BY CreatedDate ASC
+```
+
+### 19.5 同期ログ確認
+
+```sql
+SELECT Id, Target_Record_Id__c, Result__c, Status_Code__c,
+       Error_Message__c, CreatedDate
+FROM Freee_Sync_Log__c
+ORDER BY CreatedDate DESC
+LIMIT 20
+```
+
+判定:
+
+| 状態 | 判定 |
+| --- | --- |
+| `Result__c=Success` | 正常 |
+| `Result__c=Failed` | `Error_Message__c` と対象レコードの `Freee_Sync_Message__c` を確認 |
+| ログがない | `Freee_Sync_Log__c` 作成権限、Apex例外発生箇所を確認 |
+
+## 20. 当日記録欄
+
+| 項目 | 記録 |
+| --- | --- |
+| 作業日 |  |
+| 対象org |  |
+| Target Org Username |  |
+| Org ID |  |
+| 作業開始 |  |
+| 作業終了 |  |
+| 作業者 |  |
+| 承認者 |  |
+| Deploy ID |  |
+| dry-run結果 |  |
+| 本番deploy結果 |  |
+| Apexテスト結果 |  |
+| カバレッジ |  |
+| freee取引先疎通 |  |
+| freee請求疎通 |  |
+| freee見積疎通 |  |
+| 商談から契約/請求作成 |  |
+| 残課題 |  |
+
+## 21. 連絡テンプレート
+
+### 21.1 作業開始
+
+```text
+Salesforce移行作業を開始します。
+対象org: <org名>
+予定時間: <開始時刻> - <終了予定時刻>
+作業中は対象機能の利用を控えてください。
+```
+
+### 21.2 dry-run成功
+
+```text
+Salesforce移行 dry-run が成功しました。
+Deploy ID: <Deploy ID>
+次に本番デプロイへ進みます。
+```
+
+### 21.3 本番デプロイ成功
+
+```text
+Salesforceメタデータデプロイが成功しました。
+Deploy ID: <Deploy ID>
+これから手動設定と疎通確認を実施します。
+```
+
+### 21.4 作業完了
+
+```text
+Salesforce移行作業が完了しました。
+実施内容:
+- メタデータデプロイ
+- freee連携設定
+- 権限/画面アクション設定
+- 主要シナリオ疎通確認
+
+結果: 正常
+残課題: <あれば記載>
+```
+
+### 21.5 中断/延期
+
+```text
+Salesforce移行作業を中断します。
+理由: <理由>
+影響: <影響>
+次回対応: <対応方針>
+再開予定: <日時>
+```
