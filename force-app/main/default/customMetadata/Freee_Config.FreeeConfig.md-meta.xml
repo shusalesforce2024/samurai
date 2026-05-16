@@ -3,6 +3,10 @@
     <label>Freee設定情報</label>
     <protected>false</protected>
     <values>
+        <field>Invoice_Base_Url__c</field>
+        <value xsi:type="xsd:string">https://invoice.secure.freee.co.jp/reports/invoices/</value>
+    </values>
+    <values>
         <field>company_id__c</field>
         <value xsi:type="xsd:string">12562039</value>
     </values>
@@ -24,6 +28,10 @@
     </values>
     <values>
         <field>withholding__c</field>
+        <value xsi:type="xsd:string">false</value>
+    </values>
+    <values>
+        <field>withholding_tax_entry_method__c</field>
         <value xsi:type="xsd:string">out</value>
     </values>
 </CustomMetadata>

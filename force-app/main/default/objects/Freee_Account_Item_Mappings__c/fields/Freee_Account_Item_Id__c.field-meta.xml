@@ -5,7 +5,6 @@
     <label>freee勘定科目ID</label>
     <length>255</length>
     <required>true</required>
-    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Text</type>
     <unique>false</unique>
