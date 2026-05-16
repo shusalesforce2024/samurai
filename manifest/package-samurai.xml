@@ -290,6 +290,10 @@
     <name>Profile</name>
   </types>
   <types>
+    <members>SAMURAI_System_Admin</members>
+    <name>PermissionSet</name>
+  </types>
+  <types>
     <members>Contract__c</members>
     <members>ContractLineItem__c</members>
     <members>Event__c</members>
