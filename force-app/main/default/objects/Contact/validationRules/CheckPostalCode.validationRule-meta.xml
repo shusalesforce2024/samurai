@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CheckPostalCode</fullName>
+    <active>false</active>
+    <errorConditionFormula>MailingPostalCode &lt;&gt; Account.BillingPostalCode</errorConditionFormula>
+    <errorMessage>取引先責任者の住所が取引先の住所と一致していません</errorMessage>
+</ValidationRule>

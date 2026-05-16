@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EventParticipation__c</fullName>
+    <label>イベント参加可否</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>×</fullName>
+                <default>false</default>
+                <label>×</label>
+            </value>
+            <value>
+                <fullName>○</fullName>
+                <default>false</default>
+                <label>○</label>
+            </value>
+            <value>
+                <fullName>送付なし</fullName>
+                <default>false</default>
+                <label>送付なし</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

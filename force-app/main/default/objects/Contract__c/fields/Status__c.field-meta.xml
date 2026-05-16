@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>■ 契約ステータス
+
+■ ① 進行系（契約成立まで）
+順序	表示名	API名	説明
+1	ドラフト	Draft	契約書作成中
+2	交渉中	Negotiating	条件調整中
+3	承認中	InApproval	社内承認中
+4	署名待ち	AwaitingSignature	顧客署名待ち
+------------------------------------------------
+■ ② 成立後（アクティブ）
+順序	表示名	API名	説明
+5	有効	Activated	契約開始済
+------------------------------------------------
+■ ③ SaaS特有
+順序	表示名	API名	説明
+6	更新予定	PendingRenewal	更新対象
+7	更新済	Renewed	更新完了
+------------------------------------------------
+■ ④ 終了系
+順序	表示名	API名	説明
+8	契約終了	Expired	期間満了
+9	解約	Terminated	途中解約
+10	キャンセル	Cancelled	契約前キャンセル
+11	契約拒否	Rejected	承認NG</description>
+    <label>ステータス</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Draft</fullName>
+                <default>true</default>
+                <label>ドラフト</label>
+            </value>
+            <value>
+                <fullName>Negotiating</fullName>
+                <default>false</default>
+                <label>交渉中</label>
+            </value>
+            <value>
+                <fullName>InApproval</fullName>
+                <default>false</default>
+                <label>承認中</label>
+            </value>
+            <value>
+                <fullName>AwaitingSignature</fullName>
+                <default>false</default>
+                <label>署名待ち</label>
+            </value>
+            <value>
+                <fullName>Activated</fullName>
+                <default>false</default>
+                <label>有効</label>
+            </value>
+            <value>
+                <fullName>更新予定</fullName>
+                <default>false</default>
+                <label>更新予定</label>
+            </value>
+            <value>
+                <fullName>更新済</fullName>
+                <default>false</default>
+                <label>更新済</label>
+            </value>
+            <value>
+                <fullName>Expired</fullName>
+                <default>false</default>
+                <label>契約終了</label>
+            </value>
+            <value>
+                <fullName>解約</fullName>
+                <default>false</default>
+                <label>解約</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>契約拒否</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>キャンセル</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

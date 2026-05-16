@@ -1,0 +1,22 @@
+<template>
+    <lightning-quick-action-panel header="freee取引先同期">
+        <div class="slds-p-around_medium">
+            <p>この取引先をfreeeへ作成し、freee取引先IDをSalesforceへ保存します。</p>
+        </div>
+
+        <div slot="footer">
+            <lightning-button
+                label="キャンセル"
+                onclick={handleCancel}>
+            </lightning-button>
+
+            <lightning-button
+                class="slds-m-left_small"
+                variant="brand"
+                label="同期実行"
+                onclick={handleExecute}
+                disabled={isLoading}>
+            </lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>

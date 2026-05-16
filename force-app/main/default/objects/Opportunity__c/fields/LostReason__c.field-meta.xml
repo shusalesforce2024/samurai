@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LostReason__c</fullName>
+    <label>失注理由</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Out of scope</fullName>
+                <default>false</default>
+                <label>対象外(競合や営業など)</label>
+            </value>
+            <value>
+                <fullName>No agreement on issue or setup</fullName>
+                <default>false</default>
+                <label>課題の設定・合意形成ができていない</label>
+            </value>
+            <value>
+                <fullName>Customer concern unresolved</fullName>
+                <default>false</default>
+                <label>顧客の疑問や不安を解消できていない</label>
+            </value>
+            <value>
+                <fullName>Needs mismatch</fullName>
+                <default>false</default>
+                <label>ニーズとのミスマッチ</label>
+            </value>
+            <value>
+                <fullName>Key person unreachable</fullName>
+                <default>false</default>
+                <label>キーパーソンにアプローチできていない</label>
+            </value>
+            <value>
+                <fullName>Budget shortage - running cost</fullName>
+                <default>false</default>
+                <label>予算不足（ランニング）</label>
+            </value>
+            <value>
+                <fullName>Budget shortage - initial or migration cost</fullName>
+                <default>false</default>
+                <label>予算不足(初期費用・移行コスト)</label>
+            </value>
+            <value>
+                <fullName>Competitor comparison</fullName>
+                <default>false</default>
+                <label>他社比較</label>
+            </value>
+            <value>
+                <fullName>Timing mismatch</fullName>
+                <default>false</default>
+                <label>時期ずれ</label>
+            </value>
+            <value>
+                <fullName>Support or track record concern</fullName>
+                <default>false</default>
+                <label>サポート体制・実績不足</label>
+            </value>
+            <value>
+                <fullName>No response or other reason</fullName>
+                <default>false</default>
+                <label>返信なし *なるべく他の理由に</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

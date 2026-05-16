@@ -1,0 +1,22 @@
+<template>
+    <lightning-quick-action-panel header="契約・請求作成">
+        <div class="slds-p-around_medium">
+            <p>この取引から契約・請求・請求明細を作成します。</p>
+        </div>
+
+        <div slot="footer">
+            <lightning-button
+                label="キャンセル"
+                onclick={handleCancel}>
+            </lightning-button>
+
+            <lightning-button
+                class="slds-m-left_small"
+                variant="brand"
+                label="実行"
+                onclick={handleExecute}
+                disabled={isLoading}>
+            </lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>

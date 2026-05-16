@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plan__c</fullName>
+    <label>プラン</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pro</fullName>
+                <default>false</default>
+                <label>Pro</label>
+            </value>
+            <value>
+                <fullName>Pro＋</fullName>
+                <default>false</default>
+                <label>Pro＋</label>
+            </value>
+            <value>
+                <fullName>EN</fullName>
+                <default>false</default>
+                <label>EN</label>
+            </value>
+            <value>
+                <fullName>BA</fullName>
+                <default>false</default>
+                <label>BA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

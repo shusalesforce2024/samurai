@@ -1,0 +1,22 @@
+<template>
+    <lightning-quick-action-panel header="freeeへ請求書送信">
+        <div class="slds-p-around_medium">
+            <p>この請求書をfreeeへ送信します。</p>
+        </div>
+
+        <div slot="footer">
+            <lightning-button
+                label="キャンセル"
+                onclick={handleCancel}>
+            </lightning-button>
+
+            <lightning-button
+                class="slds-m-left_small"
+                variant="brand"
+                label="実行"
+                onclick={handleExecute}
+                disabled={isLoading}>
+            </lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>

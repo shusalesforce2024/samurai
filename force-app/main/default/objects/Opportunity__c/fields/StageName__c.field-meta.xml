@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StageName__c</fullName>
+    <label>ステージ</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Prospecting</fullName>
+                <default>false</default>
+                <label>初回接点</label>
+            </value>
+            <value>
+                <fullName>Qualification</fullName>
+                <default>false</default>
+                <label>商談化</label>
+            </value>
+            <value>
+                <fullName>NeedsAnalysis</fullName>
+                <default>false</default>
+                <label>課題ヒアリング</label>
+            </value>
+            <value>
+                <fullName>ValueProposition</fullName>
+                <default>false</default>
+                <label>提案</label>
+            </value>
+            <value>
+                <fullName>Negotiation</fullName>
+                <default>false</default>
+                <label>交渉</label>
+            </value>
+            <value>
+                <fullName>Applove</fullName>
+                <default>false</default>
+                <label>承認</label>
+            </value>
+            <value>
+                <fullName>Closed Won</fullName>
+                <default>false</default>
+                <label>受注</label>
+            </value>
+            <value>
+                <fullName>Closed Lost</fullName>
+                <default>false</default>
+                <label>失注</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Freee設定情報</label>
+    <protected>false</protected>
+    <values>
+        <field>company_id__c</field>
+        <value xsi:type="xsd:string">12562039</value>
+    </values>
+    <values>
+        <field>payment_type__c</field>
+        <value xsi:type="xsd:string">transfer</value>
+    </values>
+    <values>
+        <field>tax_entry_method__c</field>
+        <value xsi:type="xsd:string">out</value>
+    </values>
+    <values>
+        <field>tax_fraction__c</field>
+        <value xsi:type="xsd:string">omit</value>
+    </values>
+    <values>
+        <field>template_id__c</field>
+        <value xsi:type="xsd:string">4411743</value>
+    </values>
+    <values>
+        <field>withholding__c</field>
+        <value xsi:type="xsd:string">out</value>
+    </values>
+</CustomMetadata>
