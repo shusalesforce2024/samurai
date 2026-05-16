@@ -186,12 +186,14 @@ private class FreeeIntegrationTest {
             new FreeeMock(422, '{"errors":[{"messages":["Invalid invoice"]}]}')
         );
 
+        Test.startTest();
         try {
             FreeeInvoiceFacade.createInvoice(invoiceRecord.Id);
             System.assert(false, 'Expected sync failure');
         } catch (FreeeInvoiceFacade.FreeeInvoiceDebugException e) {
             System.assert(e.getMessage().contains('Invalid invoice'));
         }
+        Test.stopTest();
 
         Invoice__c failed = [
             SELECT Freee_Sync_Status__c, Freee_Sync_Message__c, Retry_Count__c
@@ -248,12 +250,14 @@ private class FreeeIntegrationTest {
             new FreeeMock(400, '{"message":"Invalid quotation"}')
         );
 
+        Test.startTest();
         try {
             FreeeQuotationFacade.createQuotation(quotationRecord.Id);
             System.assert(false, 'Expected sync failure');
         } catch (FreeeQuotationFacade.FreeeQuotationDebugException e) {
             System.assert(e.getMessage().contains('Invalid quotation'));
         }
+        Test.stopTest();
 
         Quotation__c failed = [
             SELECT Freee_Sync_Status__c, Freee_Sync_Message__c, Retry_Count__c

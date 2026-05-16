@@ -4,7 +4,8 @@ private class TriggerSyncServicesTest {
     static void opportunityStageProbabilitySyncsOnInsertAndUpdate() {
         Opportunity__c opportunityRecord = new Opportunity__c(
             Name = 'Probability Opportunity',
-            StageName__c = 'Prospecting'
+            StageName__c = 'Prospecting',
+            ContractUpdate__c = '月'
         );
 
         insert opportunityRecord;
@@ -108,7 +109,8 @@ private class TriggerSyncServicesTest {
         Opportunity__c opportunityRecord = new Opportunity__c(
             Name = 'MRR Opportunity',
             Account__c = accountRecord.Id,
-            StageName__c = 'Prospecting'
+            StageName__c = 'Prospecting',
+            ContractUpdate__c = '月'
         );
         insert opportunityRecord;
 

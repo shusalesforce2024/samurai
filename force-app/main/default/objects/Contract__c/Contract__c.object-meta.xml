@@ -167,9 +167,7 @@
         <type>AutoNumber</type>
     </nameField>
     <searchLayouts>
-        <customTabListAdditionalFields xsi:nil></customTabListAdditionalFields>
         <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
-        <searchResultsAdditionalFields xsi:nil></searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>StartDate__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>EndDate__c</searchResultsAdditionalFields>

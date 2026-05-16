@@ -44,106 +44,39 @@
     <name>CustomApplication</name>
   </types>
   <types>
-    <members>Freee_Account_Item_Mapping.sales</members>
     <members>Freee_Config.FreeeConfig</members>
     <name>CustomMetadata</name>
   </types>
   <types>
-    <members>Account.AccountNumber</members>
-    <members>Account.AccountSource</members>
     <members>Account.Active__c</members>
-    <members>Account.AnnualRevenue</members>
     <members>Account.AnnualRevenueRange__c</members>
-    <members>Account.BillingAddress</members>
-    <members>Account.ChannelProgramLevelName</members>
-    <members>Account.ChannelProgramName</members>
-    <members>Account.CleanStatus</members>
     <members>Account.ContractCount__c</members>
     <members>Account.CustomerPriority__c</members>
-    <members>Account.DandbCompanyId</members>
-    <members>Account.Description</members>
-    <members>Account.DunsNumber</members>
     <members>Account.Event__c</members>
-    <members>Account.Fax</members>
     <members>Account.Freee_Partner_Id__c</members>
-    <members>Account.Industry</members>
     <members>Account.IndustryCategory__c</members>
     <members>Account.IndustryType__c</members>
-    <members>Account.IsCustomerPortal</members>
-    <members>Account.IsPartner</members>
-    <members>Account.Jigsaw</members>
     <members>Account.Labels__c</members>
     <members>Account.LinkedInProfileUrl__c</members>
-    <members>Account.NaicsCode</members>
-    <members>Account.NaicsDesc</members>
-    <members>Account.Name</members>
-    <members>Account.NumberOfEmployees</members>
     <members>Account.NumberofLocations__c</members>
-    <members>Account.OperatingHoursId</members>
-    <members>Account.OwnerId</members>
-    <members>Account.Ownership</members>
-    <members>Account.ParentId</members>
-    <members>Account.Phone</members>
-    <members>Account.Rating</members>
     <members>Account.SalesMemo__c</members>
-    <members>Account.ShippingAddress</members>
-    <members>Account.Sic</members>
-    <members>Account.SicDesc</members>
-    <members>Account.Site</members>
     <members>Account.SLA__c</members>
     <members>Account.SLAExpirationDate__c</members>
     <members>Account.SLASerialNumber__c</members>
-    <members>Account.TickerSymbol</members>
-    <members>Account.Tier</members>
-    <members>Account.Tradestyle</members>
-    <members>Account.Type</members>
     <members>Account.UpsellOpportunity__c</members>
-    <members>Account.Website</members>
-    <members>Account.YearStarted</members>
-    <members>Contact.AccountId</members>
-    <members>Contact.AssistantName</members>
-    <members>Contact.AssistantPhone</members>
-    <members>Contact.Birthdate</members>
-    <members>Contact.BuyerAttributes</members>
-    <members>Contact.CleanStatus</members>
-    <members>Contact.ContactSource</members>
     <members>Contact.Coupon__c</members>
-    <members>Contact.Department</members>
-    <members>Contact.Description</members>
     <members>Contact.DMFaxConsent__c</members>
-    <members>Contact.DoNotCall</members>
-    <members>Contact.Email</members>
     <members>Contact.Event__c</members>
     <members>Contact.EventParticipation__c</members>
-    <members>Contact.Fax</members>
-    <members>Contact.GenderIdentity</members>
-    <members>Contact.HasOptedOutOfEmail</members>
-    <members>Contact.HasOptedOutOfFax</members>
-    <members>Contact.HomePhone</members>
-    <members>Contact.IndividualId</members>
     <members>Contact.IsDecisionMaker__c</members>
-    <members>Contact.Jigsaw</members>
     <members>Contact.Labels__c</members>
     <members>Contact.Languages__c</members>
-    <members>Contact.LastCURequestDate</members>
-    <members>Contact.LastCUUpdateDate</members>
-    <members>Contact.LeadSource</members>
     <members>Contact.Level__c</members>
-    <members>Contact.MailingAddress</members>
-    <members>Contact.MobilePhone</members>
-    <members>Contact.Name</members>
     <members>Contact.NextActivityDate__c</members>
-    <members>Contact.OtherAddress</members>
-    <members>Contact.OtherPhone</members>
-    <members>Contact.OwnerId</members>
-    <members>Contact.Phone</members>
     <members>Contact.Product__c</members>
-    <members>Contact.Pronouns</members>
-    <members>Contact.ReportsToId</members>
     <members>Contact.Source__c</members>
     <members>Contact.StripeAccountId__c</members>
     <members>Contact.TelemarketingTarget__c</members>
-    <members>Contact.Title</members>
     <members>Contract__c.Account__c</members>
     <members>Contract__c.ActivatedDate__c</members>
     <members>Contract__c.ACV__c</members>
@@ -261,23 +194,7 @@
     <members>Opportunity__c.StandardStartDate__c</members>
     <members>Opportunity__c.StartDate__c</members>
     <members>Product2.BillingFrequency__c</members>
-    <members>Product2.Description</members>
-    <members>Product2.DisplayUrl</members>
-    <members>Product2.ExternalDataSourceId</members>
-    <members>Product2.ExternalId</members>
-    <members>Product2.Family</members>
-    <members>Product2.IsActive</members>
-    <members>Product2.IsSerialized</members>
-    <members>Product2.Name</members>
-    <members>Product2.ProductClass</members>
-    <members>Product2.ProductCode</members>
-    <members>Product2.QuantityUnitOfMeasure</members>
-    <members>Product2.SellerId</members>
-    <members>Product2.SourceProductId</members>
-    <members>Product2.StockKeepingUnit</members>
     <members>Product2.Tax__c</members>
-    <members>Product2.TransferRecordMode</members>
-    <members>Product2.Type</members>
     <members>Product2.Unit__c</members>
     <members>Product2.UnitPrice__c</members>
     <members>Quotation__c.Account__c</members>
@@ -311,8 +228,6 @@
     <name>CustomField</name>
   </types>
   <types>
-    <members>Account</members>
-    <members>Contact</members>
     <members>Contract__c</members>
     <members>ContractLineItem__c</members>
     <members>Event__c</members>
@@ -323,25 +238,16 @@
     <members>Invoice__c</members>
     <members>InvoiceLine__c</members>
     <members>Opportunity__c</members>
-    <members>Product2</members>
     <members>Quotation__c</members>
     <members>QuotationLine__c</members>
     <name>CustomObject</name>
   </types>
   <types>
-    <members>Account.FSL__Emergency_Account_Fields</members>
-    <members>Account.FSL__Gantt_Lightbox</members>
-    <name>FieldSet</name>
-  </types>
-  <types>
-    <members>Account-Account Layout</members>
-    <members>Contact-Contact Layout</members>
     <members>Contract__c-Contract Clone Layout</members>
     <members>Event__c-イベントレイアウト</members>
     <members>Invoice__c-請求書レイアウト</members>
     <members>InvoiceLine__c-請求明細レイアウト</members>
     <members>Opportunity__c-Opportunity Clone Layout</members>
-    <members>Opportunity-Opportunity Layout</members>
     <members>Quotation__c-Quotation Layout</members>
     <members>QuotationLine__c-Quotation Line Layout</members>
     <name>Layout</name>
@@ -354,17 +260,6 @@
     <name>LightningComponentBundle</name>
   </types>
   <types>
-    <members>Account.AllAccounts</members>
-    <members>Account.MyAccounts</members>
-    <members>Account.NewLastWeek</members>
-    <members>Account.NewThisWeek</members>
-    <members>Account.PlatinumandGoldSLACustomers</members>
-    <members>Contact.AllContacts</members>
-    <members>Contact.BirthdaysThisMonth</members>
-    <members>Contact.BulkMessageContacts</members>
-    <members>Contact.MyContacts</members>
-    <members>Contact.NewLastWeek</members>
-    <members>Contact.NewThisWeek</members>
     <members>Contract__c.All</members>
     <members>Contract__c.CreditContract</members>
     <members>ContractLineItem__c.All</members>
@@ -376,8 +271,6 @@
     <members>InvoiceLine__c.All</members>
     <members>Opportunity__c.All</members>
     <members>Opportunity__c.remaind</members>
-    <members>Product2.AllProducts</members>
-    <members>Product2.Rendery</members>
     <members>Quotation__c.All</members>
     <members>Quotation__c.All1</members>
     <members>QuotationLine__c.All</members>
@@ -395,6 +288,39 @@
   <types>
     <members>Admin</members>
     <name>Profile</name>
+  </types>
+  <types>
+    <members>Contract__c</members>
+    <members>ContractLineItem__c</members>
+    <members>Event__c</members>
+    <members>Invoice__c</members>
+    <members>InvoiceLine__c</members>
+    <members>Opportunity__c</members>
+    <members>Quotation__c</members>
+    <members>QuotationLine__c</members>
+    <name>CustomTab</name>
+  </types>
+  <types>
+    <members>FlexiPage14</members>
+    <members>FlexiPage15</members>
+    <members>FlexiPage16</members>
+    <members>FlexiPage17</members>
+    <members>FlexiPage18</members>
+    <members>FlexiPage19</members>
+    <members>FlexiPage20</members>
+    <members>FlexiPage21</members>
+    <members>SAMURAI_UtilityBar</members>
+    <name>FlexiPage</name>
+  </types>
+  <types>
+    <members>Invoice__c.FreeeInvoiceAction</members>
+    <members>Opportunity__c.ContractInvoiceAction</members>
+    <members>Quotation__c.FreeeQuotationAction</members>
+    <name>QuickAction</name>
+  </types>
+  <types>
+    <members>Samurai</members>
+    <name>ContentAsset</name>
   </types>
   <version>64.0</version>
 </Package>
