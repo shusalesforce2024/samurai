@@ -84,7 +84,6 @@
     <members>Contract__c.ActivatedDate__c</members>
     <members>Contract__c.ACV__c</members>
     <members>Contract__c.ARR__c</members>
-    <members>Contract__c.CheckStatus__c</members>
     <members>Contract__c.CompanySigned__c</members>
     <members>Contract__c.ContractName__c</members>
     <members>Contract__c.ContractUpdate__c</members>

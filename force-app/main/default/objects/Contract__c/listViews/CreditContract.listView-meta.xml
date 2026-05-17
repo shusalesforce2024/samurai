@@ -5,7 +5,6 @@
     <columns>Account__c</columns>
     <columns>Status__c</columns>
     <columns>Plan__c</columns>
-    <columns>CheckStatus__c</columns>
     <columns>StartDate__c</columns>
     <columns>EndDate__c</columns>
     <columns>Payment__c</columns>

@@ -37,10 +37,6 @@
                 <field>EndDate__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>ExpectedDuration__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Required</behavior>
                 <field>ContractUpdate__c</field>
             </layoutItems>
@@ -80,15 +76,11 @@
                 <behavior>Edit</behavior>
                 <field>Plan__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Payment__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>CheckStatus__c</field>
+                <field>Payment__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -182,6 +174,16 @@
             <sortOrder>0</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
+            <actionName>Delete</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>1</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Edit</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>2</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>Clone</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>3</sortOrder>
@@ -192,19 +194,9 @@
             <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Edit</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>2</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Share</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>5</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Delete</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>1</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList>
@@ -234,12 +226,17 @@
         <fields>NAME</fields>
         <fields>Account__c</fields>
         <fields>TotalAmount__c</fields>
+        <fields>NumberOfPeople__c</fields>
         <fields>Payment_Type__c</fields>
         <fields>Payment_Date__c</fields>
         <relatedList>Invoice__c.ParentContract__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Plan__c</fields>
+        <fields>PeopleNumber__c</fields>
+        <fields>Total__c</fields>
+        <fields>CheckStatus__c</fields>
         <relatedList>ContractLineItem__c.MasterContract__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
