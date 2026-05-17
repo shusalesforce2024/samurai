@@ -297,6 +297,9 @@
     <members>Contract__c</members>
     <members>ContractLineItem__c</members>
     <members>Event__c</members>
+    <members>Freee_Account_Item_Mappings__c</members>
+    <members>Freee_Configs__c</members>
+    <members>Freee_Sync_Log__c</members>
     <members>Invoice__c</members>
     <members>InvoiceLine__c</members>
     <members>Opportunity__c</members>

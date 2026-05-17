@@ -1055,6 +1055,18 @@
     <visibility>Available</visibility>
   </tabSettings>
   <tabSettings>
+    <tab>Freee_Account_Item_Mappings__c</tab>
+    <visibility>Available</visibility>
+  </tabSettings>
+  <tabSettings>
+    <tab>Freee_Configs__c</tab>
+    <visibility>Available</visibility>
+  </tabSettings>
+  <tabSettings>
+    <tab>Freee_Sync_Log__c</tab>
+    <visibility>Available</visibility>
+  </tabSettings>
+  <tabSettings>
     <tab>Invoice__c</tab>
     <visibility>Available</visibility>
   </tabSettings>
