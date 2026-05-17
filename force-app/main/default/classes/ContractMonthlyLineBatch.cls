@@ -100,6 +100,9 @@ public with sharing class ContractMonthlyLineBatch
 
         Map<Id, Set<String>> existingYearMonthsByContractId =
             getExistingYearMonthsByContractId(contractRecords);
+        Map<Id, InvoiceSummary> invoiceSummaryByContractId =
+            getInvoiceSummaryByContractId(contractRecords);
+        validateInvoiceExists(contractRecords, invoiceSummaryByContractId);
         List<ContractLineItem__c> linesToInsert = new List<ContractLineItem__c>();
 
         for (Contract__c contractRecord : contractRecords) {
@@ -115,7 +118,11 @@ public with sharing class ContractMonthlyLineBatch
                     continue;
                 }
 
-                linesToInsert.add(buildLine(contractRecord, yearMonth));
+                linesToInsert.add(buildLine(
+                    contractRecord,
+                    yearMonth,
+                    invoiceSummaryByContractId.get(contractRecord.Id)
+                ));
             }
         }
 
@@ -161,6 +168,55 @@ public with sharing class ContractMonthlyLineBatch
         }
 
         return existingYearMonthsByContractId;
+    }
+
+    private static Map<Id, InvoiceSummary> getInvoiceSummaryByContractId(
+        List<Contract__c> contractRecords
+    ) {
+        Set<Id> contractIds = new Set<Id>();
+        for (Contract__c contractRecord : contractRecords) {
+            contractIds.add(contractRecord.Id);
+        }
+
+        Map<Id, InvoiceSummary> invoiceSummaryByContractId =
+            new Map<Id, InvoiceSummary>();
+        for (AggregateResult result : [
+            SELECT ParentContract__c contractId,
+                   SUM(NumberOfPeople__c) peopleNumber,
+                   SUM(TotalAmount__c) totalAmount
+            FROM Invoice__c
+            WHERE ParentContract__c IN :contractIds
+            GROUP BY ParentContract__c
+        ]) {
+            invoiceSummaryByContractId.put(
+                (Id) result.get('contractId'),
+                new InvoiceSummary(
+                    (Decimal) result.get('peopleNumber'),
+                    (Decimal) result.get('totalAmount')
+                )
+            );
+        }
+
+        return invoiceSummaryByContractId;
+    }
+
+    private static void validateInvoiceExists(
+        List<Contract__c> contractRecords,
+        Map<Id, InvoiceSummary> invoiceSummaryByContractId
+    ) {
+        List<String> contractNamesWithoutInvoice = new List<String>();
+        for (Contract__c contractRecord : contractRecords) {
+            if (!invoiceSummaryByContractId.containsKey(contractRecord.Id)) {
+                contractNamesWithoutInvoice.add(getContractDisplayName(contractRecord));
+            }
+        }
+
+        if (!contractNamesWithoutInvoice.isEmpty()) {
+            throw new ContractMonthlyLineException(
+                '契約に紐づく請求が存在しないため、契約月次明細を作成できません: '
+                + String.join(contractNamesWithoutInvoice, ', ')
+            );
+        }
     }
 
     private static List<String> buildTargetYearMonths(
@@ -233,13 +289,18 @@ public with sharing class ContractMonthlyLineBatch
         return String.valueOf(sourceDate.year()) + '/' + String.valueOf(sourceDate.month());
     }
 
-    private static ContractLineItem__c buildLine(
-        Contract__c contractRecord,
-        String yearMonth
-    ) {
-        String sourceName = String.isBlank(contractRecord.ContractName__c)
+    private static String getContractDisplayName(Contract__c contractRecord) {
+        return String.isBlank(contractRecord.ContractName__c)
             ? contractRecord.Name
             : contractRecord.ContractName__c;
+    }
+
+    private static ContractLineItem__c buildLine(
+        Contract__c contractRecord,
+        String yearMonth,
+        InvoiceSummary invoiceSummary
+    ) {
+        String sourceName = getContractDisplayName(contractRecord);
 
         return new ContractLineItem__c(
             Name = sourceName + '_' + yearMonth,
@@ -247,7 +308,22 @@ public with sharing class ContractMonthlyLineBatch
             ContractYearMonth__c = yearMonth,
             MasterContract__c = contractRecord.Id,
             Month__c = yearMonth,
-            Plan__c = contractRecord.Plan__c
+            PeopleNumber__c = invoiceSummary == null ? null : invoiceSummary.peopleNumber,
+            Plan__c = contractRecord.Plan__c,
+            Total__c = invoiceSummary == null ? null : invoiceSummary.totalAmount
         );
+    }
+
+    private class InvoiceSummary {
+        private Decimal peopleNumber;
+        private Decimal totalAmount;
+
+        private InvoiceSummary(Decimal peopleNumber, Decimal totalAmount) {
+            this.peopleNumber = peopleNumber;
+            this.totalAmount = totalAmount;
+        }
+    }
+
+    public class ContractMonthlyLineException extends Exception {
     }
 }

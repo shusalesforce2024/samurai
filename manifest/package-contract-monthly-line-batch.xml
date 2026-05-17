@@ -9,9 +9,5 @@
         <members>ContractTrigger</members>
         <name>ApexTrigger</name>
     </types>
-    <types>
-        <members>SAMURAI_System_Admin</members>
-        <name>PermissionSet</name>
-    </types>
     <version>64.0</version>
 </Package>
