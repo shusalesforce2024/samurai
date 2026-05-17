@@ -288,6 +288,10 @@
     <name>Report</name>
   </types>
   <types>
+    <members>ContractManagementFolder</members>
+    <name>ReportFolder</name>
+  </types>
+  <types>
     <members>ContractReport</members>
     <name>ReportType</name>
   </types>
