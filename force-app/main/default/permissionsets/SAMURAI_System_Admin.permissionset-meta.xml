@@ -8,6 +8,14 @@
     <visible>true</visible>
   </applicationVisibilities>
   <classAccesses>
+    <apexClass>ContractMonthlyLineBatch</apexClass>
+    <enabled>true</enabled>
+  </classAccesses>
+  <classAccesses>
+    <apexClass>ContractMonthlyLineBatchTest</apexClass>
+    <enabled>true</enabled>
+  </classAccesses>
+  <classAccesses>
     <apexClass>FreeeConfigService</apexClass>
     <enabled>true</enabled>
   </classAccesses>

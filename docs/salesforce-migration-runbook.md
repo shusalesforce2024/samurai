@@ -241,6 +241,36 @@ Named Credential はメタデータに含まれていないため、本番環境
 | 4 | `Freee_Account_Item_Mappings__c` | `Key__c`、`Freee_Account_Item_Id__c`、`Is_Active__c=true` を登録 | 請求書作成時に勘定科目IDエラーが出ない |
 | 5 | 権限 | 対象ユーザにオブジェクト/項目/Apex/LWC 実行権限を付与 | 対象ユーザで各アクションを実行できる |
 
+### 10.1 契約月次明細作成バッチのスケジュール登録
+
+`ContractMonthlyLineBatch` は Apex クラスとしてデプロイされるが、スケジュール済みジョブは manifest デプロイでは自動作成されない。各環境へのリリース後に、以下の Anonymous Apex を1回実行して登録する。
+
+```apex
+System.schedule(
+    'Contract Monthly Line Batch - Monthly 11th',
+    '0 0 1 11 * ?',
+    new ContractMonthlyLineBatch()
+);
+```
+
+登録内容:
+
+| 項目 | 内容 |
+| --- | --- |
+| Apex class | `ContractMonthlyLineBatch` |
+| ジョブ名 | `Contract Monthly Line Batch - Monthly 11th` |
+| 実行タイミング | 毎月11日 01:00 |
+| 作成対象 | `Status__c=Activated` かつ `ContractUpdate__c=月/年` かつ `StartDate__c` が設定済みの `Contract__c` |
+| 重複防止 | 同一 `MasterContract__c` + `ContractYearMonth__c` が存在する場合は作成しない |
+
+登録後、Setup > Scheduled Jobs でジョブが存在することを確認する。CLI で確認する場合は以下を実行する。
+
+```powershell
+sf data query --target-org <production-org> --query "SELECT Id, CronJobDetail.Name, State, NextFireTime FROM CronTrigger WHERE CronJobDetail.Name = 'Contract Monthly Line Batch - Monthly 11th'"
+```
+
+既に同名ジョブが存在する場合は二重登録しない。実行時刻やジョブ名を変更する場合は、既存ジョブを中止してから再登録する。
+
 ## 11. リリース後疎通確認
 
 | No | シナリオ | 事前条件 | 期待結果 |
@@ -285,6 +315,7 @@ Named Credential はメタデータに含まれていないため、本番環境
 | 本番 Deploy 結果 |  |
 | Apex Test 結果 |  |
 | 手動設定完了 |  |
+| 契約月次明細作成バッチ スケジュール登録 |  |
 | 疎通確認完了 |  |
 | 残課題 |  |
 
