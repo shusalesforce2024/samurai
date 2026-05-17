@@ -284,6 +284,14 @@
     <name>ValidationRule</name>
   </types>
   <types>
+    <members>ContractManagementFolder/ContractReport</members>
+    <name>Report</name>
+  </types>
+  <types>
+    <members>ContractReport</members>
+    <name>ReportType</name>
+  </types>
+  <types>
     <members>Account.Billing</members>
     <name>WebLink</name>
   </types>
