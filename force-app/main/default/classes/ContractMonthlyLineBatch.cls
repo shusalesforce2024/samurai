@@ -10,6 +10,11 @@ public with sharing class ContractMonthlyLineBatch
     private static final Integer BILLING_UPDATE_DAY = 10;
     private static final Integer YEARLY_MONTH_COUNT = 12;
 
+    private enum LineCreationTiming {
+        ACTIVATION,
+        SCHEDULED
+    }
+
     private Date runDate;
 
     public ContractMonthlyLineBatch() {
@@ -54,6 +59,41 @@ public with sharing class ContractMonthlyLineBatch
         Database.BatchableContext context,
         List<Contract__c> contractRecords
     ) {
+        createLines(contractRecords, LineCreationTiming.SCHEDULED, runDate);
+    }
+
+    public void finish(Database.BatchableContext context) {
+    }
+
+    public static void createInitialLinesForActivatedContracts(
+        List<Contract__c> newRecords,
+        Map<Id, Contract__c> oldMap
+    ) {
+        List<Contract__c> targetContracts = new List<Contract__c>();
+        for (Contract__c contractRecord : newRecords) {
+            if (!isLineCreationTarget(contractRecord)) {
+                continue;
+            }
+
+            Contract__c oldRecord = oldMap == null ? null : oldMap.get(contractRecord.Id);
+            if (oldRecord == null || oldRecord.Status__c != STATUS_ACTIVATED) {
+                targetContracts.add(contractRecord);
+            }
+        }
+
+        createLines(targetContracts, LineCreationTiming.ACTIVATION, Date.today());
+    }
+
+    @TestVisible
+    private static Boolean shouldRun(Date targetDate) {
+        return targetDate != null && targetDate.day() > BILLING_UPDATE_DAY;
+    }
+
+    private static void createLines(
+        List<Contract__c> contractRecords,
+        LineCreationTiming timing,
+        Date targetDate
+    ) {
         if (contractRecords.isEmpty()) {
             return;
         }
@@ -63,7 +103,11 @@ public with sharing class ContractMonthlyLineBatch
         List<ContractLineItem__c> linesToInsert = new List<ContractLineItem__c>();
 
         for (Contract__c contractRecord : contractRecords) {
-            for (String yearMonth : buildTargetYearMonths(contractRecord)) {
+            for (String yearMonth : buildTargetYearMonths(
+                contractRecord,
+                timing,
+                targetDate
+            )) {
                 Set<String> existingYearMonths = existingYearMonthsByContractId.get(
                     contractRecord.Id
                 );
@@ -80,15 +124,16 @@ public with sharing class ContractMonthlyLineBatch
         }
     }
 
-    public void finish(Database.BatchableContext context) {
+    private static Boolean isLineCreationTarget(Contract__c contractRecord) {
+        return contractRecord.Status__c == STATUS_ACTIVATED
+            && contractRecord.StartDate__c != null
+            && (
+                contractRecord.ContractUpdate__c == UPDATE_MONTHLY
+                || contractRecord.ContractUpdate__c == UPDATE_YEARLY
+            );
     }
 
-    @TestVisible
-    private static Boolean shouldRun(Date targetDate) {
-        return targetDate != null && targetDate.day() > BILLING_UPDATE_DAY;
-    }
-
-    private Map<Id, Set<String>> getExistingYearMonthsByContractId(
+    private static Map<Id, Set<String>> getExistingYearMonthsByContractId(
         List<Contract__c> contractRecords
     ) {
         Set<Id> contractIds = new Set<Id>();
@@ -118,16 +163,36 @@ public with sharing class ContractMonthlyLineBatch
         return existingYearMonthsByContractId;
     }
 
-    private List<String> buildTargetYearMonths(Contract__c contractRecord) {
+    private static List<String> buildTargetYearMonths(
+        Contract__c contractRecord,
+        LineCreationTiming timing,
+        Date targetDate
+    ) {
         Date startMonth = firstDayOfMonth(contractRecord.StartDate__c);
-        Integer monthCount = contractRecord.ContractUpdate__c == UPDATE_YEARLY
-            ? YEARLY_MONTH_COUNT
-            : 1;
 
-        Date targetMonth = contractRecord.ContractUpdate__c == UPDATE_MONTHLY
-            ? getMonthlyTargetMonth(startMonth)
-            : startMonth;
+        if (timing == LineCreationTiming.ACTIVATION) {
+            Integer monthCount = contractRecord.ContractUpdate__c == UPDATE_YEARLY
+                ? YEARLY_MONTH_COUNT
+                : 1;
+            return buildYearMonthRange(startMonth, monthCount);
+        }
 
+        if (contractRecord.ContractUpdate__c == UPDATE_MONTHLY) {
+            return buildYearMonthRange(
+                getScheduledMonthlyTargetMonth(startMonth, targetDate),
+                1
+            );
+        }
+
+        Date yearlyTargetMonth = getScheduledYearlyTargetMonth(startMonth, targetDate);
+        if (yearlyTargetMonth == null) {
+            return new List<String>();
+        }
+
+        return buildYearMonthRange(yearlyTargetMonth, YEARLY_MONTH_COUNT);
+    }
+
+    private static List<String> buildYearMonthRange(Date targetMonth, Integer monthCount) {
         List<String> yearMonths = new List<String>();
         for (Integer index = 0; index < monthCount; index++) {
             yearMonths.add(formatYearMonth(targetMonth.addMonths(index)));
@@ -136,9 +201,28 @@ public with sharing class ContractMonthlyLineBatch
         return yearMonths;
     }
 
-    private Date getMonthlyTargetMonth(Date contractStartMonth) {
-        Date currentMonth = firstDayOfMonth(runDate);
-        return contractStartMonth > currentMonth ? contractStartMonth : currentMonth;
+    private static Date getScheduledMonthlyTargetMonth(
+        Date contractStartMonth,
+        Date targetDate
+    ) {
+        Date nextMonth = firstDayOfMonth(targetDate).addMonths(1);
+        return contractStartMonth > nextMonth ? contractStartMonth : nextMonth;
+    }
+
+    private static Date getScheduledYearlyTargetMonth(
+        Date contractStartMonth,
+        Date targetDate
+    ) {
+        if (targetDate.month() != contractStartMonth.month()) {
+            return null;
+        }
+
+        Date renewalStartMonth = Date.newInstance(
+            targetDate.year(),
+            contractStartMonth.month(),
+            1
+        );
+        return renewalStartMonth > contractStartMonth ? renewalStartMonth : null;
     }
 
     private static Date firstDayOfMonth(Date sourceDate) {

@@ -6,6 +6,10 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>ContractTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
         <members>SAMURAI_System_Admin</members>
         <name>PermissionSet</name>
     </types>

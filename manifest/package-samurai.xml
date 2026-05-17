@@ -30,6 +30,7 @@
     <name>ApexClass</name>
   </types>
   <types>
+    <members>ContractTrigger</members>
     <members>InvoiceLineTrigger</members>
     <members>OpportunityTrigger</members>
     <members>QuotationLineTrigger</members>
