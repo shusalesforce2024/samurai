@@ -19,8 +19,17 @@ public with sharing class FreeePartnerFacade {
         }
 
         Freee_Configs__c config = getConfig();
-        String requestBody = buildRequestBody(acc, config);
+        String existingPartnerId = findExistingPartnerId(acc, config);
 
+        if (!String.isBlank(existingPartnerId)) {
+            savePartnerId(acc, existingPartnerId);
+            return buildResult(
+                '既存のfreee取引先を取得し、取引先IDをSalesforceへ保存しました。',
+                existingPartnerId
+            );
+        }
+
+        String requestBody = buildRequestBody(acc, config);
         HttpResponse res = FreeePartnerService.createPartner(requestBody);
 
         if (res.getStatusCode() < 200 || res.getStatusCode() >= 300) {
@@ -28,19 +37,12 @@ public with sharing class FreeePartnerFacade {
         }
 
         String partnerId = extractPartnerId(res.getBody());
+        savePartnerId(acc, partnerId);
 
-        if (!Schema.sObjectType.Account.isUpdateable()) {
-            throw new AuraHandledException('取引先の更新権限がありません。');
-        }
-
-        acc.Freee_Partner_Id__c = Decimal.valueOf(partnerId);
-        update acc;
-
-        Result result = new Result();
-        result.success = true;
-        result.message = 'freee取引先を作成し、取引先IDをSalesforceへ保存しました。';
-        result.freeePartnerId = partnerId;
-        return result;
+        return buildResult(
+            'freee取引先を作成し、取引先IDをSalesforceへ保存しました。',
+            partnerId
+        );
     }
 
     private static Account getAccount(Id accountId) {
@@ -90,12 +92,40 @@ public with sharing class FreeePartnerFacade {
         }
 
         if (configs.isEmpty()) {
-            throw new AuraHandledException(
-                'Freee設定が見つかりません。Freee_Configs__c のレコードを作成してください。'
-            );
+            throw new AuraHandledException('Freee設定が見つかりません。Freee_Configs__c のレコードを作成してください。');
         }
 
         return configs[0];
+    }
+
+    private static String findExistingPartnerId(Account acc, Freee_Configs__c config) {
+        String companyId = String.valueOf(config.Company_Id__c);
+        if (String.isBlank(companyId)) {
+            throw new AuraHandledException('Freee設定の Company_Id__c が未設定です。');
+        }
+
+        HttpResponse res = FreeePartnerService.searchPartners(companyId, acc.Name);
+
+        if (res.getStatusCode() < 200 || res.getStatusCode() >= 300) {
+            throw new AuraHandledException('freee取引先検索に失敗しました: ' + res.getBody());
+        }
+
+        Map<String, Object> responseMap =
+            (Map<String, Object>) JSON.deserializeUntyped(res.getBody());
+        List<Object> partners = (List<Object>) responseMap.get('partners');
+
+        if (partners == null || partners.isEmpty()) {
+            return null;
+        }
+
+        for (Object partnerObject : partners) {
+            Map<String, Object> partner = (Map<String, Object>) partnerObject;
+            if (String.valueOf(partner.get('name')) == acc.Name && partner.get('id') != null) {
+                return String.valueOf(partner.get('id'));
+            }
+        }
+
+        return null;
     }
 
     private static String buildRequestBody(Account acc, Freee_Configs__c config) {
@@ -113,7 +143,6 @@ public with sharing class FreeePartnerFacade {
     private static String extractPartnerId(String responseBody) {
         Map<String, Object> responseMap =
             (Map<String, Object>) JSON.deserializeUntyped(responseBody);
-
         Map<String, Object> partner =
             (Map<String, Object>) responseMap.get('partner');
 
@@ -122,5 +151,22 @@ public with sharing class FreeePartnerFacade {
         }
 
         return String.valueOf(partner.get('id'));
+    }
+
+    private static void savePartnerId(Account acc, String partnerId) {
+        if (!Schema.sObjectType.Account.isUpdateable()) {
+            throw new AuraHandledException('取引先の更新権限がありません。');
+        }
+
+        acc.Freee_Partner_Id__c = Decimal.valueOf(partnerId);
+        update acc;
+    }
+
+    private static Result buildResult(String message, String partnerId) {
+        Result result = new Result();
+        result.success = true;
+        result.message = message;
+        result.freeePartnerId = partnerId;
+        return result;
     }
 }

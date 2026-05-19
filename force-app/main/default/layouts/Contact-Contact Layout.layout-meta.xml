@@ -99,10 +99,6 @@
                 <field>StripeAccountId__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>CleanStatus</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Source__c</field>
             </layoutItems>

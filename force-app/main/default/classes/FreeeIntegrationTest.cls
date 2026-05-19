@@ -21,6 +21,40 @@ private class FreeeIntegrationTest {
         }
     }
 
+    private class FreeePartnerSyncMock implements HttpCalloutMock {
+        private Boolean partnerExists;
+        Integer getCallCount = 0;
+        Integer postCallCount = 0;
+
+        FreeePartnerSyncMock(Boolean partnerExists) {
+            this.partnerExists = partnerExists;
+        }
+
+        public HttpResponse respond(HttpRequest req) {
+            HttpResponse res = new HttpResponse();
+
+            if (req.getMethod() == 'GET') {
+                getCallCount++;
+                res.setStatusCode(200);
+                res.setBody(
+                    partnerExists
+                        ? '{"partners":[{"id":888001,"name":"Partner Account"}]}'
+                        : '{"partners":[]}'
+                );
+                return res;
+            }
+
+            System.assertEquals('POST', req.getMethod());
+            System.assertEquals('application/json', req.getHeader('Content-Type'));
+            System.assert(String.isNotBlank(req.getBody()));
+            postCallCount++;
+
+            res.setStatusCode(201);
+            res.setBody('{"partner":{"id":999001}}');
+            return res;
+        }
+    }
+
     @testSetup
     static void setupConfigAndMappings() {
         insert new Freee_Configs__c(
@@ -274,10 +308,8 @@ private class FreeeIntegrationTest {
         Account accountRecord = new Account(Name = 'Partner Account');
         insert accountRecord;
 
-        Test.setMock(
-            HttpCalloutMock.class,
-            new FreeeMock(201, '{"partner":{"id":999001}}')
-        );
+        FreeePartnerSyncMock mock = new FreeePartnerSyncMock(false);
+        Test.setMock(HttpCalloutMock.class, mock);
 
         Test.startTest();
         FreeePartnerFacade.Result result = FreeePartnerController.syncPartner(accountRecord.Id);
@@ -291,6 +323,32 @@ private class FreeeIntegrationTest {
         System.assertEquals(true, result.success);
         System.assertEquals('999001', result.freeePartnerId);
         System.assertEquals(Decimal.valueOf(999001), updatedAccount.Freee_Partner_Id__c);
+        System.assertEquals(1, mock.getCallCount);
+        System.assertEquals(1, mock.postCallCount);
+    }
+
+    @isTest
+    static void partnerControllerUsesExistingFreeePartnerWhenNameMatches() {
+        Account accountRecord = new Account(Name = 'Partner Account');
+        insert accountRecord;
+
+        FreeePartnerSyncMock mock = new FreeePartnerSyncMock(true);
+        Test.setMock(HttpCalloutMock.class, mock);
+
+        Test.startTest();
+        FreeePartnerFacade.Result result = FreeePartnerController.syncPartner(accountRecord.Id);
+        Test.stopTest();
+
+        Account updatedAccount = [
+            SELECT Freee_Partner_Id__c
+            FROM Account
+            WHERE Id = :accountRecord.Id
+        ];
+        System.assertEquals(true, result.success);
+        System.assertEquals('888001', result.freeePartnerId);
+        System.assertEquals(Decimal.valueOf(888001), updatedAccount.Freee_Partner_Id__c);
+        System.assertEquals(1, mock.getCallCount);
+        System.assertEquals(0, mock.postCallCount);
     }
 
     @isTest

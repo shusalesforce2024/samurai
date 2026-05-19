@@ -71,10 +71,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>YearStarted</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Labels__c</field>
             </layoutItems>
         </layoutColumns>
@@ -249,12 +245,6 @@
         </quickActionListItems>
         <quickActionListItems>
             <quickActionName>SendEmail</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
-            <quickActionName>FSL__Emergency</quickActionName>
-        </quickActionListItems>
-        <quickActionListItems>
-            <quickActionName>FSL__Book_Appointment</quickActionName>
         </quickActionListItems>
     </quickActionList>
     <relatedLists>
