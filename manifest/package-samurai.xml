@@ -245,11 +245,17 @@
     <name>CustomObject</name>
   </types>
   <types>
+    <members>Contract-Contract Layout</members>
     <members>Contract__c-Contract Clone Layout</members>
+    <members>ContractLineItem__c-契約月次明細レイアウト</members>
     <members>Event__c-イベントレイアウト</members>
+    <members>Freee_Account_Item_Mappings__c-Freee勘定科目マッピングレイアウト</members>
+    <members>Freee_Configs__c-Freee設定レイアウト</members>
+    <members>Freee_Sync_Log__c-Free連携ログレイアウト</members>
     <members>Invoice__c-請求書レイアウト</members>
     <members>InvoiceLine__c-請求明細レイアウト</members>
     <members>Opportunity__c-Opportunity Clone Layout</members>
+    <members>Product2-Product Layout</members>
     <members>Quotation__c-Quotation Layout</members>
     <members>QuotationLine__c-Quotation Line Layout</members>
     <name>Layout</name>
@@ -334,6 +340,7 @@
     <name>FlexiPage</name>
   </types>
   <types>
+    <members>Account.FreeePartnerSyncAction</members>
     <members>Invoice__c.FreeeInvoiceAction</members>
     <members>Opportunity__c.ContractInvoiceAction</members>
     <members>Quotation__c.FreeeQuotationAction</members>
