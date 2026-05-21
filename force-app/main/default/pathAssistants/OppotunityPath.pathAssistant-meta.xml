@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity__c</entityName>
+    <fieldName>StageName__c</fieldName>
+    <masterLabel>商談パス</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>NextStep__c</fieldNames>
+        <fieldNames>ExpectedCloseDate__c</fieldNames>
+        <info>&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 状態&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;稟議・意思決定&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 営業がやること&lt;/strong&gt;&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;社内外の承認取得&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;決裁者フォロー&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;契約締結準備&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 成功の定義&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&amp;#128073; &lt;/span&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;意思決定プロセスに乗っている&lt;/strong&gt;&lt;/p&gt;</info>
+        <picklistValueName>Applove</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>LostDate__c</fieldNames>
+        <fieldNames>LostReason__c</fieldNames>
+        <info>&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 状態&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;案件終了&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 営業がやること&lt;/strong&gt;&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;失注理由の整理&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;次回アプローチ検討&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 成功の定義&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&amp;#128073; &lt;/span&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;再現性のある失注理由が記録されている&lt;/strong&gt;&lt;/p&gt;</info>
+        <picklistValueName>Closed Lost</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>StartDate__c</fieldNames>
+        <fieldNames>ExpectedCloseDate__c</fieldNames>
+        <info>&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 状態&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;契約成立&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 営業がやること&lt;/strong&gt;&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;契約締結&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;CSへの引き継ぎ&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;freee連携（請求）&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 成功の定義&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&amp;#128073; &lt;/span&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;契約が成立し、運用開始準備が整っている&lt;/strong&gt;&lt;/p&gt;</info>
+        <picklistValueName>Closed Won</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>HearingStatus__c</fieldNames>
+        <fieldNames>Description__c</fieldNames>
+        <fieldNames>NextStep__c</fieldNames>
+        <info>&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 状態&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;課題・ニーズ把握&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 営業がやること&lt;/strong&gt;&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;現状課題を整理&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;予算感・意思決定構造を把握&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;成功条件（KPI）を明確化&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 成功の定義&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&amp;#128073; &lt;/span&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;顧客課題と意思決定条件が言語化できている&lt;/strong&gt;&lt;/p&gt;</info>
+        <picklistValueName>NeedsAnalysis</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>ACV__c</fieldNames>
+        <fieldNames>ARR__c</fieldNames>
+        <fieldNames>MRR__c</fieldNames>
+        <fieldNames>NextStep__c</fieldNames>
+        <info>&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 状態&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;条件調整&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 営業がやること&lt;/strong&gt;&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;価格・契約条件の調整&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;不安点の解消&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;競合対策&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 成功の定義&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&amp;#128073; &lt;/span&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;受注条件が合意可能な状態&lt;/strong&gt;&lt;/p&gt;</info>
+        <picklistValueName>Negotiation</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Name</fieldNames>
+        <fieldNames>Account__c</fieldNames>
+        <fieldNames>Contact__c</fieldNames>
+        <fieldNames>SourceChannel__c</fieldNames>
+        <fieldNames>NextActivityDate__c</fieldNames>
+        <info>&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 状態&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;問い合わせ・初回接点&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 営業がやること&lt;/strong&gt;&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;顧客の基本情報を把握&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;誰がキーマンか確認&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;次回アクションを確定（打合せ設定）&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 成功の定義&lt;/strong&gt;&lt;/h3&gt;&lt;ul&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&amp;#128073; &lt;/span&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;次回打合せが確定している&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Prospecting</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Contact__c</fieldNames>
+        <fieldNames>NextActivityDate__c</fieldNames>
+        <fieldNames>NextStep__c</fieldNames>
+        <fieldNames>Description__c</fieldNames>
+        <info>&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 状態&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;打合せ前後&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 営業がやること&lt;/strong&gt;&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;アポ確定&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;目的・論点整理&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;顧客の期待値把握&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 成功の定義&lt;/strong&gt;&lt;/h3&gt;&lt;ul&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&amp;#128073; &lt;/span&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;初回打合せの目的が明確になっている&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Qualification</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>ProposalStatus__c</fieldNames>
+        <fieldNames>ACV__c</fieldNames>
+        <fieldNames>MRR__c</fieldNames>
+        <fieldNames>ARR__c</fieldNames>
+        <info>&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 状態&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;解決策提示&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 営業がやること&lt;/strong&gt;&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;提案内容の提示&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;金額提示&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 11pt;&quot;&gt;ROI説明&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 13pt;&quot;&gt;■ 成功の定義&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;&amp;#128073; &lt;/span&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 11pt;&quot;&gt;顧客が「検討する理由」を持っている&lt;/strong&gt;&lt;/p&gt;</info>
+        <picklistValueName>ValueProposition</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

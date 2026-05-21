@@ -1,0 +1,21 @@
+Name,ProductCode,Description,IsActive,BillingFrequency__c,Tax__c,UnitPrice__c,Unit__c
+Rendery Basicプラン,101,,TRUE,1,10,5500,1
+Rendery Proプラン,102,,TRUE,1,10,8800,1
+Rendery Enterpriseプラン,103,,TRUE,1,10,15000,1
+knock knock AI Basicプラン,201,,TRUE,1,10,12100,1
+knock knock AI Proプラン,202,,TRUE,1,10,60500,1
+knock knock AI Enterpriseプラン,203,,TRUE,1,10,93500,2
+受託開発,1,,TRUE,0,0,,
+knock knock AI 都度払い,200,,TRUE,0,10,3500,
+Rendery Enterpriseプラン（代理販売）,104,,TRUE,12,10,13200,
+Rendery Enterpriseプラン（年払い）,105,,TRUE,0,0,14000,
+Rendery セキュリティオプション(SSO)_初期費用,106,,TRUE,0,0,100000,3
+Rendery セキュリティオプション(SSO)_運用費用,107,,TRUE,1,10,30000,3
+Rendery セキュリティオプション(IP制限)_初期費用,108,,TRUE,0,10,100000,3
+Rendery セキュリティオプション(IP制限)_運用費用,109,,TRUE,1,10,25000,3
+Rendery セキュリティオプション(ドメイン制限)_初期費用,110,,TRUE,0,10,50000,3
+Rendery セキュリティオプション(ドメイン制限)_運用費用,111,,TRUE,1,10,5000,3
+Rendery セキュリティオプション+_初期費用,112,,TRUE,0,10,350000,3
+Rendery セキュリティオプション+_運用費用,113,,TRUE,1,10,100000,3
+Rendery Proプラン(代理販売),114,,TRUE,12,10,76800,
+Rendery 初回レクチャー,,,TRUE,0,0,,
