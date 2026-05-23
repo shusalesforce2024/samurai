@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FreeeSyncStatus__c</fullName>
+    <label>Freee連携ステータス</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>未連携</fullName>
+                <default>true</default>
+                <label>未連携</label>
+            </value>
+            <value>
+                <fullName>連携済</fullName>
+                <default>false</default>
+                <label>連携済</label>
+            </value>
+            <value>
+                <fullName>連携エラー</fullName>
+                <default>false</default>
+                <label>連携エラー</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

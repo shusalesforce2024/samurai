@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RenewalConfirmationStatus__c</fullName>
+    <label>更新確認ステータス</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>未確認</fullName><default>true</default><label>未確認</label></value>
+            <value><fullName>更新予定</fullName><default>false</default><label>更新予定</label></value>
+            <value><fullName>更新停止</fullName><default>false</default><label>更新停止</label></value>
+            <value><fullName>条件変更あり</fullName><default>false</default><label>条件変更あり</label></value>
+            <value><fullName>確認不要</fullName><default>false</default><label>確認不要</label></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

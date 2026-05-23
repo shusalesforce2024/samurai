@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QuotationLine__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>元見積明細</label>
+    <referenceTo>QuotationLine__c</referenceTo>
+    <relationshipLabel>請求明細</relationshipLabel>
+    <relationshipName>InvoiceLines</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>
