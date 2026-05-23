@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_Cancelled_Invoice_Edit</fullName>
+    <active>true</active>
+    <description>取消済み請求は社内メモ以外を編集不可にする。</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(PRIORVALUE(CancelStatus__c), &quot;取消済&quot;),
+    OR(
+        ISCHANGED(Account__c),
+        ISCHANGED(Billing_Date__c),
+        ISCHANGED(ContractPeriod__c),
+        ISCHANGED(Freee_Account_Item_Picklist__c),
+        ISCHANGED(ParentContract__c),
+        ISCHANGED(ParentOpportunity__c),
+        ISCHANGED(Payment_Date__c),
+        ISCHANGED(Subject__c),
+        ISCHANGED(TargetPeriodEndDate__c),
+        ISCHANGED(TargetPeriodStartDate__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>取消済みの請求は編集できません。社内メモのみ更新できます。</errorMessage>
+</ValidationRule>

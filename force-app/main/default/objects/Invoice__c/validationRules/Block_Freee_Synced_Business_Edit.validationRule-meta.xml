@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_Freee_Synced_Business_Edit</fullName>
+    <active>true</active>
+    <description>freee連携済み請求の主要業務項目は編集不可。freee同期で更新されるステータス・金額・支払期日は対象外。</description>
+    <errorConditionFormula>AND(
+    PRIORVALUE(Sent_To_Freee__c) = TRUE,
+    OR(
+        ISCHANGED(Account__c),
+        ISCHANGED(Billing_Date__c),
+        ISCHANGED(ContractPeriod__c),
+        ISCHANGED(Freee_Account_Item_Picklist__c),
+        ISCHANGED(ParentContract__c),
+        ISCHANGED(ParentOpportunity__c),
+        ISCHANGED(Subject__c),
+        ISCHANGED(TargetPeriodEndDate__c),
+        ISCHANGED(TargetPeriodStartDate__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>freee連携済みの請求は主要業務項目を編集できません。必要な場合は請求を取消して再作成してください。</errorMessage>
+</ValidationRule>

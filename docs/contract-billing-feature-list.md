@@ -14,8 +14,8 @@
 | 画面・UI | 契約ページ、請求ページ、請求明細ページ、契約期間ページ、契約月次明細ページ |
 | リストビュー | 年契約更新確認、Freee連携エラー、決済待ち請求、送付待ち請求、取消請求、請求作成対象 |
 | レポート | 月別売上予定、入金予定、未請求、決済待ち、MRR/ARR、契約更新予定、解約予定、イベント別売上、契約月次明細3種。作成はユーザー側で実施 |
-| 自動化 | 受注時初回作成、月契約更新、年契約更新、Freee請求書作成、Freee入金同期、取消処理 |
-| Apex | 初回作成サービス、請求作成サービス、Freee APIクライアント、バッチ、スケジューラ、エラーハンドリング |
+| 自動化 | ボタン起動による初回作成、月契約更新、年契約更新、更新時Freee請求書自動作成、Freee送付・決済ステータス同期、取消処理 |
+| Apex | 初回作成サービス、Freee APIクライアント、更新バッチ、Freee作成Queueable、ステータス同期バッチ、取消・再作成サービス、エラーハンドリング |
 | 権限制御 | Freee連携済み請求・請求明細の編集制御、取消済みデータの編集制御 |
 | 連携ログ | Freee請求書作成・同期・取消時のエラーログ |
 | テスト | 月契約、年契約、初期費用、値引き、税額、Freee成功/失敗、取消、再作成、同期 |
@@ -39,18 +39,16 @@
 | 契約ステータス | 選択リスト | 有効 / 終了 / 取消 / 切替済み等 |
 | 契約開始日 | 日付 | 契約開始日 |
 | 契約終了日 | 日付 | 契約終了日 |
-| 自動更新フラグ | チェックボックス | 自動更新対象 |
 | 更新停止フラグ | チェックボックス | 自動更新停止 |
 | 更新確認ステータス | 選択リスト | 未確認 / 更新予定 / 更新停止 / 条件変更あり |
 | 支払方法 | 選択リスト | 請求書等 |
 | 次回請求書作成予定日 | 日付 | バッチ対象判定・リスト表示 |
 | MRR | 通貨 | レポート用 |
 | ARR | 通貨 | レポート用 |
-| 年払い請求月区分 | 選択リスト | 利用開始月 / 利用開始前月 |
 
 必要機能:
 
-- 取引受注時に対象契約を特定する。
+- 取引受注後に担当者が画面ボタンを押下し、対象契約を特定する。
 - 契約種別により、契約期間・請求・請求明細の生成ルールを切り替える。
 - 年契約は終了2か月前から更新確認リストビューに表示する。
 - 更新停止フラグが true の契約は自動更新対象外にする。
@@ -285,10 +283,10 @@ Freee品目IDを保持する。
 
 ### 6.1 受注時初回作成
 
-トリガー:
+起動:
 
 ```text
-取引が受注ステータスになったとき
+担当者が取引画面のボタンを押下したとき
 ```
 
 処理:
@@ -302,8 +300,9 @@ Freee品目IDを保持する。
 6. 契約月次明細を作成する
 7. 請求を作成する
 8. 請求明細を作成する
-9. Freee請求書を作成する
-10. Freee情報を請求に保存する
+9. 担当者が請求明細・商品などを確認/補正する
+10. 担当者が請求画面のボタンからFreee請求書を手動作成する
+11. Freee情報を請求に保存する
 ```
 
 初回請求対象:
@@ -316,12 +315,17 @@ Freee品目IDを保持する。
 想定Apex:
 
 ```text
-OpportunityWonHandler
-ContractBillingInitialCreationService
-ContractPeriodService
-ContractMonthlyDetailService
-InvoiceCreationService
-InvoiceLineCreationService
+OppContractInvoiceController
+OppContractInvoiceService
+FreeeInvoiceService
+```
+
+実装済みApex:
+
+```text
+OppContractInvoiceController
+OppContractInvoiceService
+FreeeInvoiceFacade
 FreeeInvoiceService
 ```
 
@@ -358,7 +362,9 @@ FreeeInvoiceService
 処理:
 
 ```text
-翌月分の契約期間、契約月次明細、請求、請求明細、Freee請求書を作成する。
+翌月分の契約期間、契約月次明細、請求、請求明細を作成する。
+作成した請求をQueueableへ渡し、別トランザクションでFreee請求書を自動作成する。
+同一契約・同一期間の契約期間が存在する場合は作成しない。
 ```
 
 対象:
@@ -366,16 +372,15 @@ FreeeInvoiceService
 ```text
 契約種別 = 月契約
 契約ステータス = 有効
-自動更新フラグ = true
 更新停止フラグ = false
 ```
 
 想定Apex:
 
 ```text
-MonthlyContractRenewalBatch
-MonthlyContractRenewalScheduler
-ContractRenewalService
+ContractRenewalInvoiceBatch
+FreeeInvoiceCreateQueueable
+FreeeInvoiceFacade
 ```
 
 ### 6.3 年契約更新バッチ
@@ -389,7 +394,9 @@ ContractRenewalService
 処理:
 
 ```text
-次年度契約開始月の前月11日に、次年度分の契約期間、契約月次明細、請求、請求明細、Freee請求書を作成する。
+次年度契約開始月の前月11日に、次年度分の契約期間、契約月次明細、請求、請求明細を作成する。
+作成した請求をQueueableへ渡し、別トランザクションでFreee請求書を自動作成する。
+同一契約・同一期間の契約期間が存在する場合は作成しない。
 ```
 
 対象:
@@ -397,7 +404,6 @@ ContractRenewalService
 ```text
 契約種別 = 年契約
 契約ステータス = 有効
-自動更新フラグ = true
 更新停止フラグ = false
 次年度契約開始月の前月11日に該当
 ```
@@ -405,9 +411,9 @@ ContractRenewalService
 想定Apex:
 
 ```text
-AnnualContractRenewalBatch
-AnnualContractRenewalScheduler
-ContractRenewalService
+ContractRenewalInvoiceBatch
+FreeeInvoiceCreateQueueable
+FreeeInvoiceFacade
 ```
 
 ### 6.4 Freee請求書作成
@@ -433,6 +439,17 @@ FreeeAuthService
 FreeeRequestBuilder
 FreeeResponseParser
 FreeeIntegrationLogService
+```
+
+実装済みApex:
+
+```text
+FreeeInvoiceController
+FreeeInvoiceFacade
+FreeeInvoiceMapper
+FreeeInvoiceService
+FreeeConfigService
+FreeeSyncLogService
 ```
 
 ### 6.5 Freee送付・決済ステータス同期
@@ -465,8 +482,7 @@ Freee連携ステータス = 連携済
 
 ```text
 FreeeInvoiceStatusSyncBatch
-FreeeInvoiceStatusSyncScheduler
-FreeeInvoiceStatusService
+FreeeInvoiceStatusSyncService
 ```
 
 ### 6.6 請求取消・再作成
@@ -518,8 +534,10 @@ Freee請求書作成
 | Validation Rule | Freee連携済み請求の業務項目編集不可 |
 | Validation Rule | Freee連携済み請求明細の編集不可 |
 | Validation Rule | 取消済み請求の編集不可 |
-| Apex Trigger | 取引受注時の初回作成呼び出し |
 | Apex Trigger | 請求取消時の整合性制御 |
+
+現行実装では、初回作成は取引画面のボタン起動とし、取引受注時のApex Triggerは使用しない。
+請求取消時の整合性制御はApex Triggerではなく、`InvoiceCancelService` から契約期間・契約月次明細を更新する。
 
 ## 8. エラー制御
 
@@ -595,10 +613,9 @@ Freee連携管理者
 請求書作成日: 11日
 請求日: 20日
 支払期日: 請求日の翌月末
-年払い請求月区分: 利用開始月 / 利用開始前月
 月契約更新バッチ実行時刻: 毎月11日 2:00
 年契約更新バッチ実行時刻: 毎月11日 2:00
-Freee入金同期バッチ実行時刻: 毎日 2:00
+Freee送付・決済ステータス同期バッチ実行時刻: 毎日 2:00
 税率: 10%
 税端数処理: 切り上げ
 Freee APIエンドポイント
@@ -629,12 +646,20 @@ ContractPeriodServiceTest
 ContractMonthlyDetailServiceTest
 InvoiceCreationServiceTest
 InvoiceLineCreationServiceTest
-MonthlyContractRenewalBatchTest
-AnnualContractRenewalBatchTest
+ContractRenewalInvoiceBatchTest
 FreeeInvoiceServiceTest
 FreeeInvoiceStatusSyncBatchTest
 InvoiceCancelServiceTest
 InvoiceRecreateServiceTest
+```
+
+実装済みテストクラス:
+
+```text
+OppContractInvoiceServiceTest
+ContractRenewalInvoiceBatchTest
+FreeeInvoiceStatusSyncBatchTest
+InvoiceCancelRecreateServiceTest
 ```
 
 主要テストケース:
@@ -669,11 +694,11 @@ Freee連携済み請求明細の編集不可
 3. リストビュー作成
 4. 請求・請求明細生成ロジック実装
 5. 契約期間・契約月次明細生成ロジック実装
-6. 取引受注時の初回作成処理実装
+6. ボタン起動による初回作成処理実装
 7. 月契約更新バッチ実装
 8. 年契約更新バッチ実装
-9. Freee請求書作成連携実装
-10. Freee入金同期バッチ実装
+9. 更新時Freee請求書自動作成連携実装
+10. Freee送付・決済ステータス同期バッチ実装
 11. 取消・再作成処理実装
 12. 権限制御・Validation Rule実装
 13. テストクラス作成

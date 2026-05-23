@@ -14,6 +14,7 @@ public with sharing class FreeeSyncLogService {
         }
 
         Freee_Sync_Log__c log = new Freee_Sync_Log__c();
+        log.Invoice__c = req.invoiceId;
         log.Target_Record_Id__c = String.valueOf(req.invoiceId);
         log.Request_Body__c = req.requestBody;
         log.Response_Body__c = req.responseBody;

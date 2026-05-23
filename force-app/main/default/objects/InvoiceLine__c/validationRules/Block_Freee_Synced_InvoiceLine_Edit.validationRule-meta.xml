@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_Freee_Synced_InvoiceLine_Edit</fullName>
+    <active>true</active>
+    <description>freee連携済み請求に紐づく請求明細は編集不可にする。</description>
+    <errorConditionFormula>Invoice__r.Sent_To_Freee__c = TRUE</errorConditionFormula>
+    <errorMessage>freee連携済みの請求明細は編集できません。必要な場合は請求を取消して再作成してください。</errorMessage>
+</ValidationRule>
