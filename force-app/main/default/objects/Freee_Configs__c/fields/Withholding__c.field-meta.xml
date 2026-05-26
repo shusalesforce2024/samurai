@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Withholding__c</fullName>
     <externalId>false</externalId>
-    <label>withholding</label>
+    <label>源泉徴収</label>
     <length>255</length>
     <required>false</required>
     <trackTrending>false</trackTrending>

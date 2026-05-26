@@ -3,6 +3,6 @@
     <fullName>NextInvoiceCreationDate__c</fullName>
     <label>次回請求書作成予定日</label>
     <required>false</required>
-    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
     <type>Date</type>
 </CustomField>

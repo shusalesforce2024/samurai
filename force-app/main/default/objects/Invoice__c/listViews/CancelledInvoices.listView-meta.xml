@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CancelledInvoices</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>ParentContract__c</columns>
+    <columns>Billing_Date__c</columns>
+    <columns>Payment_Date__c</columns>
+    <columns>InvoiceAmount__c</columns>
+    <columns>CancelStatus__c</columns>
+    <columns>OriginalInvoice__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CancelStatus__c</field>
+        <operation>equals</operation>
+        <value>取消済</value>
+    </filters>
+    <label>取消済み請求</label>
+</ListView>

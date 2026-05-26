@@ -13,7 +13,7 @@
             <value>
                 <fullName>sales</fullName>
                 <default>true</default>
-                <label>sales</label>
+                <label>売上</label>
             </value>
         </valueSetDefinition>
     </valueSet>

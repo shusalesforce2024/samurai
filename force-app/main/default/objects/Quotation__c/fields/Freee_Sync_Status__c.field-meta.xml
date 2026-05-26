@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Freee_Sync_Status__c</fullName>
-    <label>freee同期ステータス</label>
+    <label>Freee同期ステータス</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
@@ -13,22 +13,22 @@
             <value>
                 <fullName>Not Sent</fullName>
                 <default>true</default>
-                <label>Not Sent</label>
+                <label>未送信</label>
             </value>
             <value>
                 <fullName>Processing</fullName>
                 <default>false</default>
-                <label>Processing</label>
+                <label>処理中</label>
             </value>
             <value>
                 <fullName>Success</fullName>
                 <default>false</default>
-                <label>Success</label>
+                <label>成功</label>
             </value>
             <value>
                 <fullName>Failed</fullName>
                 <default>false</default>
-                <label>Failed</label>
+                <label>失敗</label>
             </value>
         </valueSetDefinition>
     </valueSet>

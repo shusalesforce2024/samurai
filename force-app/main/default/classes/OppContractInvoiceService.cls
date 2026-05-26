@@ -178,17 +178,17 @@ public with sharing class OppContractInvoiceService {
                    Description__c,
                    Freee_Account_Item_Id__c,
                    Line_Amount__c,
-                   Product2__c,
+                   ProductMaster__c,
                    Quantity__c,
                    Tax_Rate__c,
                    Unit_Price__c,
                    Withholding__c,
-                   Product2__r.Name,
-                   Product2__r.ProductType__c,
-                   Product2__r.BillingTiming__c,
-                   Product2__r.AnnualMonthlyPrice__c,
-                   Product2__r.MRR_Target__c,
-                   Product2__r.ARR_Target__c
+                   ProductMaster__r.Name,
+                   ProductMaster__r.ProductType__c,
+                   ProductMaster__r.BillingTiming__c,
+                   ProductMaster__r.AnnualMonthlyPrice__c,
+                   ProductMaster__r.MRR_Target__c,
+                   ProductMaster__r.ARR_Target__c
             FROM QuotationLine__c
             WHERE Quotation__c = :quotationId
             ORDER BY CreatedDate ASC
@@ -363,7 +363,7 @@ public with sharing class OppContractInvoiceService {
             Freee_Account_Item_Id__c = quotationLine.Freee_Account_Item_Id__c,
             Invoice__c = invoiceId,
             LineType__c = lineType,
-            Product2__c = quotationLine.Product2__c,
+            ProductMaster__c = quotationLine.ProductMaster__c,
             Quantity__c = quotationLine.Quantity__c,
             QuotationLine__c = quotationLine.Id,
             TaxAmount__c = taxAmount,
@@ -397,23 +397,23 @@ public with sharing class OppContractInvoiceService {
                 String yearMonth = formatYearMonth(monthStart);
                 linesToInsert.add(new ContractLineItem__c(
                     Account__c = contractRecord.Account__c,
-                    ARR_Target__c = quotationLine.Product2__r == null
+                    ARR_Target__c = quotationLine.ProductMaster__r == null
                         ? false
-                        : quotationLine.Product2__r.ARR_Target__c,
+                        : quotationLine.ProductMaster__r.ARR_Target__c,
                     ContractPeriod__c = contractPeriodId,
                     ContractYearMonth__c = yearMonth,
                     InitialFee__c = isInitialFee(quotationLine),
                     InvoiceStatus__c = INVOICE_STATUS_BILLED,
                     MasterContract__c = contractRecord.Id,
                     Month__c = yearMonth,
-                    MRR_Target__c = quotationLine.Product2__r == null
+                    MRR_Target__c = quotationLine.ProductMaster__r == null
                         ? false
-                        : quotationLine.Product2__r.MRR_Target__c,
+                        : quotationLine.ProductMaster__r.MRR_Target__c,
                     PeopleNumber__c = quotationLine.Quantity__c,
                     PeriodStartDate__c = monthStart,
                     PeriodEndDate__c = monthStart.addMonths(1).addDays(-1),
                     Plan__c = contractRecord.Plan__c,
-                    Product2__c = quotationLine.Product2__c,
+                    ProductMaster__c = quotationLine.ProductMaster__c,
                     QuotationLine__c = quotationLine.Id,
                     RelatedInvoice__c = invoiceId,
                     RevenueAmount__c = revenueAmount,
@@ -501,10 +501,10 @@ public with sharing class OppContractInvoiceService {
         String contractUpdate
     ) {
         if (contractUpdate == UPDATE_YEARLY && !isInitialFee(quotationLine)) {
-            if (quotationLine.Product2__r != null
-                && quotationLine.Product2__r.AnnualMonthlyPrice__c != null
+            if (quotationLine.ProductMaster__r != null
+                && quotationLine.ProductMaster__r.AnnualMonthlyPrice__c != null
             ) {
-                return quotationLine.Product2__r.AnnualMonthlyPrice__c
+                return quotationLine.ProductMaster__r.AnnualMonthlyPrice__c
                     * nullToOne(quotationLine.Quantity__c);
             }
             return getLineAmount(quotationLine) / 12;
@@ -513,11 +513,13 @@ public with sharing class OppContractInvoiceService {
     }
 
     private static Boolean isInitialFee(QuotationLine__c quotationLine) {
-        if (quotationLine.Product2__r == null) {
+        if (quotationLine.ProductMaster__r == null) {
             return false;
         }
-        return quotationLine.Product2__r.ProductType__c == '初期費用'
-            || quotationLine.Product2__r.BillingTiming__c == '初回のみ';
+        return quotationLine.ProductMaster__r.ProductType__c == '初期費用'
+            || quotationLine.ProductMaster__r.BillingTiming__c == '初回のみ'
+            || quotationLine.ProductMaster__r.ProductType__c == '蛻晄悄雋ｻ逕ｨ'
+            || quotationLine.ProductMaster__r.BillingTiming__c == '蛻晏屓縺ｮ縺ｿ';
     }
 
     private static Decimal getLineAmount(QuotationLine__c quotationLine) {
@@ -549,10 +551,10 @@ public with sharing class OppContractInvoiceService {
     }
 
     private static String getProductOrLineName(QuotationLine__c quotationLine) {
-        if (quotationLine.Product2__r != null
-            && !String.isBlank(quotationLine.Product2__r.Name)
+        if (quotationLine.ProductMaster__r != null
+            && !String.isBlank(quotationLine.ProductMaster__r.Name)
         ) {
-            return quotationLine.Product2__r.Name;
+            return quotationLine.ProductMaster__r.Name;
         }
         return quotationLine.Description__c;
     }

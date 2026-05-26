@@ -9,9 +9,21 @@
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
-            <value><fullName>毎月</fullName><default>false</default><label>毎月</label></value>
-            <value><fullName>年一括</fullName><default>false</default><label>年一括</label></value>
-            <value><fullName>初回のみ</fullName><default>false</default><label>初回のみ</label></value>
+            <value>
+                <fullName>毎月</fullName>
+                <default>false</default>
+                <label>毎月</label>
+            </value>
+            <value>
+                <fullName>年一括</fullName>
+                <default>false</default>
+                <label>年一括</label>
+            </value>
+            <value>
+                <fullName>初回のみ</fullName>
+                <default>false</default>
+                <label>初回のみ</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FreeeSyncFailedInvoices</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>ParentContract__c</columns>
+    <columns>Billing_Date__c</columns>
+    <columns>InvoiceAmount__c</columns>
+    <columns>Freee_Sync_Status__c</columns>
+    <columns>Freee_Sync_Message__c</columns>
+    <columns>Freee_Last_Synced_At__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Freee_Sync_Status__c</field>
+        <operation>equals</operation>
+        <value>Failed</value>
+    </filters>
+    <label>Freee連携エラー</label>
+</ListView>

@@ -3,6 +3,8 @@
     <fullName>LineType__c</fullName>
     <label>請求明細種別</label>
     <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>

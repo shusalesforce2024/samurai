@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RenewalStoppedContracts</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Status__c</columns>
+    <columns>ContractUpdate__c</columns>
+    <columns>StartDate__c</columns>
+    <columns>EndDate__c</columns>
+    <columns>RenewalConfirmationStatus__c</columns>
+    <columns>RenewalStop__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RenewalStop__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>自動更新停止契約</label>
+</ListView>

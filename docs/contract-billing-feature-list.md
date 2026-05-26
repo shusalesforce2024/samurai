@@ -504,14 +504,24 @@ InvoiceRecreateService
 FreeeInvoiceCancelService
 ```
 
+実装済みApex / 画面:
+
+```text
+InvoiceActionController
+invoiceCancelAction
+invoiceRecreateAction
+Invoice__c.InvoiceCancelAction
+Invoice__c.InvoiceRecreateAction
+```
+
 ### 6.7 手動操作
 
 必要なクイックアクションまたは画面アクション:
 
 ```text
 Freee請求書作成
-請求取消
-請求再作成
+請求取消: 実装済み
+請求再作成: 実装済み
 送付・決済ステータス再同期
 ```
 
@@ -613,9 +623,9 @@ Freee連携管理者
 請求書作成日: 11日
 請求日: 20日
 支払期日: 請求日の翌月末
-月契約更新バッチ実行時刻: 毎月11日 2:00
-年契約更新バッチ実行時刻: 毎月11日 2:00
-Freee送付・決済ステータス同期バッチ実行時刻: 毎日 2:00
+月契約更新バッチ実行時刻: 毎日 2:00に起動し、11日のみ作成処理を実行
+年契約更新バッチ実行時刻: 毎日 2:00に起動し、11日のみ作成処理を実行
+Freee送付・決済ステータス同期バッチ実行時刻: 毎日 3:00
 税率: 10%
 税端数処理: 切り上げ
 Freee APIエンドポイント

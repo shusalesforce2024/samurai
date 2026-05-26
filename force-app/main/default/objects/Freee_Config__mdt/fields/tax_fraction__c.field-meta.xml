@@ -3,7 +3,7 @@
     <fullName>tax_fraction__c</fullName>
     <externalId>false</externalId>
     <fieldManageability>DeveloperControlled</fieldManageability>
-    <label>tax_fraction</label>
+    <label>消費税端数処理</label>
     <length>255</length>
     <required>false</required>
     <type>Text</type>

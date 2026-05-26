@@ -16,6 +16,7 @@
     <navType>Console</navType>
     <tabs>Opportunity__c</tabs>
     <tabs>Contract__c</tabs>
+    <tabs>ContractPeriod__c</tabs>
     <tabs>standard-Account</tabs>
     <tabs>standard-Contact</tabs>
     <tabs>InvoiceLine__c</tabs>
@@ -24,6 +25,7 @@
     <tabs>Quotation__c</tabs>
     <tabs>QuotationLine__c</tabs>
     <tabs>ContractLineItem__c</tabs>
+    <tabs>ProductMaster__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>SAMURAI_UtilityBar</utilityBar>
     <workspaceConfig>
@@ -32,6 +34,9 @@
         </mappings>
         <mappings>
             <tab>Contract__c</tab>
+        </mappings>
+        <mappings>
+            <tab>ContractPeriod__c</tab>
         </mappings>
         <mappings>
             <tab>Event__c</tab>
@@ -44,6 +49,9 @@
         </mappings>
         <mappings>
             <tab>Opportunity__c</tab>
+        </mappings>
+        <mappings>
+            <tab>ProductMaster__c</tab>
         </mappings>
         <mappings>
             <tab>QuotationLine__c</tab>

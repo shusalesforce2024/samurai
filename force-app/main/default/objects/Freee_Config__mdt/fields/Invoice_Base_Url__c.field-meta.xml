@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Invoice_Base_Url__c</fullName>
     <fieldManageability>DeveloperControlled</fieldManageability>
-    <label>Invoice_Base_Url</label>
+    <label>請求書ベースURL</label>
     <required>false</required>
     <type>Url</type>
 </CustomField>

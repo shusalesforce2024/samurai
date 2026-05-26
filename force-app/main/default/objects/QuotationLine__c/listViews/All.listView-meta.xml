@@ -7,5 +7,5 @@
     <columns>Quantity__c</columns>
     <columns>Unit_Price__c</columns>
     <filterScope>Everything</filterScope>
-    <label>All</label>
+    <label>すべての見積明細</label>
 </ListView>

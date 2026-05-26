@@ -3,7 +3,7 @@
     <fullName>tax_entry_method__c</fullName>
     <externalId>false</externalId>
     <fieldManageability>DeveloperControlled</fieldManageability>
-    <label>tax_entry_method</label>
+    <label>税額計算方法</label>
     <length>255</length>
     <required>false</required>
     <type>Text</type>

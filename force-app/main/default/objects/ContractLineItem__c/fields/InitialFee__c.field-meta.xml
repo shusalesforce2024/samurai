@@ -4,5 +4,6 @@
     <defaultValue>false</defaultValue>
     <label>初期費用</label>
     <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

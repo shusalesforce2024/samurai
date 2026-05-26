@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AnnualRenewalReview</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Status__c</columns>
+    <columns>ContractUpdate__c</columns>
+    <columns>StartDate__c</columns>
+    <columns>EndDate__c</columns>
+    <columns>RenewalConfirmationStatus__c</columns>
+    <columns>RenewalStop__c</columns>
+    <columns>NextInvoiceCreationDate__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ContractUpdate__c</field>
+        <operation>equals</operation>
+        <value>年</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Activated</value>
+    </filters>
+    <filters>
+        <field>EndDate__c</field>
+        <operation>lessOrEqual</operation>
+        <value>NEXT_N_DAYS:60</value>
+    </filters>
+    <filters>
+        <field>RenewalStop__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>年契約_更新確認対象</label>
+</ListView>

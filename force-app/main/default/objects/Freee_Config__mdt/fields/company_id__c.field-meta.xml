@@ -3,7 +3,7 @@
     <fullName>company_id__c</fullName>
     <externalId>false</externalId>
     <fieldManageability>DeveloperControlled</fieldManageability>
-    <label>company_id</label>
+    <label>事業所ID</label>
     <length>255</length>
     <required>false</required>
     <type>Text</type>

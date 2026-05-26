@@ -83,7 +83,51 @@ private class InvoiceCancelRecreateServiceTest {
             );
             System.assert(false, 'Expected validation error');
         } catch (DmlException e) {
-            System.assert(e.getMessage().contains('freee連携済み'));
+            System.assertEquals('FIELD_CUSTOM_VALIDATION_EXCEPTION', e.getDmlStatusCode(0));
+        }
+    }
+
+    @isTest
+    static void blocksInvoiceLineEditAfterFreeeSync() {
+        Account accountRecord = new Account(Name = 'Line Validation Account');
+        insert accountRecord;
+
+        Invoice__c invoiceRecord = new Invoice__c(
+            Account__c = accountRecord.Id,
+            Billing_Date__c = Date.newInstance(2026, 6, 20),
+            Freee_Account_Item_Picklist__c = 'Sales',
+            Freee_Invoice_Status__c = '送付待ち',
+            Freee_Sync_Status__c = 'Processing',
+            PaymentStatus__c = '決済待ち',
+            Payment_Date__c = Date.newInstance(2026, 7, 31),
+            Sent_To_Freee__c = false,
+            Subject__c = 'Line Validation Invoice'
+        );
+        insert invoiceRecord;
+
+        InvoiceLine__c lineRecord = new InvoiceLine__c(
+            Description__c = 'Editable before sync',
+            Invoice__c = invoiceRecord.Id,
+            Quantity__c = 1,
+            Tax_Rate__c = 10,
+            Unit_Price__c = 1000
+        );
+        insert lineRecord;
+
+        update new Invoice__c(
+            Id = invoiceRecord.Id,
+            Freee_Sync_Status__c = 'Success',
+            Sent_To_Freee__c = true
+        );
+
+        try {
+            update new InvoiceLine__c(
+                Id = lineRecord.Id,
+                Unit_Price__c = 2000
+            );
+            System.assert(false, 'Expected validation error');
+        } catch (DmlException e) {
+            System.assertEquals('FIELD_CUSTOM_VALIDATION_EXCEPTION', e.getDmlStatusCode(0));
         }
     }
 }

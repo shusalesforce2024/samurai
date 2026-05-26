@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Pricebook2__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <label>Price Book</label>
+    <label>価格表</label>
     <referenceTo>Pricebook2</referenceTo>
     <relationshipName>CustomContracts</relationshipName>
     <required>false</required>

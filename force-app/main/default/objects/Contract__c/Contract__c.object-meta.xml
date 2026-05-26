@@ -163,7 +163,7 @@
     <label>契約管理</label>
     <nameField>
         <displayFormat>CN-{00000000}</displayFormat>
-        <label>Contract Name</label>
+        <label>契約番号</label>
         <type>AutoNumber</type>
     </nameField>
     <searchLayouts>

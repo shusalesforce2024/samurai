@@ -162,7 +162,7 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>取引</label>
     <nameField>
-        <label>Opportunity Name</label>
+        <label>取引番号</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>
     </nameField>

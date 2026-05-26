@@ -4,14 +4,27 @@
     <label>請求状態</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
-            <value><fullName>未請求</fullName><default>true</default><label>未請求</label></value>
-            <value><fullName>請求済</fullName><default>false</default><label>請求済</label></value>
-            <value><fullName>取消済</fullName><default>false</default><label>取消済</label></value>
+            <value>
+                <fullName>未請求</fullName>
+                <default>true</default>
+                <label>未請求</label>
+            </value>
+            <value>
+                <fullName>請求済</fullName>
+                <default>false</default>
+                <label>請求済</label>
+            </value>
+            <value>
+                <fullName>取消済</fullName>
+                <default>false</default>
+                <label>取消済</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

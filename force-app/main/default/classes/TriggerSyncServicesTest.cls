@@ -29,17 +29,15 @@ private class TriggerSyncServicesTest {
 
     @isTest
     static void productUnitPriceSyncsQuotationAndInvoiceLines() {
-        Product2 firstProduct = new Product2(
+        ProductMaster__c firstProduct = new ProductMaster__c(
             Name = 'First Product',
-            IsActive = true,
             UnitPrice__c = 2500
         );
-        Product2 secondProduct = new Product2(
+        ProductMaster__c secondProduct = new ProductMaster__c(
             Name = 'Second Product',
-            IsActive = true,
             UnitPrice__c = 3500
         );
-        insert new List<Product2>{ firstProduct, secondProduct };
+        insert new List<ProductMaster__c>{ firstProduct, secondProduct };
 
         Account accountRecord = new Account(Name = 'Unit Price Account');
         insert accountRecord;
@@ -53,7 +51,7 @@ private class TriggerSyncServicesTest {
 
         QuotationLine__c quotationLine = new QuotationLine__c(
             Quotation__c = quotationRecord.Id,
-            Product2__c = firstProduct.Id,
+            ProductMaster__c = firstProduct.Id,
             Description__c = 'Quotation product',
             Quantity__c = 1,
             Tax_Rate__c = '10'
@@ -61,13 +59,13 @@ private class TriggerSyncServicesTest {
         insert quotationLine;
 
         quotationLine = [
-            SELECT Product2__c, Unit_Price__c
+            SELECT ProductMaster__c, Unit_Price__c
             FROM QuotationLine__c
             WHERE Id = :quotationLine.Id
         ];
         System.assertEquals(2500, quotationLine.Unit_Price__c);
 
-        quotationLine.Product2__c = secondProduct.Id;
+        quotationLine.ProductMaster__c = secondProduct.Id;
         update quotationLine;
         quotationLine = [
             SELECT Unit_Price__c
@@ -86,7 +84,7 @@ private class TriggerSyncServicesTest {
 
         InvoiceLine__c invoiceLine = new InvoiceLine__c(
             Invoice__c = invoiceRecord.Id,
-            Product2__c = firstProduct.Id,
+            ProductMaster__c = firstProduct.Id,
             Description__c = 'Invoice product',
             Quantity__c = 1,
             Tax_Rate__c = 10

@@ -9,9 +9,21 @@
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
-            <value><fullName>継続費用</fullName><default>false</default><label>継続費用</label></value>
-            <value><fullName>初期費用</fullName><default>false</default><label>初期費用</label></value>
-            <value><fullName>オプション</fullName><default>false</default><label>オプション</label></value>
+            <value>
+                <fullName>継続費用</fullName>
+                <default>false</default>
+                <label>継続費用</label>
+            </value>
+            <value>
+                <fullName>初期費用</fullName>
+                <default>false</default>
+                <label>初期費用</label>
+            </value>
+            <value>
+                <fullName>オプション</fullName>
+                <default>false</default>
+                <label>オプション</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

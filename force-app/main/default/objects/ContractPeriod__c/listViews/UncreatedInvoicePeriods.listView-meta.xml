@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UncreatedInvoicePeriods</fullName>
+    <columns>NAME</columns>
+    <columns>Contract__c</columns>
+    <columns>ContractUpdate__c</columns>
+    <columns>PeriodStartDate__c</columns>
+    <columns>PeriodEndDate__c</columns>
+    <columns>InvoiceCreationStatus__c</columns>
+    <columns>RelatedInvoice__c</columns>
+    <columns>FreeeSyncStatus__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>InvoiceCreationStatus__c</field>
+        <operation>equals</operation>
+        <value>未作成</value>
+    </filters>
+    <label>請求未作成期間</label>
+</ListView>

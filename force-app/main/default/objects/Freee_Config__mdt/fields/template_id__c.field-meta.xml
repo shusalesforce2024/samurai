@@ -3,7 +3,7 @@
     <fullName>template_id__c</fullName>
     <externalId>false</externalId>
     <fieldManageability>DeveloperControlled</fieldManageability>
-    <label>template_id</label>
+    <label>請求書テンプレートID</label>
     <length>255</length>
     <required>false</required>
     <type>Text</type>

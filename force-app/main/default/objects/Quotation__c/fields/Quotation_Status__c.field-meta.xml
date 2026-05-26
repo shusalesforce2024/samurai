@@ -13,22 +13,22 @@
             <value>
                 <fullName>Draft</fullName>
                 <default>false</default>
-                <label>Draft</label>
+                <label>下書き</label>
             </value>
             <value>
                 <fullName>Sent</fullName>
                 <default>false</default>
-                <label>Sent</label>
+                <label>送付済み</label>
             </value>
             <value>
                 <fullName>Accepted</fullName>
                 <default>false</default>
-                <label>Accepted</label>
+                <label>承認済み</label>
             </value>
             <value>
                 <fullName>Rejected</fullName>
                 <default>false</default>
-                <label>Rejected</label>
+                <label>却下</label>
             </value>
         </valueSetDefinition>
     </valueSet>

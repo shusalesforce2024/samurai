@@ -40,7 +40,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Product2__c</field>
+                <field>ProductMaster__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

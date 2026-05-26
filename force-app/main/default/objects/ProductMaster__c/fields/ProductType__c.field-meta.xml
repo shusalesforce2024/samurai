@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProductType__c</fullName>
+    <label>商品種別</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>継続費用</fullName>
+                <default>false</default>
+                <label>継続費用</label>
+            </value>
+            <value>
+                <fullName>初期費用</fullName>
+                <default>false</default>
+                <label>初期費用</label>
+            </value>
+            <value>
+                <fullName>オプション</fullName>
+                <default>false</default>
+                <label>オプション</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

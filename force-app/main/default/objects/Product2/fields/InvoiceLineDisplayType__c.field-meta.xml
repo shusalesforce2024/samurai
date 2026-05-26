@@ -9,8 +9,16 @@
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
-            <value><fullName>個別表示</fullName><default>false</default><label>個別表示</label></value>
-            <value><fullName>年間利用料に集約</fullName><default>false</default><label>年間利用料に集約</label></value>
+            <value>
+                <fullName>個別表示</fullName>
+                <default>false</default>
+                <label>個別表示</label>
+            </value>
+            <value>
+                <fullName>年間利用料に集約</fullName>
+                <default>false</default>
+                <label>年間利用料に集約</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

@@ -13,12 +13,12 @@
             <value>
                 <fullName>Success</fullName>
                 <default>false</default>
-                <label>Success</label>
+                <label>成功</label>
             </value>
             <value>
                 <fullName>Failed</fullName>
                 <default>false</default>
-                <label>Failed</label>
+                <label>失敗</label>
             </value>
         </valueSetDefinition>
     </valueSet>

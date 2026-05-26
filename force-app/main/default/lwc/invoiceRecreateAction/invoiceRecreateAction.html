@@ -1,0 +1,22 @@
+<template>
+    <lightning-quick-action-panel header="請求再作成">
+        <div class="slds-p-around_medium">
+            <p>取消済み請求を元に、新しい請求と請求明細を作成します。</p>
+        </div>
+
+        <div slot="footer">
+            <lightning-button
+                label="閉じる"
+                onclick={handleCancel}>
+            </lightning-button>
+
+            <lightning-button
+                class="slds-m-left_small"
+                variant="brand"
+                label="再作成"
+                onclick={handleExecute}
+                disabled={isLoading}>
+            </lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>

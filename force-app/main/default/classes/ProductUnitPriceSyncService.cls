@@ -12,7 +12,7 @@ public with sharing class ProductUnitPriceSyncService {
                 continue;
             }
 
-            Decimal unitPrice = unitPriceByProductId.get(record.Product2__c);
+            Decimal unitPrice = unitPriceByProductId.get(record.ProductMaster__c);
             if (unitPrice != null) {
                 record.Unit_Price__c = unitPrice;
             }
@@ -32,7 +32,7 @@ public with sharing class ProductUnitPriceSyncService {
                 continue;
             }
 
-            Decimal unitPrice = unitPriceByProductId.get(record.Product2__c);
+            Decimal unitPrice = unitPriceByProductId.get(record.ProductMaster__c);
             if (unitPrice != null) {
                 record.Unit_Price__c = unitPrice;
             }
@@ -47,7 +47,7 @@ public with sharing class ProductUnitPriceSyncService {
 
         for (QuotationLine__c record : newRecords) {
             if (shouldSyncQuotationLine(record, oldMap)) {
-                productIds.add(record.Product2__c);
+                productIds.add(record.ProductMaster__c);
             }
         }
 
@@ -62,7 +62,7 @@ public with sharing class ProductUnitPriceSyncService {
 
         for (InvoiceLine__c record : newRecords) {
             if (shouldSyncInvoiceLine(record, oldMap)) {
-                productIds.add(record.Product2__c);
+                productIds.add(record.ProductMaster__c);
             }
         }
 
@@ -73,7 +73,7 @@ public with sharing class ProductUnitPriceSyncService {
         QuotationLine__c record,
         Map<Id, QuotationLine__c> oldMap
     ) {
-        if (record.Product2__c == null) {
+        if (record.ProductMaster__c == null) {
             return false;
         }
 
@@ -81,14 +81,14 @@ public with sharing class ProductUnitPriceSyncService {
             return true;
         }
 
-        return oldMap.get(record.Id).Product2__c != record.Product2__c;
+        return oldMap.get(record.Id).ProductMaster__c != record.ProductMaster__c;
     }
 
     private static Boolean shouldSyncInvoiceLine(
         InvoiceLine__c record,
         Map<Id, InvoiceLine__c> oldMap
     ) {
-        if (record.Product2__c == null) {
+        if (record.ProductMaster__c == null) {
             return false;
         }
 
@@ -96,7 +96,7 @@ public with sharing class ProductUnitPriceSyncService {
             return true;
         }
 
-        return oldMap.get(record.Id).Product2__c != record.Product2__c;
+        return oldMap.get(record.Id).ProductMaster__c != record.ProductMaster__c;
     }
 
     private static Map<Id, Decimal> getUnitPriceByProductId(Set<Id> productIds) {
@@ -105,9 +105,9 @@ public with sharing class ProductUnitPriceSyncService {
             return unitPriceByProductId;
         }
 
-        for (Product2 product : [
+        for (ProductMaster__c product : [
             SELECT Id, UnitPrice__c
-            FROM Product2
+            FROM ProductMaster__c
             WHERE Id IN :productIds
         ]) {
             unitPriceByProductId.put(product.Id, product.UnitPrice__c);

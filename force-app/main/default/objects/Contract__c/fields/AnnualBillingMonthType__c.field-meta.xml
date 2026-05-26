@@ -3,14 +3,22 @@
     <fullName>AnnualBillingMonthType__c</fullName>
     <label>年払い請求月区分</label>
     <required>false</required>
-    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
-            <value><fullName>利用開始月</fullName><default>true</default><label>利用開始月</label></value>
-            <value><fullName>利用開始前月</fullName><default>false</default><label>利用開始前月</label></value>
+            <value>
+                <fullName>利用開始月</fullName>
+                <default>true</default>
+                <label>利用開始月</label>
+            </value>
+            <value>
+                <fullName>利用開始前月</fullName>
+                <default>false</default>
+                <label>利用開始前月</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

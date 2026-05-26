@@ -1,0 +1,22 @@
+<template>
+    <lightning-quick-action-panel header="請求取消">
+        <div class="slds-p-around_medium">
+            <p>この請求を取消します。取消済み請求は削除せず履歴として残ります。</p>
+        </div>
+
+        <div slot="footer">
+            <lightning-button
+                label="閉じる"
+                onclick={handleCancel}>
+            </lightning-button>
+
+            <lightning-button
+                class="slds-m-left_small"
+                variant="destructive"
+                label="取消"
+                onclick={handleExecute}
+                disabled={isLoading}>
+            </lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>

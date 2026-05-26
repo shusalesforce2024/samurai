@@ -136,8 +136,8 @@ public with sharing class ContractRenewalInvoiceBatch
         for (ContractLineItem__c line : [
             SELECT Id,
                    MasterContract__c,
-                   Product2__c,
-                   Product2__r.Name,
+                   ProductMaster__c,
+                   ProductMaster__r.Name,
                    QuotationLine__c,
                    RevenueAmount__c,
                    Total__c,
@@ -280,7 +280,7 @@ public with sharing class ContractRenewalInvoiceBatch
                 DiscountedUnitPrice__c = amount,
                 Invoice__c = invoiceId,
                 LineType__c = '継続費用',
-                Product2__c = templateLine.Product2__c,
+                ProductMaster__c = templateLine.ProductMaster__c,
                 Quantity__c = nullToOne(templateLine.PeopleNumber__c),
                 TaxAmount__c = taxAmount,
                 Tax_Rate__c = TAX_RATE,
@@ -319,7 +319,7 @@ public with sharing class ContractRenewalInvoiceBatch
                     PeriodStartDate__c = monthStart,
                     PeriodEndDate__c = monthStart.addMonths(1).addDays(-1),
                     Plan__c = contractRecord.Plan__c,
-                    Product2__c = templateLine.Product2__c,
+                    ProductMaster__c = templateLine.ProductMaster__c,
                     QuotationLine__c = templateLine.QuotationLine__c,
                     RelatedInvoice__c = invoiceId,
                     RevenueAmount__c = amount,
@@ -335,9 +335,9 @@ public with sharing class ContractRenewalInvoiceBatch
     ) {
         Map<String, ContractLineItem__c> latestByProduct = new Map<String, ContractLineItem__c>();
         for (ContractLineItem__c templateLine : templateLines) {
-            String key = templateLine.Product2__c == null
+            String key = templateLine.ProductMaster__c == null
                 ? String.valueOf(templateLine.QuotationLine__c)
-                : String.valueOf(templateLine.Product2__c);
+                : String.valueOf(templateLine.ProductMaster__c);
             if (!latestByProduct.containsKey(key)) {
                 latestByProduct.put(key, templateLine);
             }
@@ -371,8 +371,8 @@ public with sharing class ContractRenewalInvoiceBatch
     }
 
     private static String getTemplateLineName(ContractLineItem__c templateLine) {
-        if (templateLine.Product2__r != null && !String.isBlank(templateLine.Product2__r.Name)) {
-            return templateLine.Product2__r.Name;
+        if (templateLine.ProductMaster__r != null && !String.isBlank(templateLine.ProductMaster__r.Name)) {
+            return templateLine.ProductMaster__r.Name;
         }
         return '利用料';
     }
