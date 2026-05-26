@@ -1,6 +1,7 @@
 public with sharing class FreeeInvoiceStatusSyncService {
     private static final String STATUS_SUCCESS = 'Success';
     private static final String STATUS_FAILED = 'Failed';
+    private static final String DEFAULT_ACCOUNT_ITEM = 'Sales';
     private static final String SEND_WAITING = '送付待ち';
     private static final String SEND_DONE = '送付済み';
     private static final String PAYMENT_WAITING = '決済待ち';
@@ -46,7 +47,18 @@ public with sharing class FreeeInvoiceStatusSyncService {
         }
 
         if (!invoicesToUpdate.isEmpty()) {
-            update invoicesToUpdate;
+            Database.SaveResult[] results = Database.update(invoicesToUpdate, false);
+            for (Integer i = 0; i < results.size(); i++) {
+                if (!results[i].isSuccess()) {
+                    saveLog(
+                        invoicesToUpdate[i].Id,
+                        null,
+                        null,
+                        STATUS_FAILED,
+                        summarizeDmlErrors(results[i].getErrors())
+                    );
+                }
+            }
         }
     }
 
@@ -90,6 +102,7 @@ public with sharing class FreeeInvoiceStatusSyncService {
             'payment_limit_date',
             'due_date'
         });
+        applyRequiredDefaults(source, invoiceToUpdate);
         invoiceToUpdate.Freee_Sync_Status__c = STATUS_SUCCESS;
         invoiceToUpdate.Freee_Sync_Message__c = null;
         invoiceToUpdate.Freee_Last_Synced_At__c = System.now();
@@ -97,12 +110,21 @@ public with sharing class FreeeInvoiceStatusSyncService {
     }
 
     private static Invoice__c buildFailedInvoice(Invoice__c source, String message) {
-        return new Invoice__c(
+        Invoice__c invoiceToUpdate = new Invoice__c(
             Id = source.Id,
             Freee_Sync_Status__c = STATUS_FAILED,
             Freee_Sync_Message__c = summarizeError(message),
             Freee_Last_Synced_At__c = System.now()
         );
+        applyRequiredDefaults(source, invoiceToUpdate);
+        return invoiceToUpdate;
+    }
+
+    private static void applyRequiredDefaults(Invoice__c source, Invoice__c invoiceToUpdate) {
+        Object accountItem = source.getPopulatedFieldsAsMap().get('Freee_Account_Item_Picklist__c');
+        if (accountItem == null || String.isBlank(String.valueOf(accountItem))) {
+            invoiceToUpdate.Freee_Account_Item_Picklist__c = DEFAULT_ACCOUNT_ITEM;
+        }
     }
 
     private static Map<String, Object> extractInvoiceMap(String body) {
@@ -208,6 +230,14 @@ public with sharing class FreeeInvoiceStatusSyncService {
             return 'freeeからレスポンスを取得できませんでした。';
         }
         return body.length() > 32000 ? body.left(32000) : body;
+    }
+
+    private static String summarizeDmlErrors(Database.Error[] errors) {
+        List<String> messages = new List<String>();
+        for (Database.Error error : errors) {
+            messages.add(error.getStatusCode() + ': ' + error.getMessage());
+        }
+        return summarizeError(String.join(messages, '\n'));
     }
 
     private static void saveLog(

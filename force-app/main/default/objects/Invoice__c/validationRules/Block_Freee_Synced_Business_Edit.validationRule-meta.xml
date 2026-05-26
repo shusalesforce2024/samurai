@@ -9,7 +9,10 @@
         ISCHANGED(Account__c),
         ISCHANGED(Billing_Date__c),
         ISCHANGED(ContractPeriod__c),
-        ISCHANGED(Freee_Account_Item_Picklist__c),
+        AND(
+            ISCHANGED(Freee_Account_Item_Picklist__c),
+            NOT(ISBLANK(TEXT(PRIORVALUE(Freee_Account_Item_Picklist__c))))
+        ),
         ISCHANGED(ParentContract__c),
         ISCHANGED(ParentOpportunity__c),
         ISCHANGED(Subject__c),
