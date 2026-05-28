@@ -13,6 +13,14 @@
     <enabled>true</enabled>
   </classAccesses>
   <classAccesses>
+    <apexClass>FreeePartnerBulkSyncController</apexClass>
+    <enabled>true</enabled>
+  </classAccesses>
+  <classAccesses>
+    <apexClass>FreeePartnerBulkSyncService</apexClass>
+    <enabled>true</enabled>
+  </classAccesses>
+  <classAccesses>
     <apexClass>FreeeQuotationController</apexClass>
     <enabled>true</enabled>
   </classAccesses>
@@ -616,6 +624,14 @@
     <viewAllFields>false</viewAllFields>
     <viewAllRecords>false</viewAllRecords>
   </objectPermissions>
+  <pageAccesses>
+    <apexPage>FreeePartnerBulkSync</apexPage>
+    <enabled>true</enabled>
+  </pageAccesses>
+  <pageAccesses>
+    <apexPage>FreeePartnerBulkSyncLauncher</apexPage>
+    <enabled>true</enabled>
+  </pageAccesses>
   <tabSettings>
     <tab>ContractLineItem__c</tab>
     <visibility>Available</visibility>

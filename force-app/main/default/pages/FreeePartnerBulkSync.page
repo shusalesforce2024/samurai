@@ -1,0 +1,46 @@
+<apex:page standardController="Account"
+           recordSetVar="accounts"
+           extensions="FreeePartnerBulkSyncController"
+           action="{!sync}"
+           lightningStylesheets="true"
+           showHeader="true"
+           sidebar="false"
+           tabStyle="Account">
+    <apex:sectionHeader title="Freee取引先一括同期" subtitle="選択した取引先をfreeeへ同期"/>
+
+    <apex:pageBlock rendered="{!hasError}" title="同期できませんでした">
+        <apex:outputText value="{!errorMessage}"/>
+    </apex:pageBlock>
+
+    <apex:pageBlock rendered="{!hasResults}" title="同期結果">
+        <apex:pageBlockSection columns="4">
+            <apex:pageBlockSectionItem>
+                <apex:outputLabel value="対象件数"/>
+                <apex:outputText value="{!summary.totalCount}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem>
+                <apex:outputLabel value="成功"/>
+                <apex:outputText value="{!summary.successCount}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem>
+                <apex:outputLabel value="スキップ"/>
+                <apex:outputText value="{!summary.skippedCount}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem>
+                <apex:outputLabel value="失敗"/>
+                <apex:outputText value="{!summary.failedCount}"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockTable value="{!summary.results}" var="result">
+            <apex:column headerValue="取引先名" value="{!result.accountName}"/>
+            <apex:column headerValue="結果" value="{!result.status}"/>
+            <apex:column headerValue="freee取引先ID" value="{!result.freeePartnerId}"/>
+            <apex:column headerValue="メッセージ" value="{!result.message}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+
+    <apex:form>
+        <apex:commandButton value="戻る" onclick="window.history.back(); return false;"/>
+    </apex:form>
+</apex:page>

@@ -713,3 +713,30 @@ Freee連携済み請求明細の編集不可
 12. 権限制御・Validation Rule実装
 13. テストクラス作成
 14. UAT
+## 13. Freee取引先一括同期機能
+
+取引先リストビューで選択した複数取引先を一括でFreee取引先同期する。
+
+開発対象:
+
+| 種別 | API名 / 名称 | 内容 |
+| --- | --- | --- |
+| Apex | `FreeePartnerBulkSyncService` | 複数取引先のFreee検索・作成・Salesforce取引先ID保存を行う一括同期サービス |
+| Apex | `FreeePartnerBulkSyncController` | 取引先リストビュー選択レコードを受け取り、一括同期サービスを呼び出すVisualforce拡張コントローラ |
+| Visualforce | `FreeePartnerBulkSync` | 一括同期の実行結果画面。対象件数、成功、スキップ、失敗、レコード別メッセージを表示 |
+| WebLink/List Button | `Account.FreeePartnerBulkSync` | 取引先リストビュー用の「Freee取引先一括同期」ボタン |
+| Search Layout | `Account.searchLayouts.listViewButtons` | 取引先リストビューに一括同期ボタンを表示 |
+| Permission Set | `SAMURAI_Sales_Contract_User` | 営業ユーザーに一括同期Apex/Visualforceアクセスを付与 |
+| Permission Set | `SAMURAI_Contract_Billing_User` | 経理ユーザーに一括同期Apex/Visualforceアクセスを付与 |
+| Permission Set | `SAMURAI_System_Admin` | システム管理者に一括同期Apex/Visualforceアクセスを付与 |
+| Profile | `Admin` | 管理者プロファイルに一括同期Apex/Visualforceアクセスを付与 |
+| Test | `FreeePartnerBulkSyncServiceTest` | 新規作成、既存Freee取引先利用、設定済みIDスキップ、Visualforceコントローラ、50件超過エラーを検証 |
+
+処理仕様:
+
+- 最大50件/回まで同期可能。
+- `Account.Freee_Partner_Id__c` 設定済みの取引先はスキップ。
+- 未設定の取引先はFreee取引先検索を行い、完全一致があれば既存IDを保存。
+- 完全一致がなければFreee取引先を作成し、返却されたIDを保存。
+- 一括処理中は先にFreee APIコールアウトを行い、最後にSalesforce取引先を一括更新する。これにより、DML後コールアウトエラーを回避する。
+- レコード別の成功・失敗を結果画面に表示し、1件の失敗で他レコードの同期を止めない。

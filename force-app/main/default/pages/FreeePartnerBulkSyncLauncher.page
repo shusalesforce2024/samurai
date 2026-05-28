@@ -1,0 +1,22 @@
+<apex:page standardController="Account"
+           recordSetVar="accounts"
+           showHeader="true"
+           sidebar="false">
+    <apex:sectionHeader title="Freee取引先一括同期" subtitle="選択した取引先をfreeeへ同期"/>
+    <apex:pageBlock title="同期を開始しています">
+        <apex:outputText value="選択した取引先を確認しています。画面が切り替わらない場合は、リストビューで取引先にチェックを入れてから再実行してください。"/>
+    </apex:pageBlock>
+
+    <script>
+        (function () {
+            var selectedIds = {!GETRECORDIDS($ObjectType.Account)};
+            var targetUrl = '/apex/FreeePartnerBulkSync';
+
+            if (selectedIds && selectedIds.length > 0) {
+                targetUrl += '?ids=' + encodeURIComponent(selectedIds.join(','));
+            }
+
+            window.location.replace(targetUrl);
+        }());
+    </script>
+</apex:page>
