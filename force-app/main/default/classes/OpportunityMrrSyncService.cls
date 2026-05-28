@@ -1,4 +1,6 @@
 public with sharing class OpportunityMrrSyncService {
+    private static final String DEFAULT_CONTRACT_UPDATE = '月';
+
     public static void syncFromQuotations(
         List<Quotation__c> newRecords,
         List<Quotation__c> oldRecords
@@ -53,19 +55,7 @@ public with sharing class OpportunityMrrSyncService {
             );
         }
 
-        List<Opportunity__c> opportunitiesToUpdate = new List<Opportunity__c>();
-        for (Id opportunityId : opportunityIds) {
-            opportunitiesToUpdate.add(new Opportunity__c(
-                Id = opportunityId,
-                MRR__c = totalByOpportunityId.containsKey(opportunityId)
-                    ? totalByOpportunityId.get(opportunityId)
-                    : 0
-            ));
-        }
-
-        if (!opportunitiesToUpdate.isEmpty()) {
-            update opportunitiesToUpdate;
-        }
+        updateOpportunityMrr(opportunityIds, totalByOpportunityId);
     }
 
     private static void syncOpportunityMrrFromQuotationLines(Set<Id> opportunityIds) {
@@ -86,19 +76,57 @@ public with sharing class OpportunityMrrSyncService {
             );
         }
 
+        updateOpportunityMrr(opportunityIds, totalByOpportunityId);
+    }
+
+    private static void updateOpportunityMrr(
+        Set<Id> opportunityIds,
+        Map<Id, Decimal> totalByOpportunityId
+    ) {
+        if (opportunityIds.isEmpty()) {
+            return;
+        }
+
         List<Opportunity__c> opportunitiesToUpdate = new List<Opportunity__c>();
-        for (Id opportunityId : opportunityIds) {
-            opportunitiesToUpdate.add(new Opportunity__c(
-                Id = opportunityId,
-                MRR__c = totalByOpportunityId.containsKey(opportunityId)
-                    ? totalByOpportunityId.get(opportunityId)
+        for (Opportunity__c opportunityRecord : [
+            SELECT Id, ContractUpdate__c
+            FROM Opportunity__c
+            WHERE Id IN :opportunityIds
+        ]) {
+            Opportunity__c opportunityToUpdate = new Opportunity__c(
+                Id = opportunityRecord.Id,
+                MRR__c = totalByOpportunityId.containsKey(opportunityRecord.Id)
+                    ? totalByOpportunityId.get(opportunityRecord.Id)
                     : 0
-            ));
+            );
+            if (String.isBlank(opportunityRecord.ContractUpdate__c)) {
+                opportunityToUpdate.ContractUpdate__c = DEFAULT_CONTRACT_UPDATE;
+            }
+            opportunitiesToUpdate.add(opportunityToUpdate);
         }
 
         if (!opportunitiesToUpdate.isEmpty()) {
-            update opportunitiesToUpdate;
+            Database.SaveResult[] results = Database.update(opportunitiesToUpdate, false);
+            for (Integer i = 0; i < results.size(); i++) {
+                if (!results[i].isSuccess()) {
+                    System.debug(
+                        LoggingLevel.ERROR,
+                        'Opportunity MRR sync failed. OpportunityId='
+                        + opportunitiesToUpdate[i].Id
+                        + ', Error='
+                        + summarizeDmlErrors(results[i].getErrors())
+                    );
+                }
+            }
         }
+    }
+
+    private static String summarizeDmlErrors(Database.Error[] errors) {
+        List<String> messages = new List<String>();
+        for (Database.Error error : errors) {
+            messages.add(error.getStatusCode() + ': ' + error.getMessage());
+        }
+        return String.join(messages, '\n');
     }
 
     private static void collectOpportunityIdsFromQuotations(

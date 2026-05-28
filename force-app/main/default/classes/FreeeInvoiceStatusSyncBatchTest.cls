@@ -2,16 +2,20 @@
 private class FreeeInvoiceStatusSyncBatchTest {
     private class InvoiceStatusMock implements HttpCalloutMock {
         public HttpResponse respond(HttpRequest request) {
+            System.assert(request.getEndpoint().contains('?company_id=12345'));
+
             HttpResponse response = new HttpResponse();
             response.setStatusCode(200);
             response.setHeader('Content-Type', 'application/json');
-            response.setBody('{"invoice":{"sending_status":"sent","payment_status":"paid","paid_amount":1100,"unpaid_amount":0,"payment_date":"2026-06-20","payment_limit_date":"2026-06-30"}}');
+            response.setBody('{"invoice":{"sending_status":"sent","payment_status":"paid","paid_amount":1100,"unpaid_amount":0,"paid_at":"2026-06-20","payment_date":"2026-06-30"}}');
             return response;
         }
     }
 
     private class AlternateInvoiceStatusMock implements HttpCalloutMock {
         public HttpResponse respond(HttpRequest request) {
+            System.assert(request.getEndpoint().contains('?company_id=12345'));
+
             HttpResponse response = new HttpResponse();
             response.setStatusCode(200);
             response.setHeader('Content-Type', 'application/json');
@@ -22,6 +26,8 @@ private class FreeeInvoiceStatusSyncBatchTest {
 
     private class FailedInvoiceStatusMock implements HttpCalloutMock {
         public HttpResponse respond(HttpRequest request) {
+            System.assert(request.getEndpoint().contains('?company_id=12345'));
+
             HttpResponse response = new HttpResponse();
             response.setStatusCode(500);
             response.setHeader('Content-Type', 'application/json');
@@ -32,8 +38,51 @@ private class FreeeInvoiceStatusSyncBatchTest {
 
     private class ThrowingInvoiceStatusMock implements HttpCalloutMock {
         public HttpResponse respond(HttpRequest request) {
+            System.assert(request.getEndpoint().contains('?company_id=12345'));
             throw new CalloutException('network failure');
         }
+    }
+
+    private class ServiceEndpointMock implements HttpCalloutMock {
+        public HttpResponse respond(HttpRequest request) {
+            if (request.getMethod() == 'POST' && request.getEndpoint().endsWith('/invoices')) {
+                System.assertEquals('{"invoice":true}', request.getBody());
+                return buildResponse(201, '{"invoice":{"id":1005}}');
+            }
+
+            if (request.getMethod() == 'GET') {
+                System.assert(request.getEndpoint().contains('/invoices/1005?company_id=12345'));
+                return buildResponse(200, '{"invoice":{"id":1005}}');
+            }
+
+            System.assertEquals('POST', request.getMethod());
+            System.assert(request.getEndpoint().contains('/invoices/1005/cancel?company_id=12345'));
+            return buildResponse(200, '{"invoice":{"id":1005,"cancel_status":"cancelled"}}');
+        }
+
+        private HttpResponse buildResponse(Integer statusCode, String body) {
+            HttpResponse response = new HttpResponse();
+            response.setStatusCode(statusCode);
+            response.setHeader('Content-Type', 'application/json');
+            response.setBody(body);
+            return response;
+        }
+    }
+
+    @testSetup
+    static void setupFreeeConfig() {
+        insert new Freee_Configs__c(
+            Name = 'Default',
+            Company_Id__c = '12345',
+            Invoice_Base_Url__c = 'https://secure.freee.co.jp/invoices/',
+            Payment_Type__c = 'transfer',
+            Quotation_Template_Id__c = '98765',
+            Tax_Entry_Method__c = 'exclusive',
+            Tax_Fraction__c = 'round_down',
+            Template_Id__c = '67890',
+            Withholding__c = 'false',
+            Withholding_Tax_Entry_Method__c = 'IN'
+        );
     }
 
     @isTest
@@ -268,6 +317,21 @@ private class FreeeInvoiceStatusSyncBatchTest {
             LIMIT 1
         ];
         System.assertEquals('Success', synced.Freee_Sync_Status__c);
+    }
+
+    @isTest
+    static void invoiceServiceAddsCompanyIdToReadAndCancelEndpoints() {
+        Test.setMock(HttpCalloutMock.class, new ServiceEndpointMock());
+
+        Test.startTest();
+        HttpResponse createResponse = FreeeInvoiceService.createInvoice('{"invoice":true}');
+        HttpResponse getResponse = FreeeInvoiceService.getInvoice(1005);
+        HttpResponse cancelResponse = FreeeInvoiceService.cancelInvoice(1005);
+        Test.stopTest();
+
+        System.assertEquals(201, createResponse.getStatusCode());
+        System.assertEquals(200, getResponse.getStatusCode());
+        System.assertEquals(200, cancelResponse.getStatusCode());
     }
 }
 

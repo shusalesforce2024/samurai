@@ -94,13 +94,14 @@ public with sharing class FreeeInvoiceStatusSyncService {
             'balance'
         });
         invoiceToUpdate.PaymentReceivedDate__c = firstDate(invoiceMap, new List<String>{
-            'payment_date',
             'paid_at',
-            'settlement_date'
+            'settlement_date',
+            'payment_received_date'
         });
         invoiceToUpdate.Payment_Date__c = firstDate(invoiceMap, new List<String>{
             'payment_limit_date',
-            'due_date'
+            'due_date',
+            'payment_date'
         });
         applyRequiredDefaults(source, invoiceToUpdate);
         invoiceToUpdate.Freee_Sync_Status__c = STATUS_SUCCESS;

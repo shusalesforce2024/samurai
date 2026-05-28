@@ -19,7 +19,7 @@ public with sharing class FreeeInvoiceService {
         }
 
         HttpRequest req = new HttpRequest();
-        req.setEndpoint(ENDPOINT + '/' + String.valueOf(freeeInvoiceId.longValue()));
+        req.setEndpoint(buildInvoiceEndpoint(freeeInvoiceId, null));
         req.setMethod('GET');
         req.setHeader('Content-Type', 'application/json');
         req.setTimeout(60000);
@@ -34,12 +34,21 @@ public with sharing class FreeeInvoiceService {
         }
 
         HttpRequest req = new HttpRequest();
-        req.setEndpoint(ENDPOINT + '/' + String.valueOf(freeeInvoiceId.longValue()) + '/cancel');
+        req.setEndpoint(buildInvoiceEndpoint(freeeInvoiceId, 'cancel'));
         req.setMethod('POST');
         req.setHeader('Content-Type', 'application/json');
         req.setTimeout(60000);
 
         Http http = new Http();
         return http.send(req);
+    }
+
+    private static String buildInvoiceEndpoint(Decimal freeeInvoiceId, String actionPath) {
+        FreeeConfigService.Config config = FreeeConfigService.getConfig();
+        String endpoint = ENDPOINT + '/' + String.valueOf(freeeInvoiceId.longValue());
+        if (!String.isBlank(actionPath)) {
+            endpoint += '/' + actionPath;
+        }
+        return endpoint + '?company_id=' + String.valueOf(config.companyId);
     }
 }
