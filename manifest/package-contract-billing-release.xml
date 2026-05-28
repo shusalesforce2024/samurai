@@ -34,6 +34,9 @@
     <members>FreeeInvoiceStatusSyncBatchTest</members>
     <members>FreeeInvoiceStatusSyncService</members>
     <members>FreeePartnerController</members>
+    <members>FreeePartnerBulkSyncController</members>
+    <members>FreeePartnerBulkSyncService</members>
+    <members>FreeePartnerBulkSyncServiceTest</members>
     <members>FreeePartnerFacade</members>
     <members>FreeePartnerService</members>
     <members>FreeeQuotationContext</members>
@@ -64,6 +67,10 @@
     <members>QuotationLineTrigger</members>
     <members>QuotationTrigger</members>
     <name>ApexTrigger</name>
+  </types>
+  <types>
+    <members>FreeePartnerBulkSync</members>
+    <name>ApexPage</name>
   </types>
   <types>
     <members>freeeInvoiceAction</members>
@@ -157,6 +164,10 @@
     <members>ContractBillingReports/UnbilledPeriods</members>
     <members>ContractManagementFolder/ContractReport</members>
     <name>Report</name>
+  </types>
+  <types>
+    <members>Account.FreeePartnerBulkSync</members>
+    <name>WebLink</name>
   </types>
   <types>
     <members>ContractBillingDashboards</members>

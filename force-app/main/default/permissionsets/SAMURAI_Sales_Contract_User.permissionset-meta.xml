@@ -608,10 +608,6 @@
     <apexPage>FreeePartnerBulkSync</apexPage>
     <enabled>true</enabled>
   </pageAccesses>
-  <pageAccesses>
-    <apexPage>FreeePartnerBulkSyncLauncher</apexPage>
-    <enabled>true</enabled>
-  </pageAccesses>
   <tabSettings>
     <tab>ContractLineItem__c</tab>
     <visibility>Available</visibility>

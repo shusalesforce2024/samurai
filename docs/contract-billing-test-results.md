@@ -178,3 +178,28 @@ powershell -ExecutionPolicy Bypass -File scripts/check-contract-billing-release-
 | レポート・ダッシュボードの表示妥当性 | データの見え方、グラフの使いやすさ確認が必要なため | UATチェックリスト |
 | 商品マスタCSVの本番データ投入 | データ自体はユーザー作業のため | 商品マスタCSV入力チェック観点 |
 
+## 8. 2026-05-28 追加シナリオテスト結果
+
+未実施UAT分をdev1で追加確認した。
+
+| 実行日 | 種別 | 対象 | 結果 | ID |
+| --- | --- | --- | --- | --- |
+| 2026-05-28 | Apex主要シナリオテスト | 契約請求・Freee連携の主要9テストクラス | 58/58 Pass | `707Ie00001HCDGM` |
+| 2026-05-28 | 修正デプロイ | `FreeeInvoiceStatusSyncService`, `FreeeInvoiceStatusSyncBatchTest` | Succeeded | `0AfIe0000019p2yKAA` |
+| 2026-05-28 | 実Freee同期UAT | 実Freee請求書ID付き請求8件 | 8/8 Success | なし |
+
+追加で検出した不具合:
+
+| 内容 | 原因 | 対応 | 結果 |
+| --- | --- | --- | --- |
+| Freee入金ステータス同期を複数件で実行すると、2件目以降が `You have uncommitted work pending` になる | 1件ごとにFreee連携ログを保存してから次のcalloutへ進んでいた | ログ保存をcalloutループ後にまとめるよう修正し、複数件同期テストを追加 | 修正済み。対象テスト8/8 Pass、実データ8件同期成功 |
+
+追加UAT結果:
+
+| 対象 | 結果 | 補足 |
+| --- | --- | --- |
+| 営業権限 | 条件付きPass | dev1に営業専用ユーザーがないため、権限セットのオブジェクト/Apex/Visualforceアクセス確認で代替 |
+| 経理権限 | 条件付きPass | dev1に経理専用ユーザーがないため、権限セットのオブジェクト/Apex/Visualforceアクセス確認で代替 |
+| 実Freeeステータス同期 | Pass | 8件すべて `Freee_Sync_Status__c = Success` |
+| レポート/ダッシュボード | Pass | 契約請求レポート16件、契約請求ダッシュボード1件を確認 |
+| 商品マスタデータ | NG | dev1の商品マスタ3件すべて `Freee_Item_Id__c` が未設定。本番相当の請求書作成前に補完が必要 |

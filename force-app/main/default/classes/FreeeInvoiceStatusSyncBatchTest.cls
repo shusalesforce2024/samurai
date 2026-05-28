@@ -130,6 +130,52 @@ private class FreeeInvoiceStatusSyncBatchTest {
     }
 
     @isTest
+    static void syncsMultipleInvoicesWithoutUncommittedWorkError() {
+        Account accountRecord = new Account(Name = 'Multiple Sync Account');
+        insert accountRecord;
+
+        List<Invoice__c> invoiceRecords = new List<Invoice__c>{
+            new Invoice__c(
+                Account__c = accountRecord.Id,
+                Billing_Date__c = Date.newInstance(2026, 6, 20),
+                Freee_Account_Item_Picklist__c = 'Sales',
+                Freee_Invoice_Id__c = 2001,
+                Freee_Sync_Status__c = 'Success',
+                Payment_Date__c = Date.newInstance(2026, 7, 31),
+                Sent_To_Freee__c = true,
+                Subject__c = 'Multiple Sync Invoice 1'
+            ),
+            new Invoice__c(
+                Account__c = accountRecord.Id,
+                Billing_Date__c = Date.newInstance(2026, 6, 20),
+                Freee_Account_Item_Picklist__c = 'Sales',
+                Freee_Invoice_Id__c = 2002,
+                Freee_Sync_Status__c = 'Success',
+                Payment_Date__c = Date.newInstance(2026, 7, 31),
+                Sent_To_Freee__c = true,
+                Subject__c = 'Multiple Sync Invoice 2'
+            )
+        };
+        insert invoiceRecords;
+
+        Test.setMock(HttpCalloutMock.class, new InvoiceStatusMock());
+
+        Test.startTest();
+        FreeeInvoiceStatusSyncService.syncInvoices(invoiceRecords);
+        Test.stopTest();
+
+        for (Invoice__c synced : [
+            SELECT Freee_Sync_Status__c,
+                   PaymentStatus__c
+            FROM Invoice__c
+            WHERE Id IN :invoiceRecords
+        ]) {
+            System.assertEquals('Success', synced.Freee_Sync_Status__c);
+            System.assertEquals('決済済み', synced.PaymentStatus__c);
+        }
+    }
+
+    @isTest
     static void syncBackfillsRequiredAccountItemWhenFieldIsNotLoaded() {
         Account accountRecord = new Account(Name = 'Legacy Sync Account');
         insert accountRecord;

@@ -13,6 +13,7 @@ public with sharing class FreeeInvoiceStatusSyncService {
         }
 
         List<Invoice__c> invoicesToUpdate = new List<Invoice__c>();
+        List<FreeeSyncLogService.LogRequest> logsToSave = new List<FreeeSyncLogService.LogRequest>();
         for (Invoice__c invoiceRecord : invoices) {
             if (invoiceRecord.Freee_Invoice_Id__c == null) {
                 continue;
@@ -23,26 +24,26 @@ public with sharing class FreeeInvoiceStatusSyncService {
                 response = FreeeInvoiceService.getInvoice(invoiceRecord.Freee_Invoice_Id__c);
                 if (isSuccess(response)) {
                     invoicesToUpdate.add(buildSyncedInvoice(invoiceRecord, response));
-                    saveLog(invoiceRecord.Id, null, response, STATUS_SUCCESS, null);
+                    logsToSave.add(buildLog(invoiceRecord.Id, null, response, STATUS_SUCCESS, null));
                 } else {
                     invoicesToUpdate.add(buildFailedInvoice(invoiceRecord, response.getBody()));
-                    saveLog(
+                    logsToSave.add(buildLog(
                         invoiceRecord.Id,
                         null,
                         response,
                         STATUS_FAILED,
                         summarizeError(response.getBody())
-                    );
+                    ));
                 }
             } catch (Exception e) {
                 invoicesToUpdate.add(buildFailedInvoice(invoiceRecord, e.getMessage()));
-                saveLog(
+                logsToSave.add(buildLog(
                     invoiceRecord.Id,
                     null,
                     response,
                     STATUS_FAILED,
                     response == null ? e.getMessage() : e.getMessage() + '\n\nRaw response:\n' + response.getBody()
-                );
+                ));
             }
         }
 
@@ -50,16 +51,18 @@ public with sharing class FreeeInvoiceStatusSyncService {
             Database.SaveResult[] results = Database.update(invoicesToUpdate, false);
             for (Integer i = 0; i < results.size(); i++) {
                 if (!results[i].isSuccess()) {
-                    saveLog(
+                    logsToSave.add(buildLog(
                         invoicesToUpdate[i].Id,
                         null,
                         null,
                         STATUS_FAILED,
                         summarizeDmlErrors(results[i].getErrors())
-                    );
+                    ));
                 }
             }
         }
+
+        saveLogs(logsToSave);
     }
 
     private static Boolean isSuccess(HttpResponse response) {
@@ -241,21 +244,35 @@ public with sharing class FreeeInvoiceStatusSyncService {
         return summarizeError(String.join(messages, '\n'));
     }
 
-    private static void saveLog(
+    private static FreeeSyncLogService.LogRequest buildLog(
         Id invoiceId,
         String requestBody,
         HttpResponse response,
         String result,
         String errorMessage
     ) {
+        FreeeSyncLogService.LogRequest logReq = new FreeeSyncLogService.LogRequest();
+        logReq.invoiceId = invoiceId;
+        logReq.requestBody = requestBody;
+        logReq.responseBody = response == null ? null : response.getBody();
+        logReq.statusCode = response == null ? null : response.getStatusCode();
+        logReq.result = result;
+        logReq.errorMessage = errorMessage;
+        return logReq;
+    }
+
+    private static void saveLogs(List<FreeeSyncLogService.LogRequest> logRequests) {
+        if (logRequests == null || logRequests.isEmpty()) {
+            return;
+        }
+
+        for (FreeeSyncLogService.LogRequest logReq : logRequests) {
+            saveLog(logReq);
+        }
+    }
+
+    private static void saveLog(FreeeSyncLogService.LogRequest logReq) {
         try {
-            FreeeSyncLogService.LogRequest logReq = new FreeeSyncLogService.LogRequest();
-            logReq.invoiceId = invoiceId;
-            logReq.requestBody = requestBody;
-            logReq.responseBody = response == null ? null : response.getBody();
-            logReq.statusCode = response == null ? null : response.getStatusCode();
-            logReq.result = result;
-            logReq.errorMessage = errorMessage;
             FreeeSyncLogService.saveLog(logReq);
         } catch (Exception e) {
             System.debug('freee請求書ステータス同期ログ保存に失敗しました: ' + e.getMessage());
