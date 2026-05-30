@@ -23,9 +23,17 @@
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>決済待ち一覧</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
     <reportType>InvoiceBillingReport__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Invoice__c$Billing_Date__c</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
 </Report>

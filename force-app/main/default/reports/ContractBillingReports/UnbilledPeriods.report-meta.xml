@@ -20,9 +20,17 @@
     </columns>
     <format>Tabular</format>
     <name>未請求一覧</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
     <reportType>ContractPeriodBillingReport__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ContractPeriod__c$PeriodStartDate__c</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
 </Report>

@@ -6,14 +6,22 @@
     </columns>
     <format>Summary</format>
     <groupingsDown>
-        <dateGranularity>Month</dateGranularity>
+        <dateGranularity>Day</dateGranularity>
         <field>ContractLineItem__c$ContractYearMonth__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>【グラフ】月別売上予定</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
     <reportType>ContractMonthlyDetailReport__c</reportType>
     <scope>organization</scope>
     <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ContractLineItem__c$PeriodStartDate__c</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
 </Report>

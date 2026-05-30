@@ -4,16 +4,49 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Invoice__c$UnpaidAmount__c</field>
     </columns>
+    <columns>
+        <field>Invoice__c$PaymentReceivedDate__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Invoice__c$Payment_Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>5/1/2026</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Invoice__c$Payment_Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>lessThan</operator>
+            <value>6/1/2026</value>
+        </criteriaItems>
+        <language>ja</language>
+    </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Month</dateGranularity>
         <field>Invoice__c$Payment_Date__c</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Invoice__c$Account__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>【グラフ】決済待ち一覧</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
     <reportType>InvoiceBillingReport__c</reportType>
     <scope>organization</scope>
     <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Invoice__c$Billing_Date__c</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
 </Report>

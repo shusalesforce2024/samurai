@@ -3,6 +3,8 @@
     <backgroundEndColor>#FFFFFF</backgroundEndColor>
     <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
     <backgroundStartColor>#FFFFFF</backgroundStartColor>
+    <chartTheme>light</chartTheme>
+    <colorPalette>unity</colorPalette>
     <dashboardChartTheme>light</dashboardChartTheme>
     <dashboardColorPalette>unity</dashboardColorPalette>
     <dashboardGridLayout>
@@ -10,59 +12,251 @@
             <colSpan>6</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
+                <chartSummary>
+                    <aggregate>Sum</aggregate>
+                    <axisBinding>y</axisBinding>
+                    <column>Contract__c$ARR__c</column>
+                </chartSummary>
+                <componentChartTheme>dark</componentChartTheme>
                 <componentType>Line</componentType>
-                <header>月別売上予定</header>
-                <report>ContractBillingReports/DashMonthlyRevenueForecastChart</report>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingColumn>Contract__c$EndDate__c</groupingColumn>
+                <groupingSortProperties>
+                    <groupingSorts>
+                        <groupingLevel>g1</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                </groupingSortProperties>
+                <header>【グラフ】契約更新予定</header>
+                <legendPosition>Bottom</legendPosition>
+                <report>ContractBillingReports/DashContractRenewalScheduleChart</report>
+                <showPercentage>false</showPercentage>
+                <showValues>false</showValues>
                 <sortBy>RowLabelAscending</sortBy>
+                <sortLegendValues>true</sortLegendValues>
+                <useReportChart>false</useReportChart>
             </dashboardComponent>
             <rowIndex>0</rowIndex>
-            <rowSpan>6</rowSpan>
+            <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
             <colSpan>6</colSpan>
             <columnIndex>6</columnIndex>
             <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
-                <componentType>Column</componentType>
-                <header>MRR</header>
+                <chartSummary>
+                    <aggregate>Sum</aggregate>
+                    <axisBinding>y</axisBinding>
+                    <column>ContractLineItem__c$RevenueAmount__c</column>
+                </chartSummary>
+                <componentChartTheme>dark</componentChartTheme>
+                <componentType>Line</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingColumn>ContractLineItem__c$ContractYearMonth__c</groupingColumn>
+                <groupingSortProperties>
+                    <groupingSorts>
+                        <groupingLevel>g1</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                </groupingSortProperties>
+                <header>【グラフ】MRR</header>
+                <legendPosition>Bottom</legendPosition>
                 <report>ContractBillingReports/DashMRRChart</report>
+                <showPercentage>false</showPercentage>
+                <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
+                <sortLegendValues>true</sortLegendValues>
+                <useReportChart>false</useReportChart>
             </dashboardComponent>
             <rowIndex>0</rowIndex>
-            <rowSpan>6</rowSpan>
+            <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
             <colSpan>6</colSpan>
             <columnIndex>0</columnIndex>
             <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
-                <componentType>Bar</componentType>
-                <header>決済待ち</header>
-                <report>ContractBillingReports/DashPaymentWaitingInvoicesChart</report>
+                <chartSummary>
+                    <aggregate>Sum</aggregate>
+                    <axisBinding>y</axisBinding>
+                    <column>ContractLineItem__c$RevenueAmount__c</column>
+                </chartSummary>
+                <componentChartTheme>dark</componentChartTheme>
+                <componentType>Line</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingColumn>ContractLineItem__c$ContractYearMonth__c</groupingColumn>
+                <groupingSortProperties>
+                    <groupingSorts>
+                        <groupingLevel>g1</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                </groupingSortProperties>
+                <header>【グラフ】月別売上予定</header>
+                <legendPosition>Bottom</legendPosition>
+                <report>ContractBillingReports/DashMonthlyRevenueForecastChart</report>
+                <showPercentage>false</showPercentage>
+                <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
+                <sortLegendValues>true</sortLegendValues>
+                <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>6</rowIndex>
-            <rowSpan>6</rowSpan>
+            <rowIndex>9</rowIndex>
+            <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
             <colSpan>6</colSpan>
             <columnIndex>6</columnIndex>
             <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
-                <componentType>Column</componentType>
-                <header>契約更新予定</header>
-                <report>ContractBillingReports/DashContractRenewalScheduleChart</report>
+                <chartSummary>
+                    <aggregate>Sum</aggregate>
+                    <axisBinding>y</axisBinding>
+                    <column>Invoice__c$UnpaidAmount__c</column>
+                </chartSummary>
+                <componentChartTheme>dark</componentChartTheme>
+                <componentType>BarGrouped</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingColumn>Invoice__c$Payment_Date__c</groupingColumn>
+                <groupingColumn>Invoice__c$Account__c</groupingColumn>
+                <groupingSortProperties>
+                    <groupingSorts>
+                        <groupingLevel>g1</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                    <groupingSorts>
+                        <groupingLevel>g2</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                </groupingSortProperties>
+                <header>【グラフ】決済待ち一覧</header>
+                <legendPosition>Right</legendPosition>
+                <report>ContractBillingReports/DashPaymentWaitingInvoicesChart</report>
+                <showPercentage>false</showPercentage>
+                <showValues>false</showValues>
                 <sortBy>RowLabelAscending</sortBy>
+                <sortLegendValues>true</sortLegendValues>
+                <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>6</rowIndex>
-            <rowSpan>6</rowSpan>
+            <rowIndex>9</rowIndex>
+            <rowSpan>9</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>6</colSpan>
+            <columnIndex>0</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <chartSummary>
+                    <aggregate>Sum</aggregate>
+                    <axisBinding>y</axisBinding>
+                    <column>ContractLineItem__c$RevenueAmount__c</column>
+                </chartSummary>
+                <componentChartTheme>dark</componentChartTheme>
+                <componentType>BarGrouped</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingColumn>ContractLineItem__c$ContractYearMonth__c</groupingColumn>
+                <groupingColumn>ContractLineItem__c$ProductMaster__c</groupingColumn>
+                <groupingSortProperties>
+                    <groupingSorts>
+                        <groupingLevel>g1</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                    <groupingSorts>
+                        <groupingLevel>g2</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                </groupingSortProperties>
+                <header>MRR(製品別)</header>
+                <legendPosition>Right</legendPosition>
+                <report>ContractBillingReports/MRR</report>
+                <showPercentage>false</showPercentage>
+                <showValues>true</showValues>
+                <sortBy>RowLabelAscending</sortBy>
+                <sortLegendValues>true</sortLegendValues>
+                <useReportChart>false</useReportChart>
+            </dashboardComponent>
+            <rowIndex>18</rowIndex>
+            <rowSpan>9</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>6</colSpan>
+            <columnIndex>6</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <chartSummary>
+                    <aggregate>Sum</aggregate>
+                    <axisBinding>y</axisBinding>
+                    <column>ContractLineItem__c$RevenueAmount__c</column>
+                </chartSummary>
+                <componentChartTheme>dark</componentChartTheme>
+                <componentType>BarGrouped</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
+                <groupingColumn>ContractLineItem__c$Account__c</groupingColumn>
+                <groupingSortProperties>
+                    <groupingSorts>
+                        <groupingLevel>g1</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                    <groupingSorts>
+                        <groupingLevel>g2</groupingLevel>
+                        <sortOrder>a</sortOrder>
+                    </groupingSorts>
+                </groupingSortProperties>
+                <header>契約月次明細（経理）</header>
+                <legendPosition>Right</legendPosition>
+                <report>ContractBillingReports/MonthlyDetailAccounting</report>
+                <showPercentage>false</showPercentage>
+                <showValues>true</showValues>
+                <sortBy>RowLabelAscending</sortBy>
+                <sortLegendValues>true</sortLegendValues>
+                <useReportChart>false</useReportChart>
+            </dashboardComponent>
+            <rowIndex>18</rowIndex>
+            <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <numberOfColumns>12</numberOfColumns>
         <rowHeight>36</rowHeight>
     </dashboardGridLayout>
     <dashboardType>LoggedInUser</dashboardType>
     <isGridLayout>true</isGridLayout>
+    <owner>kawanami.shu2@sandbox.com</owner>
+    <runningUser>kawanami.shu2@sandbox.com</runningUser>
     <textColor>#000000</textColor>
     <title>契約請求ダッシュボード</title>
     <titleColor>#000000</titleColor>

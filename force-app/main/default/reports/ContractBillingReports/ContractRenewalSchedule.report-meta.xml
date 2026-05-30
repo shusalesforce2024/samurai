@@ -26,9 +26,17 @@
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>契約更新予定</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
     <reportType>ContractLifecycleReport__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Contract__c$StartDate__c</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
 </Report>

@@ -9,7 +9,7 @@
     </columns>
     <format>Matrix</format>
     <groupingsAcross>
-        <dateGranularity>Month</dateGranularity>
+        <dateGranularity>Day</dateGranularity>
         <field>ContractLineItem__c$ContractYearMonth__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsAcross>
@@ -19,9 +19,17 @@
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>月別売上予定</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
     <reportType>ContractMonthlyDetailReport__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ContractLineItem__c$PeriodStartDate__c</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
 </Report>

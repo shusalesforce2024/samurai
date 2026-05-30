@@ -7,20 +7,31 @@
     <filter>
         <criteriaItems>
             <column>ContractLineItem__c$MRR_Target__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
             <value>1</value>
         </criteriaItems>
+        <language>ja</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
-        <dateGranularity>Month</dateGranularity>
+        <dateGranularity>Day</dateGranularity>
         <field>ContractLineItem__c$ContractYearMonth__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>【グラフ】MRR</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
     <reportType>ContractMonthlyDetailReport__c</reportType>
     <scope>organization</scope>
     <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>ContractLineItem__c$PeriodStartDate__c</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
 </Report>
