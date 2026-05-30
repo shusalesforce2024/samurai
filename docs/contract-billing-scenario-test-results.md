@@ -15,7 +15,7 @@ dev1で、契約請求・Freee連携の主要業務シナリオに対応するAp
 
 未実施だったUAT項目も、dev1上でCLI/Apex/メタデータ確認により実施した。
 営業・経理の実ユーザー目視操作は専用ユーザーがdev1に存在しないため、権限セット・Apex/Visualforceアクセス・オブジェクト権限の代替確認とした。
-商品マスタはレコード自体は存在するが、Freee品目IDが未設定のため、本番相当のFreee請求書作成UAT前にデータ補完が必要。
+商品マスタはレコード自体が存在することを確認済み。現行のFreee見積書・請求書連携では商品マスタのFreee品目IDは使用しないため、Freee品目ID未設定はUAT NG要因としない。
 
 ## 2. 実行コマンド
 
@@ -93,7 +93,7 @@ sf apex run test --target-org dev1 --tests OppContractInvoiceServiceTest,Contrac
 | UAT-02 | 経理ユーザーでの請求管理、取消、再作成 | `SAMURAI_Contract_Billing_User` の請求/請求明細/Freee関連権限、Apex/Visualforceアクセスを確認 | 条件付きPass | dev1に経理専用ユーザーがないため、実ログイン目視は未実施 |
 | UAT-03 | Freeeで請求書を手動送付した後の実ステータス同期 | 実Freee請求書IDを持つ請求8件に対し、`FreeeInvoiceStatusSyncService.syncInvoices` を実行 | Pass | 8件すべて同期成功。送付待ち/送付済み、決済待ちをSalesforceへ反映 |
 | UAT-04 | レポート・ダッシュボードの表示妥当性 | dev1のReport/DashboardをSOQL確認 | Pass | 契約請求レポート16件、契約請求ダッシュボード1件を確認 |
-| UAT-05 | 本番用商品マスタデータの妥当性 | `ProductMaster__c` 3件を確認 | NG | 3件とも `Freee_Item_Id__c` が未設定。本番相当の請求書作成前に補完が必要 |
+| UAT-05 | 本番用商品マスタデータの妥当性 | `ProductMaster__c` 3件を確認 | Pass | 現行連携では `Freee_Item_Id__c` は不要。商品マスタ3件の存在を確認 |
 
 ## 7. 追加UATで発見・修正した不具合
 
@@ -113,9 +113,9 @@ sf apex run test --target-org dev1 --tests OppContractInvoiceServiceTest,Contrac
 | --- | ---: | ---: | ---: |
 | Apexシナリオテスト | 58 | 58 | 100% |
 | 業務シナリオ表の自動/確認済み項目 | 30 | 30 | 100% |
-| 追加UAT | 4 | 5 | 80.0% |
-| 条件付きPassを合格扱いにした追加UAT | 4 | 5 | 80.0% |
-| 全体 | 34 | 35 | 97.1% |
+| 追加UAT | 5 | 5 | 100% |
+| 条件付きPassを合格扱いにした追加UAT | 5 | 5 | 100% |
+| 全体 | 35 | 35 | 100% |
 
-全体35件のうち、NGは商品マスタのFreee品目ID未設定1件。
+全体35件すべてPass。
 営業/経理の実ログイン目視は専用ユーザーがないため条件付きPassとしたが、権限セット上の必要権限は確認済み。

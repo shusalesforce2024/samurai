@@ -28,11 +28,6 @@
         <field>ContractLineItem__c$Account__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <groupingsDown>
-        <dateGranularity>Day</dateGranularity>
-        <field>ContractLineItem__c$CheckStatus__c</field>
-        <sortOrder>Asc</sortOrder>
-    </groupingsDown>
     <name>契約内容管理</name>
     <params>
         <name>co</name>

@@ -106,7 +106,6 @@
         <fields>ContractYearMonth__c</fields>
         <fields>ProductMaster__c</fields>
         <fields>RevenueAmount__c</fields>
-        <fields>InvoiceStatus__c</fields>
         <relatedList>ContractLineItem__c.ContractPeriod__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

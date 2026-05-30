@@ -10,7 +10,7 @@
 | 取引先同期 | `Account.Freee_Partner_Id__c` |
 | 見積連携 | `Quotation__c` のFreee ID、番号、URL、同期ステータス |
 | 請求連携 | `Invoice__c` のFreee ID、番号、URL、送付ステータス、決済ステータス |
-| 商品ID | `ProductMaster__c.Freee_Item_Id__c` |
+| 勘定科目マッピング | `Freee_Account_Item_Mappings__c.Freee_Account_Item_Id__c` |
 
 ## トラブル別対応
 | 事象 | 主な原因 | 確認箇所 | 対応 |
@@ -19,7 +19,7 @@
 | Freee事業所IDエラー | company_idが未設定または本番値でない | Freee設定 | 本番Freeeの事業所IDに修正する |
 | 請求書テンプレートエラー | template_idが未設定またはFreee側に存在しない | Freee設定、Freee管理画面 | Freee側テンプレートIDを確認して修正する |
 | 取引先IDなし | Salesforce取引先にFreee取引先IDがない | Account | Freee取引先同期を実行してから再連携する |
-| 商品ID不一致 | 商品マスタのFreee商品IDが空または誤り | ProductMaster__c | Freee商品IDを修正して再連携する |
+| Freee勘定科目ID不一致 | 請求のFreee勘定科目、またはFreee勘定科目マッピングが空/誤り | Invoice__c、Freee_Account_Item_Mappings__c | Freee勘定科目とマッピングのfreee勘定科目IDを修正して再連携する |
 | 請求明細がFreeeに作成されない | 請求明細の商品、数量、単価、税額が不正 | InvoiceLine__c | 請求明細を確認し、必要なら請求再作成する |
 | 金額が想定と違う | 値引き率、税端数、年一括/按分商品の設定違い | 見積明細、請求明細、商品マスタ | 商品マスタと請求明細を確認する。Freee連携済みは取消・再作成を使う |
 | 送付ステータスが反映されない | 夜間同期未実行、Freee側状態未変更、対象外請求 | Invoice__c、Apex Jobs | 未入金請求が同期対象になっているか確認する |
@@ -40,4 +40,3 @@
 | Freee同期ログURL |  |
 | 再実行可否 |  |
 | 業務影響 |  |
-

@@ -284,7 +284,6 @@
         <fields>Plan__c</fields>
         <fields>PeopleNumber__c</fields>
         <fields>Total__c</fields>
-        <fields>CheckStatus__c</fields>
         <relatedList>ContractLineItem__c.MasterContract__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

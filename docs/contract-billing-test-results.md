@@ -202,4 +202,4 @@ powershell -ExecutionPolicy Bypass -File scripts/check-contract-billing-release-
 | 経理権限 | 条件付きPass | dev1に経理専用ユーザーがないため、権限セットのオブジェクト/Apex/Visualforceアクセス確認で代替 |
 | 実Freeeステータス同期 | Pass | 8件すべて `Freee_Sync_Status__c = Success` |
 | レポート/ダッシュボード | Pass | 契約請求レポート16件、契約請求ダッシュボード1件を確認 |
-| 商品マスタデータ | NG | dev1の商品マスタ3件すべて `Freee_Item_Id__c` が未設定。本番相当の請求書作成前に補完が必要 |
+| 商品マスタデータ | Pass | dev1の商品マスタ3件を確認。現行のFreee見積書・請求書連携では `Freee_Item_Id__c` は不要 |

@@ -1,7 +1,4 @@
-Name,ProductType__c,BillingTiming__c,UnitPrice__c,AnnualMonthlyPrice__c,AnnualBulkBillingProduct__c,AnnualMonthlyProduct__c,InvoiceLineDisplayType__c,Freee_Item_Id__c,MRR_Target__c,ARR_Target__c,Freee商品ID確認,年一括商品確認,月額按分商品確認,入力確認メモ
-Rendery 年間利用料,継続費用,年一括,120000,10000,,Rendery 月額按分,年間利用料に集約,,true,true,未確認,対象,対象外,
-Rendery 月額按分,継続費用,毎月,10000,10000,Rendery 年間利用料,,個別表示,,true,true,未確認,対象外,対象,
-セキュリティオプション 年間利用料,オプション,年一括,60000,5000,,セキュリティオプション 月額按分,年間利用料に集約,,true,true,未確認,対象,対象外,
-セキュリティオプション 月額按分,オプション,毎月,5000,5000,セキュリティオプション 年間利用料,,個別表示,,true,true,未確認,対象外,対象,
-初期設定費用,初期費用,初回のみ,30000,,,個別表示,,false,false,未確認,対象外,対象外,更新時は再請求しない
-
+Name,ProductType__c,BillingTiming__c,UnitPrice__c,AnnualMonthlyPrice__c,InvoiceLineDisplayType__c,MRR_Target__c,ARR_Target__c,入力確認メモ
+Rendery 年間利用料,継続費用,年一括,120000,10000,年間利用料に集約,true,true,
+セキュリティオプション 年間利用料,オプション,年一括,60000,5000,年間利用料に集約,true,true,
+初期設定費用,初期費用,初回のみ,30000,,個別表示,false,false,更新時は再請求しない

@@ -58,11 +58,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CheckStatus__c</field>
-            <table>ContractLineItem__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>Total__c</field>
             <table>ContractLineItem__c</table>
         </columns>

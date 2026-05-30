@@ -15,24 +15,20 @@ docs/product-master-template.csv
 | `BillingTiming__c` | `毎月`、`年一括`、`初回のみ` のいずれか | 表記ゆれ、空欄 |
 | `UnitPrice__c` | 0以上の数値 | マイナス、カンマ入り文字列 |
 | `AnnualMonthlyPrice__c` | 年契約の月額按分用金額が入っている | 年一括商品なのに按分金額なし |
-| `AnnualBulkBillingProduct__c` | 月額按分商品から年一括商品を辿れる | 年契約商品なのに空欄 |
-| `AnnualMonthlyProduct__c` | 年一括商品から月額按分商品を辿れる | 年一括商品なのに空欄 |
 | `InvoiceLineDisplayType__c` | Freee請求明細上の表示方法が正しい | 年一括商品なのに個別表示 |
-| `Freee_Item_Id__c` | Freee請求書に出す商品はFreee商品IDが入っている | Freee未確認、別商品のID |
 | `MRR_Target__c` | MRR集計対象の商品だけtrue | 初期費用がtrue |
 | `ARR_Target__c` | ARR集計対象の商品だけtrue | 初期費用がtrue |
 
-## 年契約商品のセット確認
-年契約は、請求用の年一括商品と、売上予定・MRR/ARR・月次明細用の月額按分商品をセットで登録する。
+## 年契約商品の確認
+年契約は、請求明細では見積明細の商品マスタを使用し、契約月次明細では商品マスタの `AnnualMonthlyPrice__c` を月別売上予定額として使用する。
+`AnnualBulkBillingProduct__c` と `AnnualMonthlyProduct__c` は現行運用では使用しないため、CSV投入対象外とする。
 
 | 確認内容 | 期待値 |
 | --- | --- |
 | 年一括商品 | `BillingTiming__c = 年一括` |
-| 月額按分商品 | `BillingTiming__c = 毎月` |
-| 年一括商品の `AnnualMonthlyProduct__c` | 対応する月額按分商品 |
-| 月額按分商品の `AnnualBulkBillingProduct__c` | 対応する年一括商品 |
-| Freee請求明細 | 年一括商品を1明細として出す |
-| 契約月次明細 | 月額按分商品で12か月分作成する |
+| 年契約用月額料金 | `AnnualMonthlyPrice__c` に月別売上予定額が入っている |
+| Freee請求明細 | 年契約の年間利用料を1明細として出す |
+| 契約月次明細 | `AnnualMonthlyPrice__c` で12か月分作成する |
 
 ## 初期費用チェック
 | 確認内容 | 期待値 |
@@ -40,23 +36,19 @@ docs/product-master-template.csv
 | 請求タイミング | `初回のみ` |
 | 更新時の再請求 | しない |
 | MRR/ARR | 原則false |
-| Freee商品ID | Freee請求書に出す場合は必須 |
+| Freee商品ID | 現行の見積書・請求書連携では不要 |
 
-## Freee商品ID確認欄
-CSV投入前に、`Freee商品ID確認` に次のいずれかを記入する。
+## Freee商品IDについて
+現行のFreee見積書・請求書連携では、商品マスタのFreee商品ID/品目IDは送信しない。
+請求書連携で必須なのは、請求のFreee勘定科目とFreee勘定科目マッピングに登録するfreee勘定科目ID。
 
-| 値 | 意味 |
-| --- | --- |
-| 確認済み | Freeeの商品IDとSalesforce商品が一致している |
-| 未確認 | まだ確認していない。投入前に確認が必要 |
-| Freee対象外 | Freee請求書に出さない内部管理用商品 |
+将来、Freee品目を明細に直接紐づける要件が出た場合のみ、商品マスタへのFreee品目ID追加とCSV項目追加を再検討する。
 
 ## 投入後チェック
 | No | 確認内容 | 結果 |
 | --- | --- | --- |
 | 1 | 商品マスタ一覧で全商品が表示される |  |
-| 2 | 年一括商品と月額按分商品の参照関係が正しい |  |
-| 3 | Freee商品IDが必要な商品に入っている |  |
+| 2 | 年契約商品の `AnnualMonthlyPrice__c` が正しい |  |
+| 3 | 請求に設定するFreee勘定科目マッピングが登録されている |  |
 | 4 | 初期費用が初回のみになっている |  |
 | 5 | 見積明細、請求明細から商品マスタを参照できる |  |
-

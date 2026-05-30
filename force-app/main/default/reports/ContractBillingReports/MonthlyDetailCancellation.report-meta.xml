@@ -10,9 +10,6 @@
         <field>ContractLineItem__c$RelatedInvoice__c</field>
     </columns>
     <columns>
-        <field>ContractLineItem__c$InvoiceStatus__c</field>
-    </columns>
-    <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>ContractLineItem__c$RevenueAmount__c</field>
     </columns>

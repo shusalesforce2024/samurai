@@ -3,7 +3,7 @@
     <baseObject>ContractLineItem__c</baseObject>
     <category>forecasts</category>
     <deployed>true</deployed>
-    <description>契約月次明細を起点に、売上予定、MRR/ARR、請求状態、関連請求を確認するためのレポートタイプ。</description>
+    <description>契約月次明細を起点に、売上予定、MRR/ARR、関連請求を確認するためのレポートタイプ。</description>
     <label>契約月次明細レポート</label>
     <sections>
         <columns>
@@ -64,11 +64,6 @@
         <columns>
             <checkedByDefault>true</checkedByDefault>
             <field>ARR_Target__c</field>
-            <table>ContractLineItem__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>true</checkedByDefault>
-            <field>InvoiceStatus__c</field>
             <table>ContractLineItem__c</table>
         </columns>
         <columns>
