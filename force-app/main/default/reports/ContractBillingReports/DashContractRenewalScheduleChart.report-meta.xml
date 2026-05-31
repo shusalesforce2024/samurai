@@ -1,50 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
-    <chart>
-        <backgroundColor1>#FFFFFF</backgroundColor1>
-        <backgroundColor2>#FFFFFF</backgroundColor2>
-        <backgroundFadeDir>Diagonal</backgroundFadeDir>
-        <chartSummaries>
-            <aggregate>Sum</aggregate>
-            <axisBinding>y</axisBinding>
-            <column>Contract__c$ARR__c</column>
-        </chartSummaries>
-        <chartType>Line</chartType>
-        <enableHoverLabels>false</enableHoverLabels>
-        <expandOthers>true</expandOthers>
-        <groupingColumn>Contract__c$EndDate__c</groupingColumn>
-        <location>CHART_BOTTOM</location>
-        <showAxisLabels>true</showAxisLabels>
-        <showPercentage>false</showPercentage>
-        <showTotal>false</showTotal>
-        <showValues>false</showValues>
-        <size>Medium</size>
-        <summaryAxisRange>Auto</summaryAxisRange>
-        <textColor>#000000</textColor>
-        <textSize>12</textSize>
-        <titleColor>#000000</titleColor>
-        <titleSize>18</titleSize>
-    </chart>
+    <columns>
+        <field>Contract__c$Name</field>
+    </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Contract__c$ARR__c</field>
     </columns>
+    <columns>
+        <field>Contract__c$StartDate__c</field>
+    </columns>
+    <columns>
+        <field>Contract__c$ContractUpdate__c</field>
+    </columns>
     <format>Summary</format>
     <groupingsDown>
-        <dateGranularity>Month</dateGranularity>
         <field>Contract__c$EndDate__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>【グラフ】契約更新予定</name>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contract__c$Account__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>【営業】契約更新予定</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
     <reportType>ContractLifecycleReport__c</reportType>
     <scope>organization</scope>
-    <showDetails>false</showDetails>
+    <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showSubTotals>false</showSubTotals>
+    <sortColumn>Contract__c$ARR__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>Contract__c$StartDate__c</dateColumn>
         <interval>INTERVAL_CURRENT</interval>

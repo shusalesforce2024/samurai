@@ -7,5 +7,7 @@
     <relationshipLabel>Freee同期ログ</relationshipLabel>
     <relationshipName>FreeeSyncLogs</relationshipName>
     <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
     <type>Lookup</type>
 </CustomField>

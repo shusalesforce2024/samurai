@@ -10,7 +10,7 @@
         <field>ContractLineItem__c$ContractYearMonth__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>【グラフ】月別売上予定</name>
+    <name>【営業】月別売上予定</name>
     <params>
         <name>co</name>
         <value>1</value>

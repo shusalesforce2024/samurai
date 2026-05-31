@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>RelatedInvoice__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <label>関連請求</label>
+    <label>代表請求</label>
     <referenceTo>Invoice__c</referenceTo>
     <relationshipLabel>契約期間</relationshipLabel>
     <relationshipName>ContractPeriods</relationshipName>

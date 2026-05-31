@@ -5,9 +5,26 @@ private class InvoiceCancelRecreateServiceTest {
         Account accountRecord = new Account(Name = 'Cancel Account');
         insert accountRecord;
 
+        Contract__c contractRecord = new Contract__c(
+            Account__c = accountRecord.Id,
+            ContractName__c = 'Cancel Contract',
+            ContractUpdate__c = '月',
+            StartDate__c = Date.newInstance(2026, 6, 1),
+            Status__c = 'Draft'
+        );
+        insert contractRecord;
+
+        ContractPeriod__c periodRecord = new ContractPeriod__c(
+            Contract__c = contractRecord.Id,
+            PeriodStartDate__c = Date.newInstance(2026, 6, 1),
+            PeriodEndDate__c = Date.newInstance(2026, 6, 30)
+        );
+        insert periodRecord;
+
         Invoice__c invoiceRecord = new Invoice__c(
             Account__c = accountRecord.Id,
             Billing_Date__c = Date.newInstance(2026, 6, 20),
+            ContractPeriod__c = periodRecord.Id,
             Freee_Account_Item_Picklist__c = 'Sales',
             Freee_Invoice_Status__c = '送付待ち',
             Freee_Sync_Status__c = 'Processing',
@@ -17,6 +34,11 @@ private class InvoiceCancelRecreateServiceTest {
         );
         insert invoiceRecord;
 
+        update new ContractPeriod__c(
+            Id = periodRecord.Id,
+            RelatedInvoice__c = invoiceRecord.Id
+        );
+
         insert new InvoiceLine__c(
             Description__c = 'Usage Fee',
             Invoice__c = invoiceRecord.Id,
@@ -24,6 +46,20 @@ private class InvoiceCancelRecreateServiceTest {
             Tax_Rate__c = 10,
             Unit_Price__c = 1000
         );
+
+        ContractLineItem__c contractLine = new ContractLineItem__c(
+            Account__c = accountRecord.Id,
+            ContractPeriod__c = periodRecord.Id,
+            ContractYearMonth__c = '2026/06',
+            MasterContract__c = contractRecord.Id,
+            Month__c = '2026/06',
+            PeriodStartDate__c = Date.newInstance(2026, 6, 1),
+            PeriodEndDate__c = Date.newInstance(2026, 6, 30),
+            RelatedInvoice__c = invoiceRecord.Id,
+            RevenueAmount__c = 1000,
+            Total__c = 1000
+        );
+        insert contractLine;
 
         Test.startTest();
         InvoiceCancelService.cancelInvoice(invoiceRecord.Id);
@@ -49,6 +85,28 @@ private class InvoiceCancelRecreateServiceTest {
         System.assertEquals(invoiceRecord.Id, recreated.OriginalInvoice__c);
         System.assertEquals(false, recreated.Sent_To_Freee__c);
         System.assertEquals('決済待ち', recreated.PaymentStatus__c);
+
+        ContractPeriod__c updatedPeriod = [
+            SELECT RelatedInvoice__c
+            FROM ContractPeriod__c
+            WHERE Id = :periodRecord.Id
+            LIMIT 1
+        ];
+        System.assertEquals(recreatedId, updatedPeriod.RelatedInvoice__c);
+
+        ContractLineItem__c updatedLine = [
+            SELECT RelatedInvoice__c
+            FROM ContractLineItem__c
+            WHERE Id = :contractLine.Id
+            LIMIT 1
+        ];
+        System.assertEquals(recreatedId, updatedLine.RelatedInvoice__c);
+
+        System.assertEquals(2, [
+            SELECT COUNT()
+            FROM Invoice__c
+            WHERE ContractPeriod__c = :periodRecord.Id
+        ]);
 
         System.assertEquals(1, [
             SELECT COUNT()

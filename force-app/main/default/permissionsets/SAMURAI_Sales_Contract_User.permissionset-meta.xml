@@ -99,6 +99,31 @@
   </fieldPermissions>
   <fieldPermissions>
     <editable>false</editable>
+    <field>ContractLineItem__c.RelatedInvoiceCancelStatus__c</field>
+    <readable>true</readable>
+  </fieldPermissions>
+  <fieldPermissions>
+    <editable>false</editable>
+    <field>ContractLineItem__c.RelatedInvoiceFreeeInvoiceStatus__c</field>
+    <readable>true</readable>
+  </fieldPermissions>
+  <fieldPermissions>
+    <editable>false</editable>
+    <field>ContractLineItem__c.RelatedInvoiceFreeeSyncStatus__c</field>
+    <readable>true</readable>
+  </fieldPermissions>
+  <fieldPermissions>
+    <editable>false</editable>
+    <field>ContractLineItem__c.RelatedInvoicePaymentReceivedDate__c</field>
+    <readable>true</readable>
+  </fieldPermissions>
+  <fieldPermissions>
+    <editable>false</editable>
+    <field>ContractLineItem__c.RelatedInvoicePaymentStatus__c</field>
+    <readable>true</readable>
+  </fieldPermissions>
+  <fieldPermissions>
+    <editable>false</editable>
     <field>ContractLineItem__c.RevenueAmount__c</field>
     <readable>true</readable>
   </fieldPermissions>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>All</fullName>
-    <columns>Account__c</columns>
     <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>StageName__c</columns>
     <columns>ACV__c</columns>
     <columns>ARR__c</columns>
     <columns>MRR__c</columns>

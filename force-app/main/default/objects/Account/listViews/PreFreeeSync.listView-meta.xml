@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>AllAccounts</fullName>
+    <fullName>PreFreeeSync</fullName>
     <columns>ACCOUNT.NAME</columns>
     <columns>Freee_Partner_Id__c</columns>
     <filterScope>Everything</filterScope>
-    <label>すべての取引先</label>
+    <filters>
+        <field>Freee_Partner_Id__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Freee未同期取引先</label>
 </ListView>

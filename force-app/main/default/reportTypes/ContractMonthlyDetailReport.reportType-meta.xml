@@ -71,6 +71,31 @@
             <field>RelatedInvoice__c</field>
             <table>ContractLineItem__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>RelatedInvoiceFreeeInvoiceStatus__c</field>
+            <table>ContractLineItem__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>RelatedInvoicePaymentStatus__c</field>
+            <table>ContractLineItem__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>RelatedInvoicePaymentReceivedDate__c</field>
+            <table>ContractLineItem__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>RelatedInvoiceFreeeSyncStatus__c</field>
+            <table>ContractLineItem__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>RelatedInvoiceCancelStatus__c</field>
+            <table>ContractLineItem__c</table>
+        </columns>
         <masterLabel>契約月次明細</masterLabel>
     </sections>
 </ReportType>

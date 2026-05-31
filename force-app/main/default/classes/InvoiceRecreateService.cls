@@ -56,7 +56,39 @@ public with sharing class InvoiceRecreateService {
             insert linesToInsert;
         }
 
+        updateRepresentativeInvoice(recreated.Id, source.ContractPeriod__c);
+        repointContractLines(source.Id, recreated.Id);
+
         return recreated.Id;
+    }
+
+    private static void updateRepresentativeInvoice(Id recreatedInvoiceId, Id contractPeriodId) {
+        if (contractPeriodId == null) {
+            return;
+        }
+
+        update new ContractPeriod__c(
+            Id = contractPeriodId,
+            RelatedInvoice__c = recreatedInvoiceId
+        );
+    }
+
+    private static void repointContractLines(Id cancelledInvoiceId, Id recreatedInvoiceId) {
+        List<ContractLineItem__c> linesToUpdate = new List<ContractLineItem__c>();
+        for (ContractLineItem__c line : [
+            SELECT Id
+            FROM ContractLineItem__c
+            WHERE RelatedInvoice__c = :cancelledInvoiceId
+        ]) {
+            linesToUpdate.add(new ContractLineItem__c(
+                Id = line.Id,
+                RelatedInvoice__c = recreatedInvoiceId
+            ));
+        }
+
+        if (!linesToUpdate.isEmpty()) {
+            update linesToUpdate;
+        }
     }
 
     private static Invoice__c getInvoice(Id invoiceId) {

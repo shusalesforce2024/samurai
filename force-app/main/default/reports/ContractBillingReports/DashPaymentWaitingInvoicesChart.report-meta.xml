@@ -9,18 +9,18 @@
     </columns>
     <filter>
         <criteriaItems>
-            <column>Invoice__c$Payment_Date__c</column>
+            <column>Invoice__c$PaymentStatus__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
-            <operator>greaterOrEqual</operator>
-            <value>5/1/2026</value>
+            <operator>equals</operator>
+            <value>決済待ち</value>
         </criteriaItems>
         <criteriaItems>
-            <column>Invoice__c$Payment_Date__c</column>
+            <column>Invoice__c$CancelStatus__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
-            <operator>lessThan</operator>
-            <value>6/1/2026</value>
+            <operator>notEqual</operator>
+            <value>取消済</value>
         </criteriaItems>
         <language>ja</language>
     </filter>
@@ -35,7 +35,7 @@
         <field>Invoice__c$Account__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>【グラフ】決済待ち一覧</name>
+    <name>【経理】未入金請求</name>
     <params>
         <name>co</name>
         <value>1</value>

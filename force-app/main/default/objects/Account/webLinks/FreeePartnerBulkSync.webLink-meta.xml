@@ -3,7 +3,6 @@
     <fullName>FreeePartnerBulkSync</fullName>
     <availability>online</availability>
     <displayType>massActionButton</displayType>
-    <encodingKey>UTF-8</encodingKey>
     <linkType>page</linkType>
     <masterLabel>Freee取引先一括同期</masterLabel>
     <openType>replace</openType>

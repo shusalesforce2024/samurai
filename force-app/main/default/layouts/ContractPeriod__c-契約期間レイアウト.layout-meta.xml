@@ -98,7 +98,10 @@
         <fields>Billing_Date__c</fields>
         <fields>Payment_Date__c</fields>
         <fields>InvoiceAmount__c</fields>
+        <fields>Freee_Invoice_Status__c</fields>
         <fields>PaymentStatus__c</fields>
+        <fields>CancelStatus__c</fields>
+        <fields>OriginalInvoice__c</fields>
         <relatedList>Invoice__c.ContractPeriod__c</relatedList>
     </relatedLists>
     <relatedLists>

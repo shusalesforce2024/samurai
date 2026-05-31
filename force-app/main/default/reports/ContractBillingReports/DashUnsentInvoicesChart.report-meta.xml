@@ -1,45 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>ContractLineItem__c$Account__c</field>
-    </columns>
-    <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>ContractLineItem__c$RevenueAmount__c</field>
+        <field>Invoice__c$AmountWithTax__c</field>
     </columns>
     <filter>
         <criteriaItems>
-            <column>ContractLineItem__c$MRR_Target__c</column>
+            <column>Invoice__c$Freee_Invoice_Status__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
-            <value>1</value>
+            <value>送付待ち</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Invoice__c$CancelStatus__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>取消済</value>
         </criteriaItems>
         <language>ja</language>
     </filter>
-    <format>Matrix</format>
-    <groupingsAcross>
-        <dateGranularity>Day</dateGranularity>
-        <field>ContractLineItem__c$ContractYearMonth__c</field>
-        <sortOrder>Asc</sortOrder>
-    </groupingsAcross>
+    <format>Summary</format>
     <groupingsDown>
-        <dateGranularity>Day</dateGranularity>
-        <field>ContractLineItem__c$ProductMaster__c</field>
+        <dateGranularity>Month</dateGranularity>
+        <field>Invoice__c$Billing_Date__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>MRR</name>
+    <name>【経理】未送付請求</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>ContractMonthlyDetailReport__c</reportType>
+    <reportType>InvoiceBillingReport__c</reportType>
     <scope>organization</scope>
-    <showDetails>true</showDetails>
+    <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>ContractLineItem__c$PeriodStartDate__c</dateColumn>
+        <dateColumn>Invoice__c$Billing_Date__c</dateColumn>
         <interval>INTERVAL_CURRENT</interval>
     </timeFrameFilter>
 </Report>

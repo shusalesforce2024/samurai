@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>ContractLineItem__c$Account__c</field>
-    </columns>
-    <columns>
-        <field>ContractLineItem__c$MasterContract__c</field>
-    </columns>
-    <columns>
-        <field>ContractLineItem__c$RelatedInvoice__c</field>
-    </columns>
-    <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>ContractLineItem__c$RevenueAmount__c</field>
     </columns>
+    <filter>
+        <criteriaItems>
+            <column>ContractLineItem__c$ARR_Target__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <language>ja</language>
+    </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
         <field>ContractLineItem__c$ContractYearMonth__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>契約月次明細（解約確認）</name>
+    <name>【営業】ARR</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
     <reportType>ContractMonthlyDetailReport__c</reportType>
     <scope>organization</scope>
-    <showDetails>true</showDetails>
+    <showDetails>false</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>

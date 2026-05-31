@@ -107,6 +107,37 @@
     <name>Layout</name>
   </types>
   <types>
+    <members>Account.AllAccounts</members>
+    <members>Account.PreFreeeSync</members>
+    <members>ContractLineItem__c.All</members>
+    <members>ContractPeriod__c.All</members>
+    <members>ContractPeriod__c.UncreatedInvoicePeriods</members>
+    <members>Contract__c.All</members>
+    <members>Contract__c.AnnualRenewalReview</members>
+    <members>Contract__c.CreditContract</members>
+    <members>Contract__c.RenewalStoppedContracts</members>
+    <members>Event__c.All</members>
+    <members>Freee_Account_Item_Mappings__c.All</members>
+    <members>Freee_Configs__c.All</members>
+    <members>Freee_Sync_Log__c.All</members>
+    <members>InvoiceLine__c.All</members>
+    <members>Invoice__c.All</members>
+    <members>Invoice__c.CancelledInvoices</members>
+    <members>Invoice__c.CurrentMonthInvoices</members>
+    <members>Invoice__c.FreeeSyncFailedInvoices</members>
+    <members>Invoice__c.FreeeUnsyncedInvoices</members>
+    <members>Invoice__c.PaymentWaitingInvoices</members>
+    <members>Invoice__c.SendWaitingInvoices</members>
+    <members>Opportunity__c.All</members>
+    <members>Opportunity__c.remaind</members>
+    <members>ProductMaster__c.All</members>
+    <members>QuotationLine__c.All</members>
+    <members>QuotationLine__c.All1</members>
+    <members>Quotation__c.All</members>
+    <members>Quotation__c.All1</members>
+    <name>ListView</name>
+  </types>
+  <types>
     <members>SAMURAI</members>
     <name>CustomApplication</name>
   </types>
@@ -146,23 +177,15 @@
     <name>ReportFolder</name>
   </types>
   <types>
-    <members>ContractBillingReports/ARR</members>
-    <members>ContractBillingReports/CancellationSchedule</members>
-    <members>ContractBillingReports/ContractRenewalSchedule</members>
+    <members>ContractBillingReports/DashARRChart</members>
+    <members>ContractBillingReports/DashCanceledInvoicesChart</members>
     <members>ContractBillingReports/DashContractRenewalScheduleChart</members>
+    <members>ContractBillingReports/DashFreeeErrorInvoicesChart</members>
     <members>ContractBillingReports/DashMonthlyRevenueForecastChart</members>
     <members>ContractBillingReports/DashMRRChart</members>
+    <members>ContractBillingReports/DashPaymentScheduleChart</members>
     <members>ContractBillingReports/DashPaymentWaitingInvoicesChart</members>
-    <members>ContractBillingReports/EventRevenue</members>
-    <members>ContractBillingReports/MonthlyDetailAccounting</members>
-    <members>ContractBillingReports/MonthlyDetailCancellation</members>
-    <members>ContractBillingReports/MonthlyDetailSales</members>
-    <members>ContractBillingReports/MonthlyRevenueForecast</members>
-    <members>ContractBillingReports/MRR</members>
-    <members>ContractBillingReports/PaymentSchedule</members>
-    <members>ContractBillingReports/PaymentWaitingInvoices</members>
-    <members>ContractBillingReports/UnbilledPeriods</members>
-    <members>ContractManagementFolder/ContractReport</members>
+    <members>ContractBillingReports/DashUnsentInvoicesChart</members>
     <name>Report</name>
   </types>
   <types>
@@ -174,8 +197,13 @@
     <name>DashboardFolder</name>
   </types>
   <types>
-    <members>ContractBillingDashboards/ContractBillingOverview</members>
+    <members>ContractBillingDashboards/AccountingBillingDashboard</members>
+    <members>ContractBillingDashboards/SalesContractDashboard</members>
     <name>Dashboard</name>
+  </types>
+  <types>
+    <members>Home</members>
+    <name>FlexiPage</name>
   </types>
   <types>
     <members>Freee_Config.FreeeConfig</members>

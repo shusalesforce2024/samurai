@@ -73,6 +73,26 @@
         </columns>
         <columns>
             <checkedByDefault>true</checkedByDefault>
+            <field>Freee_Invoice_Id__c</field>
+            <table>Invoice__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Freee_Invoice_Number__c</field>
+            <table>Invoice__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Freee_Sync_Message__c</field>
+            <table>Invoice__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Freee_Last_Synced_At__c</field>
+            <table>Invoice__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
             <field>PaymentStatus__c</field>
             <table>Invoice__c</table>
         </columns>
