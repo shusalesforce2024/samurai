@@ -12,7 +12,6 @@
             <operator>equals</operator>
             <value>1</value>
         </criteriaItems>
-        <language>ja</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>

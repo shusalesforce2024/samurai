@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
   <types>
-    <members>Account</members>
     <members>Contract__c</members>
     <members>ContractLineItem__c</members>
     <members>ContractPeriod__c</members>
@@ -17,6 +16,11 @@
     <members>Quotation__c</members>
     <members>QuotationLine__c</members>
     <name>CustomObject</name>
+  </types>
+  <types>
+    <members>Account.Event__c</members>
+    <members>Account.Freee_Partner_Id__c</members>
+    <name>CustomField</name>
   </types>
   <types>
     <members>ContractRenewalInvoiceBatch</members>

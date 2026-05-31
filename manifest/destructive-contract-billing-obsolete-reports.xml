@@ -1,27 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
   <types>
-    <members>ContractBillingReports/ARR</members>
-    <members>ContractBillingReports/CanceledInvoices</members>
-    <members>ContractBillingReports/CancellationSchedule</members>
-    <members>ContractBillingReports/ContractRenewalSchedule</members>
-    <members>ContractBillingReports/EventRevenue</members>
-    <members>ContractBillingReports/FreeeErrorInvoices</members>
-    <members>ContractBillingReports/MRR</members>
-    <members>ContractBillingReports/MonthlyDetailAccounting</members>
-    <members>ContractBillingReports/MonthlyDetailCancellation</members>
-    <members>ContractBillingReports/MonthlyDetailSales</members>
-    <members>ContractBillingReports/MonthlyRevenueForecast</members>
-    <members>ContractBillingReports/PaymentSchedule</members>
-    <members>ContractBillingReports/PaymentWaitingInvoices</members>
-    <members>ContractBillingReports/UnbilledPeriods</members>
-    <members>ContractBillingReports/UnsentInvoices</members>
     <members>ContractManagementFolder/ContractReport</members>
     <name>Report</name>
-  </types>
-  <types>
-    <members>ContractBillingDashboards/ContractBillingOverview</members>
-    <name>Dashboard</name>
   </types>
   <version>64.0</version>
 </Package>

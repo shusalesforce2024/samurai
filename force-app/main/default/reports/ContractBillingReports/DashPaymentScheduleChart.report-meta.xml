@@ -19,7 +19,6 @@
             <operator>notEqual</operator>
             <value>取消済</value>
         </criteriaItems>
-        <language>ja</language>
     </filter>
     <format>Summary</format>
     <groupingsDown>
