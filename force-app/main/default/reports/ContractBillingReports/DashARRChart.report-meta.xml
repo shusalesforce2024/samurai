@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -12,14 +12,14 @@
             <operator>equals</operator>
             <value>1</value>
         </criteriaItems>
-    </filter>
+</filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
         <field>ContractLineItem__c$ContractYearMonth__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>【営業】ARR</name>
+    <name>縲仙霧讌ｭ縲羨RR</name>
     <params>
         <name>co</name>
         <value>1</value>
@@ -34,3 +34,4 @@
         <interval>INTERVAL_CURRENT</interval>
     </timeFrameFilter>
 </Report>
+

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -10,7 +10,7 @@
         <field>ContractLineItem__c$ContractYearMonth__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>【営業】月別売上予定</name>
+    <name>縲仙霧讌ｭ縲第怦蛻･螢ｲ荳贋ｺ亥ｮ・/name>
     <params>
         <name>co</name>
         <value>1</value>
@@ -21,7 +21,8 @@
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>ContractLineItem__c$PeriodStartDate__c</dateColumn>
-        <interval>INTERVAL_CURRENT</interval>
+        <dateColumn>ContractLineItem__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
     </timeFrameFilter>
 </Report>
+

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
         <field>Contract__c$Name</field>
@@ -23,7 +23,7 @@
         <field>Contract__c$Account__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>【営業】契約更新予定</name>
+    <name>縲仙霧讌ｭ縲大･醍ｴ・峩譁ｰ莠亥ｮ・/name>
     <params>
         <name>co</name>
         <value>1</value>
@@ -37,6 +37,7 @@
     <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>Contract__c$StartDate__c</dateColumn>
-        <interval>INTERVAL_CURRENT</interval>
+        <interval>INTERVAL_CURFY</interval>
     </timeFrameFilter>
 </Report>
+

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -10,23 +10,23 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
-            <value>決済待ち</value>
+            <value>豎ｺ貂亥ｾ・■</value>
         </criteriaItems>
         <criteriaItems>
             <column>Invoice__c$CancelStatus__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>notEqual</operator>
-            <value>取消済</value>
+            <value>蜿匁ｶ域ｸ・/value>
         </criteriaItems>
-    </filter>
+</filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Month</dateGranularity>
         <field>Invoice__c$Payment_Date__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>【経理】入金予定</name>
+    <name>縲千ｵ檎炊縲大・驥台ｺ亥ｮ・/name>
     <params>
         <name>co</name>
         <value>1</value>
@@ -38,6 +38,7 @@
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
         <dateColumn>Invoice__c$Payment_Date__c</dateColumn>
-        <interval>INTERVAL_CURRENT</interval>
+        <interval>INTERVAL_NEXT60</interval>
     </timeFrameFilter>
 </Report>
+
