@@ -1,0 +1,58 @@
+﻿[
+    {
+        "ObjectLabel":  "取引先",
+        "ObjectApi":  "Account",
+        "File":  "取引先.xlsx",
+        "Rows":  7619,
+        "Columns":  79,
+        "Headers":  "Id | IsDeleted | MasterRecordId | Name | Type | ParentId | BillingStreet | BillingCity | BillingState | BillingPostalCode | BillingCountry | BillingLatitude | BillingLongitude | BillingGeocodeAccuracy | BillingAddress | ShippingStreet | ShippingCity | ShippingState | ShippingPostalCode | ShippingCountry | ShippingLatitude | ShippingLongitude | ShippingGeocodeAccuracy | ShippingAddress | Phone | Fax | AccountNumber | Website | PhotoUrl | Sic | Industry | AnnualRevenue | NumberOfEmployees | Ownership | TickerSymbol | Description | Rating | Site | OwnerId | CreatedDate | CreatedById | LastModifiedDate | LastModifiedById | SystemModstamp | LastActivityDate | LastViewedDate | LastReferencedDate | IsPartner | IsCustomerPortal | ChannelProgramName | ChannelProgramLevelName | Jigsaw | JigsawCompanyId | CleanStatus | AccountSource | DunsNumber | Tradestyle | NaicsCode | NaicsDesc | YearStarted | SicDesc | DandbCompanyId | OperatingHoursId | CustomerPriority__c | SLA__c | Active__c | NumberofLocations__c | UpsellOpportunity__c | SLASerialNumber__c | SLAExpirationDate__c | SalesMemo__c | AnnualRevenueRange__c | Freee_Partner_Id__c | IndustryCategory__c | IndustryType__c | Labels__c | LinkedInProfileUrl__c | ContractCount__c | Event__c"
+    },
+    {
+        "ObjectLabel":  "取引先責任者",
+        "ObjectApi":  "Contact",
+        "File":  "取引先責任者.xlsx",
+        "Rows":  17756,
+        "Columns":  81,
+        "Headers":  "Id | IsDeleted | MasterRecordId | AccountId | LastName | FirstName | Salutation | Name | OtherStreet | OtherCity | OtherState | OtherPostalCode | OtherCountry | OtherLatitude | OtherLongitude | OtherGeocodeAccuracy | OtherAddress | MailingStreet | MailingCity | MailingState | MailingPostalCode | MailingCountry | MailingLatitude | MailingLongitude | MailingGeocodeAccuracy | MailingAddress | Phone | Fax | MobilePhone | HomePhone | OtherPhone | AssistantPhone | ReportsToId | Email | Title | Department | AssistantName | LeadSource | Birthdate | Description | OwnerId | HasOptedOutOfEmail | HasOptedOutOfFax | DoNotCall | CreatedDate | CreatedById | LastModifiedDate | LastModifiedById | SystemModstamp | LastActivityDate | LastCURequestDate | LastCUUpdateDate | LastViewedDate | LastReferencedDate | EmailBouncedReason | EmailBouncedDate | IsEmailBounced | PhotoUrl | Jigsaw | JigsawContactId | CleanStatus | IndividualId | Pronouns | GenderIdentity | IsPriorityRecord | ContactSource | BuyerAttributes | Level__c | Languages__c | EventParticipation__c | IsDecisionMaker__c | Labels__c | NextActivityDate__c | Product__c | Source__c | StripeAccountId__c | Coupon__c | Event__c | TelemarketingTarget__c | DMFaxConsent__c | MarketingStatus__c"
+    },
+    {
+        "ObjectLabel":  "商品マスタ",
+        "ObjectApi":  "ProductMaster__c",
+        "File":  "商品マスタ.xlsx",
+        "Rows":  35,
+        "Columns":  22,
+        "Headers":  "Id | OwnerId | IsDeleted | Name | CreatedDate | CreatedById | LastModifiedDate | LastModifiedById | SystemModstamp | LastActivityDate | LastViewedDate | LastReferencedDate | ARR_Target__c | AnnualBulkBillingProduct__c | AnnualMonthlyPrice__c | AnnualMonthlyProduct__c | BillingTiming__c | Freee_Item_Id__c | InvoiceLineDisplayType__c | MRR_Target__c | ProductType__c | UnitPrice__c"
+    },
+    {
+        "ObjectLabel":  "契約管理",
+        "ObjectApi":  "Contract__c",
+        "File":  "契約管理.xlsx",
+        "Rows":  161,
+        "Columns":  38,
+        "Headers":  "Id | OwnerId | IsDeleted | Name | CreatedDate | CreatedById | LastModifiedDate | LastModifiedById | SystemModstamp | LastActivityDate | LastViewedDate | LastReferencedDate | Account__c | ContractUpdate__c | ContractName__c | AnnualBillingMonthType__c | Event__c | NextInvoiceCreationDate__c | PreviousContract__c | RenewalConfirmationStatus__c | RenewalStop__c | SourceQuotation__c | CompanySigned__c | CustomerSignedDate__c | CustomerSigned__c | Description__c | EndDate__c | Pricebook2__c | StartDate__c | Status__c | ActivatedDate__c | Oppotunity__c | Payment__c | Plan__c | ExpectedDuration__c | ACV__c | ARR__c | MRR__c"
+    },
+    {
+        "ObjectLabel":  "契約期間",
+        "ObjectApi":  "ContractPeriod__c",
+        "File":  "契約期間.xlsx",
+        "Rows":  162,
+        "Columns":  20,
+        "Headers":  "Id | IsDeleted | Name | CreatedDate | CreatedById | LastModifiedDate | LastModifiedById | SystemModstamp | LastActivityDate | LastViewedDate | LastReferencedDate | Contract__c | ContractUpdate__c | FreeeSyncStatus__c | InvoiceCreationStatus__c | IsInitialPeriod__c | PeriodEndDate__c | PeriodStartDate__c | RelatedInvoice__c | RenewalCount__c"
+    },
+    {
+        "ObjectLabel":  "契約月次明細",
+        "ObjectApi":  "ContractLineItem__c",
+        "File":  "契約月次明細.xlsx",
+        "Rows":  1514,
+        "Columns":  37,
+        "Headers":  "Id | IsDeleted | Name | CreatedDate | CreatedById | LastModifiedDate | LastModifiedById | SystemModstamp | LastActivityDate | LastViewedDate | LastReferencedDate | MasterContract__c | Month__c | PeopleNumber__c | CheckStatus__c | Total__c | Account__c | Contact__c | Payment__c | Plan__c | ContractYearMonth__c | ARR_Target__c | ContractPeriod__c | InitialFee__c | InvoiceStatus__c | MRR_Target__c | PeriodEndDate__c | PeriodStartDate__c | QuotationLine__c | RelatedInvoice__c | RevenueAmount__c | ProductMaster__c | RelatedInvoiceCancelStatus__c | RelatedInvoiceFreeeInvoiceStatus__c | RelatedInvoiceFreeeSyncStatus__c | RelatedInvoicePaymentReceivedDate__c | RelatedInvoicePaymentStatus__c"
+    },
+    {
+        "ObjectLabel":  "取引",
+        "ObjectApi":  "Opportunity__c",
+        "File":  "取引.xlsx",
+        "Rows":  483,
+        "Columns":  38,
+        "Headers":  "Id | OwnerId | IsDeleted | Name | CreatedDate | CreatedById | LastModifiedDate | LastModifiedById | SystemModstamp | LastActivityDate | LastViewedDate | LastReferencedDate | ACV__c | ContractUpdate__c | Account__c | Contact__c | Description__c | ExpectedCloseDate__c | LostDate__c | LostReason__c | MRR__c | NextActivityDate__c | NextStep__c | Pricebook2__c | SourceChannel__c | StageName__c | StandardCloseDate__c | StandardProbability__c | StartDate__c | ExpectedRevenue__c | IsClosed__c | IsWon__c | Event__c | StandardStartDate__c | ARR__c | HearingStatus__c | ProposalStatus__c | ExpectedDuration__c"
+    }
+]
