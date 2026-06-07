@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types>
+    <members>SAMURAI</members>
+    <name>CustomApplication</name>
+  </types>
+  <types>
+    <members>Contract__c</members>
+    <members>ContractLineItem__c</members>
+    <members>ContractPeriod__c</members>
+    <members>Event__c</members>
+    <members>Freee_Account_Item_Mappings__c</members>
+    <members>Freee_Configs__c</members>
+    <members>Freee_Sync_Log__c</members>
+    <members>Invoice__c</members>
+    <members>InvoiceLine__c</members>
+    <members>Opportunity__c</members>
+    <members>ProductMaster__c</members>
+    <members>Quotation__c</members>
+    <members>QuotationLine__c</members>
+    <name>CustomTab</name>
+  </types>
+  <types>
+    <members>SAMURAI_UtilityBar</members>
+    <name>FlexiPage</name>
+  </types>
+  <types>
+    <members>SAMURAI_Contract_Billing_User</members>
+    <members>SAMURAI_Sales_Contract_User</members>
+    <members>SAMURAI_System_Admin</members>
+    <name>PermissionSet</name>
+  </types>
+  <version>64.0</version>
+</Package>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>SAMURAI</application>
@@ -61,15 +61,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>FreeePartnerController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>FreeePartnerBulkSyncController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>FreeePartnerBulkSyncService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>FreeePartnerController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -271,6 +271,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Level__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.MarketingStatus__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

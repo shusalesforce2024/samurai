@@ -20,6 +20,7 @@
   <types>
     <members>Account.Event__c</members>
     <members>Account.Freee_Partner_Id__c</members>
+    <members>Contact.MarketingStatus__c</members>
     <name>CustomField</name>
   </types>
   <types>
@@ -96,6 +97,7 @@
   </types>
   <types>
     <members>Account-Account Layout</members>
+    <members>Contact-Contact Layout</members>
     <members>Contract__c-Contract Clone Layout</members>
     <members>ContractLineItem__c-契約月次明細レイアウト</members>
     <members>ContractPeriod__c-契約期間レイアウト</members>
