@@ -17,7 +17,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>notEqual</operator>
-            <value>蜿匁ｶ域ｸ・/value>
+            <value>取消済</value>
         </criteriaItems>
 </filter>
     <format>Summary</format>
@@ -26,7 +26,7 @@
         <field>Invoice__c$Billing_Date__c</field>
         <sortOrder>Desc</sortOrder>
     </groupingsDown>
-    <name>縲千ｵ檎炊縲詮reee騾｣謳ｺ繧ｨ繝ｩ繝ｼ</name>
+    <name>【経理】freee連携エラー</name>
     <params>
         <name>co</name>
         <value>1</value>
@@ -41,4 +41,5 @@
         <interval>INTERVAL_CURRENT</interval>
     </timeFrameFilter>
 </Report>
+
 

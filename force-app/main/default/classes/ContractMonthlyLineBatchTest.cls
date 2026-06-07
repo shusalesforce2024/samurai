@@ -15,8 +15,8 @@ private class ContractMonthlyLineBatchTest {
 
         List<ContractLineItem__c> lines = getLines(contractRecord.Id);
         System.assertEquals(1, lines.size());
-        System.assertEquals('2026/6', lines[0].ContractYearMonth__c);
-        System.assertEquals('2026/6', lines[0].Month__c);
+        System.assertEquals('2026/06', lines[0].ContractYearMonth__c);
+        System.assertEquals('2026/06', lines[0].Month__c);
         System.assertEquals(contractRecord.Account__c, lines[0].Account__c);
         System.assertEquals(5, lines[0].PeopleNumber__c);
         System.assertEquals(500, lines[0].Total__c);
@@ -38,9 +38,9 @@ private class ContractMonthlyLineBatchTest {
 
         Set<String> yearMonths = getYearMonths(contractRecord.Id);
         System.assertEquals(2, yearMonths.size());
-        System.assert(yearMonths.contains('2026/6'));
-        System.assert(yearMonths.contains('2026/7'));
-        assertLineTotals(contractRecord.Id, '2026/7', 5, 500);
+        System.assert(yearMonths.contains('2026/06'));
+        System.assert(yearMonths.contains('2026/07'));
+        assertLineTotals(contractRecord.Id, '2026/07', 5, 500);
     }
 
     @isTest
@@ -63,8 +63,8 @@ private class ContractMonthlyLineBatchTest {
 
         Set<String> yearMonths = getYearMonths(contractRecord.Id);
         System.assertEquals(2, yearMonths.size());
-        System.assert(yearMonths.contains('2026/6'));
-        System.assert(yearMonths.contains('2026/7'));
+        System.assert(yearMonths.contains('2026/06'));
+        System.assert(yearMonths.contains('2026/07'));
     }
 
     @isTest
@@ -83,7 +83,7 @@ private class ContractMonthlyLineBatchTest {
 
         Set<String> yearMonths = getYearMonths(contractRecord.Id);
         System.assertEquals(1, yearMonths.size());
-        System.assert(yearMonths.contains('2026/6'));
+        System.assert(yearMonths.contains('2026/06'));
     }
 
     @isTest
@@ -101,9 +101,9 @@ private class ContractMonthlyLineBatchTest {
 
         Set<String> yearMonths = getYearMonths(contractRecord.Id);
         System.assertEquals(12, yearMonths.size());
-        System.assert(yearMonths.contains('2026/6'));
-        System.assert(yearMonths.contains('2027/5'));
-        assertLineTotals(contractRecord.Id, '2026/6', 5, 500);
+        System.assert(yearMonths.contains('2026/06'));
+        System.assert(yearMonths.contains('2027/05'));
+        assertLineTotals(contractRecord.Id, '2026/06', 5, 500);
     }
 
     @isTest
@@ -122,11 +122,11 @@ private class ContractMonthlyLineBatchTest {
 
         Set<String> yearMonths = getYearMonths(contractRecord.Id);
         System.assertEquals(24, yearMonths.size());
-        System.assert(yearMonths.contains('2026/6'));
-        System.assert(yearMonths.contains('2027/5'));
-        System.assert(yearMonths.contains('2027/6'));
-        System.assert(yearMonths.contains('2028/5'));
-        assertLineTotals(contractRecord.Id, '2027/6', 5, 500);
+        System.assert(yearMonths.contains('2026/06'));
+        System.assert(yearMonths.contains('2027/05'));
+        System.assert(yearMonths.contains('2027/06'));
+        System.assert(yearMonths.contains('2028/05'));
+        assertLineTotals(contractRecord.Id, '2027/06', 5, 500);
     }
 
     @isTest

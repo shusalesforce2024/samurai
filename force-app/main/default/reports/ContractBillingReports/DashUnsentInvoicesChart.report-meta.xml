@@ -10,14 +10,14 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
-            <value>騾∽ｻ伜ｾ・■</value>
+            <value>送付待ち</value>
         </criteriaItems>
         <criteriaItems>
             <column>Invoice__c$CancelStatus__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>notEqual</operator>
-            <value>蜿匁ｶ域ｸ・/value>
+            <value>取消済</value>
         </criteriaItems>
 </filter>
     <format>Summary</format>
@@ -26,7 +26,7 @@
         <field>Invoice__c$Billing_Date__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>縲千ｵ檎炊縲第悴騾∽ｻ倩ｫ区ｱ・/name>
+    <name>【経理】未送付請求</name>
     <params>
         <name>co</name>
         <value>1</value>
@@ -41,4 +41,5 @@
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>
+
 

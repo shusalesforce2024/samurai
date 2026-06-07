@@ -286,7 +286,7 @@ public with sharing class ContractMonthlyLineBatch
     }
 
     private static String formatYearMonth(Date sourceDate) {
-        return String.valueOf(sourceDate.year()) + '/' + String.valueOf(sourceDate.month());
+        return String.valueOf(sourceDate.year()) + '/' + String.valueOf(sourceDate.month()).leftPad(2, '0');
     }
 
     private static String getContractDisplayName(Contract__c contractRecord) {

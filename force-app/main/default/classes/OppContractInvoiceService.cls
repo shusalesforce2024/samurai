@@ -564,7 +564,7 @@ public with sharing class OppContractInvoiceService {
     }
 
     private static String formatYearMonth(Date sourceDate) {
-        return String.valueOf(sourceDate.year()) + '/' + String.valueOf(sourceDate.month());
+        return String.valueOf(sourceDate.year()) + '/' + String.valueOf(sourceDate.month()).leftPad(2, '0');
     }
 
     private static Decimal nullToZero(Decimal sourceValue) {

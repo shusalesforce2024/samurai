@@ -23,7 +23,7 @@
         <field>Contract__c$Account__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>縲仙霧讌ｭ縲大･醍ｴ・峩譁ｰ莠亥ｮ・/name>
+    <name>【営業】契約更新予定</name>
     <params>
         <name>co</name>
         <value>1</value>
@@ -40,4 +40,5 @@
         <interval>INTERVAL_CURFY</interval>
     </timeFrameFilter>
 </Report>
+
 

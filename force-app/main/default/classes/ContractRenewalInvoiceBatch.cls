@@ -414,7 +414,7 @@ public with sharing class ContractRenewalInvoiceBatch
     }
 
     private static String formatYearMonth(Date sourceDate) {
-        return String.valueOf(sourceDate.year()) + '/' + String.valueOf(sourceDate.month());
+        return String.valueOf(sourceDate.year()) + '/' + String.valueOf(sourceDate.month()).leftPad(2, '0');
     }
 
     private static Decimal calculateTax(Decimal amount) {

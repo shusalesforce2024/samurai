@@ -10,7 +10,7 @@
         <field>ContractLineItem__c$ContractYearMonth__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>縲仙霧讌ｭ縲第怦蛻･螢ｲ荳贋ｺ亥ｮ・/name>
+    <name>【営業】月別売上予定</name>
     <params>
         <name>co</name>
         <value>1</value>
@@ -25,4 +25,5 @@
         <interval>INTERVAL_CURFY</interval>
     </timeFrameFilter>
 </Report>
+
 

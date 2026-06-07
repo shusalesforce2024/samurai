@@ -10,7 +10,7 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
-            <value>蜿匁ｶ域ｸ・/value>
+            <value>取消済</value>
         </criteriaItems>
 </filter>
     <format>Summary</format>
@@ -19,7 +19,7 @@
         <field>Invoice__c$Billing_Date__c</field>
         <sortOrder>Desc</sortOrder>
     </groupingsDown>
-    <name>縲千ｵ檎炊縲大叙豸域ｸ医∩隲区ｱ・/name>
+    <name>【経理】取消済み請求</name>
     <params>
         <name>co</name>
         <value>1</value>
@@ -34,4 +34,5 @@
         <interval>INTERVAL_CURRENT</interval>
     </timeFrameFilter>
 </Report>
+
 
