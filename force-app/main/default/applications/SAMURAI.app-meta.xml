@@ -33,10 +33,10 @@
             <tab>ContractLineItem__c</tab>
         </mappings>
         <mappings>
-            <tab>Contract__c</tab>
+            <tab>ContractPeriod__c</tab>
         </mappings>
         <mappings>
-            <tab>ContractPeriod__c</tab>
+            <tab>Contract__c</tab>
         </mappings>
         <mappings>
             <tab>Event__c</tab>
