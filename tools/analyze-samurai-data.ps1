@@ -235,7 +235,7 @@ function Get-Cell($row, [int]$col) {
 
 function Is-ReadonlyColumn([string]$api, [string]$typeText) {
     $readonlyApis = @(
-        'IsDeleted','MasterRecordId','CreatedDate','CreatedById','LastModifiedDate','LastModifiedById',
+        'Id','IsDeleted','MasterRecordId','CreatedDate','CreatedById','LastModifiedDate','LastModifiedById',
         'SystemModstamp','LastActivityDate','LastViewedDate','LastReferencedDate','PhotoUrl',
         'BillingAddress','ShippingAddress','MailingAddress','OtherAddress'
     )
@@ -267,6 +267,13 @@ function Normalize-Phone([string]$value) {
         return "{0}-{1}-{2}" -f $digits.Substring(0,3), $digits.Substring(3,4), $digits.Substring(7,4)
     }
     return $v
+}
+
+function Normalize-Email([string]$value) {
+    if (-not $value) { return '' }
+    $fullwidthAt = [string][char]0xFF20
+    $v = $value.Trim() -replace [regex]::Escape($fullwidthAt), '@'
+    return (($v -split '[,\|]')[0]).Trim()
 }
 
 function Normalize-DateValue([string]$value, [bool]$asDateTime) {
@@ -327,7 +334,7 @@ function Normalize-ForSalesforce($col, [string]$value) {
     $type = [string]$col.TypeText
     $api = [string]$col.Api
     if ($type -match '電話' -or $api -match '(Phone|Fax)$') { return Normalize-Phone $v }
-    if ($api -match 'Email') { return ((($v -replace '＠','@') -split '[,\|]')[0]).Trim() }
+    if ($api -match 'Email') { return Normalize-Email $v }
     if ($type -match '日付/時間') { return Normalize-DateValue $v $true }
     if ($type -match '^日付$') { return Normalize-DateValue $v $false }
     if ($api -in @('DMFaxConsent__c','TelemarketingTarget__c')) { return $v }
@@ -462,12 +469,12 @@ foreach ($name in $objectMap.Keys) {
         if ($keyCol) {
             $groups = $dataRows | Group-Object -Property { Get-Cell $_ $keyCol.Col } | Where-Object { $_.Name -and $_.Count -gt 1 }
             foreach ($g in $groups | Select-Object -First 20) {
-                $issues += [pscustomobject]@{ Object=$objectApi; File="$name.xlsx"; Row='複数'; Column=$key; Issue="Duplicate candidate ($($g.Count) rows)"; Before=$g.Name; After=''; Action='Resolve if used as Upsert key' }
+                $issues += [pscustomobject]@{ Object=$objectApi; File="$name.xlsx"; Row='複数'; Column=$key; Issue="Duplicate candidate ($($g.Count) rows)"; Before=$g.Name; After=''; Action='Confirm before Insert' }
             }
         }
     }
 
-    $csvPath = Join-Path $OutputDir "$objectApi.upsert.csv"
+    $csvPath = Join-Path $OutputDir "$objectApi.insert.csv"
     $outRecords = @()
     foreach ($row in $dataRows) {
         $obj = [ordered]@{}
@@ -489,9 +496,8 @@ foreach ($name in $objectMap.Keys) {
     } else {
         $csvText = @(($csvColumns | ForEach-Object { '"' + ($_.Api -replace '"','""') + '"' }) -join ',')
     }
-    [System.IO.File]::WriteAllLines((Resolve-Path -LiteralPath $OutputDir).Path + "\$objectApi.upsert.csv", $csvText, [System.Text.UTF8Encoding]::new($false))
-    $externalCols = @($columns | Where-Object { $_.ExternalId } | ForEach-Object { $_.Api })
-    $csvPlan += [pscustomobject]@{ Object=$objectApi; Csv="$objectApi.upsert.csv"; Rows=$dataRows.Count; CsvColumns=$csvColumns.Count; ExternalIdColumns=($externalCols -join ';'); UnmappedColumns=($unmapped -join ';') }
+    [System.IO.File]::WriteAllLines((Resolve-Path -LiteralPath $OutputDir).Path + "\$objectApi.insert.csv", $csvText, [System.Text.UTF8Encoding]::new($false))
+    $csvPlan += [pscustomobject]@{ Object=$objectApi; Operation='Insert'; Csv="$objectApi.insert.csv"; Rows=$dataRows.Count; CsvColumns=$csvColumns.Count; UnmappedColumns=($unmapped -join ';') }
 }
 
 $summary | ConvertTo-Json -Depth 5 | Set-Content -Encoding UTF8 -LiteralPath (Join-Path $OutputDir 'summary.json')

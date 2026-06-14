@@ -29,6 +29,11 @@
                 <default>false</default>
                 <label>解除済み</label>
             </value>
+            <value>
+                <fullName>バウンス</fullName>
+                <default>false</default>
+                <label>バウンス</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

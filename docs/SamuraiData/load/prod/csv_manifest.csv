@@ -1,0 +1,8 @@
+"File","Rows","Columns","DirectDataLoader","SampleSalesforceIdLikeValues"
+"docs\SamuraiData\load\prod\01_ProductMaster__c.insert.csv","35","11","Yes","0"
+"docs\SamuraiData\load\prod\02_Account.insert.csv","7639","2","Yes","0"
+"docs\SamuraiData\load\prod\source\03_Contact.source.csv","17756","10","No","2"
+"docs\SamuraiData\load\prod\source\04_Opportunity__c.source.csv","483","24","No","0"
+"docs\SamuraiData\load\prod\source\05_Contract__c.source.csv","161","28","No","0"
+"docs\SamuraiData\load\prod\source\06_ContractPeriod__c.source.csv","162","10","No","0"
+"docs\SamuraiData\load\prod\source\07_ContractLineItem__c.source.csv","1514","22","No","0"
