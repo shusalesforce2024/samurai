@@ -1,0 +1,20 @@
+﻿sf.cmd : (node:28072) [EPERM] Error: EPERM: operation not permitted, open 'C:\Users\ShuKawanami(川波嵩)\AppData\Local\sf\p
+ackage.json'
+発生場所 行:26 文字:10
++   $out = & sf apex run --target-org prod --file $apexPath 2>&1 | Out- ...
++          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:28072) [E...f\package.json':String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+(Use `node --trace-warnings ...` to show where the warning was created)
+node:events:497
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EPERM: operation not permitted, open 'C:\Users\ShuKawanami(川波嵩)\.sf\sf-2026-06-21.log'
+Emitted 'error' event on ThreadStream instance at:
+    at Immediate.<anonymous> (C:\Program Files\sf\client\node_modules\thread-stream\index.js:369:12)
+    at process.processImmediate (node:internal/timers:485:21)
+
+Node.js v22.21.1
+

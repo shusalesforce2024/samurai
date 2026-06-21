@@ -39,6 +39,26 @@ private class Mig_FreeeInvoiceMigrationTest {
         }
     }
 
+    private class FreeeInvoiceOutOfPeriodListMock implements HttpCalloutMock {
+        public HttpResponse respond(HttpRequest request) {
+            System.assertEquals('GET', request.getMethod());
+            System.assert(request.getEndpoint().contains('/invoices?'));
+
+            HttpResponse response = new HttpResponse();
+            response.setStatusCode(200);
+            response.setHeader('Content-Type', 'application/json');
+            response.setBody(
+                '{"invoices":[' +
+                '{"id":777001,"invoice_number":"INV-OLD","partner_id":901,"partner_name":"Migration Account",' +
+                '"issue_date":"2023-07-10","payment_limit_date":"2023-08-31","subject":"Old usage",' +
+                '"total_amount":1100,"total_vat":100,"paid_amount":0,"unpaid_amount":1100,' +
+                '"sending_status":"sent","payment_status":"unpaid"}' +
+                ']}'
+            );
+            return response;
+        }
+    }
+
     @testSetup
     static void setupData() {
         insert new Freee_Configs__c(
@@ -193,6 +213,22 @@ private class Mig_FreeeInvoiceMigrationTest {
         System.assertNotEquals(null, lineWork.ConfirmedProductMaster__c);
         System.assertNotEquals(null, lineWork.ResolvedContractLineItem__c);
         System.assertEquals(Mig_FreeeInvoiceWorkService.PRODUCT_STATUS_CONFIRMED, lineWork.ProductResolveStatus__c);
+    }
+
+    @isTest
+    static void fetchBatchSkipsOutOfPeriodInvoicesReturnedByFreee() {
+        Test.setMock(HttpCalloutMock.class, new FreeeInvoiceOutOfPeriodListMock());
+
+        Test.startTest();
+        Database.executeBatch(new Mig_FreeeInvoiceFetchBatch(2026, 3, 6), 1);
+        Test.stopTest();
+
+        Integer workCount = [
+            SELECT COUNT()
+            FROM Mig_FreeeInvoiceWork__c
+            WHERE FreeeInvoiceId__c = '777001'
+        ];
+        System.assertEquals(0, workCount);
     }
 
     @isTest

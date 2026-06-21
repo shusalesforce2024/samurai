@@ -30,12 +30,16 @@ public with sharing class Mig_FreeeInvoiceFetchBatch implements Database.Batchab
         Integer emptyPages = 0;
         while (page <= MAX_PAGES_PER_EXECUTE && emptyPages == 0) {
             HttpResponse response = FreeeInvoiceService.getInvoices(startDate, endDate, page, perPage);
-            List<String> detailBodies = fetchDetailBodies(response.getBody());
-            Mig_FreeeInvoiceWorkService.ImportResult result = Mig_FreeeInvoiceWorkService.importResponse(response);
+            assertSuccessfulListResponse(response);
+            Integer headerCount = countInvoiceHeaders(response.getBody());
+            List<String> detailBodies = fetchDetailBodies(response.getBody(), startDate, endDate);
             for (String detailBody : detailBodies) {
-                Mig_FreeeInvoiceWorkService.importBody(detailBody);
+                Mig_FreeeInvoiceWorkService.ImportResult detailResult = Mig_FreeeInvoiceWorkService.importBody(detailBody);
+                if (detailResult.headerCount > 0) {
+                    deleteOutOfPeriodWorks(detailBody, startDate, endDate);
+                }
             }
-            if (result.headerCount == 0 || result.headerCount < perPage) {
+            if (headerCount == 0 || headerCount < perPage) {
                 emptyPages++;
             }
             page++;
@@ -57,9 +61,21 @@ public with sharing class Mig_FreeeInvoiceFetchBatch implements Database.Batchab
         }
     }
 
-    private List<String> fetchDetailBodies(String listResponseBody) {
+    private void assertSuccessfulListResponse(HttpResponse response) {
+        if (response == null) {
+            throw new Mig_FreeeInvoiceWorkService.Mig_FreeeInvoiceMigrationException('freee invoice list response is null.');
+        }
+        if (response.getStatusCode() < 200 || response.getStatusCode() >= 300) {
+            throw new Mig_FreeeInvoiceWorkService.Mig_FreeeInvoiceMigrationException(
+                'freee invoice list fetch failed. status=' + response.getStatusCode() +
+                ', body=' + Mig_FreeeInvoiceWorkService.left(response.getBody(), 32000)
+            );
+        }
+    }
+
+    private List<String> fetchDetailBodies(String listResponseBody, Date startDate, Date endDate) {
         List<String> detailBodies = new List<String>();
-        for (String freeeInvoiceId : Mig_FreeeInvoiceWorkService.extractInvoiceIds(listResponseBody)) {
+        for (String freeeInvoiceId : extractInvoiceIdsInPeriod(listResponseBody, startDate, endDate)) {
             Decimal invoiceId = Mig_FreeeInvoiceWorkService.toDecimal(freeeInvoiceId);
             if (invoiceId == null) {
                 continue;
@@ -78,5 +94,90 @@ public with sharing class Mig_FreeeInvoiceFetchBatch implements Database.Batchab
             detailBodies.add(detailResponse.getBody());
         }
         return detailBodies;
+    }
+
+    private Integer countInvoiceHeaders(String body) {
+        return extractInvoiceObjects(body).size();
+    }
+
+    private List<String> extractInvoiceIdsInPeriod(String body, Date startDate, Date endDate) {
+        List<String> invoiceIds = new List<String>();
+        for (Object invoiceObject : extractInvoiceObjects(body)) {
+            if (!(invoiceObject instanceof Map<String, Object>)) {
+                continue;
+            }
+            Map<String, Object> invoiceMap = (Map<String, Object>) invoiceObject;
+            Date billingDate = Mig_FreeeInvoiceWorkService.firstDate(
+                invoiceMap,
+                new List<String>{'issue_date', 'invoice_date', 'billing_date', 'date'}
+            );
+            if (!isInPeriod(billingDate, startDate, endDate)) {
+                continue;
+            }
+            String freeeInvoiceId = Mig_FreeeInvoiceWorkService.firstString(invoiceMap, new List<String>{'id', 'invoice_id'});
+            if (!String.isBlank(freeeInvoiceId)) {
+                invoiceIds.add(freeeInvoiceId);
+            }
+        }
+        return invoiceIds;
+    }
+
+    private void deleteOutOfPeriodWorks(String detailBody, Date startDate, Date endDate) {
+        Set<String> outOfPeriodKeys = new Set<String>();
+        FreeeConfigService.Config config = FreeeConfigService.getConfig();
+        for (Object invoiceObject : extractInvoiceObjects(detailBody)) {
+            if (!(invoiceObject instanceof Map<String, Object>)) {
+                continue;
+            }
+            Map<String, Object> invoiceMap = (Map<String, Object>) invoiceObject;
+            Date billingDate = Mig_FreeeInvoiceWorkService.firstDate(
+                invoiceMap,
+                new List<String>{'issue_date', 'invoice_date', 'billing_date', 'date'}
+            );
+            if (isInPeriod(billingDate, startDate, endDate)) {
+                continue;
+            }
+            String freeeInvoiceId = Mig_FreeeInvoiceWorkService.firstString(invoiceMap, new List<String>{'id', 'invoice_id'});
+            if (!String.isBlank(freeeInvoiceId)) {
+                outOfPeriodKeys.add(Mig_FreeeInvoiceWorkService.buildInvoiceExternalKey(config.companyId, freeeInvoiceId));
+            }
+        }
+        if (outOfPeriodKeys.isEmpty()) {
+            return;
+        }
+        delete [
+            SELECT Id
+            FROM Mig_FreeeInvoiceWork__c
+            WHERE ExternalKey__c IN :outOfPeriodKeys
+        ];
+    }
+
+    private Boolean isInPeriod(Date billingDate, Date startDate, Date endDate) {
+        return billingDate != null && billingDate >= startDate && billingDate <= endDate;
+    }
+
+    private List<Object> extractInvoiceObjects(String body) {
+        if (String.isBlank(body)) {
+            return new List<Object>();
+        }
+        Object parsed = JSON.deserializeUntyped(body);
+        if (parsed instanceof List<Object>) {
+            return (List<Object>) parsed;
+        }
+        if (!(parsed instanceof Map<String, Object>)) {
+            return new List<Object>();
+        }
+        Map<String, Object> root = (Map<String, Object>) parsed;
+        for (String key : new List<String>{'invoices', 'data', 'records'}) {
+            Object value = root.get(key);
+            if (value instanceof List<Object>) {
+                return (List<Object>) value;
+            }
+        }
+        Object invoiceObject = root.get('invoice');
+        if (invoiceObject instanceof Map<String, Object>) {
+            return new List<Object>{invoiceObject};
+        }
+        return new List<Object>();
     }
 }

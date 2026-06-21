@@ -1,0 +1,43 @@
+sf.cmd :  »   Warning: @salesforce/cli update available from 2.112.6 to 2.139.6.
+At line:24 char:10
++   $out = & sf apex run --target-org prod --file $apexPath 2>&1 | Out- ...
++          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( »   Warning: @...2.6 to 2.139.6.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Compiled successfully.
+Executed successfully.
+
+67.0 APEX_CODE,DEBUG;APEX_PROFILING,INFO
+Execute Anonymous: List<Id> accountIds = new List<Id>{ '001RB00001VTrxkYAD','001RB00001VTrvBYAT','001RB00001VTrFHYA1','001RB00001VTrPtYAL','001RB00001VTrHkYAL','001RB00001VTr17YAD','001RB00001VTrmVYAT','001RB00001VTr4oYAD','001RB00001VTqb8YAD','001RB00001VTrPFYA1','001RB00001VTrKiYAL','001RB00001VTr4mYAD','001RB00001VTrEyYAL','001RB00001VTqbLYAT','001RB00001VTrJVYA1','001RB00001VTrIKYA1','001RB00001VTrSUYA1','001RB00001VTrJ6YAL','001RB00001VTr8qYAD','001RB00001VTrJcYAL','001RB00001VTrGWYA1','001RB00001VTtHHYA1','001RB00001VTrS1YAL','001RB00001VTrm1YAD','001RB00001VTCYfYAP','001RB00001VTrwUYAT','001RB00001VTrJhYAL','001RB00001VTr1MYAT','001RB00001VTCYlYAP','001RB00001VTsahYAD','001RB00001VTqaPYAT','001RB00001VTr0eYAD','001RB00001VTqavYAD','001RB00001VTr8cYAD','001RB00001VTrK7YAL','001RB00001VTqiaYAD','001RB00001VTrJqYAL','001RB00001VTri8YAD','001RB00001VTrFAYA1','001RB00001VTrTcYAL','001RB00001VTr9hYAD','001RB00001VTrF3YAL','001RB00001VTrA5YAL','001RB00001VTrs8YAD','001RB00001VTr3EYAT','001RB00001VTr2LYAT','001RB00001VTrtBYAT','001RB00001VTr8hYAD','001RB00001VTqnxYAD','001RB00001VTsrEYAT' };
+Execute Anonymous: FreeePartnerBulkSyncService.Summary summary = FreeePartnerBulkSyncService.syncPartners(accountIds);
+Execute Anonymous: System.debug('BULK_SYNC_SUMMARY chunk=11 total=' + summary.totalCount + ' success=' + summary.successCount + ' skipped=' + summary.skippedCount + ' failed=' + summary.failedCount);
+01:41:36.71 (71041100)|USER_INFO|[EXTERNAL]|005d5000005X5qE|kazuki.senoo-t2tr@force.com|(GMT+09:00) 日本標準時 (Asia/Tokyo)|GMT+09:00
+01:41:36.71 (71082836)|EXECUTION_STARTED
+01:41:36.71 (71115268)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+01:42:03.247 (27247460982)|CODE_UNIT_STARTED|[EXTERNAL]|DuplicateDetector
+01:42:03.247 (27249662788)|CODE_UNIT_FINISHED|DuplicateDetector
+01:42:03.247 (27366175760)|USER_DEBUG|[3]|DEBUG|BULK_SYNC_SUMMARY chunk=11 total=50 success=50 skipped=0 failed=0
+01:42:03.247 (27395429402)|CODE_UNIT_STARTED|[EXTERNAL]|DuplicateDetector
+01:42:03.247 (27410238081)|CODE_UNIT_FINISHED|DuplicateDetector
+01:42:03.410 (27410515198)|CUMULATIVE_LIMIT_USAGE
+01:42:03.410 (27410515198)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 3 out of 100
+  Number of query rows: 51 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 50 out of 10000
+  Maximum CPU time: 1576 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 99 out of 100 ******* CLOSE TO LIMIT
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+01:42:03.410 (27410515198)|CUMULATIVE_LIMIT_USAGE_END
+
+01:42:03.247 (27410655218)|CODE_UNIT_FINISHED|execute_anonymous_apex
+01:42:03.247 (27410673691)|EXECUTION_FINISHED
+
