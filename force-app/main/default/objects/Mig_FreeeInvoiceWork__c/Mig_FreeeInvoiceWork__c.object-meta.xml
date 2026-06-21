@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Migration-only work object for importing existing freee invoices into Salesforce invoices.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <label>Freee請求移行Work</label>
+    <nameField>
+        <displayFormat>MFIW-{000000}</displayFormat>
+        <label>Freee請求移行Work番号</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Freee請求移行Work</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>FreeeInvoiceNumber__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PartnerName__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BillingDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>InvoiceAmount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ImportStatus__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InvoiceWork__c</fullName>
+    <label>Freee請求移行Work</label>
+    <referenceTo>Mig_FreeeInvoiceWork__c</referenceTo>
+    <relationshipLabel>Freee請求明細移行Work</relationshipLabel>
+    <relationshipName>InvoiceLineWorks</relationshipName>
+    <type>MasterDetail</type>
+</CustomField>

@@ -1,0 +1,1 @@
+Mig_FreeeInvoiceValidator.validateAll();

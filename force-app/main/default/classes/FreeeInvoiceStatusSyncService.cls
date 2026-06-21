@@ -73,6 +73,7 @@ public with sharing class FreeeInvoiceStatusSyncService {
 
     private static Invoice__c buildSyncedInvoice(Invoice__c source, HttpResponse response) {
         Map<String, Object> invoiceMap = extractInvoiceMap(response.getBody());
+        validateResponseInvoiceId(source, invoiceMap);
 
         Invoice__c invoiceToUpdate = new Invoice__c(Id = source.Id);
         invoiceToUpdate.Freee_Invoice_Status__c = mapSendStatus(firstString(invoiceMap, new List<String>{
@@ -111,6 +112,21 @@ public with sharing class FreeeInvoiceStatusSyncService {
         invoiceToUpdate.Freee_Sync_Message__c = null;
         invoiceToUpdate.Freee_Last_Synced_At__c = System.now();
         return invoiceToUpdate;
+    }
+
+    private static void validateResponseInvoiceId(Invoice__c source, Map<String, Object> invoiceMap) {
+        Decimal responseInvoiceId = firstDecimal(invoiceMap, new List<String>{'id', 'invoice_id'});
+        if (responseInvoiceId == null) {
+            return;
+        }
+        if (source.Freee_Invoice_Id__c != responseInvoiceId) {
+            throw new FreeeInvoiceStatusMismatchException(
+                'freee invoice id mismatch. Salesforce Freee_Invoice_Id__c='
+                + String.valueOf(source.Freee_Invoice_Id__c)
+                + ', freee response id='
+                + String.valueOf(responseInvoiceId)
+            );
+        }
     }
 
     private static Invoice__c buildFailedInvoice(Invoice__c source, String message) {
@@ -278,4 +294,6 @@ public with sharing class FreeeInvoiceStatusSyncService {
             System.debug('freee請求書ステータス同期ログ保存に失敗しました: ' + e.getMessage());
         }
     }
+
+    private class FreeeInvoiceStatusMismatchException extends Exception {}
 }

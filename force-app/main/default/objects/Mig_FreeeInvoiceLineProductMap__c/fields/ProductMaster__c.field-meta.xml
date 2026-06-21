@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProductMaster__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <label>商品マスタ</label>
+    <referenceTo>ProductMaster__c</referenceTo>
+    <relationshipLabel>Freee請求明細商品マッピング</relationshipLabel>
+    <relationshipName>MigFreeeInvoiceLineProductMaps</relationshipName>
+    <required>true</required>
+    <type>Lookup</type>
+</CustomField>

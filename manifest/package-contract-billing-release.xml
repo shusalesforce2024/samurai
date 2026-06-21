@@ -11,6 +11,9 @@
     <members>Freee_Sync_Log__c</members>
     <members>Invoice__c</members>
     <members>InvoiceLine__c</members>
+    <members>Mig_FreeeInvoiceLineProductMap__c</members>
+    <members>Mig_FreeeInvoiceLineWork__c</members>
+    <members>Mig_FreeeInvoiceWork__c</members>
     <members>Opportunity__c</members>
     <members>ProductMaster__c</members>
     <members>Quotation__c</members>
@@ -56,6 +59,14 @@
     <members>InvoiceCancelRecreateServiceTest</members>
     <members>InvoiceCancelService</members>
     <members>InvoiceRecreateService</members>
+    <members>Mig_FreeeInvoiceFetchBatch</members>
+    <members>Mig_FreeeInvoiceFinalizeService</members>
+    <members>Mig_FreeeInvoiceMigrationController</members>
+    <members>Mig_FreeeInvoiceMigrationTest</members>
+    <members>Mig_FreeeInvoiceProductResolver</members>
+    <members>Mig_FreeeInvoiceReferenceResolver</members>
+    <members>Mig_FreeeInvoiceValidator</members>
+    <members>Mig_FreeeInvoiceWorkService</members>
     <members>OppContractInvoiceController</members>
     <members>OppContractInvoiceService</members>
     <members>OppContractInvoiceServiceTest</members>
@@ -106,6 +117,9 @@
     <members>Freee_Sync_Log__c-Free連携ログレイアウト</members>
     <members>Invoice__c-請求書レイアウト</members>
     <members>InvoiceLine__c-請求明細レイアウト</members>
+    <members>Mig_FreeeInvoiceLineProductMap__c-Freee請求明細商品マッピングレイアウト</members>
+    <members>Mig_FreeeInvoiceLineWork__c-Freee請求明細移行Workレイアウト</members>
+    <members>Mig_FreeeInvoiceWork__c-Freee請求移行Workレイアウト</members>
     <members>Opportunity__c-Opportunity Clone Layout</members>
     <members>ProductMaster__c-商品マスタレイアウト</members>
     <members>Quotation__c-Quotation Layout</members>
@@ -134,6 +148,9 @@
     <members>Invoice__c.FreeeUnsyncedInvoices</members>
     <members>Invoice__c.PaymentWaitingInvoices</members>
     <members>Invoice__c.SendWaitingInvoices</members>
+    <members>Mig_FreeeInvoiceLineProductMap__c.All</members>
+    <members>Mig_FreeeInvoiceLineWork__c.All</members>
+    <members>Mig_FreeeInvoiceWork__c.All</members>
     <members>Opportunity__c.All</members>
     <members>Opportunity__c.remaind</members>
     <members>ProductMaster__c.All</members>
@@ -157,6 +174,9 @@
     <members>Freee_Sync_Log__c</members>
     <members>Invoice__c</members>
     <members>InvoiceLine__c</members>
+    <members>Mig_FreeeInvoiceLineProductMap__c</members>
+    <members>Mig_FreeeInvoiceLineWork__c</members>
+    <members>Mig_FreeeInvoiceWork__c</members>
     <members>Opportunity__c</members>
     <members>ProductMaster__c</members>
     <members>Quotation__c</members>
@@ -167,6 +187,7 @@
     <members>SAMURAI_Contract_Billing_User</members>
     <members>SAMURAI_Sales_Contract_User</members>
     <members>SAMURAI_System_Admin</members>
+    <members>Mig_FreeeInvoiceMigrationAdmin</members>
     <name>PermissionSet</name>
   </types>
   <types>

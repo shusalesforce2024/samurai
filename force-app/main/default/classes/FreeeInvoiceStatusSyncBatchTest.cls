@@ -3,11 +3,12 @@ private class FreeeInvoiceStatusSyncBatchTest {
     private class InvoiceStatusMock implements HttpCalloutMock {
         public HttpResponse respond(HttpRequest request) {
             System.assert(request.getEndpoint().contains('?company_id=12345'));
+            String invoiceId = extractInvoiceIdFromEndpoint(request.getEndpoint());
 
             HttpResponse response = new HttpResponse();
             response.setStatusCode(200);
             response.setHeader('Content-Type', 'application/json');
-            response.setBody('{"invoice":{"sending_status":"sent","payment_status":"paid","paid_amount":1100,"unpaid_amount":0,"paid_at":"2026-06-20","payment_date":"2026-06-30"}}');
+            response.setBody('{"invoice":{"id":' + invoiceId + ',"sending_status":"sent","payment_status":"paid","paid_amount":1100,"unpaid_amount":0,"paid_at":"2026-06-20","payment_date":"2026-06-30"}}');
             return response;
         }
     }
@@ -19,7 +20,19 @@ private class FreeeInvoiceStatusSyncBatchTest {
             HttpResponse response = new HttpResponse();
             response.setStatusCode(200);
             response.setHeader('Content-Type', 'application/json');
-            response.setBody('{"send_status":"draft","settlement_status":"unsettled","payment_amount":"bad-decimal","balance":2200,"paid_at":"bad-date","due_date":"2026-08-20"}');
+            response.setBody('{"id":1002,"send_status":"draft","settlement_status":"unsettled","payment_amount":"bad-decimal","balance":2200,"paid_at":"bad-date","due_date":"2026-08-20"}');
+            return response;
+        }
+    }
+
+    private class MismatchedInvoiceStatusMock implements HttpCalloutMock {
+        public HttpResponse respond(HttpRequest request) {
+            System.assert(request.getEndpoint().contains('?company_id=12345'));
+
+            HttpResponse response = new HttpResponse();
+            response.setStatusCode(200);
+            response.setHeader('Content-Type', 'application/json');
+            response.setBody('{"invoice":{"id":999999,"sending_status":"sent","payment_status":"paid"}}');
             return response;
         }
     }
@@ -67,6 +80,14 @@ private class FreeeInvoiceStatusSyncBatchTest {
             response.setBody(body);
             return response;
         }
+    }
+
+    private static String extractInvoiceIdFromEndpoint(String endpoint) {
+        Integer marker = endpoint.indexOf('/invoices/');
+        System.assert(marker >= 0, 'Endpoint must include /invoices/. endpoint=' + endpoint);
+        Integer startPos = marker + '/invoices/'.length();
+        Integer endPos = endpoint.indexOf('?', startPos);
+        return endpoint.substring(startPos, endPos);
     }
 
     @testSetup
@@ -332,6 +353,40 @@ private class FreeeInvoiceStatusSyncBatchTest {
         ];
         System.assertEquals('Failed', synced.Freee_Sync_Status__c);
         System.assert(synced.Freee_Sync_Message__c.contains('network failure'));
+    }
+
+    @isTest
+    static void syncMarksInvoiceFailedWhenFreeeResponseIdDoesNotMatch() {
+        Account accountRecord = new Account(Name = 'Mismatch Sync Account');
+        insert accountRecord;
+
+        Invoice__c invoiceRecord = new Invoice__c(
+            Account__c = accountRecord.Id,
+            Billing_Date__c = Date.newInstance(2026, 11, 20),
+            Freee_Account_Item_Picklist__c = 'Sales',
+            Freee_Invoice_Id__c = 1101,
+            Freee_Sync_Status__c = 'Success',
+            Payment_Date__c = Date.newInstance(2026, 11, 30),
+            Sent_To_Freee__c = true,
+            Subject__c = 'Mismatch Sync Invoice'
+        );
+        insert invoiceRecord;
+
+        Test.setMock(HttpCalloutMock.class, new MismatchedInvoiceStatusMock());
+
+        Test.startTest();
+        FreeeInvoiceStatusSyncService.syncInvoices(new List<Invoice__c>{ invoiceRecord });
+        Test.stopTest();
+
+        Invoice__c synced = [
+            SELECT Freee_Sync_Status__c,
+                   Freee_Sync_Message__c
+            FROM Invoice__c
+            WHERE Id = :invoiceRecord.Id
+            LIMIT 1
+        ];
+        System.assertEquals('Failed', synced.Freee_Sync_Status__c);
+        System.assert(synced.Freee_Sync_Message__c.contains('freee invoice id mismatch'));
     }
 
     @isTest

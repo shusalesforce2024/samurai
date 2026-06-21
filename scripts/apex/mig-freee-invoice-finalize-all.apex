@@ -1,0 +1,1 @@
+Mig_FreeeInvoiceFinalizeService.finalizeAllReady();

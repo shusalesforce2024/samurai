@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ConfirmedProductMaster__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>確定商品マスタ</label>
+    <referenceTo>ProductMaster__c</referenceTo>
+    <relationshipLabel>Freee請求明細移行Work(確定)</relationshipLabel>
+    <relationshipName>MigConfirmedInvoiceLineWorks</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>
