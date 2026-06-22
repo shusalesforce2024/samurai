@@ -104,7 +104,14 @@ public with sharing class ContractMonthlyLineBatch
             getInvoiceSummaryByContractId(contractRecords);
         Map<Id, List<ContractLineItem__c>> templateLinesByContractId =
             getTemplateLinesByContractId(contractRecords);
-        validateLineSourceExists(contractRecords, invoiceSummaryByContractId, templateLinesByContractId);
+        contractRecords = filterContractsWithLineSource(
+            contractRecords,
+            invoiceSummaryByContractId,
+            templateLinesByContractId
+        );
+        if (contractRecords.isEmpty()) {
+            return;
+        }
         Map<String, ContractPeriod__c> periodByKey =
             getExistingPeriodsByKey(contractRecords);
         List<PendingLineGroup> pendingLineGroups = new List<PendingLineGroup>();
@@ -290,26 +297,31 @@ public with sharing class ContractMonthlyLineBatch
         return periodByKey;
     }
 
-    private static void validateLineSourceExists(
+    private static List<Contract__c> filterContractsWithLineSource(
         List<Contract__c> contractRecords,
         Map<Id, InvoiceSummary> invoiceSummaryByContractId,
         Map<Id, List<ContractLineItem__c>> templateLinesByContractId
     ) {
+        List<Contract__c> validContracts = new List<Contract__c>();
         List<String> contractNamesWithoutInvoice = new List<String>();
         for (Contract__c contractRecord : contractRecords) {
             List<ContractLineItem__c> templateLines = templateLinesByContractId.get(contractRecord.Id);
             Boolean hasTemplate = templateLines != null && !templateLines.isEmpty();
-            if (!hasTemplate && !invoiceSummaryByContractId.containsKey(contractRecord.Id)) {
+            Boolean hasInvoiceSummary = invoiceSummaryByContractId.containsKey(contractRecord.Id);
+            if (hasTemplate || hasInvoiceSummary) {
+                validContracts.add(contractRecord);
+            } else {
                 contractNamesWithoutInvoice.add(getContractDisplayName(contractRecord));
             }
         }
 
         if (!contractNamesWithoutInvoice.isEmpty()) {
-            throw new ContractMonthlyLineException(
-                '契約に紐づく請求または契約月次明細が存在しないため、契約月次明細を作成できません: '
+            System.debug(LoggingLevel.WARN,
+                'Skipped ContractMonthlyLineBatch targets because no invoice or contract monthly line source exists: '
                 + String.join(contractNamesWithoutInvoice, ', ')
             );
         }
+        return validContracts;
     }
 
     private static List<PeriodPlan> buildTargetPeriods(

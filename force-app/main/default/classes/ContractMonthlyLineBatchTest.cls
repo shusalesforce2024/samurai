@@ -159,7 +159,7 @@ private class ContractMonthlyLineBatchTest {
     }
 
     @isTest
-    static void activatedContractWithoutInvoiceOrTemplateThrowsError() {
+    static void activatedContractWithoutInvoiceOrTemplateIsSkipped() {
         Contract__c contractRecord = createDraftContract('月', Date.newInstance(2026, 6, 15));
 
         Test.startTest();
@@ -167,9 +167,27 @@ private class ContractMonthlyLineBatchTest {
         Database.SaveResult result = Database.update(contractRecord, false);
         Test.stopTest();
 
-        System.assertEquals(false, result.isSuccess());
-        System.assert(result.getErrors()[0].getMessage().contains('契約に紐づく請求または契約月次明細が存在しない'));
+        System.assertEquals(true, result.isSuccess());
         System.assertEquals(0, getLines(contractRecord.Id).size());
+    }
+
+    @isTest
+    static void scheduledBatchSkipsInvalidContractAndProcessesValidContract() {
+        Contract__c invalidContract = createDraftContract('月', Date.newInstance(2026, 6, 15));
+        invalidContract.Status__c = 'Activated';
+        update invalidContract;
+
+        Contract__c validContract = createActivatedContract('月', Date.newInstance(2026, 6, 15));
+
+        Test.startTest();
+        Database.executeBatch(new ContractMonthlyLineBatch(Date.newInstance(2026, 6, 11)), 200);
+        Test.stopTest();
+
+        System.assertEquals(0, getLines(invalidContract.Id).size());
+        Set<String> validYearMonths = getYearMonths(validContract.Id);
+        System.assertEquals(2, validYearMonths.size());
+        System.assert(validYearMonths.contains('2026/06'));
+        System.assert(validYearMonths.contains('2026/07'));
     }
 
     private static Contract__c createActivatedContract(String contractUpdate, Date startDate) {

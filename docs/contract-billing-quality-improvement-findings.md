@@ -100,3 +100,24 @@ dev1検証結果:
 4. 旧スケジュール登録スクリプトとリリースチェックを現行設計に直す。
 5. dev1で対象テスト、dry-run、スケジュール確認を実施する。
 6. 本番リリース後に3バッチを登録し、翌朝の実行結果を確認する。
+
+## 追加実施結果（2026-06-23）
+
+### 最優先リスクへの対応
+
+本番運用前の横断チェックで、契約月次明細作成バッチが1件の不備契約によって全体停止する可能性を確認した。MRR/ARR・将来売上レポートの基礎データ作成に影響するため、請求関連に閉じない最優先リスクとして改修した。
+
+対応内容:
+
+- `ContractMonthlyLineBatch` で、請求または既存契約月次明細がない契約はスキップするように変更した。
+- Activated時処理で、作成元情報がない契約でも契約更新自体を失敗させないようにした。
+- Scheduled実行で、同一スコープ内に不備契約が含まれても、作成可能な契約は処理継続するようにした。
+- `ContractMonthlyLineBatchTest` に、不備契約スキップと正常契約継続処理のテストを追加した。
+- `scripts/apex/backfill-freee-invoice-amounts.apex` を、税額未設定時の明細税額合計補完にも対応させた。
+
+検証結果:
+
+- dev1 deploy: 成功。Deploy ID `0AfIe000001A3TUKA0`
+- `ContractMonthlyLineBatchTest`: 11/11 Pass
+- 主要回帰テスト: 39/39 Pass。Test Run Id `707Ie00001KhrAU`
+- dev1 readiness check: 全項目OK

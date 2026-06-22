@@ -888,3 +888,12 @@ Freee連携済み請求明細の編集不可
 | `FreeeInvoiceImportScheduler` | 有効 | freee自動作成・自動送付済み請求書をSalesforceへ取り込むため |
 | `FreeeInvoiceStatusSyncBatch` | 有効 | freee側の送付ステータス・決済ステータス・金額情報をSalesforceへ反映するため |
 | `ContractRenewalInvoiceBatch` | 停止 | Salesforce起点の更新請求作成はfreee自動作成と二重請求になるため |
+
+### 月次明細作成バッチの障害耐性
+
+| 機能 | 実装仕様 |
+|---|---|
+| 不備契約の扱い | 請求または既存契約月次明細がない契約はスキップし、他契約の月次明細作成を継続する |
+| Activated時処理 | 作成元情報がない場合でも契約更新自体は失敗させない |
+| Scheduled実行 | 同一スコープ内に不備契約が含まれても、作成可能な契約は処理する |
+| テスト | `ContractMonthlyLineBatchTest` で不備契約スキップ、正常契約継続処理を検証する |
