@@ -21,8 +21,8 @@ private class Mig_FreeeInvoiceMigrationTest {
 
             System.assert(request.getEndpoint().contains('/invoices?'));
             System.assert(request.getEndpoint().contains('company_id=12345'));
-            System.assert(request.getEndpoint().contains('start_issue_date=2026-03-01'));
-            System.assert(request.getEndpoint().contains('end_issue_date=2026-06-30'));
+            System.assert(request.getEndpoint().contains('start_billing_date='));
+            System.assert(request.getEndpoint().contains('end_billing_date='));
 
             HttpResponse response = new HttpResponse();
             response.setStatusCode(200);
@@ -229,6 +229,46 @@ private class Mig_FreeeInvoiceMigrationTest {
             WHERE FreeeInvoiceId__c = '777001'
         ];
         System.assertEquals(0, workCount);
+    }
+
+    @isTest
+    static void fetchBatchStartUsesSingleDateInTestsAndValidatesParameters() {
+        Mig_FreeeInvoiceFetchBatch batch = new Mig_FreeeInvoiceFetchBatch(2026, 3, 6);
+        List<Date> targetDates = new List<Date>();
+        for (Date targetDate : batch.start(null)) {
+            targetDates.add(targetDate);
+        }
+
+        System.assertEquals(1, targetDates.size());
+        System.assertEquals(Date.newInstance(2026, 3, 20), targetDates[0]);
+
+        List<Date> productionDates = batch.buildTargetDates(false);
+        System.assertEquals(Date.newInstance(2026, 3, 1), productionDates[0]);
+        System.assertEquals(Date.newInstance(2026, 6, 30), productionDates[productionDates.size() - 1]);
+        System.assertEquals(122, productionDates.size());
+
+        Mig_FreeeInvoiceFetchBatch rangedBatch = new Mig_FreeeInvoiceFetchBatch(
+            Date.newInstance(2026, 4, 11),
+            Date.newInstance(2026, 4, 20)
+        );
+        List<Date> rangedDates = rangedBatch.buildTargetDates(false);
+        System.assertEquals(10, rangedDates.size());
+        System.assertEquals(Date.newInstance(2026, 4, 11), rangedDates[0]);
+        System.assertEquals(Date.newInstance(2026, 4, 20), rangedDates[rangedDates.size() - 1]);
+
+        try {
+            new Mig_FreeeInvoiceFetchBatch(1999, 3, 6).start(null);
+            System.assert(false, 'Expected invalid targetYear.');
+        } catch (IllegalArgumentException e) {
+            System.assert(e.getMessage().contains('targetYear'));
+        }
+
+        try {
+            new Mig_FreeeInvoiceFetchBatch(2026, 7, 6).start(null);
+            System.assert(false, 'Expected invalid month range.');
+        } catch (IllegalArgumentException e) {
+            System.assert(e.getMessage().contains('startMonth/endMonth'));
+        }
     }
 
     @isTest

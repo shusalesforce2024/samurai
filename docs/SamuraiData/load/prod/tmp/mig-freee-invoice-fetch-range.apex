@@ -1,0 +1,1 @@
+Database.executeBatch(new Mig_FreeeInvoiceFetchBatch(Date.newInstance(2026, 6, 30), Date.newInstance(2026, 6, 30)), 1);

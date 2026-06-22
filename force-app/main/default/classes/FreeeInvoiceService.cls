@@ -39,10 +39,10 @@ public with sharing class FreeeInvoiceService {
             'per_page=' + String.valueOf(safePerPage)
         };
         if (startDate != null) {
-            params.add('start_issue_date=' + String.valueOf(startDate));
+            params.add('start_billing_date=' + String.valueOf(startDate));
         }
         if (endDate != null) {
-            params.add('end_issue_date=' + String.valueOf(endDate));
+            params.add('end_billing_date=' + String.valueOf(endDate));
         }
 
         HttpRequest req = new HttpRequest();

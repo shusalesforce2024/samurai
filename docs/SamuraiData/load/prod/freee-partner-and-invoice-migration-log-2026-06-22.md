@@ -87,4 +87,62 @@ Freee請求一覧APIはステータス200で疎通している。
 | Freee請求Work取得 | 対象データ未取得のため停止 | 0% |
 | Freee請求Work検証 | 未着手 | 0% |
 | Freee請求本反映 | 未着手 | 0% |
+---
 
+## 2026-06-22 追記: freee請求Work取得の最終結果
+
+### 実施内容
+
+- 対象期間: 2026-03-01 から 2026-06-30
+- 取得方式: freee APIのレート制限を避けるため、日別に `Mig_FreeeInvoiceFetchBatch` を実行
+- レート制限対策:
+  - `Mig_FreeeInvoiceFetchBatch` に日付範囲指定コンストラクタを追加
+  - `scripts/powershell/run-mig-freee-invoice-fetch-ranges.ps1` を作成
+  - freee API制限 `30 requests / 60 seconds` に合わせ、推定コールアウト数を見ながら待機
+
+### デプロイ結果
+
+| 対象 | 結果 |
+|---|---|
+| `Mig_FreeeInvoiceFetchBatch` 日付範囲指定対応 | prodデプロイ済み |
+| `Mig_FreeeInvoiceMigrationTest` テスト追加 | prodデプロイ済み |
+| dry-run | 7/7 Pass |
+| 本番デプロイ | 7/7 Pass |
+
+### 取得結果
+
+| 項目 | 件数 |
+|---|---:|
+| `Mig_FreeeInvoiceWork__c` | 130 |
+| `Mig_FreeeInvoiceLineWork__c` | 185 |
+
+### Workステータス内訳
+
+| ステータス | 件数 |
+|---|---:|
+| 要確認 | 128 |
+| 対象外 | 1 |
+| 反映可能 | 1 |
+
+### 確認結果ファイル
+
+- `docs/SamuraiData/load/prod/maps/prod_mig_invoice_work_count_final.json`
+- `docs/SamuraiData/load/prod/maps/prod_mig_invoice_work_status_final.json`
+- `docs/SamuraiData/load/prod/maps/prod_mig_invoice_line_work_count_final.json`
+- `docs/SamuraiData/load/prod/maps/prod_mig_invoice_work_by_billing_date_final.csv`
+
+### 現在の進捗
+
+| 工程 | 状態 | 進捗 |
+|---|---|---:|
+| 基本データ投入 | 完了 | 100% |
+| Account freee取引先同期 | 完了 | 100% |
+| freee請求Work取得 | 完了 | 100% |
+| freee請求Work検証・要確認解消 | 未完了 | 1% |
+| Salesforce請求・請求明細への本反映 | 未実施 | 0% |
+
+### 次アクション
+
+1. `Mig_FreeeInvoiceWork__c` の要確認 128件を確認する。
+2. 主な確認観点は、取引先参照、契約管理参照、契約期間参照、商品マスタ割当。
+3. 要確認を解消し、`反映可能` にした後で `Mig_FreeeInvoiceFinalizeService` による本反映を実施する。
