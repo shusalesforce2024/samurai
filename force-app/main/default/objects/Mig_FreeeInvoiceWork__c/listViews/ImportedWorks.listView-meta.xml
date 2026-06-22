@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ImportedWorks</fullName>
+    <columns>NAME</columns>
+    <columns>FreeeInvoiceNumber__c</columns>
+    <columns>PartnerName__c</columns>
+    <columns>BillingDate__c</columns>
+    <columns>InvoiceAmount__c</columns>
+    <columns>CreatedInvoice__c</columns>
+    <columns>ImportStatus__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ImportStatus__c</field>
+        <operation>equals</operation>
+        <value>反映済み</value>
+    </filters>
+    <label>反映済みfreee請求書取込Work</label>
+</ListView>

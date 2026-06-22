@@ -8,7 +8,7 @@ private class FreeeInvoiceStatusSyncBatchTest {
             HttpResponse response = new HttpResponse();
             response.setStatusCode(200);
             response.setHeader('Content-Type', 'application/json');
-            response.setBody('{"invoice":{"id":' + invoiceId + ',"sending_status":"sent","payment_status":"paid","paid_amount":1100,"unpaid_amount":0,"paid_at":"2026-06-20","payment_date":"2026-06-30"}}');
+            response.setBody('{"invoice":{"id":' + invoiceId + ',"sending_status":"sent","payment_status":"paid","paid_at":"2026-06-20","payment_date":"2026-06-30"}}');
             return response;
         }
     }
@@ -117,6 +117,7 @@ private class FreeeInvoiceStatusSyncBatchTest {
             Freee_Account_Item_Picklist__c = 'Sales',
             Freee_Invoice_Id__c = 999,
             Freee_Sync_Status__c = 'Success',
+            InvoiceAmount__c = 1100,
             Payment_Date__c = Date.newInstance(2026, 7, 31),
             Sent_To_Freee__c = true,
             Subject__c = 'Sync Invoice'
@@ -160,9 +161,10 @@ private class FreeeInvoiceStatusSyncBatchTest {
                 Account__c = accountRecord.Id,
                 Billing_Date__c = Date.newInstance(2026, 6, 20),
                 Freee_Account_Item_Picklist__c = 'Sales',
-                Freee_Invoice_Id__c = 2001,
-                Freee_Sync_Status__c = 'Success',
-                Payment_Date__c = Date.newInstance(2026, 7, 31),
+            Freee_Invoice_Id__c = 2001,
+            Freee_Sync_Status__c = 'Success',
+            InvoiceAmount__c = 1100,
+            Payment_Date__c = Date.newInstance(2026, 7, 31),
                 Sent_To_Freee__c = true,
                 Subject__c = 'Multiple Sync Invoice 1'
             ),
@@ -170,9 +172,10 @@ private class FreeeInvoiceStatusSyncBatchTest {
                 Account__c = accountRecord.Id,
                 Billing_Date__c = Date.newInstance(2026, 6, 20),
                 Freee_Account_Item_Picklist__c = 'Sales',
-                Freee_Invoice_Id__c = 2002,
-                Freee_Sync_Status__c = 'Success',
-                Payment_Date__c = Date.newInstance(2026, 7, 31),
+            Freee_Invoice_Id__c = 2002,
+            Freee_Sync_Status__c = 'Success',
+            InvoiceAmount__c = 1100,
+            Payment_Date__c = Date.newInstance(2026, 7, 31),
                 Sent_To_Freee__c = true,
                 Subject__c = 'Multiple Sync Invoice 2'
             )
@@ -217,6 +220,7 @@ private class FreeeInvoiceStatusSyncBatchTest {
             SELECT Id,
                    Freee_Invoice_Id__c,
                    Freee_Invoice_Status__c,
+                   InvoiceAmount__c,
                    PaymentStatus__c
             FROM Invoice__c
             WHERE Id = :invoiceRecord.Id
@@ -254,6 +258,7 @@ private class FreeeInvoiceStatusSyncBatchTest {
             Freee_Account_Item_Picklist__c = 'Sales',
             Freee_Invoice_Id__c = 1002,
             Freee_Sync_Status__c = 'Success',
+            InvoiceAmount__c = 2200,
             Payment_Date__c = Date.newInstance(2026, 7, 31),
             Sent_To_Freee__c = true,
             Subject__c = 'Alternate Sync Invoice'
@@ -280,7 +285,7 @@ private class FreeeInvoiceStatusSyncBatchTest {
         ];
         System.assertNotEquals(null, synced.Freee_Invoice_Status__c);
         System.assertNotEquals(null, synced.PaymentStatus__c);
-        System.assertEquals(null, synced.PaidAmount__c);
+        System.assertEquals(0, synced.PaidAmount__c);
         System.assertEquals(2200, synced.UnpaidAmount__c);
         System.assertEquals(null, synced.PaymentReceivedDate__c);
         System.assertEquals(Date.newInstance(2026, 8, 20), synced.Payment_Date__c);

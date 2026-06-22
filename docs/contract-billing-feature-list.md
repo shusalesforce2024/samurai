@@ -361,8 +361,9 @@ FreeeInvoiceService
 処理:
 
 ```text
-翌月分の契約期間、契約月次明細、請求、請求明細を作成する。
-作成した請求をQueueableへ渡し、別トランザクションでFreee請求書を自動作成する。
+MRR/ARR・将来売上レポート用の契約月次明細は、`ContractMonthlyLineBatch` が毎月11日深夜に先行作成する。
+請求・請求明細・Freee請求書はSalesforce側の更新請求バッチでは作成せず、freee側の自動作成・自動送付を正とする。
+freee請求書取込後、対象となる契約月次明細の関連請求を更新する。
 同一契約・同一期間の契約期間が存在する場合は作成しない。
 ```
 
@@ -393,8 +394,9 @@ FreeeInvoiceFacade
 処理:
 
 ```text
-次年度契約開始月の前月11日に、次年度分の契約期間、契約月次明細、請求、請求明細を作成する。
-作成した請求をQueueableへ渡し、別トランザクションでFreee請求書を自動作成する。
+次年度分の契約月次明細は、次年度契約開始月の前月11日深夜に `ContractMonthlyLineBatch` が先行作成する。
+請求・請求明細・Freee請求書はSalesforce側の更新請求バッチでは作成せず、freee側の自動作成・自動送付を正とする。
+freee請求書取込後、年一括請求に対応する12か月分の契約月次明細へ関連請求を設定する。
 同一契約・同一期間の契約期間が存在する場合は作成しない。
 ```
 
@@ -815,3 +817,74 @@ Freee連携済み請求明細の編集不可
 | API名 | 理由 |
 | --- | --- |
 | `MonthlyDetailCancellation` | 解約確認は契約ライフサイクル/解約予定レポートで確認し、契約月次明細ベースの請求実績確認と混在させないため |
+## 追記: freee請求書取込機能
+
+### Apex
+
+| 機能 | 資産 | 内容 |
+|---|---|---|
+| freee請求書通常取込Service | `FreeeInvoiceImportService` | 通常運用の対象期間を計算し、既存のfreee請求書取得バッチを起動する |
+| freee請求書通常取込Scheduler | `FreeeInvoiceImportScheduler` | 夜間スケジュール実行用の入口 |
+| freee請求書手動取込Controller | `FreeeInvoiceImportManualController` | Visualforce画面から対象期間を指定して取込を起動する |
+| freee請求書Work一括本反映Controller | `FreeeInvoiceWorkBulkActionController` | リストビューで選択したWorkを請求・請求明細へ本反映する |
+
+### 画面・ボタン
+
+| 機能 | 配置先 | 内容 |
+|---|---|---|
+| freee請求書を取込 | `Mig_FreeeInvoiceWork__c` リストビュー | freee請求書を取得してWorkへ保存する |
+| freee請求書を再検証 | `Mig_FreeeInvoiceWork__c` リストビュー | Workの参照解決・検証結果を再確認する |
+| freee請求書を一括本反映 | `Mig_FreeeInvoiceWork__c` リストビュー | `反映可能` のWorkをSalesforce請求へ反映する |
+
+### バッチ運用
+
+| バッチ | 方針 | 理由 |
+|---|---|---|
+| `ContractMonthlyLineBatch` | 継続 | MRR/ARR・将来売上レポート用の契約月次明細を先に作成するため |
+| `ContractRenewalInvoiceBatch` | 停止 | Salesforceで請求・請求明細・Freee請求書まで作成する旧更新請求バッチであり、freee自動作成・自動送付と二重請求になるため |
+| `FreeeInvoiceImportScheduler` | 新規利用 | freeeで作成された請求書をSalesforceへ取り込むため |
+| `FreeeInvoiceStatusSyncBatch` | 継続 | freee送付ステータス・決済ステータスを同期するため |
+
+通常運用の作成順序:
+
+```text
+1. ContractMonthlyLineBatch が契約月次明細を作成
+2. freee側で請求書を自動作成・自動送付
+3. FreeeInvoiceImportScheduler または手動取込でfreee請求書をWorkへ取込
+4. Work検証・本反映でInvoice__c / InvoiceLine__cを作成または更新
+5. 対象契約期間内の契約月次明細 RelatedInvoice__c を更新
+6. FreeeInvoiceStatusSyncBatch が送付ステータス・決済ステータスを同期
+```
+
+## 追記: freee取込・金額同期の最新機能（2026-06-23更新）
+
+### 更新対象機能
+
+| 区分 | 資産 | 内容 |
+|---|---|---|
+| Apex Service | `Mig_FreeeInvoiceWorkService` | freee請求取込Work作成時に、請求金額、税額、入金額、未入金額を設定する |
+| Apex Batch | `FreeeInvoiceStatusSyncBatch` | Salesforce請求の送付ステータス、決済ステータス、金額系項目をfreeeから日次同期する |
+| Apex Service | `FreeeInvoiceStatusSyncService` | 決済ステータスと請求金額から、入金額・未入金額を統一ルールで算出する |
+| Apex Test | `Mig_FreeeInvoiceMigrationTest` | freee取込時の税額、入金額、未入金額の設定を検証する |
+| Apex Test | `FreeeInvoiceStatusSyncBatchTest` | 日次同期時の金額更新を検証する |
+| Apex Script | `scripts/apex/backfill-freee-invoice-amounts.apex` | 既存請求・既存Workの入金額、未入金額を一度だけ補正する |
+| Schedule Script | `scripts/apex/schedule-contract-billing-batches.apex` | 通常運用で必要なバッチのみを登録し、旧更新請求バッチを停止する |
+| Check Script | `scripts/check-contract-billing-release-readiness.ps1` | 権限、Apex資産、スケジュール登録状況、旧バッチ停止状態を確認する |
+
+### 金額同期仕様
+
+| 項目 | 実装仕様 |
+|---|---|
+| 請求金額 | freee請求書の請求金額をSalesforceへ保持 |
+| 税額 | freee請求書ヘッダー税額を優先。取得不可の場合は明細税額合計 |
+| 入金額 | 決済ステータスが「決済済み」の場合は請求金額、それ以外は0 |
+| 未入金額 | 決済ステータスが「決済待ち」の場合は請求金額、それ以外は0 |
+
+### スケジュール対象
+
+| バッチ | 状態 | 理由 |
+|---|---|---|
+| `ContractMonthlyLineBatch` | 有効 | 契約月次明細を毎月11日深夜に作成し、MRR/ARR・将来売上を維持するため |
+| `FreeeInvoiceImportScheduler` | 有効 | freee自動作成・自動送付済み請求書をSalesforceへ取り込むため |
+| `FreeeInvoiceStatusSyncBatch` | 有効 | freee側の送付ステータス・決済ステータス・金額情報をSalesforceへ反映するため |
+| `ContractRenewalInvoiceBatch` | 停止 | Salesforce起点の更新請求作成はfreee自動作成と二重請求になるため |

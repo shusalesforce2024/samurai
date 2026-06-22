@@ -87,16 +87,9 @@ public with sharing class FreeeInvoiceStatusSyncService {
             'settlement_status',
             'deal_status'
         }));
-        invoiceToUpdate.PaidAmount__c = firstDecimal(invoiceMap, new List<String>{
-            'paid_amount',
-            'payment_amount',
-            'settled_amount'
-        });
-        invoiceToUpdate.UnpaidAmount__c = firstDecimal(invoiceMap, new List<String>{
-            'unpaid_amount',
-            'remaining_amount',
-            'balance'
-        });
+        Decimal invoiceAmount = resolveInvoiceAmount(source, invoiceMap);
+        invoiceToUpdate.PaidAmount__c = resolvePaidAmount(invoiceMap, invoiceAmount, invoiceToUpdate.PaymentStatus__c);
+        invoiceToUpdate.UnpaidAmount__c = resolveUnpaidAmount(invoiceMap, invoiceAmount, invoiceToUpdate.PaymentStatus__c);
         invoiceToUpdate.PaymentReceivedDate__c = firstDate(invoiceMap, new List<String>{
             'paid_at',
             'settlement_date',
@@ -145,6 +138,46 @@ public with sharing class FreeeInvoiceStatusSyncService {
         if (accountItem == null || String.isBlank(String.valueOf(accountItem))) {
             invoiceToUpdate.Freee_Account_Item_Picklist__c = DEFAULT_ACCOUNT_ITEM;
         }
+    }
+
+    private static Decimal resolveInvoiceAmount(Invoice__c source, Map<String, Object> invoiceMap) {
+        Decimal responseAmount = firstDecimal(invoiceMap, new List<String>{'total_amount', 'amount', 'invoice_amount'});
+        if (responseAmount != null) {
+            return responseAmount;
+        }
+
+        Object sourceAmount = source.getPopulatedFieldsAsMap().get('InvoiceAmount__c');
+        if (sourceAmount instanceof Decimal) {
+            return (Decimal) sourceAmount;
+        }
+        if (sourceAmount != null) {
+            try {
+                return Decimal.valueOf(String.valueOf(sourceAmount));
+            } catch (Exception e) {
+                return null;
+            }
+        }
+        return null;
+    }
+
+    private static Decimal resolvePaidAmount(Map<String, Object> invoiceMap, Decimal invoiceAmount, String paymentStatus) {
+        if (invoiceAmount != null && paymentStatus == PAYMENT_DONE) {
+            return invoiceAmount;
+        }
+        if (invoiceAmount != null && paymentStatus == PAYMENT_WAITING) {
+            return 0;
+        }
+        return firstDecimal(invoiceMap, new List<String>{'paid_amount', 'payment_amount', 'settled_amount'});
+    }
+
+    private static Decimal resolveUnpaidAmount(Map<String, Object> invoiceMap, Decimal invoiceAmount, String paymentStatus) {
+        if (invoiceAmount != null && paymentStatus == PAYMENT_DONE) {
+            return 0;
+        }
+        if (invoiceAmount != null && paymentStatus == PAYMENT_WAITING) {
+            return invoiceAmount;
+        }
+        return firstDecimal(invoiceMap, new List<String>{'unpaid_amount', 'remaining_amount', 'balance'});
     }
 
     private static Map<String, Object> extractInvoiceMap(String body) {

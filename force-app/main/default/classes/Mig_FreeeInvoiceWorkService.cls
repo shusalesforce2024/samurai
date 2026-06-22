@@ -116,9 +116,10 @@ public with sharing class Mig_FreeeInvoiceWorkService {
         Date billingDate = firstDate(invoiceMap, new List<String>{'issue_date', 'invoice_date', 'billing_date', 'date'});
         Date dueDate = firstDate(invoiceMap, new List<String>{'payment_limit_date', 'due_date', 'payment_date'});
         Decimal amount = firstDecimal(invoiceMap, new List<String>{'total_amount', 'amount', 'invoice_amount'});
-        Decimal taxAmount = firstDecimal(invoiceMap, new List<String>{'total_vat', 'tax_amount', 'vat'});
-        Decimal paidAmount = firstDecimal(invoiceMap, new List<String>{'paid_amount', 'payment_amount', 'settled_amount'});
-        Decimal unpaidAmount = firstDecimal(invoiceMap, new List<String>{'unpaid_amount', 'remaining_amount', 'balance'});
+        Decimal taxAmount = resolveTaxAmount(invoiceMap);
+        String paymentStatus = mapPaymentStatus(firstString(invoiceMap, new List<String>{'payment_status', 'settlement_status', 'deal_status'}));
+        Decimal paidAmount = resolvePaidAmount(invoiceMap, amount, paymentStatus);
+        Decimal unpaidAmount = resolveUnpaidAmount(invoiceMap, amount, paymentStatus);
 
         return new Mig_FreeeInvoiceWork__c(
             ExternalKey__c = externalKey,
@@ -134,13 +135,65 @@ public with sharing class Mig_FreeeInvoiceWorkService {
             PaidAmount__c = paidAmount,
             UnpaidAmount__c = unpaidAmount,
             SendStatus__c = mapSendStatus(firstString(invoiceMap, new List<String>{'sending_status', 'send_status', 'invoice_status', 'status'})),
-            PaymentStatus__c = mapPaymentStatus(firstString(invoiceMap, new List<String>{'payment_status', 'settlement_status', 'deal_status'})),
+            PaymentStatus__c = paymentStatus,
             TargetPeriodStartDate__c = firstDate(invoiceMap, new List<String>{'target_period_start_date', 'period_start_date'}),
             TargetPeriodEndDate__c = firstDate(invoiceMap, new List<String>{'target_period_end_date', 'period_end_date'}),
             RawJson__c = left(JSON.serialize(invoiceMap), 131072),
             ImportStatus__c = STATUS_FETCHED,
             ValidationMessage__c = null
         );
+    }
+
+    private static Decimal resolveTaxAmount(Map<String, Object> invoiceMap) {
+        Decimal taxAmount = firstDecimal(invoiceMap, new List<String>{
+            'total_vat',
+            'total_tax',
+            'tax_amount',
+            'vat',
+            'consumption_tax'
+        });
+        if (taxAmount != null) {
+            return taxAmount;
+        }
+
+        Decimal lineTaxTotal = 0;
+        Boolean hasLineTax = false;
+        for (Object lineObject : extractLineObjects(invoiceMap)) {
+            if (!(lineObject instanceof Map<String, Object>)) {
+                continue;
+            }
+            Decimal lineTax = firstDecimal((Map<String, Object>) lineObject, new List<String>{
+                'tax_amount',
+                'vat',
+                'vat_amount',
+                'consumption_tax'
+            });
+            if (lineTax != null) {
+                lineTaxTotal += lineTax;
+                hasLineTax = true;
+            }
+        }
+        return hasLineTax ? lineTaxTotal : null;
+    }
+
+    private static Decimal resolvePaidAmount(Map<String, Object> invoiceMap, Decimal invoiceAmount, String paymentStatus) {
+        if (invoiceAmount != null && paymentStatus == PAYMENT_DONE) {
+            return invoiceAmount;
+        }
+        if (invoiceAmount != null && paymentStatus == PAYMENT_WAITING) {
+            return 0;
+        }
+        return firstDecimal(invoiceMap, new List<String>{'paid_amount', 'payment_amount', 'settled_amount'});
+    }
+
+    private static Decimal resolveUnpaidAmount(Map<String, Object> invoiceMap, Decimal invoiceAmount, String paymentStatus) {
+        if (invoiceAmount != null && paymentStatus == PAYMENT_DONE) {
+            return 0;
+        }
+        if (invoiceAmount != null && paymentStatus == PAYMENT_WAITING) {
+            return invoiceAmount;
+        }
+        return firstDecimal(invoiceMap, new List<String>{'unpaid_amount', 'remaining_amount', 'balance'});
     }
 
     private static Mig_FreeeInvoiceLineWork__c toLineWork(

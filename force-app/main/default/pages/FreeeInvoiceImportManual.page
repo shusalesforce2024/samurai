@@ -1,0 +1,29 @@
+<apex:page controller="FreeeInvoiceImportManualController"
+           lightningStylesheets="true"
+           showHeader="true"
+           sidebar="false">
+    <apex:sectionHeader title="freee請求書取込" subtitle="freeeから請求書を取得してWorkへ保存"/>
+
+    <apex:form>
+        <apex:pageBlock title="取込条件">
+            <apex:pageMessages />
+            <apex:pageBlockSection columns="2">
+                <apex:inputText value="{!rangeStartDate}" label="開始日"/>
+                <apex:inputText value="{!rangeEndDate}" label="終了日"/>
+                <apex:inputText value="{!perPage}" label="1回あたり取得件数"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="freee請求書を取込" action="{!runImport}"/>
+                <apex:commandButton value="戻る" onclick="window.history.back(); return false;"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+
+        <apex:pageBlock rendered="{!hasMessage}" title="開始しました">
+            <apex:outputText value="{!message}"/>
+        </apex:pageBlock>
+
+        <apex:pageBlock rendered="{!hasError}" title="取込できませんでした">
+            <apex:outputText value="{!errorMessage}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

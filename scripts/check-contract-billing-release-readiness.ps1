@@ -35,6 +35,29 @@ function Add-Result {
     }
 }
 
+function Add-ScheduleCheck {
+    param(
+        [System.Collections.Generic.List[object]]$Results,
+        [string]$CheckName,
+        [string]$NameLike,
+        [string]$ExpectedCron
+    )
+
+    $records = Invoke-SfQuery -Query "SELECT CronJobDetail.Name, State, CronExpression FROM CronTrigger WHERE CronJobDetail.Name LIKE '$NameLike'"
+    $matched = @($records | Where-Object { $_.State -eq "WAITING" -and $_.CronExpression -eq $ExpectedCron })
+    if ($matched.Count -eq 0) {
+        $detail = if (@($records).Count -eq 0) {
+            "No schedule found"
+        } else {
+            (@($records) | ForEach-Object { "$($_.CronJobDetail.Name) / $($_.State) / $($_.CronExpression)" }) -join "; "
+        }
+        $Results.Add((Add-Result "Schedule" $CheckName "NG" $detail))
+    } else {
+        $detail = ($matched | ForEach-Object { "$($_.CronJobDetail.Name) / $($_.State) / $($_.CronExpression)" }) -join "; "
+        $Results.Add((Add-Result "Schedule" $CheckName "OK" $detail))
+    }
+}
+
 $results = New-Object System.Collections.Generic.List[object]
 
 $requiredPermissionSets = @(
@@ -45,16 +68,14 @@ $requiredPermissionSets = @(
 
 $requiredApexClasses = @(
     "OppContractInvoiceService",
-    "ContractRenewalInvoiceBatch",
+    "ContractMonthlyLineBatch",
+    "FreeeInvoiceImportScheduler",
+    "FreeeInvoiceImportService",
     "FreeeInvoiceCreateQueueable",
     "FreeeInvoiceStatusSyncBatch",
     "InvoiceCancelService",
     "InvoiceRecreateService",
     "FreeeInvoiceCancelService"
-)
-
-$requiredExactSchedules = @(
-    "FreeeInvoiceStatusSyncBatch"
 )
 
 $permissionSets = Invoke-SfQuery -Query ("SELECT Name FROM PermissionSet WHERE Name IN ('" + ($requiredPermissionSets -join "','") + "')")
@@ -71,32 +92,16 @@ foreach ($name in $requiredApexClasses) {
     $results.Add((Add-Result "ApexClass" $name $status "Required Apex class"))
 }
 
-$exactSchedules = Invoke-SfQuery -Query ("SELECT CronJobDetail.Name, State, CronExpression FROM CronTrigger WHERE CronJobDetail.Name IN ('" + ($requiredExactSchedules -join "','") + "')")
-$exactScheduleNames = @($exactSchedules | ForEach-Object { $_.CronJobDetail.Name })
-foreach ($name in $requiredExactSchedules) {
-    $matched = @($exactSchedules | Where-Object { $_.CronJobDetail.Name -eq $name })
-    if ($matched.Count -eq 0) {
-        $results.Add((Add-Result "Schedule" $name "NG" "Schedule is not registered"))
-    } else {
-        $detail = ($matched | ForEach-Object { "$($_.State) / $($_.CronExpression)" }) -join "; "
-        $results.Add((Add-Result "Schedule" $name "OK" $detail))
-    }
-}
+Add-ScheduleCheck $results "ContractMonthlyLineBatch" "ContractMonthlyLineBatch%" "0 30 1 11 * ?"
+Add-ScheduleCheck $results "FreeeInvoiceImportScheduler" "FreeeInvoiceImportScheduler%" "0 30 2 * * ?"
+Add-ScheduleCheck $results "FreeeInvoiceStatusSyncBatch" "FreeeInvoiceStatusSyncBatch" "0 0 3 * * ?"
 
-$renewalSchedules = Invoke-SfQuery -Query "SELECT CronJobDetail.Name, State, CronExpression FROM CronTrigger WHERE CronJobDetail.Name LIKE 'ContractRenewalInvoiceBatch_%'"
-if (@($renewalSchedules).Count -eq 0) {
-    $results.Add((Add-Result "Schedule" "ContractRenewalInvoiceBatch monthly" "NG" "Monthly renewal schedule is not registered"))
-} else {
+$renewalSchedules = Invoke-SfQuery -Query "SELECT CronJobDetail.Name, State, CronExpression FROM CronTrigger WHERE CronJobDetail.Name LIKE 'ContractRenewalInvoiceBatch%'"
+if (@($renewalSchedules).Count -gt 0) {
     $detail = ($renewalSchedules | ForEach-Object { "$($_.CronJobDetail.Name) / $($_.State) / $($_.CronExpression)" }) -join "; "
-    $results.Add((Add-Result "Schedule" "ContractRenewalInvoiceBatch monthly" "OK" $detail))
-}
-
-$duplicateRenewalSchedules = Invoke-SfQuery -Query "SELECT CronJobDetail.Name, State, CronExpression FROM CronTrigger WHERE CronJobDetail.Name = 'ContractRenewalInvoiceBatch'"
-if (@($duplicateRenewalSchedules).Count -gt 0) {
-    $detail = ($duplicateRenewalSchedules | ForEach-Object { "$($_.State) / $($_.CronExpression)" }) -join "; "
-    $results.Add((Add-Result "Schedule" "ContractRenewalInvoiceBatch duplicate" "WARN" $detail))
+    $results.Add((Add-Result "Schedule" "ContractRenewalInvoiceBatch disabled" "NG" "ContractRenewalInvoiceBatch must not be scheduled. Found: $detail"))
 } else {
-    $results.Add((Add-Result "Schedule" "ContractRenewalInvoiceBatch duplicate" "OK" "No duplicate daily renewal schedule"))
+    $results.Add((Add-Result "Schedule" "ContractRenewalInvoiceBatch disabled" "OK" "No ContractRenewalInvoiceBatch schedule"))
 }
 
 $productMasters = Invoke-SfQuery -Query "SELECT Id FROM ProductMaster__c LIMIT 1"

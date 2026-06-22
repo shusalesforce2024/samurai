@@ -701,9 +701,9 @@ freee請求書は、`Mig_FreeeInvoiceWork__c` にUpsertする。
 | 支払期日 | `PaymentDate__c` | 請求へ反映 |
 | 件名 | `Subject__c` | 請求名・対象期間推定に使用 |
 | 合計金額 | `InvoiceAmount__c` | 金額検証に使用 |
-| 税額 | `TaxAmount__c` | 請求へ反映 |
-| 入金額 | `PaidAmount__c` | 請求へ反映 |
-| 未入金額 | `UnpaidAmount__c` | 請求へ反映 |
+| 税額 | `TaxAmount__c` | freeeヘッダ税額を取得する。ヘッダ税額がない場合は請求明細の税額合計で補完する |
+| 入金額 | `PaidAmount__c` | 決済ステータスが決済済みの場合は請求金額を設定する |
+| 未入金額 | `UnpaidAmount__c` | 決済ステータスが決済待ちの場合は請求金額を設定する |
 | 送付ステータス | `SendStatus__c` | 請求へ反映 |
 | 決済ステータス | `PaymentStatus__c` | 請求へ反映 |
 | レスポンス全体 | `RawJson__c` | 監査・再解析用 |
@@ -832,9 +832,9 @@ ContractPeriod__c.PeriodEndDate__c >= 対象日
 | `PaymentDate__c` | 支払期日 |
 | `Subject__c` | 件名 |
 | `InvoiceAmount__c` | 請求金額 |
-| `TaxAmount__c` | 税額 |
-| `PaidAmount__c` | 入金額 |
-| `UnpaidAmount__c` | 未入金額 |
+| `TaxAmount__c` | 税額。freeeヘッダ税額を優先し、未取得時は明細税額合計で補完 |
+| `PaidAmount__c` | 入金額。決済済みの場合は請求金額、決済待ちの場合は0 |
+| `UnpaidAmount__c` | 未入金額。決済待ちの場合は請求金額、決済済みの場合は0 |
 | `FreeeInvoiceId__c` | freee請求書ID |
 | `FreeeInvoiceNumber__c` | freee請求書番号 |
 | `SendStatus__c` | freee送付ステータス |
@@ -992,7 +992,7 @@ Invoice__c 1件 -> ContractLineItem__c 12件
 
 | No | 補強点 | 理由 | 対応方針 |
 |---|---|---|---|
-| 1 | 年契約の12か月分関連請求反映 | 既存 `Mig_FreeeInvoiceFinalizeService` は解決済みの契約月次明細のみ更新するため | 年契約の場合、対象期間内の `ContractLineItem__c` すべてへ `RelatedInvoice__c` を設定する処理を追加する |
+| 1 | 年契約の12か月分関連請求反映 | 年一括請求でもMRR確認用の12か月分契約月次明細へ同じ請求を紐づける必要があるため | 実装済み。`ResolvedContractPeriod__c` を基準に対象契約期間内の `ContractLineItem__c` すべてへ `RelatedInvoice__c` を設定する |
 | 2 | freee自動作成請求書の対象期間判定 | freeeレスポンスに対象期間が明示されない可能性があるため | 件名・備考・メモ・請求日・契約サイクルから対象期間を推定するロジックを実装する |
 | 3 | 通常運用用入口クラス | `Mig_` クラスを直接スケジュール実行すると、運用上「移行機能」に見えるため | `FreeeInvoiceImportBatch` / `FreeeInvoiceImportService` / `FreeeInvoiceImportScheduler` を追加し、内部で既存ロジックを呼ぶ |
 | 4 | 本反映の初期運用モード | 初期から完全自動本反映にすると誤紐づけ時の影響が大きい | 初期は「取込・検証まで自動、本反映は手動」。安定後に `反映可能` を自動本反映へ切替 |
@@ -1009,7 +1009,7 @@ Invoice__c 1件 -> ContractLineItem__c 12件
 | `Mig_FreeeInvoiceReferenceResolver` | 取引先、契約、契約期間を解決できる | 契約識別情報がfreeeメモ・備考にある場合の優先解決を追加 |
 | `Mig_FreeeInvoiceProductResolver` | 商品マスタ、契約月次明細を解決できる | ほぼ流用可。商品マッピング運用を整備 |
 | `Mig_FreeeInvoiceValidator` | 必須参照、商品、金額を検証できる | 契約月次明細の月契約/年契約判定を追加 |
-| `Mig_FreeeInvoiceFinalizeService` | 請求・請求明細作成、関連請求更新ができる | 年契約12か月反映、既存請求更新項目の制御を追加 |
+| `Mig_FreeeInvoiceFinalizeService` | 請求・請求明細作成、関連請求更新ができる | 年契約12か月反映は実装済み。既存請求更新項目の制御は通常運用開始前にUATで確認する |
 
 ### 18.5 手動本反映ボタン設計
 
@@ -1101,7 +1101,7 @@ freee請求書取込 -> Work作成 -> 参照解決 -> 商品解決 -> 検証
 2. 既存Work取込、参照解決、商品解決、検証を呼び出す。
 3. 本反映は初期状態では手動または管理者実行にする。
 4. Workリストビューから選択実行できる一括本反映ボタンを作成する。
-5. 年契約の12か月関連請求反映を追加する。
+5. 年契約の12か月関連請求反映が、月契約・年契約のUATデータで正しく動くことを確認する。
 6. UATでfreee自動送付設定から作成された請求書を取り込む。
 7. 誤紐づけがないことを確認してから自動本反映へ切り替える。
 

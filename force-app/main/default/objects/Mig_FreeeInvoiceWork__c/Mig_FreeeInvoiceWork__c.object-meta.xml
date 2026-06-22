@@ -16,6 +16,9 @@
     </nameField>
     <pluralLabel>Freee請求移行Work</pluralLabel>
     <searchLayouts>
+        <listViewButtons>FreeeInvoiceImportManual</listViewButtons>
+        <listViewButtons>FreeeInvoiceWorkBulkFinalize</listViewButtons>
+        <listViewButtons>FreeeInvoiceWorkBulkValidate</listViewButtons>
         <searchResultsAdditionalFields>FreeeInvoiceNumber__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>PartnerName__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>BillingDate__c</searchResultsAdditionalFields>

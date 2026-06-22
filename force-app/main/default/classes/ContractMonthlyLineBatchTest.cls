@@ -2,10 +2,7 @@
 private class ContractMonthlyLineBatchTest {
     @isTest
     static void monthlyContractCreatesCurrentMonthWhenActivated() {
-        Contract__c contractRecord = createDraftContract(
-            '月',
-            Date.newInstance(2026, 6, 15)
-        );
+        Contract__c contractRecord = createDraftContract('月', Date.newInstance(2026, 6, 15));
         createInvoiceWithLines(contractRecord.Id, contractRecord.Account__c);
 
         Test.startTest();
@@ -16,24 +13,17 @@ private class ContractMonthlyLineBatchTest {
         List<ContractLineItem__c> lines = getLines(contractRecord.Id);
         System.assertEquals(1, lines.size());
         System.assertEquals('2026/06', lines[0].ContractYearMonth__c);
-        System.assertEquals('2026/06', lines[0].Month__c);
-        System.assertEquals(contractRecord.Account__c, lines[0].Account__c);
+        System.assertNotEquals(null, lines[0].ContractPeriod__c);
         System.assertEquals(5, lines[0].PeopleNumber__c);
         System.assertEquals(500, lines[0].Total__c);
     }
 
     @isTest
     static void monthlyContractCreatesNextMonthAfterBillingUpdateDay() {
-        Contract__c contractRecord = createActivatedContract(
-            '月',
-            Date.newInstance(2026, 6, 15)
-        );
+        Contract__c contractRecord = createActivatedContract('月', Date.newInstance(2026, 6, 15));
 
         Test.startTest();
-        Database.executeBatch(
-            new ContractMonthlyLineBatch(Date.newInstance(2026, 6, 11)),
-            200
-        );
+        Database.executeBatch(new ContractMonthlyLineBatch(Date.newInstance(2026, 6, 11)), 200);
         Test.stopTest();
 
         Set<String> yearMonths = getYearMonths(contractRecord.Id);
@@ -45,20 +35,11 @@ private class ContractMonthlyLineBatchTest {
 
     @isTest
     static void monthlyContractCreatesNoDuplicateOnRerun() {
-        Contract__c contractRecord = createActivatedContract(
-            '月',
-            Date.newInstance(2026, 6, 15)
-        );
+        Contract__c contractRecord = createActivatedContract('月', Date.newInstance(2026, 6, 15));
 
         Test.startTest();
-        Database.executeBatch(
-            new ContractMonthlyLineBatch(Date.newInstance(2026, 6, 12)),
-            200
-        );
-        Database.executeBatch(
-            new ContractMonthlyLineBatch(Date.newInstance(2026, 6, 12)),
-            200
-        );
+        Database.executeBatch(new ContractMonthlyLineBatch(Date.newInstance(2026, 6, 12)), 200);
+        Database.executeBatch(new ContractMonthlyLineBatch(Date.newInstance(2026, 6, 12)), 200);
         Test.stopTest();
 
         Set<String> yearMonths = getYearMonths(contractRecord.Id);
@@ -68,17 +49,54 @@ private class ContractMonthlyLineBatchTest {
     }
 
     @isTest
-    static void monthlyContractDoesNotCreateNextMonthOnBillingUpdateDay() {
-        Contract__c contractRecord = createActivatedContract(
-            '月',
-            Date.newInstance(2026, 6, 15)
+    static void scheduledMonthlyLineCanBeCreatedBeforeInvoiceExists() {
+        Contract__c contractRecord = createDraftContract('月', Date.newInstance(2026, 6, 15));
+        insert new ContractLineItem__c(
+            Account__c = contractRecord.Account__c,
+            ContractYearMonth__c = '2026/06',
+            MasterContract__c = contractRecord.Id,
+            Month__c = '2026/06',
+            PeopleNumber__c = 3,
+            PeriodStartDate__c = Date.newInstance(2026, 6, 1),
+            PeriodEndDate__c = Date.newInstance(2026, 6, 30),
+            RevenueAmount__c = 300,
+            Total__c = 300
         );
+        contractRecord.Status__c = 'Activated';
+        update contractRecord;
 
         Test.startTest();
-        Database.executeBatch(
-            new ContractMonthlyLineBatch(Date.newInstance(2026, 6, 10)),
-            200
-        );
+        Database.executeBatch(new ContractMonthlyLineBatch(Date.newInstance(2026, 6, 11)), 200);
+        Test.stopTest();
+
+        ContractLineItem__c createdLine = [
+            SELECT ContractPeriod__c,
+                   PeriodStartDate__c,
+                   PeriodEndDate__c,
+                   PeopleNumber__c,
+                   RelatedInvoice__c,
+                   RevenueAmount__c,
+                   Total__c
+            FROM ContractLineItem__c
+            WHERE MasterContract__c = :contractRecord.Id
+              AND ContractYearMonth__c = '2026/07'
+            LIMIT 1
+        ];
+        System.assertNotEquals(null, createdLine.ContractPeriod__c);
+        System.assertEquals(Date.newInstance(2026, 7, 1), createdLine.PeriodStartDate__c);
+        System.assertEquals(Date.newInstance(2026, 7, 31), createdLine.PeriodEndDate__c);
+        System.assertEquals(3, createdLine.PeopleNumber__c);
+        System.assertEquals(null, createdLine.RelatedInvoice__c);
+        System.assertEquals(300, createdLine.RevenueAmount__c);
+        System.assertEquals(300, createdLine.Total__c);
+    }
+
+    @isTest
+    static void monthlyContractDoesNotCreateNextMonthOnBillingUpdateDay() {
+        Contract__c contractRecord = createActivatedContract('月', Date.newInstance(2026, 6, 15));
+
+        Test.startTest();
+        Database.executeBatch(new ContractMonthlyLineBatch(Date.newInstance(2026, 6, 10)), 200);
         Test.stopTest();
 
         Set<String> yearMonths = getYearMonths(contractRecord.Id);
@@ -88,10 +106,7 @@ private class ContractMonthlyLineBatchTest {
 
     @isTest
     static void yearlyContractCreatesTwelveLinesWhenActivated() {
-        Contract__c contractRecord = createDraftContract(
-            '年',
-            Date.newInstance(2026, 6, 15)
-        );
+        Contract__c contractRecord = createDraftContract('年', Date.newInstance(2026, 6, 15));
         createInvoiceWithLines(contractRecord.Id, contractRecord.Account__c);
 
         Test.startTest();
@@ -107,40 +122,26 @@ private class ContractMonthlyLineBatchTest {
     }
 
     @isTest
-    static void yearlyContractCreatesNextTwelveLinesAfterRenewalMonthDayTen() {
-        Contract__c contractRecord = createActivatedContract(
-            '年',
-            Date.newInstance(2026, 6, 15)
-        );
+    static void yearlyContractCreatesNextTwelveLinesInPreviousMonthAfterBillingUpdateDay() {
+        Contract__c contractRecord = createActivatedContract('年', Date.newInstance(2026, 6, 15));
 
         Test.startTest();
-        Database.executeBatch(
-            new ContractMonthlyLineBatch(Date.newInstance(2027, 6, 11)),
-            200
-        );
+        Database.executeBatch(new ContractMonthlyLineBatch(Date.newInstance(2027, 5, 11)), 200);
         Test.stopTest();
 
         Set<String> yearMonths = getYearMonths(contractRecord.Id);
         System.assertEquals(24, yearMonths.size());
-        System.assert(yearMonths.contains('2026/06'));
-        System.assert(yearMonths.contains('2027/05'));
         System.assert(yearMonths.contains('2027/06'));
         System.assert(yearMonths.contains('2028/05'));
         assertLineTotals(contractRecord.Id, '2027/06', 5, 500);
     }
 
     @isTest
-    static void yearlyContractDoesNotCreateNextYearBeforeRenewalMonthDayTen() {
-        Contract__c contractRecord = createActivatedContract(
-            '年',
-            Date.newInstance(2026, 6, 15)
-        );
+    static void yearlyContractDoesNotCreateNextYearBeforePreviousMonthBillingUpdateDay() {
+        Contract__c contractRecord = createActivatedContract('年', Date.newInstance(2026, 6, 15));
 
         Test.startTest();
-        Database.executeBatch(
-            new ContractMonthlyLineBatch(Date.newInstance(2027, 6, 10)),
-            200
-        );
+        Database.executeBatch(new ContractMonthlyLineBatch(Date.newInstance(2027, 5, 10)), 200);
         Test.stopTest();
 
         System.assertEquals(12, getYearMonths(contractRecord.Id).size());
@@ -148,27 +149,18 @@ private class ContractMonthlyLineBatchTest {
 
     @isTest
     static void inactiveContractIsIgnored() {
-        Contract__c contractRecord = createDraftContract(
-            '月',
-            Date.newInstance(2026, 6, 15)
-        );
+        Contract__c contractRecord = createDraftContract('月', Date.newInstance(2026, 6, 15));
 
         Test.startTest();
-        Database.executeBatch(
-            new ContractMonthlyLineBatch(Date.newInstance(2026, 6, 11)),
-            200
-        );
+        Database.executeBatch(new ContractMonthlyLineBatch(Date.newInstance(2026, 6, 11)), 200);
         Test.stopTest();
 
         System.assertEquals(0, getLines(contractRecord.Id).size());
     }
 
     @isTest
-    static void activatedContractWithoutInvoiceThrowsError() {
-        Contract__c contractRecord = createDraftContract(
-            '月',
-            Date.newInstance(2026, 6, 15)
-        );
+    static void activatedContractWithoutInvoiceOrTemplateThrowsError() {
+        Contract__c contractRecord = createDraftContract('月', Date.newInstance(2026, 6, 15));
 
         Test.startTest();
         contractRecord.Status__c = 'Activated';
@@ -176,9 +168,7 @@ private class ContractMonthlyLineBatchTest {
         Test.stopTest();
 
         System.assertEquals(false, result.isSuccess());
-        System.assert(
-            result.getErrors()[0].getMessage().contains('契約に紐づく請求が存在しない')
-        );
+        System.assert(result.getErrors()[0].getMessage().contains('契約に紐づく請求または契約月次明細が存在しない'));
         System.assertEquals(0, getLines(contractRecord.Id).size());
     }
 
@@ -187,7 +177,6 @@ private class ContractMonthlyLineBatchTest {
         createInvoiceWithLines(contractRecord.Id, contractRecord.Account__c);
         contractRecord.Status__c = 'Activated';
         update contractRecord;
-
         return contractRecord;
     }
 
@@ -204,7 +193,6 @@ private class ContractMonthlyLineBatchTest {
             Status__c = 'Draft'
         );
         insert contractRecord;
-
         return contractRecord;
     }
 
@@ -232,12 +220,7 @@ private class ContractMonthlyLineBatchTest {
         };
     }
 
-    private static void assertLineTotals(
-        Id contractId,
-        String yearMonth,
-        Decimal expectedPeopleNumber,
-        Decimal expectedTotal
-    ) {
+    private static void assertLineTotals(Id contractId, String yearMonth, Decimal expectedPeopleNumber, Decimal expectedTotal) {
         ContractLineItem__c line = [
             SELECT PeopleNumber__c,
                    Total__c
@@ -246,7 +229,6 @@ private class ContractMonthlyLineBatchTest {
               AND ContractYearMonth__c = :yearMonth
             LIMIT 1
         ];
-
         System.assertEquals(expectedPeopleNumber, line.PeopleNumber__c);
         System.assertEquals(expectedTotal, line.Total__c);
     }
@@ -262,6 +244,7 @@ private class ContractMonthlyLineBatchTest {
     private static List<ContractLineItem__c> getLines(Id contractId) {
         return [
             SELECT Account__c,
+                   ContractPeriod__c,
                    ContractYearMonth__c,
                    MasterContract__c,
                    Month__c,

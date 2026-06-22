@@ -1,0 +1,40 @@
+<apex:page standardController="Mig_FreeeInvoiceWork__c"
+           recordSetVar="works"
+           extensions="FreeeInvoiceWorkBulkActionController"
+           action="{!validateSelected}"
+           lightningStylesheets="true"
+           showHeader="true"
+           sidebar="false"
+           tabStyle="Mig_FreeeInvoiceWork__c">
+    <apex:sectionHeader title="freee請求書を再検証" subtitle="選択したfreee請求書取込Workの検証結果を更新"/>
+
+    <apex:pageBlock rendered="{!hasError}" title="再検証できませんでした">
+        <apex:outputText value="{!errorMessage}"/>
+    </apex:pageBlock>
+
+    <apex:pageBlock rendered="{!hasSummary}" title="再検証結果">
+        <apex:pageBlockSection columns="3">
+            <apex:pageBlockSectionItem>
+                <apex:outputLabel value="選択件数"/>
+                <apex:outputText value="{!summary.selectedCount}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem>
+                <apex:outputLabel value="反映済み件数"/>
+                <apex:outputText value="{!summary.importedCount}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem>
+                <apex:outputLabel value="要確認件数"/>
+                <apex:outputText value="{!summary.needsReviewCount}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem>
+                <apex:outputLabel value="エラー件数"/>
+                <apex:outputText value="{!summary.errorCount}"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:outputText value="{!summary.message}"/>
+    </apex:pageBlock>
+
+    <apex:form>
+        <apex:commandButton value="戻る" onclick="window.history.back(); return false;"/>
+    </apex:form>
+</apex:page>

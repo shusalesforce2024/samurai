@@ -29,6 +29,8 @@
   <types>
     <members>ContractRenewalInvoiceBatch</members>
     <members>ContractRenewalInvoiceBatchTest</members>
+    <members>ContractMonthlyLineBatch</members>
+    <members>ContractMonthlyLineBatchTest</members>
     <members>FreeeConfigService</members>
     <members>FreeeIntegrationTest</members>
     <members>FreeeInvoiceCancelService</members>
@@ -36,11 +38,17 @@
     <members>FreeeInvoiceController</members>
     <members>FreeeInvoiceCreateQueueable</members>
     <members>FreeeInvoiceFacade</members>
+    <members>FreeeInvoiceImportManualController</members>
+    <members>FreeeInvoiceImportScheduler</members>
+    <members>FreeeInvoiceImportService</members>
+    <members>FreeeInvoiceImportServiceTest</members>
     <members>FreeeInvoiceMapper</members>
     <members>FreeeInvoiceService</members>
     <members>FreeeInvoiceStatusSyncBatch</members>
     <members>FreeeInvoiceStatusSyncBatchTest</members>
     <members>FreeeInvoiceStatusSyncService</members>
+    <members>FreeeInvoiceWorkBulkActionController</members>
+    <members>FreeeInvoiceWorkBulkActionControllerTest</members>
     <members>FreeePartnerController</members>
     <members>FreeePartnerBulkSyncController</members>
     <members>FreeePartnerBulkSyncService</members>
@@ -86,6 +94,9 @@
   </types>
   <types>
     <members>FreeePartnerBulkSync</members>
+    <members>FreeeInvoiceImportManual</members>
+    <members>FreeeInvoiceWorkBulkFinalize</members>
+    <members>FreeeInvoiceWorkBulkValidate</members>
     <name>ApexPage</name>
   </types>
   <types>
@@ -151,6 +162,10 @@
     <members>Mig_FreeeInvoiceLineProductMap__c.All</members>
     <members>Mig_FreeeInvoiceLineWork__c.All</members>
     <members>Mig_FreeeInvoiceWork__c.All</members>
+    <members>Mig_FreeeInvoiceWork__c.ErrorWorks</members>
+    <members>Mig_FreeeInvoiceWork__c.ImportedWorks</members>
+    <members>Mig_FreeeInvoiceWork__c.NeedsReview</members>
+    <members>Mig_FreeeInvoiceWork__c.ReadyToImport</members>
     <members>Opportunity__c.All</members>
     <members>Opportunity__c.remaind</members>
     <members>ProductMaster__c.All</members>
@@ -217,6 +232,8 @@
   </types>
   <types>
     <members>Account.FreeePartnerBulkSync</members>
+    <members>Mig_FreeeInvoiceWork__c.FreeeInvoiceWorkBulkFinalize</members>
+    <members>Mig_FreeeInvoiceWork__c.FreeeInvoiceWorkBulkValidate</members>
     <name>WebLink</name>
   </types>
   <types>

@@ -13,6 +13,7 @@ public with sharing class FreeeInvoiceStatusSyncBatch
                    Freee_Invoice_Id__c,
                    Freee_Invoice_Status__c,
                    Freee_Account_Item_Picklist__c,
+                   InvoiceAmount__c,
                    PaymentStatus__c,
                    CancelStatus__c
             FROM Invoice__c

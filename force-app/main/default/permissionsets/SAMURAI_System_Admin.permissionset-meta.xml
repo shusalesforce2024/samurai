@@ -61,6 +61,22 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>FreeeInvoiceWorkBulkActionController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>FreeeInvoiceImportManualController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>FreeeInvoiceImportScheduler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>FreeeInvoiceImportService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>FreeePartnerBulkSyncController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1232,6 +1248,18 @@
     </objectPermissions>
     <pageAccesses>
         <apexPage>FreeePartnerBulkSync</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>FreeeInvoiceWorkBulkFinalize</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>FreeeInvoiceWorkBulkValidate</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>FreeeInvoiceImportManual</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <tabSettings>

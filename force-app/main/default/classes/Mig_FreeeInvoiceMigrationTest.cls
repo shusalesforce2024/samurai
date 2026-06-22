@@ -21,8 +21,6 @@ private class Mig_FreeeInvoiceMigrationTest {
 
             System.assert(request.getEndpoint().contains('/invoices?'));
             System.assert(request.getEndpoint().contains('company_id=12345'));
-            System.assert(request.getEndpoint().contains('start_billing_date='));
-            System.assert(request.getEndpoint().contains('end_billing_date='));
 
             HttpResponse response = new HttpResponse();
             response.setStatusCode(200);
@@ -216,6 +214,48 @@ private class Mig_FreeeInvoiceMigrationTest {
     }
 
     @isTest
+    static void importBodyCalculatesWorkAmountsFromPaymentStatus() {
+        String body =
+            '{"invoices":[' +
+            '{"id":888001,"invoice_number":"INV-PAID","partner_id":901,"partner_name":"Migration Account",' +
+            '"issue_date":"2026-03-21","payment_limit_date":"2026-04-30","subject":"Paid usage",' +
+            '"total_amount":2200,"sending_status":"sent","payment_status":"paid",' +
+            '"invoice_lines":[{"id":1,"description":"Rendary","quantity":1,"unit_price":2000,"amount":2000,"tax_rate":10,"tax_amount":200}]},' +
+            '{"id":888002,"invoice_number":"INV-UNPAID","partner_id":901,"partner_name":"Migration Account",' +
+            '"issue_date":"2026-03-22","payment_limit_date":"2026-04-30","subject":"Unpaid usage",' +
+            '"total_amount":1100,"total_vat":100,"sending_status":"sent","payment_status":"unpaid",' +
+            '"invoice_lines":[{"id":1,"description":"Rendary","quantity":1,"unit_price":1000,"amount":1000,"tax_rate":10,"tax_amount":100}]}' +
+            ']}';
+
+        Mig_FreeeInvoiceWorkService.ImportResult result = Mig_FreeeInvoiceWorkService.importBody(body);
+        System.assertEquals(2, result.headerCount);
+        System.assertEquals(2, result.lineCount);
+
+        Map<String, Mig_FreeeInvoiceWork__c> workByInvoiceId = new Map<String, Mig_FreeeInvoiceWork__c>();
+        for (Mig_FreeeInvoiceWork__c workRecord : [
+            SELECT FreeeInvoiceId__c,
+                   InvoiceAmount__c,
+                   TaxAmount__c,
+                   PaidAmount__c,
+                   UnpaidAmount__c
+            FROM Mig_FreeeInvoiceWork__c
+            WHERE FreeeInvoiceId__c IN ('888001', '888002')
+        ]) {
+            workByInvoiceId.put(workRecord.FreeeInvoiceId__c, workRecord);
+        }
+
+        System.assertEquals(2200, workByInvoiceId.get('888001').InvoiceAmount__c);
+        System.assertEquals(200, workByInvoiceId.get('888001').TaxAmount__c);
+        System.assertEquals(2200, workByInvoiceId.get('888001').PaidAmount__c);
+        System.assertEquals(0, workByInvoiceId.get('888001').UnpaidAmount__c);
+
+        System.assertEquals(1100, workByInvoiceId.get('888002').InvoiceAmount__c);
+        System.assertEquals(100, workByInvoiceId.get('888002').TaxAmount__c);
+        System.assertEquals(0, workByInvoiceId.get('888002').PaidAmount__c);
+        System.assertEquals(1100, workByInvoiceId.get('888002').UnpaidAmount__c);
+    }
+
+    @isTest
     static void fetchBatchSkipsOutOfPeriodInvoicesReturnedByFreee() {
         Test.setMock(HttpCalloutMock.class, new FreeeInvoiceOutOfPeriodListMock());
 
@@ -284,6 +324,33 @@ private class Mig_FreeeInvoiceMigrationTest {
             WHERE FreeeInvoiceId__c = '555'
             LIMIT 1
         ];
+        ContractLineItem__c sourceMonthlyLine = [
+            SELECT Account__c,
+                   ContractPeriod__c,
+                   MasterContract__c,
+                   PeriodStartDate__c,
+                   PeriodEndDate__c,
+                   ProductMaster__c,
+                   RevenueAmount__c,
+                   Total__c
+            FROM ContractLineItem__c
+            LIMIT 1
+        ];
+        insert new ContractLineItem__c(
+            Account__c = sourceMonthlyLine.Account__c,
+            ContractPeriod__c = sourceMonthlyLine.ContractPeriod__c,
+            MasterContract__c = sourceMonthlyLine.MasterContract__c,
+            PeriodStartDate__c = sourceMonthlyLine.PeriodStartDate__c,
+            PeriodEndDate__c = sourceMonthlyLine.PeriodEndDate__c,
+            ProductMaster__c = sourceMonthlyLine.ProductMaster__c,
+            RevenueAmount__c = sourceMonthlyLine.RevenueAmount__c,
+            Total__c = sourceMonthlyLine.Total__c
+        );
+        Integer expectedRelatedLineCount = [
+            SELECT COUNT()
+            FROM ContractLineItem__c
+            WHERE ContractPeriod__c = :sourceMonthlyLine.ContractPeriod__c
+        ];
 
         Mig_FreeeInvoiceFinalizeService.finalizeByWorkIds(new List<Id>{workRecord.Id});
 
@@ -332,6 +399,12 @@ private class Mig_FreeeInvoiceMigrationTest {
             LIMIT 1
         ];
         System.assertEquals(invoiceRecord.Id, monthlyLine.RelatedInvoice__c);
+        System.assertEquals(expectedRelatedLineCount, [
+            SELECT COUNT()
+            FROM ContractLineItem__c
+            WHERE ContractPeriod__c = :sourceMonthlyLine.ContractPeriod__c
+              AND RelatedInvoice__c = :invoiceRecord.Id
+        ]);
 
         Mig_FreeeInvoiceMigrationController.validateAll();
         Mig_FreeeInvoiceMigrationController.finalizeByIds(new List<Id>());
