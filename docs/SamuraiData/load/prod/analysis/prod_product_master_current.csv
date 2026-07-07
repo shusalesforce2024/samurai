@@ -1,0 +1,36 @@
+﻿Id,Name,BillingTiming__c,InvoiceLineDisplayType__c,MRR_Target__c,ARR_Target__c,ProductType__c
+a0CRB0000CcXZ6P2QW,Rendery Basicプラン,毎月,,true,true,継続費用
+a0CRB0000CcXZ6Q2QW,Rendery Proプラン,毎月,,true,true,継続費用
+a0CRB0000CcXZ6R2QW,[代理販売20%] Rendery Proプラン,毎月,,true,true,継続費用
+a0CRB0000CcXZ6S2QW,[年払_代理販売20%] Rendery Proプランネンバライ,年一括,,false,true,継続費用
+a0CRB0000CcXZ6T2QW,[OLD] Rendery Enterpriseプラン(2025年9月まで),毎月,,true,true,継続費用
+a0CRB0000CcXZ6U2QW,[OLD_年払]Rendery Enterpriseプラン(2025年9月まで),毎月,,true,true,継続費用
+a0CRB0000CcXZ6V2QW,Rendery Enterpriseプラン,毎月,,true,true,継続費用
+a0CRB0000CcXZ6W2QW,[代理販売20%] Rendery Enterpriseプラン,毎月,,true,true,継続費用
+a0CRB0000CcXZ6X2QW,[年払] Rendery Enterpriseプラン,毎月,,true,true,継続費用
+a0CRB0000CcXZ6Y2QW,代理販売20%] Rendery Enterpriseプラン,年一括,,false,true,継続費用
+a0CRB0000CcXZ6Z2QW,[年払] Rendery Enterpriseプラン,年一括,,false,true,継続費用
+a0CRB0000CcXZ6a2QG,Rendery セキュリティオプション(SSO)_初期費用,初回のみ,,false,true,初期費用
+a0CRB0000CcXZ6b2QG,Rendery セキュリティオプション(SSO)_運用費用,毎月,,true,true,オプション
+a0CRB0000CcXZ6c2QG,Rendery セキュリティオプション(IP制限)_初期費用,初回のみ,,false,true,初期費用
+a0CRB0000CcXZ6d2QG,Rendery セキュリティオプション(IP制限)_運用費用,毎月,,true,true,オプション
+a0CRB0000CcXZ6e2QG,Rendery セキュリティオプション(ドメイン制限)_初期費用,初回のみ,,false,true,初期費用
+a0CRB0000CcXZ6f2QG,Rendery セキュリティオプション(ドメイン制限)_運用費用,毎月,,true,true,オプション
+a0CRB0000CcXZ6g2QG,Rendery セキュリティオプション+_初期費用,初回のみ,,false,true,初期費用
+a0CRB0000CcXZ6h2QG,Rendery セキュリティオプション+_運用費用,毎月,,true,true,オプション
+a0CRB0000CcXZ6i2QG,knock knock AI Basicプラン(50クレジット),毎月,,true,true,継続費用
+a0CRB0000CcXZ6j2QG,knock knock AI Proプラン(300クレジット),毎月,,true,true,継続費用
+a0CRB0000CcXZ6k2QG,[月払] knock knock AI Enterpriseプラン 500クレジット,毎月,,true,true,継続費用
+a0CRB0000CcXZ6l2QG,[月払] knock knock AI Enterpriseプラン 600クレジット,毎月,,true,true,継続費用
+a0CRB0000CcXZ6m2QG,[月払] knock knock AI Enterpriseプラン 700クレジット,毎月,,true,true,継続費用
+a0CRB0000CcXZ6n2QG,[月払] knock knock AI Enterpriseプラン 800クレジット,毎月,,true,true,継続費用
+a0CRB0000CcXZ6o2QG,[月払] knock knock AI Enterpriseプラン 900クレジット,毎月,,true,true,継続費用
+a0CRB0000CcXZ6p2QG,[月払] knock knock AI Enterpriseプラン 1000クレジット,毎月,,true,true,継続費用
+a0CRB0000CcXZ6q2QG,[年払] knock knock AI Enterpriseプラン 500クレジット,年一括,,true,true,継続費用
+a0CRB0000CcXZ6r2QG,[年払] knock knock AI Enterpriseプラン 600クレジット,年一括,,true,true,継続費用
+a0CRB0000CcXZ6s2QG,[年払] knock knock AI Enterpriseプラン 700クレジット,年一括,,true,true,継続費用
+a0CRB0000CcXZ6t2QG,[年払] knock knock AI Enterpriseプラン 800クレジット,年一括,,true,true,継続費用
+a0CRB0000CcXZ6u2QG,[年払] knock knock AI Enterpriseプラン 900クレジット,年一括,,true,true,継続費用
+a0CRB0000CcXZ6v2QG,[年払] knock knock AI Enterpriseプラン 1000クレジット,年一括,,true,true,継続費用
+a0CRB0000CcXZ6w2QG,knock knock AI 都度払い,初回のみ,,false,true,初期費用
+a0CRB0000CcXZ6x2QG,受託開発,初回のみ,,false,true,初期費用

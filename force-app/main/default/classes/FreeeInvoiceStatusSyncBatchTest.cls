@@ -127,7 +127,7 @@ private class FreeeInvoiceStatusSyncBatchTest {
         Test.setMock(HttpCalloutMock.class, new InvoiceStatusMock());
 
         Test.startTest();
-        Database.executeBatch(new FreeeInvoiceStatusSyncBatch(), 50);
+        Database.executeBatch(new FreeeInvoiceStatusSyncBatch(Date.newInstance(2026, 7, 4)), 50);
         Test.stopTest();
 
         Invoice__c synced = [
@@ -149,6 +149,20 @@ private class FreeeInvoiceStatusSyncBatchTest {
         System.assertEquals(Date.newInstance(2026, 6, 20), synced.PaymentReceivedDate__c);
         System.assertEquals(Date.newInstance(2026, 6, 30), synced.Payment_Date__c);
         System.assertEquals('Success', synced.Freee_Sync_Status__c);
+    }
+
+    @isTest
+    static void calculatesPreviousMonthStartToCurrentMonthEndPaymentWindow() {
+        Date runDate = Date.newInstance(2026, 7, 4);
+
+        System.assertEquals(
+            Date.newInstance(2026, 6, 1),
+            FreeeInvoiceStatusSyncBatch.getSyncStartDate(runDate)
+        );
+        System.assertEquals(
+            Date.newInstance(2026, 7, 31),
+            FreeeInvoiceStatusSyncBatch.getSyncEndDate(runDate)
+        );
     }
 
     @isTest

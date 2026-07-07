@@ -15,6 +15,7 @@
         <layoutColumns>
             <layoutItems><behavior>Edit</behavior><field>Description__c</field></layoutItems>
             <layoutItems><behavior>Edit</behavior><field>Quantity__c</field></layoutItems>
+            <layoutItems><behavior>Edit</behavior><field>Unit__c</field></layoutItems>
             <layoutItems><behavior>Edit</behavior><field>UnitPrice__c</field></layoutItems>
             <layoutItems><behavior>Edit</behavior><field>LineAmount__c</field></layoutItems>
             <layoutItems><behavior>Edit</behavior><field>TaxRate__c</field></layoutItems>

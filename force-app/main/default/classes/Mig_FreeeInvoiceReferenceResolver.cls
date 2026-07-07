@@ -82,7 +82,7 @@ public with sharing class Mig_FreeeInvoiceReferenceResolver {
             if (nameMatches != null && nameMatches.size() == 1) {
                 workRecord.ResolvedAccount__c = nameMatches[0].Id;
             } else if (nameMatches != null && nameMatches.size() > 1) {
-                appendMessage(workRecord, 'Multiple Accounts matched by PartnerName.');
+                appendMessage(workRecord, '取引先名に一致する取引先が複数存在します。freee取引先IDまたは取引先名の対応を確認してください。');
             }
         }
     }
@@ -156,7 +156,7 @@ public with sharing class Mig_FreeeInvoiceReferenceResolver {
                         workRecord.ResolvedContract__c = accountPeriodMatches[0].Contract__c;
                     }
                 } else if (accountPeriodMatches.size() > 1) {
-                    appendMessage(workRecord, 'Multiple ContractPeriods matched by Account and target date.');
+                    appendMessage(workRecord, '取引先と対象日付に一致する契約期間が複数存在します。対象の契約管理と契約期間を確認してください。');
                 }
             }
 
@@ -173,7 +173,7 @@ public with sharing class Mig_FreeeInvoiceReferenceResolver {
                 if (candidates.size() == 1) {
                     workRecord.ResolvedContract__c = candidates[0].Id;
                 } else if (candidates.size() > 1) {
-                    appendMessage(workRecord, 'Multiple Contracts matched by Account and target date.');
+                    appendMessage(workRecord, '取引先と対象日付に一致する契約管理が複数存在します。対象の契約管理を確認してください。');
                 }
             }
 
@@ -190,7 +190,7 @@ public with sharing class Mig_FreeeInvoiceReferenceResolver {
                 if (matchedPeriods.size() == 1) {
                     workRecord.ResolvedContractPeriod__c = matchedPeriods[0].Id;
                 } else if (matchedPeriods.size() > 1) {
-                    appendMessage(workRecord, 'Multiple ContractPeriods matched by Contract and target date.');
+                    appendMessage(workRecord, '契約管理と対象日付に一致する契約期間が複数存在します。対象の契約期間を確認してください。');
                 }
             }
         }

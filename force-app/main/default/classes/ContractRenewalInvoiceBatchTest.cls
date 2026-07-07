@@ -177,6 +177,7 @@ private class ContractRenewalInvoiceBatchTest {
                    RelatedInvoice__c
             FROM ContractPeriod__c
             WHERE Contract__c = :contractRecord.Id
+              AND PeriodStartDate__c = :Date.newInstance(2027, 6, 1)
             LIMIT 1
         ];
         System.assertEquals(Date.newInstance(2027, 6, 1), createdPeriod.PeriodStartDate__c);
@@ -249,6 +250,7 @@ private class ContractRenewalInvoiceBatchTest {
             SELECT COUNT()
             FROM ContractPeriod__c
             WHERE Contract__c = :contractRecord.Id
+              AND IsInitialPeriod__c = false
         ]);
     }
 }

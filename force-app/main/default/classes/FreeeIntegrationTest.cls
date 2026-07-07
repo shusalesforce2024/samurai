@@ -111,6 +111,7 @@ private class FreeeIntegrationTest {
             new InvoiceLine__c(
                 Description__c = 'Service fee',
                 Quantity__c = 2,
+                Unit__c = '件',
                 Unit_Price__c = 1500,
                 Tax_Rate__c = 10,
                 Reduced_Tax__c = false,
@@ -132,6 +133,7 @@ private class FreeeIntegrationTest {
         System.assertEquals('direct_debit', parsed.get('payment_type'));
         System.assertEquals('in', parsed.get('withholding_tax_entry_method'));
         System.assertEquals('4001', String.valueOf(firstLine.get('account_item_id')));
+        System.assertEquals('件', firstLine.get('unit'));
         System.assertEquals('1500', firstLine.get('unit_price'));
     }
 
@@ -142,12 +144,14 @@ private class FreeeIntegrationTest {
             Issue_Date__c = Date.newInstance(2026, 5, 2),
             Expiration_Date__c = Date.newInstance(2026, 6, 2),
             Subject__c = 'Quotation subject',
-            Memo__c = 'Quotation memo'
+            Memo__c = 'Quotation memo',
+            QuotationNote__c = 'Customer-facing quotation note'
         );
         List<QuotationLine__c> lines = new List<QuotationLine__c>{
             new QuotationLine__c(
                 Description__c = 'Quoted service',
                 Quantity__c = 3,
+                Unit__c = '月',
                 Unit_Price__c = 2000,
                 Tax_Rate__c = '10',
                 Withholding__c = false
@@ -167,6 +171,9 @@ private class FreeeIntegrationTest {
         System.assertEquals('98765', String.valueOf(parsed.get('template_id')));
         System.assertEquals('777', String.valueOf(parsed.get('partner_id')));
         System.assertEquals('2026-05-02', parsed.get('quotation_date'));
+        System.assertEquals('Quotation memo', parsed.get('memo'));
+        System.assertEquals('Customer-facing quotation note', parsed.get('quotation_note'));
+        System.assertEquals('月', firstLine.get('unit'));
         System.assertEquals('2000', firstLine.get('unit_price'));
     }
 
@@ -240,6 +247,119 @@ private class FreeeIntegrationTest {
     }
 
     @isTest
+    static void invoiceFacadeShowsReadableFreeeRateLimitMessage() {
+        Account accountRecord = createAccountWithPartner();
+        Invoice__c invoiceRecord = createInvoice(accountRecord.Id, 'Sales');
+        createInvoiceLine(invoiceRecord.Id);
+        String rateLimitBody = '{"status_code":429,"meta":{"limit":3000,"period":86400,"remaining":0,"reset":"2026-07-05T09:00:00+09:00"}}';
+
+        Test.setMock(HttpCalloutMock.class, new FreeeMock(429, rateLimitBody));
+
+        Test.startTest();
+        try {
+            FreeeInvoiceFacade.createInvoice(invoiceRecord.Id);
+            System.assert(false, 'Expected rate limit failure');
+        } catch (FreeeInvoiceFacade.FreeeInvoiceDebugException e) {
+            System.assert(e.getMessage().contains('freee APIの利用上限に達しました。'));
+            System.assert(e.getMessage().contains('2026-07-05T09:00:00+09:00'));
+        }
+        Test.stopTest();
+
+        Invoice__c failed = [
+            SELECT Freee_Sync_Status__c, Freee_Sync_Message__c, Retry_Count__c
+            FROM Invoice__c
+            WHERE Id = :invoiceRecord.Id
+        ];
+        System.assertEquals('Failed', failed.Freee_Sync_Status__c);
+        System.assert(failed.Freee_Sync_Message__c.contains('freee APIの利用上限に達しました。'));
+        System.assert(failed.Freee_Sync_Message__c.contains('リセット予定時刻: 2026-07-05T09:00:00+09:00'));
+        System.assertEquals(Decimal.valueOf(1), failed.Retry_Count__c);
+    }
+
+    @isTest
+    static void invoiceControllerReturnsFailureDetailsForScreenAction() {
+        Account accountRecord = createAccountWithPartner();
+        Invoice__c invoiceRecord = createInvoice(accountRecord.Id, 'Sales');
+        createInvoiceLine(invoiceRecord.Id);
+
+        Test.setMock(
+            HttpCalloutMock.class,
+            new FreeeMock(400, '{"message":"Invalid invoice for screen"}')
+        );
+
+        Test.startTest();
+        try {
+            FreeeInvoiceController.createInvoice(invoiceRecord.Id);
+            System.assert(false, 'Expected screen action failure');
+        } catch (Exception e) {
+            System.assert(String.isNotBlank(e.getMessage()));
+        }
+        Test.stopTest();
+
+        Invoice__c failed = [
+            SELECT Freee_Sync_Status__c, Freee_Sync_Message__c, Retry_Count__c
+            FROM Invoice__c
+            WHERE Id = :invoiceRecord.Id
+        ];
+        System.assertEquals('Failed', failed.Freee_Sync_Status__c);
+        System.assert(failed.Freee_Sync_Message__c.contains('Invalid invoice for screen'));
+        System.assertEquals(Decimal.valueOf(1), failed.Retry_Count__c);
+    }
+
+    @isTest
+    static void invoiceFacadeRejectsAlreadySyncedInvoice() {
+        Account accountRecord = createAccountWithPartner();
+        Invoice__c invoiceRecord = createInvoice(accountRecord.Id, 'Sales');
+        createInvoiceLine(invoiceRecord.Id);
+        invoiceRecord.Sent_To_Freee__c = true;
+        update invoiceRecord;
+
+        Test.startTest();
+        try {
+            FreeeInvoiceFacade.createInvoice(invoiceRecord.Id);
+            System.assert(false, 'Expected already synced validation failure');
+        } catch (AuraHandledException e) {
+            System.assert(String.isNotBlank(e.getMessage()));
+        }
+        Test.stopTest();
+
+        Invoice__c failed = [
+            SELECT Freee_Sync_Status__c, Retry_Count__c
+            FROM Invoice__c
+            WHERE Id = :invoiceRecord.Id
+        ];
+        System.assertEquals('Failed', failed.Freee_Sync_Status__c);
+        System.assertEquals(Decimal.valueOf(1), failed.Retry_Count__c);
+    }
+
+    @isTest
+    static void invoiceFacadeRejectsMalformedSuccessResponse() {
+        Account accountRecord = createAccountWithPartner();
+        Invoice__c invoiceRecord = createInvoice(accountRecord.Id, 'Sales');
+        createInvoiceLine(invoiceRecord.Id);
+
+        Test.setMock(HttpCalloutMock.class, new FreeeMock(201, '{"invoice":{}}'));
+
+        Test.startTest();
+        try {
+            FreeeInvoiceFacade.createInvoice(invoiceRecord.Id);
+            System.assert(false, 'Expected malformed success response failure');
+        } catch (AuraHandledException e) {
+            System.assert(String.isNotBlank(e.getMessage()));
+        }
+        Test.stopTest();
+
+        Invoice__c failed = [
+            SELECT Freee_Sync_Status__c, Freee_Sync_Message__c, Retry_Count__c
+            FROM Invoice__c
+            WHERE Id = :invoiceRecord.Id
+        ];
+        System.assertEquals('Failed', failed.Freee_Sync_Status__c);
+        System.assert(String.isNotBlank(failed.Freee_Sync_Message__c));
+        System.assertEquals(Decimal.valueOf(1), failed.Retry_Count__c);
+    }
+
+    @isTest
     static void quotationControllerSyncsSuccessAndWritesLog() {
         Account accountRecord = createAccountWithPartner();
         Quotation__c quotationRecord = createQuotation(accountRecord.Id);
@@ -300,6 +420,153 @@ private class FreeeIntegrationTest {
         ];
         System.assertEquals('Failed', failed.Freee_Sync_Status__c);
         System.assert(failed.Freee_Sync_Message__c.contains('Invalid quotation'));
+        System.assertEquals(Decimal.valueOf(1), failed.Retry_Count__c);
+    }
+
+    @isTest
+    static void quotationFacadeShowsReadableFreeeRateLimitMessage() {
+        Account accountRecord = createAccountWithPartner();
+        Quotation__c quotationRecord = createQuotation(accountRecord.Id);
+        createQuotationLine(quotationRecord.Id);
+        String rateLimitBody = '{"status_code":429,"meta":{"limit":30,"period":60,"remaining":0,"reset":"2026-07-05T03:02:00+09:00"}}';
+
+        Test.setMock(HttpCalloutMock.class, new FreeeMock(429, rateLimitBody));
+
+        Test.startTest();
+        try {
+            FreeeQuotationFacade.createQuotation(quotationRecord.Id);
+            System.assert(false, 'Expected rate limit failure');
+        } catch (FreeeQuotationFacade.FreeeQuotationDebugException e) {
+            System.assert(e.getMessage().contains('freee APIの利用上限に達しました。'));
+            System.assert(e.getMessage().contains('2026-07-05T03:02:00+09:00'));
+        }
+        Test.stopTest();
+
+        Quotation__c failed = [
+            SELECT Freee_Sync_Status__c, Freee_Sync_Message__c, Retry_Count__c
+            FROM Quotation__c
+            WHERE Id = :quotationRecord.Id
+        ];
+        System.assertEquals('Failed', failed.Freee_Sync_Status__c);
+        System.assert(failed.Freee_Sync_Message__c.contains('freee APIの利用上限に達しました。'));
+        System.assert(failed.Freee_Sync_Message__c.contains('1分あたりの上限 30回'));
+        System.assert(failed.Freee_Sync_Message__c.contains('リセット予定時刻: 2026-07-05T03:02:00+09:00'));
+        System.assertEquals(Decimal.valueOf(1), failed.Retry_Count__c);
+    }
+
+    @isTest
+    static void quotationControllerReturnsFailureDetailsForScreenAction() {
+        Account accountRecord = createAccountWithPartner();
+        Quotation__c quotationRecord = createQuotation(accountRecord.Id);
+        createQuotationLine(quotationRecord.Id);
+
+        Test.setMock(
+            HttpCalloutMock.class,
+            new FreeeMock(400, '{"message":"Invalid quotation for screen"}')
+        );
+
+        Test.startTest();
+        try {
+            FreeeQuotationController.createQuotation(quotationRecord.Id);
+            System.assert(false, 'Expected screen action failure');
+        } catch (AuraHandledException e) {
+            System.assert(String.isNotBlank(e.getMessage()));
+        }
+        Test.stopTest();
+
+        Quotation__c failed = [
+            SELECT Freee_Sync_Status__c, Freee_Sync_Message__c, Retry_Count__c
+            FROM Quotation__c
+            WHERE Id = :quotationRecord.Id
+        ];
+        System.assertEquals('Failed', failed.Freee_Sync_Status__c);
+        System.assert(failed.Freee_Sync_Message__c.contains('Invalid quotation for screen'));
+        System.assertEquals(Decimal.valueOf(1), failed.Retry_Count__c);
+    }
+
+    @isTest
+    static void quotationControllerReturnsValidationErrorsForScreenAction() {
+        Account accountRecord = new Account(Name = 'No Freee Partner Account');
+        insert accountRecord;
+
+        Quotation__c quotationRecord = new Quotation__c(
+            Account__c = accountRecord.Id,
+            Issue_Date__c = Date.newInstance(2026, 5, 1),
+            Subject__c = 'Missing account quotation'
+        );
+        insert quotationRecord;
+
+        Test.startTest();
+        try {
+            FreeeQuotationController.createQuotation(quotationRecord.Id);
+            System.assert(false, 'Expected validation failure');
+        } catch (AuraHandledException e) {
+            System.assert(String.isNotBlank(e.getMessage()));
+        }
+        Test.stopTest();
+
+        Quotation__c failed = [
+            SELECT Freee_Sync_Status__c, Retry_Count__c
+            FROM Quotation__c
+            WHERE Id = :quotationRecord.Id
+        ];
+        System.assertEquals('Failed', failed.Freee_Sync_Status__c);
+        System.assertEquals(Decimal.valueOf(1), failed.Retry_Count__c);
+    }
+
+    @isTest
+    static void quotationFacadeRejectsAlreadySyncedQuotation() {
+        Account accountRecord = createAccountWithPartner();
+        Quotation__c quotationRecord = createQuotation(accountRecord.Id);
+        quotationRecord.Sent_To_Freee__c = true;
+        update quotationRecord;
+        createQuotationLine(quotationRecord.Id);
+
+        Test.startTest();
+        try {
+            FreeeQuotationFacade.createQuotation(quotationRecord.Id);
+            System.assert(false, 'Expected already synced validation failure');
+        } catch (AuraHandledException e) {
+            System.assert(String.isNotBlank(e.getMessage()));
+        }
+        Test.stopTest();
+
+        Quotation__c failed = [
+            SELECT Freee_Sync_Status__c, Retry_Count__c
+            FROM Quotation__c
+            WHERE Id = :quotationRecord.Id
+        ];
+        System.assertEquals('Failed', failed.Freee_Sync_Status__c);
+        System.assertEquals(Decimal.valueOf(1), failed.Retry_Count__c);
+    }
+
+    @isTest
+    static void quotationFacadeRejectsMalformedSuccessResponse() {
+        Account accountRecord = createAccountWithPartner();
+        Quotation__c quotationRecord = createQuotation(accountRecord.Id);
+        createQuotationLine(quotationRecord.Id);
+
+        Test.setMock(
+            HttpCalloutMock.class,
+            new FreeeMock(201, '{"quotation":{}}')
+        );
+
+        Test.startTest();
+        try {
+            FreeeQuotationFacade.createQuotation(quotationRecord.Id);
+            System.assert(false, 'Expected malformed success response failure');
+        } catch (AuraHandledException e) {
+            System.assert(String.isNotBlank(e.getMessage()));
+        }
+        Test.stopTest();
+
+        Quotation__c failed = [
+            SELECT Freee_Sync_Status__c, Freee_Sync_Message__c, Retry_Count__c
+            FROM Quotation__c
+            WHERE Id = :quotationRecord.Id
+        ];
+        System.assertEquals('Failed', failed.Freee_Sync_Status__c);
+        System.assert(String.isNotBlank(failed.Freee_Sync_Message__c));
         System.assertEquals(Decimal.valueOf(1), failed.Retry_Count__c);
     }
 
@@ -492,6 +759,7 @@ private class FreeeIntegrationTest {
             Invoice__c = invoiceId,
             Description__c = 'Invoice line',
             Quantity__c = 2,
+            Unit__c = '件',
             Unit_Price__c = 1000,
             Tax_Rate__c = 10,
             Withholding__c = false
@@ -517,6 +785,7 @@ private class FreeeIntegrationTest {
             Quotation__c = quotationId,
             Description__c = 'Quotation line',
             Quantity__c = 1,
+            Unit__c = '式',
             Unit_Price__c = 1200,
             Tax_Rate__c = '10',
             Withholding__c = false

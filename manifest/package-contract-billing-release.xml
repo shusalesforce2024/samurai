@@ -24,6 +24,7 @@
     <members>Account.Event__c</members>
     <members>Account.Freee_Partner_Id__c</members>
     <members>Contact.MarketingStatus__c</members>
+    <members>Quotation__c.QuotationNote__c</members>
     <name>CustomField</name>
   </types>
   <types>
@@ -44,6 +45,7 @@
     <members>FreeeInvoiceImportServiceTest</members>
     <members>FreeeInvoiceMapper</members>
     <members>FreeeInvoiceService</members>
+    <members>FreeeInvoiceServiceTest</members>
     <members>FreeeInvoiceStatusSyncBatch</members>
     <members>FreeeInvoiceStatusSyncBatchTest</members>
     <members>FreeeInvoiceStatusSyncService</members>
@@ -68,6 +70,7 @@
     <members>InvoiceCancelService</members>
     <members>InvoiceRecreateService</members>
     <members>Mig_FreeeInvoiceFetchBatch</members>
+    <members>Mig_FreeeInvoiceFetchService</members>
     <members>Mig_FreeeInvoiceFinalizeService</members>
     <members>Mig_FreeeInvoiceMigrationController</members>
     <members>Mig_FreeeInvoiceMigrationTest</members>

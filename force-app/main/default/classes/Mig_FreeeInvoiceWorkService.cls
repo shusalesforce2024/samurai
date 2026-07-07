@@ -225,6 +225,7 @@ public with sharing class Mig_FreeeInvoiceWorkService {
             FreeeLineId__c = freeeLineId,
             Description__c = firstString(lineMap, new List<String>{'description', 'name', 'item_name'}),
             Quantity__c = quantity,
+            Unit__c = firstString(lineMap, new List<String>{'unit', 'unit_name', 'quantity_unit'}),
             UnitPrice__c = unitPrice,
             LineAmount__c = lineAmount,
             TaxRate__c = taxRate,

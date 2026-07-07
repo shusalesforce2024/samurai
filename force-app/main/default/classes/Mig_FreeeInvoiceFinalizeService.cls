@@ -60,14 +60,17 @@ public with sharing class Mig_FreeeInvoiceFinalizeService {
                    FreeeLineId__c,
                    Description__c,
                    Quantity__c,
+                   Unit__c,
                    UnitPrice__c,
                    LineAmount__c,
                    TaxRate__c,
                    TaxAmount__c,
                    ConfirmedProductMaster__c,
+                   ConfirmedProductMaster__r.Name,
                    ResolvedContractLineItem__c,
                    CreatedInvoiceLine__c,
-                   ImportStatus__c
+                   ImportStatus__c,
+                   ResolveMessage__c
             FROM Mig_FreeeInvoiceLineWork__c
             WHERE InvoiceWork__c IN :requestedWorkIds
               AND ImportStatus__c != :Mig_FreeeInvoiceWorkService.STATUS_EXCLUDED
@@ -165,7 +168,7 @@ public with sharing class Mig_FreeeInvoiceFinalizeService {
             }
             if (!allExistingLinesMatched) {
                 workRecord.ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_NEEDS_REVIEW;
-                workRecord.ValidationMessage__c = 'Existing Salesforce invoice was found, but not all invoice lines could be matched.';
+                workRecord.ValidationMessage__c = '同じfreee請求書IDのSalesforce請求は存在しますが、すべての請求明細を照合できませんでした。既存の請求明細と移行Workの明細を確認してください。';
                 continue;
             }
             workRecord.CreatedInvoice__c = invoiceId;
@@ -257,6 +260,7 @@ public with sharing class Mig_FreeeInvoiceFinalizeService {
             ProductMaster__c = lineWork.ConfirmedProductMaster__c,
             Description__c = lineWork.Description__c,
             Quantity__c = quantity,
+            Unit__c = lineWork.Unit__c,
             Unit_Price__c = unitPrice,
             Tax_Rate__c = lineWork.TaxRate__c == null ? 10 : lineWork.TaxRate__c,
             TaxAmount__c = lineWork.TaxAmount__c,
@@ -325,34 +329,118 @@ public with sharing class Mig_FreeeInvoiceFinalizeService {
     private static List<String> validateWork(Mig_FreeeInvoiceWork__c workRecord, List<Mig_FreeeInvoiceLineWork__c> lineWorks) {
         List<String> errors = new List<String>();
         if (workRecord.ImportStatus__c != Mig_FreeeInvoiceWorkService.STATUS_READY) {
-            errors.add('Work ImportStatus__c must be Ready.');
+            errors.add('請求書移行Workの取込ステータスが反映可能ではありません。検証を実行し、要確認事項を解消してください。');
         }
         if (Mig_FreeeInvoiceWorkService.toDecimal(workRecord.FreeeInvoiceId__c) == null) {
-            errors.add('FreeeInvoiceId__c must be a valid freee invoice id.');
+            errors.add('freee請求書IDが不正です。freee請求書IDに数値が入っているか確認してください。');
         }
         if (workRecord.ResolvedAccount__c == null) {
-            errors.add('ResolvedAccount__c is required.');
+            errors.add('取引先を特定できません。freee取引先IDまたは取引先名の対応を確認してください。');
         }
         if (workRecord.ResolvedContract__c == null) {
-            errors.add('ResolvedContract__c is required.');
+            errors.add('契約管理を特定できません。取引先に有効な契約管理があるか確認してください。');
         }
         if (workRecord.ResolvedContractPeriod__c == null) {
-            errors.add('ResolvedContractPeriod__c is required.');
+            errors.add('契約期間を特定できません。請求日を含む契約期間があるか確認してください。');
         }
         if (String.isBlank(workRecord.ExternalKey__c)) {
-            errors.add('ExternalKey__c is required.');
+            errors.add('移行用の一意キーが作成できていません。freee請求書IDまたは事業所IDを確認してください。');
         }
         if (lineWorks == null || lineWorks.isEmpty()) {
-            errors.add('At least one line work is required.');
+            errors.add('請求明細Workがありません。freee請求書に明細が存在するか確認してください。');
         } else {
             for (Mig_FreeeInvoiceLineWork__c lineWork : lineWorks) {
                 if (lineWork.ConfirmedProductMaster__c == null) {
-                    errors.add('All line works must have ConfirmedProductMaster__c.');
+                    errors.add('商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。');
+                    break;
+                }
+            }
+        }
+        if (errors.isEmpty() && lineWorks != null) {
+            for (Mig_FreeeInvoiceLineWork__c lineWork : lineWorks) {
+                if (isLowSimilarityPriceMatch(lineWork)) {
+                    errors.add(
+                        '請求明細の件名と商品マスタ名が類似していないため、請求作成を停止しました。'
+                        + '金額一致だけで商品が選ばれている可能性があります。'
+                        + '明細「' + safeText(lineWork.Description__c) + '」の商品マスタを確認してください。'
+                    );
                     break;
                 }
             }
         }
         return errors;
+    }
+
+    private static Boolean isLowSimilarityPriceMatch(Mig_FreeeInvoiceLineWork__c lineWork) {
+        if (lineWork == null || String.isBlank(lineWork.ResolveMessage__c)) {
+            return false;
+        }
+        Boolean priceOnlyMatch = lineWork.ResolveMessage__c == 'Matched by unit price.'
+            || lineWork.ResolveMessage__c == 'Matched by single-line amount.';
+        if (!priceOnlyMatch || lineWork.ConfirmedProductMaster__r == null) {
+            return false;
+        }
+        return textSimilarity(lineWork.Description__c, lineWork.ConfirmedProductMaster__r.Name) < 0.35;
+    }
+
+    private static Decimal textSimilarity(String leftText, String rightText) {
+        String left = normalizeForSimilarity(leftText);
+        String right = normalizeForSimilarity(rightText);
+        if (String.isBlank(left) || String.isBlank(right)) {
+            return 0;
+        }
+        if (left.contains(right) || right.contains(left)) {
+            return 1;
+        }
+
+        Set<String> leftChars = toCharacterSet(left);
+        Set<String> rightChars = toCharacterSet(right);
+        Set<String> unionChars = new Set<String>();
+        unionChars.addAll(leftChars);
+        unionChars.addAll(rightChars);
+        if (unionChars.isEmpty()) {
+            return 0;
+        }
+
+        Integer intersectionCount = 0;
+        for (String characterValue : leftChars) {
+            if (rightChars.contains(characterValue)) {
+                intersectionCount++;
+            }
+        }
+        return Decimal.valueOf(intersectionCount) / Decimal.valueOf(unionChars.size());
+    }
+
+    private static Set<String> toCharacterSet(String source) {
+        Set<String> values = new Set<String>();
+        if (String.isBlank(source)) {
+            return values;
+        }
+        for (Integer i = 0; i < source.length(); i++) {
+            values.add(source.substring(i, i + 1));
+        }
+        return values;
+    }
+
+    private static String normalizeForSimilarity(String source) {
+        if (String.isBlank(source)) {
+            return '';
+        }
+        String normalized = source.toLowerCase();
+        List<String> removableValues = new List<String>{
+            ' ', '　', '_', '-', '・', '（', '）', '(', ')', '[', ']', '【', '】',
+            '「', '」', '『', '』', ',', '，', '.', '．', '/', '／', ':', '：',
+            ';', '；', '+', '＋', '株式会社', '有限会社', '合同会社', '年間利用料',
+            '月額', '初期費用'
+        };
+        for (String value : removableValues) {
+            normalized = normalized.replace(value, '');
+        }
+        return normalized;
+    }
+
+    private static String safeText(String source) {
+        return String.isBlank(source) ? '(空白)' : source;
     }
 
     private static Map<Decimal, List<Invoice__c>> findExistingInvoicesByFreeeId(List<Mig_FreeeInvoiceWork__c> works) {
@@ -400,7 +488,7 @@ public with sharing class Mig_FreeeInvoiceFinalizeService {
             return errors;
         }
         if (existingInvoices.size() > 1) {
-            errors.add('Multiple Salesforce invoices already have the same Freee_Invoice_Id__c: ' + String.valueOf(freeeInvoiceId));
+            errors.add('同じfreee請求書IDを持つSalesforce請求が複数存在します。freee請求書ID=' + String.valueOf(freeeInvoiceId));
             return errors;
         }
 
@@ -408,10 +496,10 @@ public with sharing class Mig_FreeeInvoiceFinalizeService {
         if (!String.isBlank(existingInvoice.Freee_External_Key__c)
             && existingInvoice.Freee_External_Key__c != workRecord.ExternalKey__c
         ) {
-            errors.add('Existing Salesforce invoice Freee_External_Key__c does not match this migration work.');
+            errors.add('既存のSalesforce請求のfreee外部キーが、この請求書移行Workと一致しません。既存請求と移行Workの対応を確認してください。');
         }
         if (existingInvoice.MigrationSourceWork__c != null && existingInvoice.MigrationSourceWork__c != workRecord.Id) {
-            errors.add('Existing Salesforce invoice is already linked to another migration work.');
+            errors.add('既存のSalesforce請求は別の請求書移行Workに紐づいています。重複取込または紐づけ誤りがないか確認してください。');
         }
         return errors;
     }

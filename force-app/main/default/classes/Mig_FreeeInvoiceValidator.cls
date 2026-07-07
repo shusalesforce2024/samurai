@@ -34,22 +34,22 @@ public with sharing class Mig_FreeeInvoiceValidator {
         for (Mig_FreeeInvoiceWork__c workRecord : works) {
             List<String> messages = new List<String>();
             if (String.isBlank(workRecord.FreeeInvoiceId__c)) {
-                messages.add('FreeeInvoiceId__c is required.');
+                messages.add('freee請求書IDが取得できていません。freee請求データを確認してください。');
             }
             if (String.isBlank(workRecord.ExternalKey__c)) {
-                messages.add('ExternalKey__c is required.');
+                messages.add('移行用の一意キーが作成できていません。freee請求書IDまたは事業所IDを確認してください。');
             }
             if (workRecord.ResolvedAccount__c == null) {
-                messages.add('ResolvedAccount__c is required.');
+                messages.add('取引先を特定できません。freee取引先IDまたは取引先名の対応を確認してください。');
             }
             if (workRecord.ResolvedContract__c == null) {
-                messages.add('ResolvedContract__c is required.');
+                messages.add('契約管理を特定できません。取引先に有効な契約管理があるか確認してください。');
             }
             if (workRecord.ResolvedContractPeriod__c == null) {
-                messages.add('ResolvedContractPeriod__c is required.');
+                messages.add('契約期間を特定できません。請求日を含む契約期間があるか確認してください。');
             }
             if (workRecord.InvoiceLineWorks__r == null || workRecord.InvoiceLineWorks__r.isEmpty()) {
-                messages.add('At least one invoice line work record is required.');
+                messages.add('請求明細Workがありません。freee請求書に明細が存在するか確認してください。');
             } else {
                 Decimal lineTotal = 0;
                 Boolean hasUnconfirmedProduct = false;
@@ -67,10 +67,10 @@ public with sharing class Mig_FreeeInvoiceValidator {
                     }
                 }
                 if (hasUnconfirmedProduct) {
-                    messages.add('All non-excluded line works must have ConfirmedProductMaster__c.');
+                    messages.add('商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。');
                 }
                 if (workRecord.InvoiceAmount__c != null && Math.abs(workRecord.InvoiceAmount__c - lineTotal) > 1) {
-                    messages.add('InvoiceAmount__c does not match line total. invoice=' + workRecord.InvoiceAmount__c + ', lines=' + lineTotal);
+                    messages.add('請求金額と明細合計が一致していません。請求金額=' + workRecord.InvoiceAmount__c + '、明細合計=' + lineTotal);
                 }
             }
 

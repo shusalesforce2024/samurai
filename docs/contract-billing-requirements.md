@@ -540,21 +540,24 @@ Freee連携エラー、年契約の更新確認対象、決済待ち、送付待
 ## 19. バッチ実行時刻
 
 ```text
-月契約の翌月分請求書作成: 毎日 2:00に起動し、11日のみ作成処理を実行
-年契約の次年度分請求書作成対象確認: 毎日 2:00に起動し、11日のみ作成処理を実行
+契約月次明細作成: 毎月11日 1:30
+freee請求書取込: 毎週土曜 2:30
 Freee送付・決済ステータス同期: 毎日 3:00
+旧更新請求バッチ: 通常運用では停止
 ```
 
 dev1では以下のスケジュールを登録済みとする。
 
 ```text
 ContractMonthlyLineBatch: 毎月11日 1:30
-FreeeInvoiceImportScheduler: 毎日 2:30
+FreeeInvoiceImportScheduler: 毎週土曜 2:30
 FreeeInvoiceStatusSyncBatch: 毎日 3:00
 ```
 
 `ContractMonthlyLineBatch` は、MRR/ARR・将来売上レポート用の契約月次明細を先に作成するため継続する。
 `ContractRenewalInvoiceBatch` は、Salesforce側で請求・請求明細・Freee請求書まで作成する旧更新請求バッチであり、freee側の自動作成・自動送付と二重請求になるため通常運用ではスケジュール停止する。
+`FreeeInvoiceImportScheduler` は、freee API上限を圧迫しないように毎週土曜2:30に前月1日〜当月末のみを取得する。
+`FreeeInvoiceStatusSyncBatch` は、毎日3:00に実行し、支払期日が前月1日〜当月末のfreee連携済み・未取消・未決済の請求のみを同期対象とする。
 
 ## 20. 既存データ移行
 
@@ -698,8 +701,8 @@ erDiagram
 | バッチ | 利用方針 | 実行タイミング | 役割 |
 |---|---|---:|---|
 | `ContractMonthlyLineBatch` | 継続利用 | 毎月11日 1:30 | MRR/ARR・将来売上確認用の契約月次明細を先行作成する |
-| `FreeeInvoiceImportScheduler` | 継続利用 | 毎日 2:30 | freeeで作成された請求書をWorkへ取り込み、検証・反映対象にする |
-| `FreeeInvoiceStatusSyncBatch` | 継続利用 | 毎日 3:00 | Salesforce請求の送付ステータス、決済ステータス、金額系項目をfreee情報で更新する |
+| `FreeeInvoiceImportScheduler` | 継続利用 | 毎週土曜 2:30 | 前月1日〜当月末のfreee請求書をWorkへ取り込み、検証・反映対象にする |
+| `FreeeInvoiceStatusSyncBatch` | 継続利用 | 毎日 3:00 | 支払期日が前月1日〜当月末のSalesforce請求について、送付ステータス、決済ステータス、金額系項目をfreee情報で更新する |
 | `ContractRenewalInvoiceBatch` | 停止 | なし | Salesforce起点で更新請求・freee請求書を作成する旧方式のため、通常運用ではスケジュール登録しない |
 
 ### 金額項目の算出ルール

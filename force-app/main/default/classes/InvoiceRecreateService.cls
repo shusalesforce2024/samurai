@@ -48,6 +48,7 @@ public with sharing class InvoiceRecreateService {
                 QuotationLine__c = sourceLine.QuotationLine__c,
                 Reduced_Tax__c = sourceLine.Reduced_Tax__c,
                 Tax_Rate__c = sourceLine.Tax_Rate__c,
+                Unit__c = sourceLine.Unit__c,
                 Unit_Price__c = sourceLine.Unit_Price__c,
                 Withholding__c = sourceLine.Withholding__c
             ));
@@ -130,6 +131,7 @@ public with sharing class InvoiceRecreateService {
                    QuotationLine__c,
                    Reduced_Tax__c,
                    Tax_Rate__c,
+                   Unit__c,
                    Unit_Price__c,
                    Withholding__c
             FROM InvoiceLine__c

@@ -31,10 +31,12 @@ private class TriggerSyncServicesTest {
     static void productUnitPriceSyncsQuotationAndInvoiceLines() {
         ProductMaster__c firstProduct = new ProductMaster__c(
             Name = 'First Product',
+            Unit__c = '件',
             UnitPrice__c = 2500
         );
         ProductMaster__c secondProduct = new ProductMaster__c(
             Name = 'Second Product',
+            Unit__c = '月',
             UnitPrice__c = 3500
         );
         insert new List<ProductMaster__c>{ firstProduct, secondProduct };
@@ -59,19 +61,21 @@ private class TriggerSyncServicesTest {
         insert quotationLine;
 
         quotationLine = [
-            SELECT ProductMaster__c, Unit_Price__c
+            SELECT ProductMaster__c, Unit__c, Unit_Price__c
             FROM QuotationLine__c
             WHERE Id = :quotationLine.Id
         ];
+        System.assertEquals('件', quotationLine.Unit__c);
         System.assertEquals(2500, quotationLine.Unit_Price__c);
 
         quotationLine.ProductMaster__c = secondProduct.Id;
         update quotationLine;
         quotationLine = [
-            SELECT Unit_Price__c
+            SELECT Unit__c, Unit_Price__c
             FROM QuotationLine__c
             WHERE Id = :quotationLine.Id
         ];
+        System.assertEquals('月', quotationLine.Unit__c);
         System.assertEquals(3500, quotationLine.Unit_Price__c);
 
         Invoice__c invoiceRecord = new Invoice__c(
@@ -92,10 +96,11 @@ private class TriggerSyncServicesTest {
         insert invoiceLine;
 
         invoiceLine = [
-            SELECT Unit_Price__c
+            SELECT Unit__c, Unit_Price__c
             FROM InvoiceLine__c
             WHERE Id = :invoiceLine.Id
         ];
+        System.assertEquals('件', invoiceLine.Unit__c);
         System.assertEquals(2500, invoiceLine.Unit_Price__c);
     }
 

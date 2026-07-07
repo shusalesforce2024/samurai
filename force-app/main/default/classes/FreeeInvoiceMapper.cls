@@ -50,6 +50,9 @@ public with sharing class FreeeInvoiceMapper {
             row.put('type', 'item');
             row.put('description', line.Description__c);
             row.put('quantity', line.Quantity__c);
+            if (String.isNotBlank(line.Unit__c)) {
+                row.put('unit', line.Unit__c);
+            }
             row.put('unit_price', String.valueOf(line.Unit_Price__c.setScale(0)));
             row.put('tax_rate', Integer.valueOf(line.Tax_Rate__c));
             row.put('account_item_id', accountItemId);

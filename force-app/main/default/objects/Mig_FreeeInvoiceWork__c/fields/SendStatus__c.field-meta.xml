@@ -3,13 +3,23 @@
     <fullName>SendStatus__c</fullName>
     <label>送付ステータス</label>
     <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
-            <value><fullName>送付待ち</fullName><default>false</default><label>送付待ち</label></value>
-            <value><fullName>送付済み</fullName><default>false</default><label>送付済み</label></value>
+            <value>
+                <fullName>送付待ち</fullName>
+                <default>false</default>
+                <label>送付待ち</label>
+            </value>
+            <value>
+                <fullName>送付済み</fullName>
+                <default>false</default>
+                <label>送付済み</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

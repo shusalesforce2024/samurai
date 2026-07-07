@@ -41,6 +41,7 @@ public with sharing class FreeeQuotationFacade {
                    Account__r.Freee_Partner_Id__c,
                    Subject__c,
                    Memo__c,
+                   QuotationNote__c,
                    Issue_Date__c,
                    Expiration_Date__c,
                    Quotation_Status__c,
@@ -74,6 +75,7 @@ public with sharing class FreeeQuotationFacade {
             SELECT Id,
                    Description__c,
                    Quantity__c,
+                   Unit__c,
                    Unit_Price__c,
                    Tax_Rate__c,
                    Withholding__c
@@ -280,71 +282,11 @@ public with sharing class FreeeQuotationFacade {
     }
 
     private static String summarizeFreeeError(String responseBody) {
-        if (String.isBlank(responseBody)) {
-            return 'freee からエラー詳細を取得できませんでした。';
-        }
-
-        try {
-            Object parsed = JSON.deserializeUntyped(responseBody);
-            if (!(parsed instanceof Map<String, Object>)) {
-                return responseBody;
-            }
-
-            Map<String, Object> bodyMap = (Map<String, Object>) parsed;
-            if (bodyMap.containsKey('message') && bodyMap.get('message') != null) {
-                return String.valueOf(bodyMap.get('message'));
-            }
-
-            if (bodyMap.containsKey('errors') && bodyMap.get('errors') instanceof List<Object>) {
-                List<Object> errors = (List<Object>) bodyMap.get('errors');
-                List<String> messages = new List<String>();
-
-                for (Object errorItem : errors) {
-                    if (errorItem instanceof Map<String, Object>) {
-                        Map<String, Object> errorMap = (Map<String, Object>) errorItem;
-                        if (errorMap.containsKey('messages')
-                            && errorMap.get('messages') instanceof List<Object>
-                        ) {
-                            List<Object> errorMessages = (List<Object>) errorMap.get('messages');
-                            for (Object errorMessage : errorMessages) {
-                                if (errorMessage != null) {
-                                    messages.add(String.valueOf(errorMessage));
-                                }
-                            }
-                        } else if (errorMap.containsKey('message')
-                            && errorMap.get('message') != null
-                        ) {
-                            messages.add(String.valueOf(errorMap.get('message')));
-                        } else {
-                            messages.add(JSON.serialize(errorMap));
-                        }
-                    } else if (errorItem != null) {
-                        messages.add(String.valueOf(errorItem));
-                    }
-                }
-
-                if (!messages.isEmpty()) {
-                    return String.join(messages, ' / ');
-                }
-            }
-        } catch (Exception e) {
-            System.debug('freee エラーレスポンスの解析に失敗しました: ' + e.getMessage());
-        }
-
-        return responseBody;
+        return FreeeErrorMessageUtil.summarizeFreeeError(responseBody);
     }
 
     private static String buildDetailedFreeeError(String responseBody) {
-        String summary = summarizeFreeeError(responseBody);
-
-        if (String.isBlank(responseBody)) {
-            return summary;
-        }
-        if (summary == responseBody) {
-            return responseBody;
-        }
-
-        return summary + '\n\nRaw response:\n' + responseBody;
+        return FreeeErrorMessageUtil.buildDetailedFreeeError(responseBody);
     }
 
     private static String buildExceptionLogMessage(Exception e, HttpResponse response) {

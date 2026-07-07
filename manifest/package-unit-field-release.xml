@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>ContractRenewalInvoiceBatch</members>
+        <members>ContractRenewalInvoiceBatchTest</members>
+        <members>FreeeIntegrationTest</members>
+        <members>FreeeInvoiceFacade</members>
+        <members>FreeeInvoiceMapper</members>
+        <members>FreeeQuotationFacade</members>
+        <members>FreeeQuotationMapper</members>
+        <members>InvoiceCancelRecreateServiceTest</members>
+        <members>InvoiceRecreateService</members>
+        <members>Mig_FreeeInvoiceFinalizeService</members>
+        <members>Mig_FreeeInvoiceMigrationTest</members>
+        <members>Mig_FreeeInvoiceWorkService</members>
+        <members>OppContractInvoiceService</members>
+        <members>OppContractInvoiceServiceTest</members>
+        <members>ProductUnitPriceSyncService</members>
+        <members>TriggerSyncServicesTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>InvoiceLine__c.Unit__c</members>
+        <members>Mig_FreeeInvoiceLineWork__c.Unit__c</members>
+        <members>ProductMaster__c.Unit__c</members>
+        <members>QuotationLine__c.Unit__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>InvoiceLine__c-請求明細レイアウト</members>
+        <members>Mig_FreeeInvoiceLineWork__c-Freee請求明細移行Workレイアウト</members>
+        <members>Mig_FreeeInvoiceWork__c-Freee請求移行Workレイアウト</members>
+        <members>ProductMaster__c-商品マスタレイアウト</members>
+        <members>QuotationLine__c-Quotation Line Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Mig_FreeeInvoiceMigrationAdmin</members>
+        <members>SAMURAI_Contract_Billing_User</members>
+        <members>SAMURAI_Sales_Contract_User</members>
+        <members>SAMURAI_System_Admin</members>
+        <name>PermissionSet</name>
+    </types>
+    <version>64.0</version>
+</Package>

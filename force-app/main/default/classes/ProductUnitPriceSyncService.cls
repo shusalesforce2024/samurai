@@ -3,7 +3,7 @@ public with sharing class ProductUnitPriceSyncService {
         List<QuotationLine__c> newRecords,
         Map<Id, QuotationLine__c> oldMap
     ) {
-        Map<Id, Decimal> unitPriceByProductId = getUnitPriceByProductId(
+        Map<Id, ProductMaster__c> productById = getProductById(
             collectChangedProductIdsForQuotationLines(newRecords, oldMap)
         );
 
@@ -12,9 +12,15 @@ public with sharing class ProductUnitPriceSyncService {
                 continue;
             }
 
-            Decimal unitPrice = unitPriceByProductId.get(record.ProductMaster__c);
-            if (unitPrice != null) {
-                record.Unit_Price__c = unitPrice;
+            ProductMaster__c product = productById.get(record.ProductMaster__c);
+            if (product == null) {
+                continue;
+            }
+            if (product.UnitPrice__c != null) {
+                record.Unit_Price__c = product.UnitPrice__c;
+            }
+            if (!String.isBlank(product.Unit__c)) {
+                record.Unit__c = product.Unit__c;
             }
         }
     }
@@ -23,7 +29,7 @@ public with sharing class ProductUnitPriceSyncService {
         List<InvoiceLine__c> newRecords,
         Map<Id, InvoiceLine__c> oldMap
     ) {
-        Map<Id, Decimal> unitPriceByProductId = getUnitPriceByProductId(
+        Map<Id, ProductMaster__c> productById = getProductById(
             collectChangedProductIdsForInvoiceLines(newRecords, oldMap)
         );
 
@@ -32,9 +38,15 @@ public with sharing class ProductUnitPriceSyncService {
                 continue;
             }
 
-            Decimal unitPrice = unitPriceByProductId.get(record.ProductMaster__c);
-            if (unitPrice != null) {
-                record.Unit_Price__c = unitPrice;
+            ProductMaster__c product = productById.get(record.ProductMaster__c);
+            if (product == null) {
+                continue;
+            }
+            if (product.UnitPrice__c != null) {
+                record.Unit_Price__c = product.UnitPrice__c;
+            }
+            if (!String.isBlank(product.Unit__c)) {
+                record.Unit__c = product.Unit__c;
             }
         }
     }
@@ -99,20 +111,20 @@ public with sharing class ProductUnitPriceSyncService {
         return oldMap.get(record.Id).ProductMaster__c != record.ProductMaster__c;
     }
 
-    private static Map<Id, Decimal> getUnitPriceByProductId(Set<Id> productIds) {
-        Map<Id, Decimal> unitPriceByProductId = new Map<Id, Decimal>();
+    private static Map<Id, ProductMaster__c> getProductById(Set<Id> productIds) {
+        Map<Id, ProductMaster__c> productById = new Map<Id, ProductMaster__c>();
         if (productIds.isEmpty()) {
-            return unitPriceByProductId;
+            return productById;
         }
 
         for (ProductMaster__c product : [
-            SELECT Id, UnitPrice__c
+            SELECT Id, UnitPrice__c, Unit__c
             FROM ProductMaster__c
             WHERE Id IN :productIds
         ]) {
-            unitPriceByProductId.put(product.Id, product.UnitPrice__c);
+            productById.put(product.Id, product);
         }
 
-        return unitPriceByProductId;
+        return productById;
     }
 }

@@ -1,0 +1,10 @@
+﻿Id,Name,ContractName__c,Account__c,Account__r.Name,Status__c,StartDate__c,EndDate__c
+a04RB00000kUAOAYA4,CN-00000036,株式会社デザインアーク,001RB00001VTruAYAT,株式会社デザインアーク,Activated,2025-05-01,
+a04RB00000kVL7SYAW,CN-00000173,Mig_freee請求移行_株式会社アールシーコア,001RB00001VTqxQYAT,株式会社アールシーコア,Draft,2026-03-01,2026-06-30
+a04RB00000kVL7UYAW,CN-00000175,Mig_freee請求移行_株式会社エリオクリエイト,001RB00001VTrxYYAT,株式会社エリオクリエイト,Draft,2026-05-01,2026-05-31
+a04RB00000kVL7VYAW,CN-00000176,Mig_freee請求移行_株式会社コスモスイニシア,001RB00001VTqgBYAT,株式会社コスモスイニシア,Draft,2026-03-01,2026-05-31
+a04RB00000kVL7WYAW,CN-00000177,Mig_freee請求移行_株式会社サンケイビル,001RB00001VTrvXYAT,株式会社サンケイビル,Draft,2026-03-01,2026-03-31
+a04RB00000kVL7YYAW,CN-00000179,Mig_freee請求移行_株式会社デザインアーク,001RB00001VTruAYAT,株式会社デザインアーク,Draft,2026-06-01,2026-06-30
+a04RB00000kVL7aYAG,CN-00000181,Mig_freee請求移行_株式会社石勝エクステリア,001RB00001VTqnMYAT,株式会社石勝エクステリア,Draft,2026-03-01,2026-03-31
+a04RB00000kVL7cYAG,CN-00000183,Mig_freee請求移行_近鉄不動産株式会社,001RB00001VTrvcYAD,近鉄不動産株式会社,Draft,2026-05-01,2026-06-30
+a04RB00000kVL7jYAG,CN-00000190,Mig_freee請求移行_野村不動産株式会社,001RB00001VTCYEYA5,野村不動産株式会社,Draft,2026-04-01,2026-04-30

@@ -138,6 +138,7 @@ public with sharing class ContractRenewalInvoiceBatch
                    MasterContract__c,
                    ProductMaster__c,
                    ProductMaster__r.Name,
+                   ProductMaster__r.Unit__c,
                    QuotationLine__c,
                    RevenueAmount__c,
                    Total__c,
@@ -266,6 +267,7 @@ public with sharing class ContractRenewalInvoiceBatch
                 Quantity__c = 1,
                 TaxAmount__c = taxAmount,
                 Tax_Rate__c = TAX_RATE,
+                Unit__c = '式',
                 Unit_Price__c = amount
             ));
             return invoiceLines;
@@ -284,6 +286,7 @@ public with sharing class ContractRenewalInvoiceBatch
                 Quantity__c = nullToOne(templateLine.PeopleNumber__c),
                 TaxAmount__c = taxAmount,
                 Tax_Rate__c = TAX_RATE,
+                Unit__c = getTemplateLineUnit(templateLine),
                 Unit_Price__c = amount
             ));
         }
@@ -375,6 +378,13 @@ public with sharing class ContractRenewalInvoiceBatch
             return templateLine.ProductMaster__r.Name;
         }
         return '利用料';
+    }
+
+    private static String getTemplateLineUnit(ContractLineItem__c templateLine) {
+        if (templateLine.ProductMaster__r != null && !String.isBlank(templateLine.ProductMaster__r.Unit__c)) {
+            return templateLine.ProductMaster__r.Unit__c;
+        }
+        return null;
     }
 
     private static Decimal getRevenueAmount(ContractLineItem__c templateLine) {

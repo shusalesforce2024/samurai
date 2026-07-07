@@ -1,5 +1,7 @@
 public with sharing class FreeeInvoiceService {
     private static final String ENDPOINT = 'callout:Freee_iv/invoices';
+    private static final Integer DEFAULT_LIST_LIMIT = 100;
+    private static final Integer MAX_LIST_LIMIT = 100;
 
     public static HttpResponse createInvoice(String requestBody) {
         HttpRequest req = new HttpRequest();
@@ -29,14 +31,21 @@ public with sharing class FreeeInvoiceService {
     }
 
     public static HttpResponse getInvoices(Date startDate, Date endDate, Integer page, Integer perPage) {
-        FreeeConfigService.Config config = FreeeConfigService.getConfig();
         Integer safePage = page == null || page < 1 ? 1 : page;
-        Integer safePerPage = perPage == null || perPage < 1 ? 100 : perPage;
+        Integer safeLimit = normalizeListLimit(perPage);
+        Integer offset = (safePage - 1) * safeLimit;
+        return getInvoicesByOffset(startDate, endDate, offset, safeLimit);
+    }
+
+    public static HttpResponse getInvoicesByOffset(Date startDate, Date endDate, Integer offset, Integer limitSize) {
+        FreeeConfigService.Config config = FreeeConfigService.getConfig();
+        Integer safeOffset = offset == null || offset < 0 ? 0 : offset;
+        Integer safeLimit = normalizeListLimit(limitSize);
 
         List<String> params = new List<String>{
             'company_id=' + String.valueOf(config.companyId),
-            'page=' + String.valueOf(safePage),
-            'per_page=' + String.valueOf(safePerPage)
+            'limit=' + String.valueOf(safeLimit),
+            'offset=' + String.valueOf(safeOffset)
         };
         if (startDate != null) {
             params.add('start_billing_date=' + String.valueOf(startDate));
@@ -53,6 +62,13 @@ public with sharing class FreeeInvoiceService {
 
         Http http = new Http();
         return http.send(req);
+    }
+
+    private static Integer normalizeListLimit(Integer limitSize) {
+        if (limitSize == null || limitSize < 1) {
+            return DEFAULT_LIST_LIMIT;
+        }
+        return Math.min(limitSize, MAX_LIST_LIMIT);
     }
 
     public static HttpResponse cancelInvoice(Decimal freeeInvoiceId) {

@@ -1,6 +1,6 @@
 List<String> managedJobNames = new List<String>{
     'ContractMonthlyLineBatch_毎月11日1時30分',
-    'FreeeInvoiceImportScheduler_毎日2時30分',
+    'FreeeInvoiceImportScheduler_毎週土曜2時30分',
     'FreeeInvoiceStatusSyncBatch'
 };
 
@@ -21,8 +21,8 @@ System.schedule(
 );
 
 System.schedule(
-    'FreeeInvoiceImportScheduler_毎日2時30分',
-    '0 30 2 * * ?',
+    'FreeeInvoiceImportScheduler_毎週土曜2時30分',
+    '0 30 2 ? * SAT',
     new FreeeInvoiceImportScheduler()
 );
 

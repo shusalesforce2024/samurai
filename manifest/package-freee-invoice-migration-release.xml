@@ -17,7 +17,9 @@
   </types>
   <types>
     <members>FreeeInvoiceService</members>
+    <members>FreeeInvoiceServiceTest</members>
     <members>Mig_FreeeInvoiceFetchBatch</members>
+    <members>Mig_FreeeInvoiceFetchService</members>
     <members>Mig_FreeeInvoiceFinalizeService</members>
     <members>Mig_FreeeInvoiceMigrationController</members>
     <members>Mig_FreeeInvoiceMigrationTest</members>

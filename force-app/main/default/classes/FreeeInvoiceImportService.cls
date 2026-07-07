@@ -1,5 +1,7 @@
 public with sharing class FreeeInvoiceImportService {
-    public static final Integer DEFAULT_PER_PAGE = 200;
+    public static final Integer DEFAULT_PER_PAGE = 10;
+    private static final Integer MAX_BATCH_PER_PAGE = 90;
+    @TestVisible private static Boolean skipBatchExecutionForTest = false;
 
     public class ImportRequest {
         public Date rangeStartDate;
@@ -42,7 +44,21 @@ public with sharing class FreeeInvoiceImportService {
 
     public static ImportResult enqueueImport(Date rangeStartDate, Date rangeEndDate, Integer perPage) {
         validateRange(rangeStartDate, rangeEndDate);
+        Integer normalizedPerPage = Mig_FreeeInvoiceFetchService.normalizeThrottledPerPage(perPage);
+        Id jobId = FreeeInvoiceImportThrottledScheduler.scheduleImport(
+            rangeStartDate,
+            rangeEndDate,
+            normalizedPerPage
+        );
+        return new ImportResult(jobId, rangeStartDate, rangeEndDate, normalizedPerPage);
+    }
+
+    public static ImportResult enqueueBatchImport(Date rangeStartDate, Date rangeEndDate, Integer perPage) {
+        validateRange(rangeStartDate, rangeEndDate);
         Integer normalizedPerPage = normalizePerPage(perPage);
+        if (Test.isRunningTest() && skipBatchExecutionForTest) {
+            return new ImportResult(UserInfo.getUserId(), rangeStartDate, rangeEndDate, normalizedPerPage);
+        }
         Id jobId = Database.executeBatch(
             new Mig_FreeeInvoiceFetchBatch(rangeStartDate, rangeEndDate, normalizedPerPage),
             1
@@ -77,8 +93,8 @@ public with sharing class FreeeInvoiceImportService {
 
     private static Integer normalizePerPage(Integer perPage) {
         if (perPage == null || perPage < 1) {
-            return DEFAULT_PER_PAGE;
+            return MAX_BATCH_PER_PAGE;
         }
-        return Math.min(perPage, 3000);
+        return Math.min(perPage, MAX_BATCH_PER_PAGE);
     }
 }

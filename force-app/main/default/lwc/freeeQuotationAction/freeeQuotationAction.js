@@ -7,6 +7,11 @@ import createQuotation from '@salesforce/apex/FreeeQuotationController.createQuo
 export default class FreeeQuotationAction extends LightningElement {
     @api recordId;
     isLoading = false;
+    errorMessage;
+
+    get hasError() {
+        return Boolean(this.errorMessage);
+    }
 
     handleCancel() {
         this.dispatchEvent(new CloseActionScreenEvent());
@@ -14,6 +19,7 @@ export default class FreeeQuotationAction extends LightningElement {
 
     async handleExecute() {
         this.isLoading = true;
+        this.errorMessage = null;
 
         try {
             const message = await createQuotation({ quotationId: this.recordId });
@@ -29,11 +35,15 @@ export default class FreeeQuotationAction extends LightningElement {
             this.dispatchEvent(new RefreshEvent());
             this.dispatchEvent(new CloseActionScreenEvent());
         } catch (error) {
+            const message = this.extractErrorMessage(error);
+            this.errorMessage = message;
+
             this.dispatchEvent(
                 new ShowToastEvent({
-                    title: 'エラー',
-                    message: this.extractErrorMessage(error),
-                    variant: 'error'
+                    title: 'freee見積連携に失敗しました',
+                    message,
+                    variant: 'error',
+                    mode: 'sticky'
                 })
             );
         } finally {
@@ -42,12 +52,24 @@ export default class FreeeQuotationAction extends LightningElement {
     }
 
     extractErrorMessage(error) {
+        if (Array.isArray(error?.body)) {
+            return error.body
+                .map((item) => item?.message)
+                .filter(Boolean)
+                .join('\n');
+        }
         if (error?.body?.message) {
             return error.body.message;
+        }
+        if (error?.body?.output?.errors?.length) {
+            return error.body.output.errors
+                .map((item) => item?.message)
+                .filter(Boolean)
+                .join('\n');
         }
         if (error?.message) {
             return error.message;
         }
-        return 'freee連携に失敗しました。';
+        return 'freee見積連携に失敗しました。見積の「freee同期メッセージ」またはfreee連携ログを確認してください。';
     }
 }

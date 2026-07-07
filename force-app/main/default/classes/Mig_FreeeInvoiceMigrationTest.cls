@@ -13,7 +13,7 @@ private class Mig_FreeeInvoiceMigrationTest {
                     '"issue_date":"2026-03-20","payment_limit_date":"2026-04-30","subject":"March usage",' +
                     '"total_amount":1100,"total_vat":100,"paid_amount":0,"unpaid_amount":1100,' +
                     '"sending_status":"sent","payment_status":"unpaid","target_period_start_date":"2026-03-01","target_period_end_date":"2026-03-31",' +
-                    '"invoice_lines":[{"id":1,"description":"Rendary","quantity":1,"unit_price":1000,"amount":1000,"tax_rate":10,"tax_amount":100}]}' +
+                    '"invoice_lines":[{"id":1,"description":"Rendary","quantity":1,"unit":"月","unit_price":1000,"amount":1000,"tax_rate":10,"tax_amount":100}]}' +
                     '}'
                 );
                 return response;
@@ -21,6 +21,8 @@ private class Mig_FreeeInvoiceMigrationTest {
 
             System.assert(request.getEndpoint().contains('/invoices?'));
             System.assert(request.getEndpoint().contains('company_id=12345'));
+            System.assert(request.getEndpoint().contains('limit='));
+            System.assert(request.getEndpoint().contains('offset='));
 
             HttpResponse response = new HttpResponse();
             response.setStatusCode(200);
@@ -34,6 +36,56 @@ private class Mig_FreeeInvoiceMigrationTest {
                 ']}'
             );
             return response;
+        }
+    }
+
+    private class FreeeInvoiceMultiPageMock implements HttpCalloutMock {
+        public HttpResponse respond(HttpRequest request) {
+            System.assertEquals('GET', request.getMethod());
+            HttpResponse response = new HttpResponse();
+            response.setStatusCode(200);
+            response.setHeader('Content-Type', 'application/json');
+
+            if (request.getEndpoint().contains('/invoices/555')) {
+                response.setBody(buildDetailBody(555, 'INV-555'));
+                return response;
+            }
+            if (request.getEndpoint().contains('/invoices/556')) {
+                response.setBody(buildDetailBody(556, 'INV-556'));
+                return response;
+            }
+
+            System.assert(request.getEndpoint().contains('/invoices?'));
+            System.assert(request.getEndpoint().contains('limit=1'));
+            if (request.getEndpoint().contains('offset=0')) {
+                response.setBody(buildListBody(555, 'INV-555'));
+            } else if (request.getEndpoint().contains('offset=1')) {
+                response.setBody(buildListBody(556, 'INV-556'));
+            } else if (request.getEndpoint().contains('offset=2')) {
+                response.setBody('{"invoices":[]}');
+            } else {
+                System.assert(false, 'Unexpected endpoint: ' + request.getEndpoint());
+            }
+            return response;
+        }
+
+        private String buildListBody(Integer invoiceId, String invoiceNumber) {
+            return '{"invoices":[' +
+                '{"id":' + invoiceId + ',"invoice_number":"' + invoiceNumber + '","partner_id":901,"partner_name":"Migration Account",' +
+                '"issue_date":"2026-03-20","billing_date":"2026-03-20","payment_limit_date":"2026-04-30","subject":"March usage",' +
+                '"total_amount":1100,"total_vat":100,"paid_amount":0,"unpaid_amount":1100,' +
+                '"sending_status":"sent","payment_status":"unpaid"}' +
+                ']}';
+        }
+
+        private String buildDetailBody(Integer invoiceId, String invoiceNumber) {
+            return '{"invoice":' +
+                '{"id":' + invoiceId + ',"invoice_number":"' + invoiceNumber + '","partner_id":901,"partner_name":"Migration Account",' +
+                '"issue_date":"2026-03-20","billing_date":"2026-03-20","payment_limit_date":"2026-04-30","subject":"March usage",' +
+                '"total_amount":1100,"total_vat":100,"paid_amount":0,"unpaid_amount":1100,' +
+                '"sending_status":"sent","payment_status":"unpaid","target_period_start_date":"2026-03-01","target_period_end_date":"2026-03-31",' +
+                '"invoice_lines":[{"id":1,"description":"Rendary","quantity":1,"unit":"月","unit_price":1000,"amount":1000,"tax_rate":10,"tax_amount":100}]}' +
+                '}';
         }
     }
 
@@ -203,7 +255,8 @@ private class Mig_FreeeInvoiceMigrationTest {
         Mig_FreeeInvoiceLineWork__c lineWork = [
             SELECT ConfirmedProductMaster__c,
                    ResolvedContractLineItem__c,
-                   ProductResolveStatus__c
+                   ProductResolveStatus__c,
+                   Unit__c
             FROM Mig_FreeeInvoiceLineWork__c
             WHERE InvoiceWork__c = :workRecord.Id
             LIMIT 1
@@ -211,6 +264,34 @@ private class Mig_FreeeInvoiceMigrationTest {
         System.assertNotEquals(null, lineWork.ConfirmedProductMaster__c);
         System.assertNotEquals(null, lineWork.ResolvedContractLineItem__c);
         System.assertEquals(Mig_FreeeInvoiceWorkService.PRODUCT_STATUS_CONFIRMED, lineWork.ProductResolveStatus__c);
+        System.assertEquals('月', lineWork.Unit__c);
+    }
+
+    @isTest
+    static void fetchBatchContinuesWithOffsetUntilLastPage() {
+        Test.setMock(HttpCalloutMock.class, new FreeeInvoiceMultiPageMock());
+
+        Test.startTest();
+        Database.executeBatch(
+            new Mig_FreeeInvoiceFetchBatch(
+                Date.newInstance(2026, 3, 20),
+                Date.newInstance(2026, 3, 20),
+                1
+            ),
+            1
+        );
+        Test.stopTest();
+
+        System.assertEquals(1, [
+            SELECT COUNT()
+            FROM Mig_FreeeInvoiceWork__c
+            WHERE FreeeInvoiceId__c = '555'
+        ]);
+        System.assertEquals(1, [
+            SELECT COUNT()
+            FROM Mig_FreeeInvoiceWork__c
+            WHERE FreeeInvoiceId__c = '556'
+        ]);
     }
 
     @isTest
@@ -220,7 +301,7 @@ private class Mig_FreeeInvoiceMigrationTest {
             '{"id":888001,"invoice_number":"INV-PAID","partner_id":901,"partner_name":"Migration Account",' +
             '"issue_date":"2026-03-21","payment_limit_date":"2026-04-30","subject":"Paid usage",' +
             '"total_amount":2200,"sending_status":"sent","payment_status":"paid",' +
-            '"invoice_lines":[{"id":1,"description":"Rendary","quantity":1,"unit_price":2000,"amount":2000,"tax_rate":10,"tax_amount":200}]},' +
+            '"invoice_lines":[{"id":1,"description":"Rendary","quantity":1,"unit":"式","unit_price":2000,"amount":2000,"tax_rate":10,"tax_amount":200}]},' +
             '{"id":888002,"invoice_number":"INV-UNPAID","partner_id":901,"partner_name":"Migration Account",' +
             '"issue_date":"2026-03-22","payment_limit_date":"2026-04-30","subject":"Unpaid usage",' +
             '"total_amount":1100,"total_vat":100,"sending_status":"sent","payment_status":"unpaid",' +
@@ -383,7 +464,8 @@ private class Mig_FreeeInvoiceMigrationTest {
                    ProductMaster__c,
                    Freee_Line_Id__c,
                    Freee_External_Key__c,
-                   MigrationSourceLineWork__c
+                   MigrationSourceLineWork__c,
+                   Unit__c
             FROM InvoiceLine__c
             WHERE Invoice__c = :invoiceRecord.Id
             LIMIT 1
@@ -391,6 +473,7 @@ private class Mig_FreeeInvoiceMigrationTest {
         System.assertNotEquals(null, invoiceLine.ProductMaster__c);
         System.assertEquals('1', invoiceLine.Freee_Line_Id__c);
         System.assertNotEquals(null, invoiceLine.MigrationSourceLineWork__c);
+        System.assertEquals('月', invoiceLine.Unit__c);
 
         ContractLineItem__c monthlyLine = [
             SELECT RelatedInvoice__c
@@ -410,6 +493,84 @@ private class Mig_FreeeInvoiceMigrationTest {
         Mig_FreeeInvoiceMigrationController.finalizeByIds(new List<Id>());
         Mig_FreeeInvoiceMigrationController.finalizeReady();
         Mig_FreeeInvoiceFinalizeService.finalizeByWorkIds(new List<Id>());
+    }
+
+    @isTest
+    static void finalizeBlocksLowSimilarityPriceOnlyProductMatch() {
+        Account accountRecord = [
+            SELECT Id
+            FROM Account
+            WHERE Name = 'Migration Account'
+            LIMIT 1
+        ];
+        Contract__c contractRecord = [
+            SELECT Id
+            FROM Contract__c
+            WHERE ContractName__c = 'Migration Contract'
+            LIMIT 1
+        ];
+        ContractPeriod__c periodRecord = [
+            SELECT Id
+            FROM ContractPeriod__c
+            WHERE Contract__c = :contractRecord.Id
+            LIMIT 1
+        ];
+        ProductMaster__c productRecord = [
+            SELECT Id
+            FROM ProductMaster__c
+            WHERE Name = 'Rendary'
+            LIMIT 1
+        ];
+
+        Mig_FreeeInvoiceWork__c workRecord = new Mig_FreeeInvoiceWork__c(
+            ExternalKey__c = 'freee_invoice:12345:991001',
+            FreeeInvoiceId__c = '991001',
+            FreeePartnerId__c = '901',
+            BillingDate__c = Date.newInstance(2026, 3, 20),
+            PaymentDate__c = Date.newInstance(2026, 4, 30),
+            Subject__c = 'Low similarity price match',
+            InvoiceAmount__c = 1100,
+            TaxAmount__c = 100,
+            ResolvedAccount__c = accountRecord.Id,
+            ResolvedContract__c = contractRecord.Id,
+            ResolvedContractPeriod__c = periodRecord.Id,
+            ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_READY
+        );
+        insert workRecord;
+
+        insert new Mig_FreeeInvoiceLineWork__c(
+            InvoiceWork__c = workRecord.Id,
+            ExternalKey__c = 'freee_invoice_line:12345:991001:1',
+            FreeeLineId__c = '1',
+            Description__c = '講演料',
+            Quantity__c = 1,
+            UnitPrice__c = 1000,
+            LineAmount__c = 1000,
+            TaxRate__c = 10,
+            TaxAmount__c = 100,
+            ConfirmedProductMaster__c = productRecord.Id,
+            ResolveMessage__c = 'Matched by unit price.',
+            ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_READY
+        );
+
+        Mig_FreeeInvoiceFinalizeService.finalizeByWorkIds(new List<Id>{ workRecord.Id });
+
+        Mig_FreeeInvoiceWork__c updatedWork = [
+            SELECT ImportStatus__c,
+                   ValidationMessage__c,
+                   CreatedInvoice__c
+            FROM Mig_FreeeInvoiceWork__c
+            WHERE Id = :workRecord.Id
+            LIMIT 1
+        ];
+        System.assertEquals(Mig_FreeeInvoiceWorkService.STATUS_NEEDS_REVIEW, updatedWork.ImportStatus__c);
+        System.assertEquals(null, updatedWork.CreatedInvoice__c);
+        System.assert(updatedWork.ValidationMessage__c.contains('件名と商品マスタ名が類似していない'));
+        System.assertEquals(0, [
+            SELECT COUNT()
+            FROM Invoice__c
+            WHERE Freee_Invoice_Id__c = 991001
+        ]);
     }
 
     @isTest
@@ -483,7 +644,7 @@ private class Mig_FreeeInvoiceMigrationTest {
             LIMIT 1
         ];
         System.assertEquals(Mig_FreeeInvoiceWorkService.STATUS_NEEDS_REVIEW, workRecord.ImportStatus__c);
-        System.assert(workRecord.ValidationMessage__c.contains('ResolvedAccount__c'));
+        System.assert(workRecord.ValidationMessage__c.contains('取引先を特定できません'));
     }
 
     @isTest

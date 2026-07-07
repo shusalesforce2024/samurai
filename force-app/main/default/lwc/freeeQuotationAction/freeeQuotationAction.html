@@ -2,6 +2,16 @@
     <lightning-quick-action-panel header="freeeへ見積送信">
         <div class="slds-p-around_medium">
             <p>この見積をfreeeへ送信します。</p>
+
+            <template if:true={hasError}>
+                <div class="slds-notify slds-notify_alert slds-alert_error slds-m-top_medium" role="alert">
+                    <span class="slds-assistive-text">エラー</span>
+                    <div>
+                        <p class="slds-text-heading_small">同期できませんでした</p>
+                        <lightning-formatted-text value={errorMessage}></lightning-formatted-text>
+                    </div>
+                </div>
+            </template>
         </div>
 
         <div slot="footer">

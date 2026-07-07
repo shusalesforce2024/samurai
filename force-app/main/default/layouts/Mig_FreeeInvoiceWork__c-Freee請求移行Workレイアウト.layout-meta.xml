@@ -66,4 +66,16 @@
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
+    <relatedLists>
+        <fields>NAME</fields>
+        <fields>Description__c</fields>
+        <fields>LineAmount__c</fields>
+        <fields>Unit__c</fields>
+        <fields>TaxAmount__c</fields>
+        <fields>SuggestedProductMaster__c</fields>
+        <fields>ConfirmedProductMaster__c</fields>
+        <fields>ProductResolveStatus__c</fields>
+        <fields>ResolveMessage__c</fields>
+        <relatedList>Mig_FreeeInvoiceLineWork__c.InvoiceWork__c</relatedList>
+    </relatedLists>
 </Layout>

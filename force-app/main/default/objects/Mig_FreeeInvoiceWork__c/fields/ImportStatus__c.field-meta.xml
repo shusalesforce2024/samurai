@@ -3,17 +3,43 @@
     <fullName>ImportStatus__c</fullName>
     <label>移行ステータス</label>
     <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
-            <value><fullName>取得済み</fullName><default>true</default><label>取得済み</label></value>
-            <value><fullName>要確認</fullName><default>false</default><label>要確認</label></value>
-            <value><fullName>反映可能</fullName><default>false</default><label>反映可能</label></value>
-            <value><fullName>反映済み</fullName><default>false</default><label>反映済み</label></value>
-            <value><fullName>対象外</fullName><default>false</default><label>対象外</label></value>
-            <value><fullName>エラー</fullName><default>false</default><label>エラー</label></value>
+            <value>
+                <fullName>取得済み</fullName>
+                <default>true</default>
+                <label>取得済み</label>
+            </value>
+            <value>
+                <fullName>要確認</fullName>
+                <default>false</default>
+                <label>要確認</label>
+            </value>
+            <value>
+                <fullName>反映可能</fullName>
+                <default>false</default>
+                <label>反映可能</label>
+            </value>
+            <value>
+                <fullName>反映済み</fullName>
+                <default>false</default>
+                <label>反映済み</label>
+            </value>
+            <value>
+                <fullName>対象外</fullName>
+                <default>false</default>
+                <label>対象外</label>
+            </value>
+            <value>
+                <fullName>エラー</fullName>
+                <default>false</default>
+                <label>エラー</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

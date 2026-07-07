@@ -181,6 +181,7 @@ public with sharing class OppContractInvoiceService {
                    ProductMaster__c,
                    Quantity__c,
                    Tax_Rate__c,
+                   Unit__c,
                    Unit_Price__c,
                    Withholding__c,
                    ProductMaster__r.Name,
@@ -329,6 +330,7 @@ public with sharing class OppContractInvoiceService {
                     Quantity__c = 1,
                     TaxAmount__c = calculateTax(annualAmount),
                     Tax_Rate__c = TAX_RATE,
+                    Unit__c = '式',
                     Unit_Price__c = annualAmount
                 ));
             }
@@ -368,6 +370,7 @@ public with sharing class OppContractInvoiceService {
             QuotationLine__c = quotationLine.Id,
             TaxAmount__c = taxAmount,
             Tax_Rate__c = Decimal.valueOf(quotationLine.Tax_Rate__c),
+            Unit__c = quotationLine.Unit__c,
             Unit_Price__c = quotationLine.Unit_Price__c,
             Withholding__c = quotationLine.Withholding__c
         );

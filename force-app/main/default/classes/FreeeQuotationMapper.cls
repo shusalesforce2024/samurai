@@ -33,6 +33,9 @@ public with sharing class FreeeQuotationMapper {
         if (String.isNotBlank(quotation.Memo__c)) {
             body.put('memo', quotation.Memo__c);
         }
+        if (String.isNotBlank(quotation.QuotationNote__c)) {
+            body.put('quotation_note', quotation.QuotationNote__c);
+        }
         if (quotation.Expiration_Date__c != null) {
             body.put('expiration_date', String.valueOf(quotation.Expiration_Date__c));
         }
@@ -43,6 +46,9 @@ public with sharing class FreeeQuotationMapper {
             row.put('type', 'item');
             row.put('description', line.Description__c);
             row.put('quantity', line.Quantity__c);
+            if (String.isNotBlank(line.Unit__c)) {
+                row.put('unit', line.Unit__c);
+            }
             row.put('unit_price', String.valueOf(line.Unit_Price__c.setScale(0)));
             row.put('tax_rate', Integer.valueOf(line.Tax_Rate__c));
 
