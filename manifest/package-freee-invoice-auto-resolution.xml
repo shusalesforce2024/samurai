@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Contract__c.AutoCreatedFromFreee__c</members>
+        <members>Contract__c.BillingControlSource__c</members>
+        <members>Contract__c.ContractNature__c</members>
+        <members>Contract__c.CreationSource__c</members>
+        <members>InvoiceLine__c.Unit__c</members>
+        <members>Mig_FreeeInvoiceLineWork__c.Unit__c</members>
+        <members>Mig_FreeeInvoiceWork__c.ProvisioningMessage__c</members>
+        <members>Mig_FreeeInvoiceWork__c.ResolutionAction__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>FreeeInvoiceContractRule__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>FreeeInvoiceContractProvisioningService</members>
+        <members>FreeeInvoiceContractProvisionTest</members>
+        <members>FreeeInvoiceService</members>
+        <members>Mig_FreeeInvoiceFinalizeService</members>
+        <members>Mig_FreeeInvoiceMigrationTest</members>
+        <members>Mig_FreeeInvoiceProductResolver</members>
+        <members>Mig_FreeeInvoiceValidator</members>
+        <members>Mig_FreeeInvoiceWorkService</members>
+        <name>ApexClass</name>
+    </types>
+    <version>64.0</version>
+</Package>

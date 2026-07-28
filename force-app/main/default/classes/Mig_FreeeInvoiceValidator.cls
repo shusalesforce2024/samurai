@@ -1,7 +1,10 @@
 public with sharing class Mig_FreeeInvoiceValidator {
     public static void validateAll() {
         Mig_FreeeInvoiceReferenceResolver.resolveAll();
-        Mig_FreeeInvoiceProductResolver.resolveAll();
+        Mig_FreeeInvoiceProductResolver.resolveProducts();
+        FreeeInvoiceContractProvisioningService.provisionAll();
+        Mig_FreeeInvoiceReferenceResolver.resolveAll();
+        Mig_FreeeInvoiceProductResolver.resolveContractLineItems();
 
         List<Mig_FreeeInvoiceWork__c> works = [
             SELECT Id,

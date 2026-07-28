@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ActiveRenderyEnterpriseContracts</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Status__c</columns>
+    <columns>ProductCategory__c</columns>
+    <columns>PlanCategory__c</columns>
+    <columns>AccountCount__c</columns>
+    <columns>StartDate__c</columns>
+    <columns>EndDate__c</columns>
+    <columns>MRR__c</columns>
+    <columns>ARR__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Activated</value>
+    </filters>
+    <filters>
+        <field>ProductCategory__c</field>
+        <operation>equals</operation>
+        <value>Rendery</value>
+    </filters>
+    <filters>
+        <field>PlanCategory__c</field>
+        <operation>equals</operation>
+        <value>Enterprise</value>
+    </filters>
+    <label>Rendery Enterprise 有効契約</label>
+</ListView>

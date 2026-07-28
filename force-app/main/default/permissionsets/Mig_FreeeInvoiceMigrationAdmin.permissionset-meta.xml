@@ -44,6 +44,14 @@
         <apexClass>Mig_FreeeInvoiceWorkService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>Mig_FreeeInvoiceWorkRetentionBatch</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>FreeeInvoiceContractProvisioningService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <description>Freee請求データ移行専用の管理者権限セット。通常運用ユーザーには付与しない。</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Freee請求移行 管理者</label>
@@ -272,6 +280,70 @@
         <field>Mig_FreeeInvoiceWork__c.ValidationMessage__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Mig_FreeeInvoiceWork__c.ProvisioningMessage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Mig_FreeeInvoiceWork__c.ResolutionAction__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FreeeInvoiceContractRule__c.AutoCreateAllowed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FreeeInvoiceContractRule__c.ContractName__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FreeeInvoiceContractRule__c.Contract__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FreeeInvoiceContractRule__c.EndDate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FreeeInvoiceContractRule__c.FreeePartnerId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FreeeInvoiceContractRule__c.IsActive__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FreeeInvoiceContractRule__c.ProductMaster__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FreeeInvoiceContractRule__c.StartDate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>FreeeInvoiceContractRule__c.SubjectKeyword__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>FreeeInvoiceContractRule__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -384,6 +456,10 @@
     </tabSettings>
     <tabSettings>
         <tab>Mig_FreeeInvoiceLineProductMap__c</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>FreeeInvoiceContractRule__c</tab>
         <visibility>Available</visibility>
     </tabSettings>
 </PermissionSet>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>OpportunityCsStageService</members>
+        <members>OpportunityCsStageServiceTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>OpportunityTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>Opportunity__c.CsStage__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Opportunity__c.Require_Cs_Stage</members>
+        <name>ValidationRule</name>
+    </types>
+    <types>
+        <members>Opportunity__c.RenderyCsManagement</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>Opportunity__c-Opportunity Clone Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>SAMURAI_Sales_Contract_User</members>
+        <members>SAMURAI_Contract_Billing_User</members>
+        <members>SAMURAI_System_Admin</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>ContractBillingReports/DashMonthlyRevenueForecastChart</members>
+        <name>Report</name>
+    </types>
+    <types>
+        <members>ContractBillingDashboards/SalesContractDashboard</members>
+        <name>Dashboard</name>
+    </types>
+    <version>67.0</version>
+</Package>

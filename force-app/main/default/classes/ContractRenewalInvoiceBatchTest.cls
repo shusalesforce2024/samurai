@@ -253,4 +253,52 @@ private class ContractRenewalInvoiceBatchTest {
               AND IsInitialPeriod__c = false
         ]);
     }
+
+    @isTest
+    static void skipsFreeeControlledContract() {
+        Account accountRecord = new Account(Name = 'Freee Controlled Account');
+        insert accountRecord;
+
+        Contract__c contractRecord = new Contract__c(
+            Account__c = accountRecord.Id,
+            BillingControlSource__c = 'Freee',
+            ContractName__c = 'Freee Controlled Contract',
+            ContractUpdate__c = '月',
+            RenewalStop__c = false,
+            StartDate__c = Date.newInstance(2026, 5, 1),
+            Status__c = 'Draft'
+        );
+        insert contractRecord;
+
+        insert new Invoice__c(
+            Account__c = accountRecord.Id,
+            Billing_Date__c = Date.newInstance(2026, 5, 20),
+            Freee_Account_Item_Picklist__c = 'Sales',
+            ParentContract__c = contractRecord.Id,
+            PaymentStatus__c = '決済待ち',
+            Payment_Date__c = Date.newInstance(2026, 6, 30),
+            Subject__c = 'Freee Controlled Initial Invoice'
+        );
+        update new Contract__c(Id = contractRecord.Id, Status__c = 'Activated');
+
+        Test.startTest();
+        Database.executeBatch(
+            new ContractRenewalInvoiceBatch(Date.newInstance(2026, 6, 11)),
+            100
+        );
+        Test.stopTest();
+
+        System.assertEquals(0, [
+            SELECT COUNT()
+            FROM ContractPeriod__c
+            WHERE Contract__c = :contractRecord.Id
+              AND PeriodStartDate__c = :Date.newInstance(2026, 7, 1)
+        ]);
+        System.assertEquals(0, [
+            SELECT COUNT()
+            FROM Invoice__c
+            WHERE ParentContract__c = :contractRecord.Id
+              AND TargetPeriodStartDate__c = :Date.newInstance(2026, 7, 1)
+        ]);
+    }
 }

@@ -7,9 +7,24 @@ public with sharing class FreeeInvoiceStatusSyncService {
     private static final String PAYMENT_WAITING = '決済待ち';
     private static final String PAYMENT_DONE = '決済済み';
 
+    public class SyncResult {
+        public Set<Id> processedInvoiceIds = new Set<Id>();
+        public Id rateLimitedInvoiceId;
+        public Integer retryAfterMinutes;
+
+        public Boolean isRateLimited() {
+            return rateLimitedInvoiceId != null;
+        }
+    }
+
     public static void syncInvoices(List<Invoice__c> invoices) {
+        syncInvoicesWithResult(invoices);
+    }
+
+    public static SyncResult syncInvoicesWithResult(List<Invoice__c> invoices) {
+        SyncResult result = new SyncResult();
         if (invoices == null || invoices.isEmpty()) {
-            return;
+            return result;
         }
 
         List<Invoice__c> invoicesToUpdate = new List<Invoice__c>();
@@ -25,6 +40,24 @@ public with sharing class FreeeInvoiceStatusSyncService {
                 if (isSuccess(response)) {
                     invoicesToUpdate.add(buildSyncedInvoice(invoiceRecord, response));
                     logsToSave.add(buildLog(invoiceRecord.Id, null, response, STATUS_SUCCESS, null));
+                } else if (response != null && response.getStatusCode() == 429) {
+                    result.rateLimitedInvoiceId = invoiceRecord.Id;
+                    result.retryAfterMinutes =
+                        calculateRateLimitRetryMinutes(response.getBody());
+                    String rateLimitMessage = buildRateLimitMessage(
+                        response.getBody(),
+                        result.retryAfterMinutes
+                    );
+                    invoicesToUpdate.add(buildFailedInvoice(invoiceRecord, rateLimitMessage));
+                    logsToSave.add(buildLog(
+                        invoiceRecord.Id,
+                        null,
+                        response,
+                        STATUS_FAILED,
+                        rateLimitMessage
+                    ));
+                    result.processedInvoiceIds.add(invoiceRecord.Id);
+                    break;
                 } else {
                     invoicesToUpdate.add(buildFailedInvoice(invoiceRecord, response.getBody()));
                     logsToSave.add(buildLog(
@@ -35,6 +68,7 @@ public with sharing class FreeeInvoiceStatusSyncService {
                         summarizeError(response.getBody())
                     ));
                 }
+                result.processedInvoiceIds.add(invoiceRecord.Id);
             } catch (Exception e) {
                 invoicesToUpdate.add(buildFailedInvoice(invoiceRecord, e.getMessage()));
                 logsToSave.add(buildLog(
@@ -44,6 +78,7 @@ public with sharing class FreeeInvoiceStatusSyncService {
                     STATUS_FAILED,
                     response == null ? e.getMessage() : e.getMessage() + '\n\nRaw response:\n' + response.getBody()
                 ));
+                result.processedInvoiceIds.add(invoiceRecord.Id);
             }
         }
 
@@ -63,6 +98,7 @@ public with sharing class FreeeInvoiceStatusSyncService {
         }
 
         saveLogs(logsToSave);
+        return result;
     }
 
     private static Boolean isSuccess(HttpResponse response) {
@@ -283,6 +319,90 @@ public with sharing class FreeeInvoiceStatusSyncService {
             return 'freeeからレスポンスを取得できませんでした。';
         }
         return body.length() > 32000 ? body.left(32000) : body;
+    }
+
+    private static String buildRateLimitMessage(String responseBody, Integer retryAfterMinutes) {
+        String message = 'freee APIの利用上限に達しました。';
+        if (retryAfterMinutes != null) {
+            message += String.valueOf(retryAfterMinutes) + '分後に自動再開します。';
+        }
+        if (!String.isBlank(responseBody)) {
+            message += ' response=' + responseBody;
+        }
+        return summarizeError(message);
+    }
+
+    @TestVisible
+    private static Integer calculateRateLimitRetryMinutes(String responseBody) {
+        Integer fallbackMinutes = 30;
+        if (String.isBlank(responseBody)) {
+            return fallbackMinutes;
+        }
+
+        try {
+            Object parsed = JSON.deserializeUntyped(responseBody);
+            if (!(parsed instanceof Map<String, Object>)) {
+                return fallbackMinutes;
+            }
+            Map<String, Object> root = (Map<String, Object>) parsed;
+            Object metaObject = root.get('meta');
+            if (!(metaObject instanceof Map<String, Object>)) {
+                return fallbackMinutes;
+            }
+            Map<String, Object> meta = (Map<String, Object>) metaObject;
+            Integer period = meta.get('period') == null
+                ? null
+                : Integer.valueOf(String.valueOf(meta.get('period')));
+            String resetValue = meta.get('reset') == null
+                ? null
+                : String.valueOf(meta.get('reset'));
+            Integer resetDelay = minutesUntilReset(resetValue);
+            if (resetDelay != null) {
+                return Math.max(2, resetDelay + 2);
+            }
+            if (period != null && period >= 86400) {
+                return 480;
+            }
+            if (period != null && period >= 60) {
+                return 3;
+            }
+        } catch (Exception e) {
+            System.debug('freee API制限レスポンスの解析に失敗しました: ' + e.getMessage());
+        }
+        return fallbackMinutes;
+    }
+
+    private static Integer minutesUntilReset(String resetValue) {
+        if (String.isBlank(resetValue) || resetValue.length() < 25) {
+            return null;
+        }
+
+        try {
+            Date resetDate = Date.valueOf(resetValue.substring(0, 10));
+            Time resetTime = Time.newInstance(
+                Integer.valueOf(resetValue.substring(11, 13)),
+                Integer.valueOf(resetValue.substring(14, 16)),
+                Integer.valueOf(resetValue.substring(17, 19)),
+                0
+            );
+            String offset = resetValue.substring(19);
+            Integer sign = offset.startsWith('-') ? -1 : 1;
+            Integer offsetHours = Integer.valueOf(offset.substring(1, 3));
+            Integer offsetMinutes = Integer.valueOf(offset.substring(4, 6));
+            Integer totalOffsetMinutes = sign * ((offsetHours * 60) + offsetMinutes);
+
+            DateTime resetDateTimeGmt = DateTime.newInstanceGmt(resetDate, resetTime)
+                .addMinutes(-totalOffsetMinutes);
+            Long diffMillis = resetDateTimeGmt.getTime() - System.now().getTime();
+            if (diffMillis <= 0) {
+                return 2;
+            }
+            Long minutes = (diffMillis + 59999) / 60000;
+            return Integer.valueOf(String.valueOf(minutes));
+        } catch (Exception e) {
+            System.debug('freee API制限リセット時刻の解析に失敗しました: ' + e.getMessage());
+            return null;
+        }
     }
 
     private static String summarizeDmlErrors(Database.Error[] errors) {

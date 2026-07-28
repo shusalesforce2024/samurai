@@ -14,7 +14,10 @@ private class OppContractInvoiceServiceTest {
             ExpectedDuration__c = 12,
             MRR__c = 1000,
             ACV__c = 12000,
-            Description__c = 'Opportunity description'
+            Description__c = 'Opportunity description',
+            ProductCategory__c = 'Rendery',
+            PlanCategory__c = 'Enterprise',
+            AccountCount__c = 5
         );
         insert opportunityRecord;
 
@@ -70,6 +73,9 @@ private class OppContractInvoiceServiceTest {
                    ExpectedDuration__c,
                    MRR__c,
                    Oppotunity__c,
+                   ProductCategory__c,
+                   PlanCategory__c,
+                   AccountCount__c,
                    Pricebook2__c,
                    StartDate__c,
                    Status__c
@@ -81,6 +87,9 @@ private class OppContractInvoiceServiceTest {
         System.assertEquals('Test Opportunity_2026-05-15', createdContract.ContractName__c);
         System.assertEquals('Draft', createdContract.Status__c);
         System.assertEquals(6000, createdContract.ARR__c);
+        System.assertEquals('Rendery', createdContract.ProductCategory__c);
+        System.assertEquals('Enterprise', createdContract.PlanCategory__c);
+        System.assertEquals(5, createdContract.AccountCount__c);
 
         Invoice__c createdInvoice = [
             SELECT Account__c,

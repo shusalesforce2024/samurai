@@ -1,0 +1,10 @@
+Id,Name,InvoiceWork__c,Description__c,Quantity__c,UnitPrice__c,LineAmount__c,SuggestedProductMaster__c,ConfirmedProductMaster__c,ProductResolveStatus__c,ImportStatus__c,ResolveMessage__c
+a0ERB00000Ojni12AB,MFILW-000303,a0FRB00000WihDQ2AZ,Rendery Enterpriseプラン5アカウント_年額,5,180000,900000,,,要確認,取得済み,No ProductMaster candidate found.
+a0ERB00000Ojni72AB,MFILW-000309,a0FRB00000WihDV2AZ,Rendery Enterpriseプラン6アカウント_年払い,6,180000,1080000,,,要確認,取得済み,No ProductMaster candidate found.
+a0ERB00000OjniA2AR,MFILW-000312,a0FRB00000WihDX2AZ,Rendery_Pro_1アカウント年間利用料(アーキデザイン株式会社様),12,6400,76800,a0CRB0000CcXZ6R2QW,a0CRB0000CcXZ6R2QW,要確認,取得済み,Matched by unit price.
+a0ERB00000Ok1g22AB,MFILW-000436,a0FRB00000WjFOi2AN,Rendery Enterpriseプラン_10アカウント_年払い,10,132000,1320000,,,要確認,取得済み,No ProductMaster candidate found.
+a0ERB00000Ok1gJ2AR,MFILW-000453,a0FRB00000WjFOu2AN,Rendery Enterpriseプラン5アカウント_年払い,5,180000,900000,,,要確認,取得済み,No ProductMaster candidate found.
+a0ERB00000Ok1gN2AR,MFILW-000457,a0FRB00000WjFOx2AN,Rendery Enterpriseプラン_7アカウント_年払い,7,180000,1260000,,,要確認,取得済み,No ProductMaster candidate found.
+a0ERB00000Ok1gP2AR,MFILW-000459,a0FRB00000WjFOy2AN,Rendery Enterpriseプラン_3アカウント_年払い,3,180000,540000,,,要確認,取得済み,No ProductMaster candidate found.
+a0ERB00000OjwWm2AJ,MFILW-000363,a0FRB00000WjTmi2AF,Rendery Enterpriseプラン10アカウント_年払い,10,180000,1800000,,,要確認,取得済み,No ProductMaster candidate found.
+a0ERB00000PISaq2AH,MFILW-000537,a0FRB00000YqK412AF,Rendery Enterpriseプラン_年払い,120,14000,1680000,a0CRB0000CcXZ6X2QW,,候補あり,取得済み,Matched by unit price and product name.

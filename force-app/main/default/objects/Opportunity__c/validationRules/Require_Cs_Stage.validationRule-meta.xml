@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Cs_Stage</fullName>
+    <active>true</active>
+    <description>Rendery Enterpriseの受注取引ではCS進捗を必須にする。</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(ProductCategory__c, &quot;Rendery&quot;),
+    ISPICKVAL(PlanCategory__c, &quot;Enterprise&quot;),
+    ISPICKVAL(StageName__c, &quot;Closed Won&quot;),
+    ISBLANK(TEXT(CsStage__c))
+)</errorConditionFormula>
+    <errorDisplayField>CsStage__c</errorDisplayField>
+    <errorMessage>Rendery Enterpriseの受注取引ではCS進捗を入力してください。</errorMessage>
+</ValidationRule>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RenderySmbOpportunityManagement</fullName>
+    <booleanFilter>1 AND ((2 AND 3) OR 4) AND 5 AND 6</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>ProductCategory__c</columns>
+    <columns>PlanCategory__c</columns>
+    <columns>AccountCount__c</columns>
+    <columns>StageName__c</columns>
+    <columns>ExpectedCloseDate__c</columns>
+    <columns>MRR__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ProductCategory__c</field>
+        <operation>equals</operation>
+        <value>Rendery</value>
+    </filters>
+    <filters>
+        <field>PlanCategory__c</field>
+        <operation>equals</operation>
+        <value>Pro</value>
+    </filters>
+    <filters>
+        <field>AccountCount__c</field>
+        <operation>lessThan</operation>
+        <value>5</value>
+    </filters>
+    <filters>
+        <field>PlanCategory__c</field>
+        <operation>equals</operation>
+        <value>Basic</value>
+    </filters>
+    <filters>
+        <field>StageName__c</field>
+        <operation>notEqual</operation>
+        <value>Closed Won</value>
+    </filters>
+    <filters>
+        <field>StageName__c</field>
+        <operation>notEqual</operation>
+        <value>Closed Lost</value>
+    </filters>
+    <label>Rendery SMB商談管理</label>
+</ListView>

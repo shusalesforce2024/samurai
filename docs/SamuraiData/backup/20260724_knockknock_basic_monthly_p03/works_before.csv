@@ -1,0 +1,6 @@
+﻿Id,Name,ImportStatus__c,ValidationMessage__c,CreatedInvoice__c
+a0FRB00000UtK9z2AF,MFIW-000048,反映済み,,a00RB000024Ux4iYAC
+a0FRB00000UtKRh2AN,MFIW-000077,反映済み,,a00RB000024Ux59YAC
+a0FRB00000WicaM2AR,MFIW-000167,要確認,請求明細の件名と商品マスタ名が類似していないため、請求作成を停止しました。金額一致だけで商品が選ばれている可能性があります。明細「KnockKnockAI_Basicプラン(月額)」の商品マスタを確認してください。,a00RB000027fzNkYAI
+a0FRB00000WjSKN2A3,MFIW-000223,反映済み,,a00RB00002AyetbYAB
+a0FRB00000YqSO42AN,MFIW-000417,反映済み,,a00RB00002AyetjYAB

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CommonRuleRequiresProduct</fullName>
+    <active>true</active>
+    <description>共通ルールが全商品へ誤適用されないよう、商品マスタを必須にする。</description>
+    <errorConditionFormula>AND(ISBLANK(Account__c), ISBLANK(ProductMaster__c))</errorConditionFormula>
+    <errorDisplayField>ProductMaster__c</errorDisplayField>
+    <errorMessage>共通ルールでは商品マスタを指定してください。</errorMessage>
+</ValidationRule>

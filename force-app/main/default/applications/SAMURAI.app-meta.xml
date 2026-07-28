@@ -26,6 +26,7 @@
     <tabs>QuotationLine__c</tabs>
     <tabs>ContractLineItem__c</tabs>
     <tabs>ProductMaster__c</tabs>
+    <tabs>FreeeInvoiceContractRule__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>SAMURAI_UtilityBar</utilityBar>
     <workspaceConfig>
@@ -52,6 +53,9 @@
         </mappings>
         <mappings>
             <tab>ProductMaster__c</tab>
+        </mappings>
+        <mappings>
+            <tab>FreeeInvoiceContractRule__c</tab>
         </mappings>
         <mappings>
             <tab>QuotationLine__c</tab>

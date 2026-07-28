@@ -7,10 +7,12 @@ public with sharing class Mig_FreeeInvoiceProductResolver {
     public static void resolveProducts() {
         List<Mig_FreeeInvoiceLineWork__c> lines = [
             SELECT Id,
+                   InvoiceWork__c,
                    Description__c,
                    UnitPrice__c,
                    Quantity__c,
                    LineAmount__c,
+                   TaxAmount__c,
                    SuggestedProductMaster__c,
                    ConfirmedProductMaster__c,
                    ProductResolveStatus__c,
@@ -38,9 +40,19 @@ public with sharing class Mig_FreeeInvoiceProductResolver {
             WHERE IsActive__c = true
             ORDER BY Priority__c ASC, CreatedDate ASC
         ];
+        Map<String, Set<Id>> confirmedProductsBySignature =
+            loadConfirmedProductHistory();
 
         for (Mig_FreeeInvoiceLineWork__c line : lines) {
             if (line.ConfirmedProductMaster__c != null || line.ImportStatus__c == Mig_FreeeInvoiceWorkService.STATUS_EXCLUDED) {
+                continue;
+            }
+            if (isInformationalLine(line)) {
+                line.ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_EXCLUDED;
+                line.ProductResolveStatus__c =
+                    Mig_FreeeInvoiceWorkService.PRODUCT_STATUS_EXCLUDED;
+                line.ResolveMessage__c =
+                    '金額を持たない注記行のため、請求明細の作成対象外にしました。';
                 continue;
             }
             ProductMatch match = matchProduct(line, products, mappings);
@@ -58,8 +70,142 @@ public with sharing class Mig_FreeeInvoiceProductResolver {
                 line.ProductResolveStatus__c = Mig_FreeeInvoiceWorkService.PRODUCT_STATUS_NEEDS_REVIEW;
                 line.ResolveMessage__c = 'No ProductMaster candidate found.';
             }
+            applyConfirmedHistory(line, confirmedProductsBySignature);
         }
+        resolveAdjustmentLines(lines);
         update lines;
+    }
+
+    private static Map<String, Set<Id>> loadConfirmedProductHistory() {
+        Map<String, Set<Id>> confirmedProductsBySignature =
+            new Map<String, Set<Id>>();
+        for (Mig_FreeeInvoiceLineWork__c historicalLine : [
+            SELECT Description__c,
+                   UnitPrice__c,
+                   Quantity__c,
+                   LineAmount__c,
+                   ConfirmedProductMaster__c
+            FROM Mig_FreeeInvoiceLineWork__c
+            WHERE ConfirmedProductMaster__c != null
+              AND CreatedDate = LAST_N_DAYS:730
+        ]) {
+            String signature = productSignature(historicalLine);
+            if (!confirmedProductsBySignature.containsKey(signature)) {
+                confirmedProductsBySignature.put(signature, new Set<Id>());
+            }
+            confirmedProductsBySignature.get(signature)
+                .add(historicalLine.ConfirmedProductMaster__c);
+        }
+        return confirmedProductsBySignature;
+    }
+
+    private static void applyConfirmedHistory(
+        Mig_FreeeInvoiceLineWork__c line,
+        Map<String, Set<Id>> confirmedProductsBySignature
+    ) {
+        if (line.ConfirmedProductMaster__c != null) {
+            return;
+        }
+        Set<Id> historicalProducts =
+            confirmedProductsBySignature.get(productSignature(line));
+        if (historicalProducts == null || historicalProducts.size() != 1) {
+            return;
+        }
+        Id historicalProductId =
+            new List<Id>(historicalProducts)[0];
+        if (line.SuggestedProductMaster__c != null
+            && line.SuggestedProductMaster__c != historicalProductId) {
+            return;
+        }
+        line.SuggestedProductMaster__c = historicalProductId;
+        line.ConfirmedProductMaster__c = historicalProductId;
+        line.ProductResolveStatus__c =
+            Mig_FreeeInvoiceWorkService.PRODUCT_STATUS_CONFIRMED;
+        line.ResolveConfidence__c = 0.99;
+        line.ResolveMessage__c =
+            '過去に確定した同一の明細名・単価・数量・金額から商品を自動確定しました。';
+    }
+
+    private static void resolveAdjustmentLines(
+        List<Mig_FreeeInvoiceLineWork__c> lines
+    ) {
+        Map<Id, Set<Id>> primaryProductsByWorkId =
+            new Map<Id, Set<Id>>();
+        for (Mig_FreeeInvoiceLineWork__c line : lines) {
+            if (line.ImportStatus__c == Mig_FreeeInvoiceWorkService.STATUS_EXCLUDED
+                || isAdjustmentLine(line)
+                || line.ConfirmedProductMaster__c == null) {
+                continue;
+            }
+            if (!primaryProductsByWorkId.containsKey(line.InvoiceWork__c)) {
+                primaryProductsByWorkId.put(line.InvoiceWork__c, new Set<Id>());
+            }
+            primaryProductsByWorkId.get(line.InvoiceWork__c)
+                .add(line.ConfirmedProductMaster__c);
+        }
+
+        for (Mig_FreeeInvoiceLineWork__c line : lines) {
+            if (!isAdjustmentLine(line)
+                || line.ConfirmedProductMaster__c != null) {
+                continue;
+            }
+            Set<Id> primaryProducts =
+                primaryProductsByWorkId.get(line.InvoiceWork__c);
+            if (primaryProducts == null || primaryProducts.size() != 1) {
+                continue;
+            }
+            Id productId = new List<Id>(primaryProducts)[0];
+            line.SuggestedProductMaster__c = productId;
+            line.ConfirmedProductMaster__c = productId;
+            line.ProductResolveStatus__c =
+                Mig_FreeeInvoiceWorkService.PRODUCT_STATUS_CONFIRMED;
+            line.ResolveConfidence__c = 0.98;
+            line.ResolveMessage__c =
+                '同じ請求内の主商品が一意に確定しているため、割引・調整行を同じ商品へ自動紐づけしました。';
+        }
+    }
+
+    private static Boolean isInformationalLine(
+        Mig_FreeeInvoiceLineWork__c line
+    ) {
+        return isZero(line.UnitPrice__c)
+            && isZero(line.LineAmount__c)
+            && isZero(line.TaxAmount__c)
+            && isZero(line.Quantity__c);
+    }
+
+    private static Boolean isAdjustmentLine(
+        Mig_FreeeInvoiceLineWork__c line
+    ) {
+        if (line == null || line.LineAmount__c == null
+            || line.LineAmount__c >= 0) {
+            return false;
+        }
+        String normalized =
+            Mig_FreeeInvoiceWorkService.normalize(line.Description__c);
+        return normalized.contains('割引')
+            || normalized.contains('値引')
+            || normalized.contains('discount')
+            || normalized.contains('調整');
+    }
+
+    private static Boolean isZero(Decimal value) {
+        return value == null || value == 0;
+    }
+
+    private static String productSignature(
+        Mig_FreeeInvoiceLineWork__c line
+    ) {
+        return String.join(new List<String>{
+            Mig_FreeeInvoiceWorkService.normalize(line.Description__c),
+            decimalKey(line.UnitPrice__c),
+            decimalKey(line.Quantity__c),
+            decimalKey(line.LineAmount__c)
+        }, '|');
+    }
+
+    private static String decimalKey(Decimal value) {
+        return value == null ? '' : String.valueOf(value);
     }
 
     public static void resolveContractLineItems() {
@@ -167,12 +313,13 @@ public with sharing class Mig_FreeeInvoiceProductResolver {
         }
         for (ProductMaster__c product : products) {
             if (line.UnitPrice__c != null
+                && hasProductNameSignal(normalizedDescription, product)
                 && (
                     (product.UnitPrice__c != null && product.UnitPrice__c == line.UnitPrice__c)
                     || (product.AnnualMonthlyPrice__c != null && product.AnnualMonthlyPrice__c == line.UnitPrice__c)
                 )
             ) {
-                return new ProductMatch(product.Id, 0.65, 'Matched by unit price.');
+                return new ProductMatch(product.Id, 0.75, 'Matched by unit price and product name.');
             }
         }
 
@@ -180,16 +327,52 @@ public with sharing class Mig_FreeeInvoiceProductResolver {
         if (singleQuantity) {
             for (ProductMaster__c product : products) {
                 if (line.LineAmount__c != null
+                    && hasProductNameSignal(normalizedDescription, product)
                     && (
                         (product.UnitPrice__c != null && product.UnitPrice__c == line.LineAmount__c)
                         || (product.AnnualMonthlyPrice__c != null && product.AnnualMonthlyPrice__c == line.LineAmount__c)
                     )
                 ) {
-                    return new ProductMatch(product.Id, 0.6, 'Matched by single-line amount.');
+                    return new ProductMatch(product.Id, 0.7, 'Matched by single-line amount and product name.');
                 }
             }
         }
         return null;
+    }
+
+    private static Boolean hasProductNameSignal(String normalizedDescription, ProductMaster__c product) {
+        if (String.isBlank(normalizedDescription) || product == null || String.isBlank(product.Name)) {
+            return false;
+        }
+        String normalizedProductName = Mig_FreeeInvoiceWorkService.normalize(product.Name);
+        if (String.isBlank(normalizedProductName)) {
+            return false;
+        }
+        return normalizedDescription.contains(normalizedProductName)
+            || normalizedProductName.contains(normalizedDescription)
+            || sharesSignificantToken(normalizedDescription, normalizedProductName);
+    }
+
+    private static Boolean sharesSignificantToken(String normalizedDescription, String normalizedProductName) {
+        for (String token : significantProductTokens(normalizedProductName)) {
+            if (normalizedDescription.contains(token)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static List<String> significantProductTokens(String normalizedProductName) {
+        List<String> tokens = new List<String>();
+        if (String.isBlank(normalizedProductName)) {
+            return tokens;
+        }
+        for (String token : new List<String>{'knockknockai', 'knockknock', 'rendery', 'rendary', 'visioal', 'visual', '受託開発', '受託'}) {
+            if (normalizedProductName.contains(token)) {
+                tokens.add(token);
+            }
+        }
+        return tokens;
     }
 
     private class ProductMatch {

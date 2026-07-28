@@ -35,7 +35,7 @@ List<CronTrigger> statusJobs = [
 if (statusJobs.isEmpty()) {
     System.debug('scheduledFreeeInvoiceStatusSyncBatch=' + System.schedule(
         'FreeeInvoiceStatusSyncBatch',
-        '0 0 3 * * ?',
+        '0 10 0 * * ?',
         new FreeeInvoiceStatusSyncBatch()
     ));
 }

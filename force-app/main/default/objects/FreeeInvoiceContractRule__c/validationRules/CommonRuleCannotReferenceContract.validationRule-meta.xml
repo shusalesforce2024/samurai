@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CommonRuleCannotReferenceContract</fullName>
+    <active>true</active>
+    <description>共通ルールから特定取引先の契約へ誤って紐づけないようにする。</description>
+    <errorConditionFormula>AND(ISBLANK(Account__c), NOT(ISBLANK(Contract__c)))</errorConditionFormula>
+    <errorDisplayField>Contract__c</errorDisplayField>
+    <errorMessage>共通ルールに契約管理は設定できません。既存契約を指定する場合は取引先別ルールにしてください。</errorMessage>
+</ValidationRule>

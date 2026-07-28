@@ -44,6 +44,8 @@ public with sharing class FreeeInvoiceFacade {
                    Payment_Date__c,
                    Payment_Type__c,
                    Memo__c,
+                   CompanyContactUser__c,
+                   CompanyContactUser__r.Name,
                    Freee_Account_Item_Picklist__c,
                    Freee_Partner_Id__c,
                    Freee_Invoice_Id__c,

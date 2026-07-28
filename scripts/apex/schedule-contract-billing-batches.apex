@@ -1,7 +1,8 @@
 List<String> managedJobNames = new List<String>{
     'ContractMonthlyLineBatch_毎月11日1時30分',
     'FreeeInvoiceImportScheduler_毎週土曜2時30分',
-    'FreeeInvoiceStatusSyncBatch'
+    'FreeeInvoiceStatusSyncBatch',
+    'Mig_FreeeInvoiceWorkRetentionMonthly'
 };
 
 for (CronTrigger existingJob : [
@@ -28,8 +29,14 @@ System.schedule(
 
 System.schedule(
     'FreeeInvoiceStatusSyncBatch',
-    '0 0 3 * * ?',
+    '0 10 0 * * ?',
     new FreeeInvoiceStatusSyncBatch()
+);
+
+System.schedule(
+    'Mig_FreeeInvoiceWorkRetentionMonthly',
+    '0 0 3 1 * ?',
+    new Mig_FreeeInvoiceWorkRetentionBatch()
 );
 
 System.debug('SCHEDULE_CONTRACT_BILLING_BATCHES completed. ContractRenewalInvoiceBatch schedules were removed.');

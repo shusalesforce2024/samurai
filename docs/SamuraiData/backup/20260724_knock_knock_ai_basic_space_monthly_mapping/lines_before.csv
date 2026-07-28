@@ -1,0 +1,6 @@
+Id,Name,InvoiceWork__c,Description__c,Quantity__c,UnitPrice__c,LineAmount__c,SuggestedProductMaster__c,ConfirmedProductMaster__c,ProductResolveStatus__c,ImportStatus__c,CreatedInvoiceLine__c,ResolveMessage__c
+a0ERB00000OjzOA2AZ,MFILW-000378,a0FRB00000Wj59I2AR,knock knock AI Basicプラン(月額),1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by migration product map.
+a0ERB00000Ok10A2AR,MFILW-000420,a0FRB00000Wj5UF2AZ,knock knock AI Basicプラン(月額),1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by migration product map.
+a0ERB00000OjwQS2AZ,MFILW-000351,a0FRB00000WjTBk2AN,knock knock AI Basicプラン(月額),1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by migration product map.
+a0ERB00000Ok2E22AJ,MFILW-000472,a0FRB00000WjhrK2AR,knock knock AI Basicプラン(月額),1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by migration product map.
+a0ERB00000PJ1AA2A1,MFILW-000576,a0FRB00000Yr46o2AB,knock knock AI Basicプラン(月額),1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by migration product map.

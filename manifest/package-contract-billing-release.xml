@@ -8,6 +8,7 @@
     <members>Freee_Account_Item_Mappings__c</members>
     <members>Freee_Config__mdt</members>
     <members>Freee_Configs__c</members>
+    <members>FreeeInvoiceContractRule__c</members>
     <members>Freee_Sync_Log__c</members>
     <members>Invoice__c</members>
     <members>InvoiceLine__c</members>
@@ -24,17 +25,24 @@
     <members>Account.Event__c</members>
     <members>Account.Freee_Partner_Id__c</members>
     <members>Contact.MarketingStatus__c</members>
+    <members>Contract__c.AccountCount__c</members>
+    <members>Contract__c.PlanCategory__c</members>
+    <members>Contract__c.ProductCategory__c</members>
     <members>Quotation__c.QuotationNote__c</members>
     <name>CustomField</name>
   </types>
   <types>
     <members>ContractRenewalInvoiceBatch</members>
     <members>ContractRenewalInvoiceBatchTest</members>
+    <members>ContractOppClassificationSyncService</members>
+    <members>ContractOppClassificationSyncServiceTest</members>
     <members>ContractMonthlyLineBatch</members>
     <members>ContractMonthlyLineBatchTest</members>
     <members>FreeeConfigService</members>
     <members>FreeeIntegrationTest</members>
     <members>FreeeInvoiceCancelService</members>
+    <members>FreeeInvoiceContractProvisioningService</members>
+    <members>FreeeInvoiceContractProvisionTest</members>
     <members>FreeeInvoiceContext</members>
     <members>FreeeInvoiceController</members>
     <members>FreeeInvoiceCreateQueueable</members>
@@ -49,6 +57,9 @@
     <members>FreeeInvoiceStatusSyncBatch</members>
     <members>FreeeInvoiceStatusSyncBatchTest</members>
     <members>FreeeInvoiceStatusSyncService</members>
+    <members>FreeeInvoiceStatusSyncThrottledQueueable</members>
+    <members>FreeeInvoiceStatusThrottleTest</members>
+    <members>FreeeInvoiceStatusSyncThrottledScheduler</members>
     <members>FreeeInvoiceWorkBulkActionController</members>
     <members>FreeeInvoiceWorkBulkActionControllerTest</members>
     <members>FreeePartnerController</members>
@@ -78,6 +89,8 @@
     <members>Mig_FreeeInvoiceReferenceResolver</members>
     <members>Mig_FreeeInvoiceValidator</members>
     <members>Mig_FreeeInvoiceWorkService</members>
+    <members>Mig_FreeeInvoiceWorkRetentionBatch</members>
+    <members>Mig_FreeeInvoiceWorkRetentionBatchTest</members>
     <members>OppContractInvoiceController</members>
     <members>OppContractInvoiceService</members>
     <members>OppContractInvoiceServiceTest</members>
@@ -128,6 +141,7 @@
     <members>ContractPeriod__c-契約期間レイアウト</members>
     <members>Freee_Account_Item_Mappings__c-Freee勘定科目マッピングレイアウト</members>
     <members>Freee_Configs__c-Freee設定レイアウト</members>
+    <members>FreeeInvoiceContractRule__c-Freee請求契約ルールレイアウト</members>
     <members>Freee_Sync_Log__c-Free連携ログレイアウト</members>
     <members>Invoice__c-請求書レイアウト</members>
     <members>InvoiceLine__c-請求明細レイアウト</members>
@@ -147,12 +161,21 @@
     <members>ContractPeriod__c.All</members>
     <members>ContractPeriod__c.UncreatedInvoicePeriods</members>
     <members>Contract__c.All</members>
+    <members>Contract__c.ActiveCustomDevelopmentContracts</members>
+    <members>Contract__c.ActiveKnockKnockAiContracts</members>
+    <members>Contract__c.ActiveRenderyContracts</members>
+    <members>Contract__c.ActiveRenderyEnterpriseContracts</members>
+    <members>Contract__c.ActiveRenderySmbContracts</members>
+    <members>Contract__c.ActiveVisioalContracts</members>
     <members>Contract__c.AnnualRenewalReview</members>
     <members>Contract__c.CreditContract</members>
     <members>Contract__c.RenewalStoppedContracts</members>
     <members>Event__c.All</members>
     <members>Freee_Account_Item_Mappings__c.All</members>
     <members>Freee_Configs__c.All</members>
+        <members>FreeeInvoiceContractRule__c.AccountSpecificRules</members>
+        <members>FreeeInvoiceContractRule__c.All</members>
+        <members>FreeeInvoiceContractRule__c.CommonRules</members>
     <members>Freee_Sync_Log__c.All</members>
     <members>InvoiceLine__c.All</members>
     <members>Invoice__c.All</members>
@@ -189,6 +212,7 @@
     <members>Event__c</members>
     <members>Freee_Account_Item_Mappings__c</members>
     <members>Freee_Configs__c</members>
+    <members>FreeeInvoiceContractRule__c</members>
     <members>Freee_Sync_Log__c</members>
     <members>Invoice__c</members>
     <members>InvoiceLine__c</members>

@@ -1,0 +1,3226 @@
+﻿{
+  "status": 1,
+  "result": {
+    "checkOnly": false,
+    "completedDate": "2026-07-28T04:34:00.000Z",
+    "createdBy": "0055g00000J9646",
+    "createdByName": "どるじ",
+    "createdDate": "2026-07-28T04:33:35.000Z",
+    "details": {
+      "componentSuccesses": [
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/Contract__c.object",
+          "fullName": "Contract__c.AutoCreatedFromFreee__c",
+          "id": "00NdL00002awf9xUAA",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/Contract__c.object",
+          "fullName": "Contract__c.BillingControlSource__c",
+          "id": "00NdL00002awf9yUAA",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/Contract__c.object",
+          "fullName": "Contract__c.ContractNature__c",
+          "id": "00NdL00002awf9zUAA",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/Contract__c.object",
+          "fullName": "Contract__c.CreationSource__c",
+          "id": "00NdL00002awfA0UAI",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.Account__c",
+          "id": "00NdL00002awfA1UAI",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.AutoCreateAllowed__c",
+          "id": "00NdL00002awfA2UAI",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.BillingCycle__c",
+          "id": "00NdL00002awfA3UAI",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.ContractName__c",
+          "id": "00NdL00002awfA4UAI",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.Contract__c",
+          "id": "00NdL00002awfA5UAI",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.EndDate__c",
+          "id": "00NdL00002awfA6UAI",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.FreeePartnerId__c",
+          "id": "00NdL00002awfA7UAI",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.IsActive__c",
+          "id": "00NdL00002awfA8UAI",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.ProductMaster__c",
+          "id": "00NdL00002awfA9UAI",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.StartDate__c",
+          "id": "00NdL00002awfAAUAY",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.SubjectKeyword__c",
+          "id": "00NdL00002awfABUAY",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/InvoiceLine__c.object",
+          "fullName": "InvoiceLine__c.Unit__c",
+          "id": "00NdL00002awfACUAY",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/Mig_FreeeInvoiceLineWork__c.object",
+          "fullName": "Mig_FreeeInvoiceLineWork__c.Unit__c",
+          "id": "00NdL00002awfADUAY",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/Mig_FreeeInvoiceWork__c.object",
+          "fullName": "Mig_FreeeInvoiceWork__c.ProvisioningMessage__c",
+          "id": "00NdL00002awfAEUAY",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomField",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:39.000Z",
+          "deleted": false,
+          "fileName": "objects/Mig_FreeeInvoiceWork__c.object",
+          "fullName": "Mig_FreeeInvoiceWork__c.ResolutionAction__c",
+          "id": "00NdL00002awfAFUAY",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "ApexClass",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "classes/FreeeInvoiceContractProvisionTest.cls",
+          "fullName": "FreeeInvoiceContractProvisionTest",
+          "id": "01pdL00000YTC0bQAH",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "ApexClass",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "classes/FreeeInvoiceContractProvisioningService.cls",
+          "fullName": "FreeeInvoiceContractProvisioningService",
+          "id": "01pdL00000YTC0cQAH",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "ApexClass",
+          "created": false,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "classes/Mig_FreeeInvoiceFinalizeService.cls",
+          "fullName": "Mig_FreeeInvoiceFinalizeService",
+          "id": "01pIe000000DHamIAG",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "ApexClass",
+          "created": false,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "classes/Mig_FreeeInvoiceMigrationTest.cls",
+          "fullName": "Mig_FreeeInvoiceMigrationTest",
+          "id": "01pIe000000DHaoIAG",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "ApexClass",
+          "created": false,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "classes/Mig_FreeeInvoiceProductResolver.cls",
+          "fullName": "Mig_FreeeInvoiceProductResolver",
+          "id": "01pIe000000DHapIAG",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "ApexClass",
+          "created": false,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "classes/Mig_FreeeInvoiceValidator.cls",
+          "fullName": "Mig_FreeeInvoiceValidator",
+          "id": "01pIe000000DHarIAG",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "ApexClass",
+          "created": false,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "classes/Mig_FreeeInvoiceWorkService.cls",
+          "fullName": "Mig_FreeeInvoiceWorkService",
+          "id": "01pIe000000DHasIAG",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "CustomObject",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c",
+          "id": "01IdL00000GJSLxUAP",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "ValidationRule",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.ActiveCommonRuleRequiresAutoCreate",
+          "id": "03ddL00000BPEe9QAH",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "ValidationRule",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.CommonRuleCannotHavePartnerId",
+          "id": "03ddL00000BPEeAQAX",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "ValidationRule",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.CommonRuleCannotReferenceContract",
+          "id": "03ddL00000BPEeBQAX",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "ValidationRule",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.CommonRuleRequiresProduct",
+          "id": "03ddL00000BPEeCQAX",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "ListView",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.AccountSpecificRules",
+          "id": "00BdL00001H2DdBUAV",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "ListView",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.All",
+          "id": "00BdL00001H2DdCUAV",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "ListView",
+          "created": true,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "objects/FreeeInvoiceContractRule__c.object",
+          "fullName": "FreeeInvoiceContractRule__c.CommonRules",
+          "id": "00BdL00001H2DdDUAV",
+          "success": true
+        },
+        {
+          "changed": true,
+          "componentType": "",
+          "created": false,
+          "createdDate": "2026-07-28T04:33:41.000Z",
+          "deleted": false,
+          "fileName": "package.xml",
+          "fullName": "package.xml",
+          "success": true
+        }
+      ],
+      "runTestResult": {
+        "codeCoverage": [
+          {
+            "id": "01pdL00000YTC0cQAH",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 66,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 123,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 124,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 125,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 126,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 137,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 145,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 146,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 147,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 148,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 160,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 161,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 162,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 201,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 243,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 279,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 283,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 340,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 344,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 353,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 386,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 387,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 388,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 389,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 391,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 397,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 419,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 472,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 482,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 527,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 528,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 529,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 530,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 544,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 545,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 546,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 547,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 642,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 649,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 659,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 668,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 700,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 746,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 753,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 759,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 763,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 785,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 817,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 836,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 850,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "FreeeInvoiceContractProvisioningService",
+            "namespace": null,
+            "numLocations": 534,
+            "numLocationsNotCovered": 50,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01pIe000000DHapIAG",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 48,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 117,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 118,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 155,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 187,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 188,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 189,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 228,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 229,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 230,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 231,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 232,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 235,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 236,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 239,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 240,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 241,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 242,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 243,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 244,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 246,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 249,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 250,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 251,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 252,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 253,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 255,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 256,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 257,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 258,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 259,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 260,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 261,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 262,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 263,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 264,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 267,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 268,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 270,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 271,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 274,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 293,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 298,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 304,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 306,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 332,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 333,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 336,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 345,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 349,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 359,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 368,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "Mig_FreeeInvoiceProductResolver",
+            "namespace": null,
+            "numLocations": 225,
+            "numLocationsNotCovered": 52,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01pIe000000DHamIAG",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 2,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 3,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 4,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 7,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 10,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 11,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 13,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 18,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 48,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 103,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 104,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 105,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 106,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 107,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 108,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 109,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 110,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 112,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 113,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 114,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 116,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 117,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 119,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 123,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 126,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 131,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 134,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 135,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 136,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 137,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 138,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 139,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 153,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 154,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 155,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 156,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 157,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 158,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 160,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 161,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 162,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 165,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 166,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 169,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 170,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 171,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 172,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 174,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 175,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 176,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 180,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 188,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 189,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 190,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 191,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 192,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 193,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 198,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 202,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 205,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 206,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 207,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 208,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 209,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 215,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 218,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 223,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 224,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 225,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 226,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 227,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 228,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 229,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 230,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 231,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 232,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 233,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 234,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 235,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 236,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 237,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 238,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 239,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 240,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 241,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 242,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 243,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 244,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 245,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 246,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 247,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 248,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 252,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 253,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 254,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 255,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 256,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 258,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 259,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 260,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 261,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 262,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 263,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 264,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 265,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 266,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 267,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 268,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 269,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 270,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 279,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 286,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 287,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 288,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 289,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 290,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 291,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 292,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 294,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 295,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 297,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 299,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 302,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 307,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 308,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 309,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 310,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 311,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 312,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 315,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 316,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 317,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 318,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 319,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 320,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 321,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 322,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 325,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 326,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 332,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 335,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 338,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 341,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 344,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 347,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 350,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 354,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 355,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 376,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 379,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 381,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 390,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 393,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 402,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 408,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 417,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 427,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 457,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 467,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 468,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 469,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 471,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 483,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 490,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 491,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 492,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 495,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 496,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 497,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 499,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 501,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 502,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 504,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 507,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 511,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 512,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 513,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 515,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 516,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 530,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 531,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 532,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 533,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 538,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 541,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 542,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 543,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 544,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 545,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 546,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 547,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 553,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "Mig_FreeeInvoiceFinalizeService",
+            "namespace": null,
+            "numLocations": 335,
+            "numLocationsNotCovered": 192,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01pIe000000DHarIAG",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 40,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 43,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 57,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 58,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 59,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 60,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 61,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 63,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 64,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 65,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 67,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 68,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 69,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 72,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 73,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 75,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 76,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 81,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 82,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "Mig_FreeeInvoiceValidator",
+            "namespace": null,
+            "numLocations": 48,
+            "numLocationsNotCovered": 19,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          },
+          {
+            "id": "01pIe000000DHasIAG",
+            "locationsNotCovered": [
+              {
+                "column": 0,
+                "line": 24,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 25,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 26,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 28,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 29,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 30,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 33,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 40,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 48,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 53,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 61,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 71,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 72,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 73,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 89,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 90,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 99,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 109,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 150,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 170,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 197,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 198,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 199,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 201,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 202,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 254,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 301,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 309,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 349,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 353,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 356,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 396,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 397,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 398,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 399,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 400,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 402,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 403,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 404,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 407,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 412,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 416,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 419,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 428,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 429,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 430,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 432,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 442,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 447,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 465,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 466,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 477,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 478,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 490,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 491,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 493,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 507,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 512,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 516,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 517,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 523,
+                "numExecutions": 0,
+                "time": -1
+              },
+              {
+                "column": 0,
+                "line": 532,
+                "numExecutions": 0,
+                "time": -1
+              }
+            ],
+            "name": "Mig_FreeeInvoiceWorkService",
+            "namespace": null,
+            "numLocations": 348,
+            "numLocationsNotCovered": 62,
+            "type": "Class",
+            "dmlInfo": [],
+            "methodInfo": [],
+            "soqlInfo": [],
+            "soslInfo": []
+          }
+        ],
+        "codeCoverageWarnings": [
+          {
+            "id": "01pIe000000DHar",
+            "message": "選択された Apex Class のテストカバー率は 60.417% です。少なくとも 75% 以上のテストカバー率が必要です。",
+            "name": "Mig_FreeeInvoiceValidator",
+            "namespace": null
+          },
+          {
+            "id": "01pIe000000DHam",
+            "message": "選択された Apex Class のテストカバー率は 42.687% です。少なくとも 75% 以上のテストカバー率が必要です。",
+            "name": "Mig_FreeeInvoiceFinalizeService",
+            "namespace": null
+          }
+        ],
+        "failures": [
+          {
+            "id": "01pIe000000DHaoIAG",
+            "message": "System.AssertException: Assertion Failed",
+            "methodName": "fetchBatchContinuesWithOffsetUntilLastPage",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "packageName": "Mig_FreeeInvoiceMigrationTest",
+            "stackTrace": "Class.Mig_FreeeInvoiceMigrationTest.FreeeInvoiceMultiPageMock.respond: line 59, column 1\nClass.FreeeInvoiceService.getInvoices: line 55, column 1\nClass.Mig_FreeeInvoiceFetchService.fetchDate: line 47, column 1\nClass.Mig_FreeeInvoiceFetchBatch.execute: line 62, column 1",
+            "time": 139,
+            "type": "Class"
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "message": "System.AssertException: Assertion Failed",
+            "methodName": "fetchBatchCreatesReadyWorkRecords",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "packageName": "Mig_FreeeInvoiceMigrationTest",
+            "stackTrace": "Class.Mig_FreeeInvoiceMigrationTest.FreeeInvoiceListMock.respond: line 24, column 1\nClass.FreeeInvoiceService.getInvoices: line 55, column 1\nClass.Mig_FreeeInvoiceFetchService.fetchDate: line 47, column 1\nClass.Mig_FreeeInvoiceFetchBatch.execute: line 62, column 1",
+            "time": 256,
+            "type": "Class"
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "message": "System.AssertException: Assertion Failed",
+            "methodName": "finalizesReadyWorkIntoExistingInvoiceWithSameFreeeId",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "packageName": "Mig_FreeeInvoiceMigrationTest",
+            "stackTrace": "Class.Mig_FreeeInvoiceMigrationTest.FreeeInvoiceListMock.respond: line 24, column 1\nClass.FreeeInvoiceService.getInvoices: line 55, column 1\nClass.Mig_FreeeInvoiceFetchService.fetchDate: line 47, column 1\nClass.Mig_FreeeInvoiceFetchBatch.execute: line 62, column 1",
+            "time": 151,
+            "type": "Class"
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "message": "System.AssertException: Assertion Failed",
+            "methodName": "finalizesReadyWorkToInvoiceAndInvoiceLine",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "packageName": "Mig_FreeeInvoiceMigrationTest",
+            "stackTrace": "Class.Mig_FreeeInvoiceMigrationTest.FreeeInvoiceListMock.respond: line 24, column 1\nClass.FreeeInvoiceService.getInvoices: line 55, column 1\nClass.Mig_FreeeInvoiceFetchService.fetchDate: line 47, column 1\nClass.Mig_FreeeInvoiceFetchBatch.execute: line 62, column 1",
+            "time": 148,
+            "type": "Class"
+          }
+        ],
+        "numFailures": 4,
+        "numTestsRun": 28,
+        "successes": [
+          {
+            "id": "01pdL00000YTC0bQAH",
+            "methodName": "accountRuleOverridesCommonRule",
+            "name": "FreeeInvoiceContractProvisionTest",
+            "namespace": null,
+            "time": 745
+          },
+          {
+            "id": "01pdL00000YTC0bQAH",
+            "methodName": "commonRuleCreatesSeparateContractsForEachAccount",
+            "name": "FreeeInvoiceContractProvisionTest",
+            "namespace": null,
+            "time": 552
+          },
+          {
+            "id": "01pdL00000YTC0bQAH",
+            "methodName": "commonRuleStopsWhenMultipleExistingContractsMatchTheProduct",
+            "name": "FreeeInvoiceContractProvisionTest",
+            "namespace": null,
+            "time": 540
+          },
+          {
+            "id": "01pdL00000YTC0bQAH",
+            "methodName": "commonRuleUsesBillingMonthWhenTargetPeriodIsMissing",
+            "name": "FreeeInvoiceContractProvisionTest",
+            "namespace": null,
+            "time": 485
+          },
+          {
+            "id": "01pdL00000YTC0bQAH",
+            "methodName": "commonRuleUsesTheSingleExistingContractMatchingTheProduct",
+            "name": "FreeeInvoiceContractProvisionTest",
+            "namespace": null,
+            "time": 594
+          },
+          {
+            "id": "01pdL00000YTC0bQAH",
+            "methodName": "doesNotCreateAnOverlappingContractPeriod",
+            "name": "FreeeInvoiceContractProvisionTest",
+            "namespace": null,
+            "time": 460
+          },
+          {
+            "id": "01pdL00000YTC0bQAH",
+            "methodName": "doesNotCreateContractWithoutUniqueApprovedRule",
+            "name": "FreeeInvoiceContractProvisionTest",
+            "namespace": null,
+            "time": 304
+          },
+          {
+            "id": "01pdL00000YTC0bQAH",
+            "methodName": "provisionsMissingPeriodOnExistingContract",
+            "name": "FreeeInvoiceContractProvisionTest",
+            "namespace": null,
+            "time": 484
+          },
+          {
+            "id": "01pdL00000YTC0bQAH",
+            "methodName": "provisionsOneTimeContractWithoutMrrOrRenewal",
+            "name": "FreeeInvoiceContractProvisionTest",
+            "namespace": null,
+            "time": 482
+          },
+          {
+            "id": "01pdL00000YTC0bQAH",
+            "methodName": "provisionsRecurringContractPeriodAndMonthlyLineIdempotently",
+            "name": "FreeeInvoiceContractProvisionTest",
+            "namespace": null,
+            "time": 583
+          },
+          {
+            "id": "01pdL00000YTC0bQAH",
+            "methodName": "yearlyMonthlyRevenueUsesNetInvoiceAmountWithoutMasterProration",
+            "name": "FreeeInvoiceContractProvisionTest",
+            "namespace": null,
+            "time": 532
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "methodName": "fetchBatchSkipsOutOfPeriodInvoicesReturnedByFreee",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "time": 269
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "methodName": "fetchBatchStartUsesSingleDateInTestsAndValidatesParameters",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "time": 76
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "methodName": "finalizeBlocksLowSimilarityPriceOnlyProductMatch",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "time": 342
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "methodName": "importBodyCalculatesWorkAmountsFromPaymentStatus",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "time": 259
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "methodName": "importBodyReconcilesTaxIncludedLineRoundingToInvoiceTax",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "time": 231
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "methodName": "importBodySeparatesTaxForTaxIncludedInvoice",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "time": 220
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "methodName": "productResolverDoesNotSuggestPriceOnlyMismatch",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "time": 263
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "methodName": "productResolverExcludesNotesAndLinksDiscountToPrimaryProduct",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "time": 249
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "methodName": "productResolverLearnsFromUniqueConfirmedHistory",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "time": 234
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "methodName": "productResolverSuggestsWhenPriceAndProductNameMatch",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "time": 288
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "methodName": "productResolverUsesMappingAsCandidateWhenNotExact",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "time": 267
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "methodName": "reimportRemovesStaleUnreflectedLineWorks",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "time": 896
+          },
+          {
+            "id": "01pIe000000DHaoIAG",
+            "methodName": "validatorKeepsUnresolvedWorkInReview",
+            "name": "Mig_FreeeInvoiceMigrationTest",
+            "namespace": null,
+            "time": 285
+          }
+        ],
+        "totalTime": 11381,
+        "flowCoverage": [],
+        "flowCoverageWarnings": []
+      },
+      "componentFailures": []
+    },
+    "done": true,
+    "id": "0AfdL00000eMl4USAS",
+    "ignoreWarnings": false,
+    "lastModifiedDate": "2026-07-28T04:34:00.000Z",
+    "numberComponentErrors": 0,
+    "numberComponentsDeployed": 34,
+    "numberComponentsTotal": 34,
+    "numberFiles": "22",
+    "numberTestErrors": 4,
+    "numberTestsCompleted": 24,
+    "numberTestsTotal": 28,
+    "rollbackOnError": true,
+    "runTestsEnabled": true,
+    "startDate": "2026-07-28T04:33:36.000Z",
+    "status": "Failed",
+    "success": false,
+    "zipSize": 43908,
+    "files": [
+      {
+        "fullName": "FreeeInvoiceContractProvisionTest",
+        "type": "ApexClass",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\classes\\FreeeInvoiceContractProvisionTest.cls"
+      },
+      {
+        "fullName": "FreeeInvoiceContractProvisionTest",
+        "type": "ApexClass",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\classes\\FreeeInvoiceContractProvisionTest.cls-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractProvisioningService",
+        "type": "ApexClass",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\classes\\FreeeInvoiceContractProvisioningService.cls"
+      },
+      {
+        "fullName": "FreeeInvoiceContractProvisioningService",
+        "type": "ApexClass",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\classes\\FreeeInvoiceContractProvisioningService.cls-meta.xml"
+      },
+      {
+        "fullName": "Mig_FreeeInvoiceFinalizeService",
+        "type": "ApexClass",
+        "state": "Changed",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\classes\\Mig_FreeeInvoiceFinalizeService.cls"
+      },
+      {
+        "fullName": "Mig_FreeeInvoiceFinalizeService",
+        "type": "ApexClass",
+        "state": "Changed",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\classes\\Mig_FreeeInvoiceFinalizeService.cls-meta.xml"
+      },
+      {
+        "fullName": "Mig_FreeeInvoiceMigrationTest",
+        "type": "ApexClass",
+        "state": "Changed",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\classes\\Mig_FreeeInvoiceMigrationTest.cls"
+      },
+      {
+        "fullName": "Mig_FreeeInvoiceMigrationTest",
+        "type": "ApexClass",
+        "state": "Changed",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\classes\\Mig_FreeeInvoiceMigrationTest.cls-meta.xml"
+      },
+      {
+        "fullName": "Mig_FreeeInvoiceProductResolver",
+        "type": "ApexClass",
+        "state": "Changed",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\classes\\Mig_FreeeInvoiceProductResolver.cls"
+      },
+      {
+        "fullName": "Mig_FreeeInvoiceProductResolver",
+        "type": "ApexClass",
+        "state": "Changed",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\classes\\Mig_FreeeInvoiceProductResolver.cls-meta.xml"
+      },
+      {
+        "fullName": "Mig_FreeeInvoiceValidator",
+        "type": "ApexClass",
+        "state": "Changed",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\classes\\Mig_FreeeInvoiceValidator.cls"
+      },
+      {
+        "fullName": "Mig_FreeeInvoiceValidator",
+        "type": "ApexClass",
+        "state": "Changed",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\classes\\Mig_FreeeInvoiceValidator.cls-meta.xml"
+      },
+      {
+        "fullName": "Mig_FreeeInvoiceWorkService",
+        "type": "ApexClass",
+        "state": "Changed",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\classes\\Mig_FreeeInvoiceWorkService.cls"
+      },
+      {
+        "fullName": "Mig_FreeeInvoiceWorkService",
+        "type": "ApexClass",
+        "state": "Changed",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\classes\\Mig_FreeeInvoiceWorkService.cls-meta.xml"
+      },
+      {
+        "fullName": "Contract__c.AutoCreatedFromFreee__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\Contract__c\\fields\\AutoCreatedFromFreee__c.field-meta.xml"
+      },
+      {
+        "fullName": "Contract__c.BillingControlSource__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\Contract__c\\fields\\BillingControlSource__c.field-meta.xml"
+      },
+      {
+        "fullName": "Contract__c.ContractNature__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\Contract__c\\fields\\ContractNature__c.field-meta.xml"
+      },
+      {
+        "fullName": "Contract__c.CreationSource__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\Contract__c\\fields\\CreationSource__c.field-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.Account__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\fields\\Account__c.field-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.AutoCreateAllowed__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\fields\\AutoCreateAllowed__c.field-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.BillingCycle__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\fields\\BillingCycle__c.field-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.ContractName__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\fields\\ContractName__c.field-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.Contract__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\fields\\Contract__c.field-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.EndDate__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\fields\\EndDate__c.field-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.FreeePartnerId__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\fields\\FreeePartnerId__c.field-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.IsActive__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\fields\\IsActive__c.field-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.ProductMaster__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\fields\\ProductMaster__c.field-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.StartDate__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\fields\\StartDate__c.field-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.SubjectKeyword__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\fields\\SubjectKeyword__c.field-meta.xml"
+      },
+      {
+        "fullName": "InvoiceLine__c.Unit__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\InvoiceLine__c\\fields\\Unit__c.field-meta.xml"
+      },
+      {
+        "fullName": "Mig_FreeeInvoiceLineWork__c.Unit__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\Mig_FreeeInvoiceLineWork__c\\fields\\Unit__c.field-meta.xml"
+      },
+      {
+        "fullName": "Mig_FreeeInvoiceWork__c.ProvisioningMessage__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\Mig_FreeeInvoiceWork__c\\fields\\ProvisioningMessage__c.field-meta.xml"
+      },
+      {
+        "fullName": "Mig_FreeeInvoiceWork__c.ResolutionAction__c",
+        "type": "CustomField",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\Mig_FreeeInvoiceWork__c\\fields\\ResolutionAction__c.field-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c",
+        "type": "CustomObject",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\FreeeInvoiceContractRule__c.object-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.AccountSpecificRules",
+        "type": "ListView",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\listViews\\AccountSpecificRules.listView-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.All",
+        "type": "ListView",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\listViews\\All.listView-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.CommonRules",
+        "type": "ListView",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\listViews\\CommonRules.listView-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.ActiveCommonRuleRequiresAutoCreate",
+        "type": "ValidationRule",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\validationRules\\ActiveCommonRuleRequiresAutoCreate.validationRule-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.CommonRuleCannotHavePartnerId",
+        "type": "ValidationRule",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\validationRules\\CommonRuleCannotHavePartnerId.validationRule-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.CommonRuleCannotReferenceContract",
+        "type": "ValidationRule",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\validationRules\\CommonRuleCannotReferenceContract.validationRule-meta.xml"
+      },
+      {
+        "fullName": "FreeeInvoiceContractRule__c.CommonRuleRequiresProduct",
+        "type": "ValidationRule",
+        "state": "Created",
+        "filePath": "C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\force-app\\main\\default\\objects\\FreeeInvoiceContractRule__c\\validationRules\\CommonRuleRequiresProduct.validationRule-meta.xml"
+      }
+    ],
+    "zipFileCount": 20,
+    "deployUrl": "https://shusandbox-dev-ed.develop.my.salesforce.com/lightning/setup/DeployStatus/page?address=%2Fchangemgmt%2FmonitorDeploymentsDetails.apexp%3FasyncId%3D0AfdL00000eMl4USAS%26retURL%3D%252Fchangemgmt%252FmonitorDeployment.apexp"
+  },
+  "warnings": []
+}

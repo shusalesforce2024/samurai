@@ -337,6 +337,62 @@ private class Mig_FreeeInvoiceMigrationTest {
     }
 
     @isTest
+    static void importBodySeparatesTaxForTaxIncludedInvoice() {
+        String body =
+            '{"invoices":[{"id":888003,"invoice_number":"INV-TAX-IN","partner_id":901,' +
+            '"partner_name":"Migration Account","issue_date":"2026-03-23","total_amount":72630,' +
+            '"amount_tax":6602,"tax_entry_method":"in","tax_fraction":"omit",' +
+            '"sending_status":"sent","payment_status":"paid","lines":[{' +
+            '"id":1,"description":"Travel","quantity":1,"unit_price":72630,' +
+            '"amount_excluding_tax":null,"tax_rate":10}]}]}';
+
+        Mig_FreeeInvoiceWorkService.ImportResult result = Mig_FreeeInvoiceWorkService.importBody(body);
+        System.assertEquals(1, result.headerCount);
+        System.assertEquals(1, result.lineCount);
+
+        Mig_FreeeInvoiceWork__c workRecord = [
+            SELECT InvoiceAmount__c,
+                   TaxAmount__c,
+                   (SELECT LineAmount__c, TaxAmount__c FROM InvoiceLineWorks__r)
+            FROM Mig_FreeeInvoiceWork__c
+            WHERE FreeeInvoiceId__c = '888003'
+            LIMIT 1
+        ];
+        System.assertEquals(72630, workRecord.InvoiceAmount__c);
+        System.assertEquals(6602, workRecord.TaxAmount__c);
+        System.assertEquals(66028, workRecord.InvoiceLineWorks__r[0].LineAmount__c);
+        System.assertEquals(6602, workRecord.InvoiceLineWorks__r[0].TaxAmount__c);
+    }
+
+    @isTest
+    static void importBodyReconcilesTaxIncludedLineRoundingToInvoiceTax() {
+        String body =
+            '{"invoices":[{"id":888004,"invoice_number":"INV-TAX-ROUND","partner_id":901,' +
+            '"partner_name":"Migration Account","issue_date":"2026-03-24","total_amount":1870000,' +
+            '"amount_tax":170000,"tax_entry_method":"in","tax_fraction":"omit",' +
+            '"lines":[{"id":1,"description":"Line 1","quantity":1,"unit_price":420000,"tax_rate":10},' +
+            '{"id":2,"description":"Line 2","quantity":1,"unit_price":1450000,"tax_rate":10}]}]}';
+
+        Mig_FreeeInvoiceWorkService.importBody(body);
+        Mig_FreeeInvoiceWork__c workRecord = [
+            SELECT TaxAmount__c,
+                   (SELECT LineAmount__c, TaxAmount__c FROM InvoiceLineWorks__r ORDER BY FreeeLineId__c)
+            FROM Mig_FreeeInvoiceWork__c
+            WHERE FreeeInvoiceId__c = '888004'
+            LIMIT 1
+        ];
+        Decimal lineTaxTotal = 0;
+        Decimal amountWithTaxTotal = 0;
+        for (Mig_FreeeInvoiceLineWork__c lineWork : workRecord.InvoiceLineWorks__r) {
+            lineTaxTotal += lineWork.TaxAmount__c;
+            amountWithTaxTotal += lineWork.LineAmount__c + lineWork.TaxAmount__c;
+        }
+        System.assertEquals(170000, workRecord.TaxAmount__c);
+        System.assertEquals(170000, lineTaxTotal);
+        System.assertEquals(1870000, amountWithTaxTotal);
+    }
+
+    @isTest
     static void fetchBatchSkipsOutOfPeriodInvoicesReturnedByFreee() {
         Test.setMock(HttpCalloutMock.class, new FreeeInvoiceOutOfPeriodListMock());
 
@@ -696,5 +752,273 @@ private class Mig_FreeeInvoiceMigrationTest {
         System.assertEquals(productRecord.Id, lineWork.SuggestedProductMaster__c);
         System.assertEquals(null, lineWork.ConfirmedProductMaster__c);
         System.assertEquals(Mig_FreeeInvoiceWorkService.PRODUCT_STATUS_CANDIDATE, lineWork.ProductResolveStatus__c);
+    }
+
+    @isTest
+    static void productResolverDoesNotSuggestPriceOnlyMismatch() {
+        ProductMaster__c productRecord = [
+            SELECT Id, UnitPrice__c, AnnualMonthlyPrice__c
+            FROM ProductMaster__c
+            WHERE Name = 'Rendary'
+            LIMIT 1
+        ];
+        Decimal productPrice = productRecord.UnitPrice__c == null
+            ? productRecord.AnnualMonthlyPrice__c
+            : productRecord.UnitPrice__c;
+
+        Mig_FreeeInvoiceWork__c workRecord = new Mig_FreeeInvoiceWork__c(
+            ExternalKey__c = 'freee_invoice:12345:778',
+            FreeeInvoiceId__c = '778',
+            ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_FETCHED
+        );
+        insert workRecord;
+
+        insert new Mig_FreeeInvoiceLineWork__c(
+            InvoiceWork__c = workRecord.Id,
+            ExternalKey__c = 'freee_invoice_line:12345:778:1',
+            FreeeLineId__c = '1',
+            Description__c = 'Unrelated Service',
+            UnitPrice__c = productPrice,
+            Quantity__c = 1,
+            LineAmount__c = productPrice,
+            ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_FETCHED
+        );
+
+        Test.startTest();
+        Mig_FreeeInvoiceProductResolver.resolveProducts();
+        Test.stopTest();
+
+        Mig_FreeeInvoiceLineWork__c lineWork = [
+            SELECT SuggestedProductMaster__c,
+                   ConfirmedProductMaster__c,
+                   ProductResolveStatus__c,
+                   ResolveMessage__c
+            FROM Mig_FreeeInvoiceLineWork__c
+            WHERE InvoiceWork__c = :workRecord.Id
+            LIMIT 1
+        ];
+        System.assertEquals(null, lineWork.SuggestedProductMaster__c);
+        System.assertEquals(null, lineWork.ConfirmedProductMaster__c);
+        System.assertEquals(Mig_FreeeInvoiceWorkService.PRODUCT_STATUS_NEEDS_REVIEW, lineWork.ProductResolveStatus__c);
+        System.assertEquals('No ProductMaster candidate found.', lineWork.ResolveMessage__c);
+    }
+
+    @isTest
+    static void productResolverSuggestsWhenPriceAndProductNameMatch() {
+        ProductMaster__c productRecord = [
+            SELECT Id, UnitPrice__c, AnnualMonthlyPrice__c
+            FROM ProductMaster__c
+            WHERE Name = 'Rendary'
+            LIMIT 1
+        ];
+        Decimal productPrice = productRecord.UnitPrice__c == null
+            ? productRecord.AnnualMonthlyPrice__c
+            : productRecord.UnitPrice__c;
+
+        Mig_FreeeInvoiceWork__c workRecord = new Mig_FreeeInvoiceWork__c(
+            ExternalKey__c = 'freee_invoice:12345:779',
+            FreeeInvoiceId__c = '779',
+            ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_FETCHED
+        );
+        insert workRecord;
+
+        insert new Mig_FreeeInvoiceLineWork__c(
+            InvoiceWork__c = workRecord.Id,
+            ExternalKey__c = 'freee_invoice_line:12345:779:1',
+            FreeeLineId__c = '1',
+            Description__c = 'Rendary monthly fee',
+            UnitPrice__c = productPrice,
+            Quantity__c = 1,
+            LineAmount__c = productPrice,
+            ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_FETCHED
+        );
+
+        Test.startTest();
+        Mig_FreeeInvoiceProductResolver.resolveProducts();
+        Test.stopTest();
+
+        Mig_FreeeInvoiceLineWork__c lineWork = [
+            SELECT SuggestedProductMaster__c,
+                   ConfirmedProductMaster__c,
+                   ProductResolveStatus__c,
+                   ResolveMessage__c
+            FROM Mig_FreeeInvoiceLineWork__c
+            WHERE InvoiceWork__c = :workRecord.Id
+            LIMIT 1
+        ];
+        System.assertEquals(productRecord.Id, lineWork.SuggestedProductMaster__c);
+        System.assertEquals(null, lineWork.ConfirmedProductMaster__c);
+        System.assertEquals(Mig_FreeeInvoiceWorkService.PRODUCT_STATUS_CANDIDATE, lineWork.ProductResolveStatus__c);
+        System.assertEquals('Matched by unit price and product name.', lineWork.ResolveMessage__c);
+    }
+
+    @isTest
+    static void productResolverLearnsFromUniqueConfirmedHistory() {
+        ProductMaster__c productRecord = [
+            SELECT Id
+            FROM ProductMaster__c
+            WHERE Name = 'Rendary'
+            LIMIT 1
+        ];
+        Mig_FreeeInvoiceWork__c historicalWork =
+            new Mig_FreeeInvoiceWork__c(
+                ExternalKey__c = 'freee_invoice:12345:history-1',
+                FreeeInvoiceId__c = '880001',
+                ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_IMPORTED
+            );
+        Mig_FreeeInvoiceWork__c targetWork =
+            new Mig_FreeeInvoiceWork__c(
+                ExternalKey__c = 'freee_invoice:12345:history-2',
+                FreeeInvoiceId__c = '880002',
+                ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_FETCHED
+            );
+        insert new List<Mig_FreeeInvoiceWork__c>{historicalWork, targetWork};
+
+        insert new List<Mig_FreeeInvoiceLineWork__c>{
+            new Mig_FreeeInvoiceLineWork__c(
+                InvoiceWork__c = historicalWork.Id,
+                ExternalKey__c = 'freee_invoice_line:12345:880001:1',
+                Description__c = 'Rendary special monthly plan',
+                UnitPrice__c = 12000,
+                Quantity__c = 2,
+                LineAmount__c = 24000,
+                ConfirmedProductMaster__c = productRecord.Id,
+                ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_IMPORTED
+            ),
+            new Mig_FreeeInvoiceLineWork__c(
+                InvoiceWork__c = targetWork.Id,
+                ExternalKey__c = 'freee_invoice_line:12345:880002:1',
+                Description__c = 'Rendary special monthly plan',
+                UnitPrice__c = 12000,
+                Quantity__c = 2,
+                LineAmount__c = 24000,
+                ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_FETCHED
+            )
+        };
+
+        Test.startTest();
+        Mig_FreeeInvoiceProductResolver.resolveProducts();
+        Test.stopTest();
+
+        Mig_FreeeInvoiceLineWork__c targetLine = [
+            SELECT ConfirmedProductMaster__c,
+                   ProductResolveStatus__c,
+                   ResolveConfidence__c
+            FROM Mig_FreeeInvoiceLineWork__c
+            WHERE InvoiceWork__c = :targetWork.Id
+            LIMIT 1
+        ];
+        System.assertEquals(productRecord.Id, targetLine.ConfirmedProductMaster__c);
+        System.assertEquals(
+            Mig_FreeeInvoiceWorkService.PRODUCT_STATUS_CONFIRMED,
+            targetLine.ProductResolveStatus__c
+        );
+        System.assertEquals(0.99, targetLine.ResolveConfidence__c);
+    }
+
+    @isTest
+    static void productResolverExcludesNotesAndLinksDiscountToPrimaryProduct() {
+        ProductMaster__c productRecord = [
+            SELECT Id
+            FROM ProductMaster__c
+            WHERE Name = 'Rendary'
+            LIMIT 1
+        ];
+        Mig_FreeeInvoiceWork__c workRecord =
+            new Mig_FreeeInvoiceWork__c(
+                ExternalKey__c = 'freee_invoice:12345:adjustment',
+                FreeeInvoiceId__c = '880003',
+                ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_FETCHED
+            );
+        insert workRecord;
+        insert new List<Mig_FreeeInvoiceLineWork__c>{
+            new Mig_FreeeInvoiceLineWork__c(
+                InvoiceWork__c = workRecord.Id,
+                ExternalKey__c = 'freee_invoice_line:12345:880003:1',
+                Description__c = 'Rendary',
+                Quantity__c = 1,
+                LineAmount__c = 10000,
+                ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_FETCHED
+            ),
+            new Mig_FreeeInvoiceLineWork__c(
+                InvoiceWork__c = workRecord.Id,
+                ExternalKey__c = 'freee_invoice_line:12345:880003:2',
+                Description__c = '年払い割引',
+                Quantity__c = 1,
+                LineAmount__c = -1000,
+                ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_FETCHED
+            ),
+            new Mig_FreeeInvoiceLineWork__c(
+                InvoiceWork__c = workRecord.Id,
+                ExternalKey__c = 'freee_invoice_line:12345:880003:3',
+                Description__c = '※補足情報',
+                ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_FETCHED
+            )
+        };
+
+        Test.startTest();
+        Mig_FreeeInvoiceProductResolver.resolveProducts();
+        Test.stopTest();
+
+        Map<String, Mig_FreeeInvoiceLineWork__c> lineByDescription =
+            new Map<String, Mig_FreeeInvoiceLineWork__c>();
+        for (Mig_FreeeInvoiceLineWork__c lineRecord : [
+            SELECT Description__c,
+                   ConfirmedProductMaster__c,
+                   ProductResolveStatus__c,
+                   ImportStatus__c
+            FROM Mig_FreeeInvoiceLineWork__c
+            WHERE InvoiceWork__c = :workRecord.Id
+        ]) {
+            lineByDescription.put(lineRecord.Description__c, lineRecord);
+        }
+        System.assertEquals(
+            productRecord.Id,
+            lineByDescription.get('年払い割引').ConfirmedProductMaster__c
+        );
+        System.assertEquals(
+            Mig_FreeeInvoiceWorkService.STATUS_EXCLUDED,
+            lineByDescription.get('※補足情報').ImportStatus__c
+        );
+    }
+
+    @isTest
+    static void reimportRemovesStaleUnreflectedLineWorks() {
+        String firstBody =
+            '{"invoices":[{"id":880004,"invoice_number":"INV-STALE","partner_id":901,' +
+            '"partner_name":"Migration Account","billing_date":"2026-03-20","total_amount":2200,' +
+            '"lines":[{"id":1,"description":"Old line","quantity":1,"unit_price":1000,"tax_rate":10},' +
+            '{"id":2,"description":"Current line","quantity":1,"unit_price":1000,"tax_rate":10}]}]}';
+        String secondBody =
+            '{"invoices":[{"id":880004,"invoice_number":"INV-STALE","partner_id":901,' +
+            '"partner_name":"Migration Account","billing_date":"2026-03-20","total_amount":1100,' +
+            '"lines":[{"id":2,"description":"Current line","quantity":1,"unit_price":1000,"tax_rate":10}]}]}';
+
+        Mig_FreeeInvoiceWorkService.importBody(firstBody);
+        Mig_FreeeInvoiceWorkService.importBody(secondBody);
+
+        Mig_FreeeInvoiceWork__c workRecord = [
+            SELECT Id
+            FROM Mig_FreeeInvoiceWork__c
+            WHERE FreeeInvoiceId__c = '880004'
+            LIMIT 1
+        ];
+        System.assertEquals(
+            1,
+            [
+                SELECT COUNT()
+                FROM Mig_FreeeInvoiceLineWork__c
+                WHERE InvoiceWork__c = :workRecord.Id
+            ]
+        );
+        System.assertEquals(
+            0,
+            [
+                SELECT COUNT()
+                FROM Mig_FreeeInvoiceLineWork__c
+                WHERE InvoiceWork__c = :workRecord.Id
+                  AND Description__c = 'Old line'
+            ]
+        );
     }
 }

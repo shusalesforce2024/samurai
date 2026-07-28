@@ -41,6 +41,7 @@ public with sharing class ContractRenewalInvoiceBatch
                    Account__r.Freee_Partner_Id__c,
                    ContractName__c,
                    ContractUpdate__c,
+                   BillingControlSource__c,
                    Plan__c,
                    RenewalStop__c,
                    StartDate__c,
@@ -49,6 +50,7 @@ public with sharing class ContractRenewalInvoiceBatch
             WHERE Status__c = :STATUS_ACTIVATED
               AND StartDate__c != null
               AND ContractUpdate__c IN (:UPDATE_MONTHLY, :UPDATE_YEARLY)
+              AND (BillingControlSource__c = null OR BillingControlSource__c = 'Salesforce')
               AND (RenewalStop__c = false OR RenewalStop__c = null)
         ]);
     }

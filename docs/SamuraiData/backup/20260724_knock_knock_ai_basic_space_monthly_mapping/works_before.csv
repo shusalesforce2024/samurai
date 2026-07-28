@@ -1,0 +1,8 @@
+Id,Name,InvoiceAmount__c,ResolvedAccount__c,ResolvedContract__c,ResolvedContractPeriod__c,CreatedInvoice__c,ImportStatus__c,ValidationMessage__c
+a0FRB00000WjTBk2AN,MFIW-000252,12100,001RB00001VTqZWYA1,a04RB00000kUAPjYAO,a0BRB00000ynn5b2AA,,要確認,商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。
+a0FRB00000Wj59I2AR,MFIW-000276,12100,001RB00001VTtIVYA1,,,,要確認,"契約管理を特定できません。取引先に有効な契約管理があるか確認してください。
+契約期間を特定できません。請求日を含む契約期間があるか確認してください。
+商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+a0FRB00000Wj5UF2AZ,MFIW-000318,12100,001RB00001VTqZWYA1,a04RB00000kUAPjYAO,a0BRB00000ynn5b2AA,,要確認,商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。
+a0FRB00000WjhrK2AR,MFIW-000362,12100,001RB00001VTqZWYA1,a04RB00000kUAPjYAO,a0BRB00000ynn5b2AA,,要確認,商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。
+a0FRB00000Yr46o2AB,MFIW-000440,12100,001RB00001VTqZWYA1,a04RB00000kUAPjYAO,a0BRB00000ynn5b2AA,,要確認,商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。

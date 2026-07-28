@@ -94,7 +94,7 @@ foreach ($name in $requiredApexClasses) {
 
 Add-ScheduleCheck $results "ContractMonthlyLineBatch" "ContractMonthlyLineBatch%" "0 30 1 11 * ?"
 Add-ScheduleCheck $results "FreeeInvoiceImportScheduler" "FreeeInvoiceImportScheduler%" "0 30 2 ? * SAT"
-Add-ScheduleCheck $results "FreeeInvoiceStatusSyncBatch" "FreeeInvoiceStatusSyncBatch" "0 0 3 * * ?"
+Add-ScheduleCheck $results "FreeeInvoiceStatusSyncBatch" "FreeeInvoiceStatusSyncBatch" "0 10 0 * * ?"
 
 $renewalSchedules = Invoke-SfQuery -Query "SELECT CronJobDetail.Name, State, CronExpression FROM CronTrigger WHERE CronJobDetail.Name LIKE 'ContractRenewalInvoiceBatch%'"
 if (@($renewalSchedules).Count -gt 0) {

@@ -453,5 +453,77 @@ private class FreeeInvoiceStatusSyncBatchTest {
         System.assertEquals(200, getResponse.getStatusCode());
         System.assertEquals(200, cancelResponse.getStatusCode());
     }
+
+    @isTest
+    static void scheduledRunLimitsFreeeCalloutsToTwentyInvoices() {
+        Account accountRecord = new Account(Name = 'Rate Limit Account');
+        insert accountRecord;
+
+        List<Invoice__c> invoiceRecords = new List<Invoice__c>();
+        for (Integer i = 0; i < 21; i++) {
+            invoiceRecords.add(new Invoice__c(
+                Account__c = accountRecord.Id,
+                Billing_Date__c = Date.today(),
+                Freee_Account_Item_Picklist__c = 'Sales',
+                Freee_Invoice_Id__c = 3000 + i,
+                InvoiceAmount__c = 1100,
+                Payment_Date__c = Date.today(),
+                Sent_To_Freee__c = true,
+                Subject__c = 'Rate Limit Invoice ' + i
+            ));
+        }
+        insert invoiceRecords;
+
+        Test.setMock(HttpCalloutMock.class, new InvoiceStatusMock());
+
+        Test.startTest();
+        Database.executeBatch(new FreeeInvoiceStatusSyncBatch(Date.today()), 50);
+        Test.stopTest();
+
+        System.assertEquals(
+            FreeeInvoiceStatusSyncBatch.MAX_INVOICES_PER_RUN,
+            [
+                SELECT COUNT()
+                FROM Invoice__c
+                WHERE Id IN :invoiceRecords
+                  AND Freee_Sync_Status__c = 'Success'
+            ]
+        );
+    }
+
+    @isTest
+    static void retriesFailedInvoiceOutsideNormalPaymentWindow() {
+        Account accountRecord = new Account(Name = 'Failed Retry Account');
+        insert accountRecord;
+
+        Invoice__c invoiceRecord = new Invoice__c(
+            Account__c = accountRecord.Id,
+            Billing_Date__c = Date.today().addMonths(-6),
+            Freee_Account_Item_Picklist__c = 'Sales',
+            Freee_Invoice_Id__c = 4001,
+            Freee_Sync_Status__c = 'Failed',
+            Freee_Last_Synced_At__c = System.now().addHours(-1),
+            InvoiceAmount__c = 2200,
+            Payment_Date__c = Date.today().addMonths(-6),
+            Sent_To_Freee__c = true,
+            Subject__c = 'Failed Retry Invoice'
+        );
+        insert invoiceRecord;
+
+        Test.setMock(HttpCalloutMock.class, new InvoiceStatusMock());
+
+        Test.startTest();
+        Database.executeBatch(new FreeeInvoiceStatusSyncBatch(Date.today()), 20);
+        Test.stopTest();
+
+        Invoice__c synced = [
+            SELECT Freee_Sync_Status__c,
+                   Freee_Sync_Message__c
+            FROM Invoice__c
+            WHERE Id = :invoiceRecord.Id
+        ];
+        System.assertEquals('Success', synced.Freee_Sync_Status__c);
+        System.assertEquals(null, synced.Freee_Sync_Message__c);
+    }
 }
 

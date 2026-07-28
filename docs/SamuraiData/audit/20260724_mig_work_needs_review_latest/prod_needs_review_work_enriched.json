@@ -1,0 +1,2175 @@
+﻿[
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000UtK9v2AF"
+                       },
+        "Id":  "a0FRB00000UtK9v2AF",
+        "Name":  "MFIW-000044",
+        "FreeeInvoiceId__c":  "54113194",
+        "FreeeInvoiceNumber__c":  "INV-0000001043",
+        "PartnerName__c":  "戸田建設株式会社",
+        "BillingDate__c":  "2026-03-20",
+        "InvoiceAmount__c":  500500,
+        "TaxAmount__c":  45500,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrmnYAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrmnYAD"
+                                                  },
+                                   "Name":  "戸田建設株式会社"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAO0YAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAO0YAO"
+                                                   },
+                                    "Name":  "CN-00000026"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynb5v2AA",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynb5v2AA"
+                                                         },
+                                          "Name":  "CP-00000024"
+                                      },
+        "CreatedInvoice__c":  "a00RB000024Ux4eYAC",
+        "CreatedInvoice__r":  {
+                                  "attributes":  {
+                                                     "type":  "Invoice__c",
+                                                     "url":  "/services/data/v67.0/sobjects/Invoice__c/a00RB000024Ux4eYAC"
+                                                 },
+                                  "Name":  "INV-0000000033"
+                              },
+        "ValidationMessage__c":  "請求明細の件名と商品マスタ名が類似していないため、請求作成を停止しました。金額一致だけで商品が選ばれている可能性があります。明細「VISIOAL＿ベーシックプラン」の商品マスタを確認してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wj59H2AR"
+                       },
+        "Id":  "a0FRB00000Wj59H2AR",
+        "Name":  "MFIW-000275",
+        "FreeeInvoiceId__c":  "54153834",
+        "FreeeInvoiceNumber__c":  "INV-0000001054",
+        "PartnerName__c":  "株式会社ヨコハマ地所",
+        "BillingDate__c":  "2026-03-20",
+        "InvoiceAmount__c":  12100,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001br9KKYAY",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001br9KKYAY"
+                                                  },
+                                   "Name":  "株式会社ヨコハマ地所"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wj59J2AR"
+                       },
+        "Id":  "a0FRB00000Wj59J2AR",
+        "Name":  "MFIW-000277",
+        "FreeeInvoiceId__c":  "54153836",
+        "FreeeInvoiceNumber__c":  "INV-0000001056",
+        "PartnerName__c":  "リアルティホールディングス株式会社",
+        "BillingDate__c":  "2026-03-20",
+        "InvoiceAmount__c":  175450,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTtIUYA1",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTtIUYA1"
+                                                  },
+                                   "Name":  "リアルティホールディングス株式会社"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAPdYAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAPdYAO"
+                                                   },
+                                    "Name":  "CN-00000127"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynn5V2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynn5V2AQ"
+                                                         },
+                                          "Name":  "CP-00000126"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wj59M2AR"
+                       },
+        "Id":  "a0FRB00000Wj59M2AR",
+        "Name":  "MFIW-000280",
+        "FreeeInvoiceId__c":  "54153839",
+        "FreeeInvoiceNumber__c":  "INV-0000001059",
+        "PartnerName__c":  "アグレ都市デザイン株式会社",
+        "BillingDate__c":  "2026-03-20",
+        "InvoiceAmount__c":  12100,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTCYzYAP",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTCYzYAP"
+                                                  },
+                                   "Name":  "アグレ都市デザイン株式会社"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wio6l2AB"
+                       },
+        "Id":  "a0FRB00000Wio6l2AB",
+        "Name":  "MFIW-000292",
+        "FreeeInvoiceId__c":  "54249842",
+        "FreeeInvoiceNumber__c":  "INV-0000001095",
+        "PartnerName__c":  "株式会社トーケン",
+        "BillingDate__c":  "2026-03-20",
+        "InvoiceAmount__c":  1056000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001br9KPYAY",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001br9KPYAY"
+                                                  },
+                                   "Name":  "株式会社トーケン"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjhrF2AR"
+                       },
+        "Id":  "a0FRB00000WjhrF2AR",
+        "Name":  "MFIW-000357",
+        "FreeeInvoiceId__c":  "54153861",
+        "FreeeInvoiceNumber__c":  "INV-0000001074",
+        "PartnerName__c":  "東急リゾーツ＆ステイ株式会社",
+        "BillingDate__c":  "2026-03-20",
+        "InvoiceAmount__c":  108900,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001br9KMYAY",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001br9KMYAY"
+                                                  },
+                                   "Name":  "東急リゾーツ＆ステイ株式会社"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjhrH2AR"
+                       },
+        "Id":  "a0FRB00000WjhrH2AR",
+        "Name":  "MFIW-000359",
+        "FreeeInvoiceId__c":  "54153863",
+        "FreeeInvoiceNumber__c":  "INV-0000001076",
+        "PartnerName__c":  "株式会社前田工務店",
+        "BillingDate__c":  "2026-03-20",
+        "InvoiceAmount__c":  60500,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTCYmYAP",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTCYmYAP"
+                                                  },
+                                   "Name":  "株式会社前田工務店"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUANjYAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUANjYAO"
+                                                   },
+                                    "Name":  "CN-00000009"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynb5e2AA",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynb5e2AA"
+                                                         },
+                                          "Name":  "CP-00000007"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjhzK2AR"
+                       },
+        "Id":  "a0FRB00000WjhzK2AR",
+        "Name":  "MFIW-000368",
+        "FreeeInvoiceId__c":  "54153879",
+        "FreeeInvoiceNumber__c":  "INV-0000001085",
+        "PartnerName__c":  "株式会社アークフロンティア　テラスエステート",
+        "BillingDate__c":  "2026-03-20",
+        "InvoiceAmount__c":  123200,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTtIhYAL",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTtIhYAL"
+                                                  },
+                                   "Name":  "株式会社アークフロンティア テラスエステート"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wjfvr2AB"
+                       },
+        "Id":  "a0FRB00000Wjfvr2AB",
+        "Name":  "MFIW-000295",
+        "FreeeInvoiceId__c":  "56527531",
+        "FreeeInvoiceNumber__c":  "INV-0000001131",
+        "PartnerName__c":  "株式会社ヨコハマ地所",
+        "BillingDate__c":  "2026-04-20",
+        "InvoiceAmount__c":  12100,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001br9KKYAY",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001br9KKYAY"
+                                                  },
+                                   "Name":  "株式会社ヨコハマ地所"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wjfvs2AB"
+                       },
+        "Id":  "a0FRB00000Wjfvs2AB",
+        "Name":  "MFIW-000296",
+        "FreeeInvoiceId__c":  "56527532",
+        "FreeeInvoiceNumber__c":  "INV-0000001132",
+        "PartnerName__c":  "リアルティホールディングス株式会社",
+        "BillingDate__c":  "2026-04-20",
+        "InvoiceAmount__c":  175450,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTtIUYA1",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTtIUYA1"
+                                                  },
+                                   "Name":  "リアルティホールディングス株式会社"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAPdYAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAPdYAO"
+                                                   },
+                                    "Name":  "CN-00000127"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynn5V2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynn5V2AQ"
+                                                         },
+                                          "Name":  "CP-00000126"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wjfvv2AB"
+                       },
+        "Id":  "a0FRB00000Wjfvv2AB",
+        "Name":  "MFIW-000299",
+        "FreeeInvoiceId__c":  "56527536",
+        "FreeeInvoiceNumber__c":  "INV-0000001135",
+        "PartnerName__c":  "アグレ都市デザイン株式会社",
+        "BillingDate__c":  "2026-04-20",
+        "InvoiceAmount__c":  12100,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTCYzYAP",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTCYzYAP"
+                                                  },
+                                   "Name":  "アグレ都市デザイン株式会社"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wj5UB2AZ"
+                       },
+        "Id":  "a0FRB00000Wj5UB2AZ",
+        "Name":  "MFIW-000314",
+        "FreeeInvoiceId__c":  "56527556",
+        "FreeeInvoiceNumber__c":  "INV-0000001150",
+        "PartnerName__c":  "東急リゾーツ＆ステイ株式会社",
+        "BillingDate__c":  "2026-04-20",
+        "InvoiceAmount__c":  108900,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001br9KMYAY",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001br9KMYAY"
+                                                  },
+                                   "Name":  "東急リゾーツ＆ステイ株式会社"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wj5UM2AZ"
+                       },
+        "Id":  "a0FRB00000Wj5UM2AZ",
+        "Name":  "MFIW-000325",
+        "FreeeInvoiceId__c":  "56647918",
+        "FreeeInvoiceNumber__c":  "INV-0000001161",
+        "PartnerName__c":  "福井コンピュータアーキテクト",
+        "BillingDate__c":  "2026-04-20",
+        "InvoiceAmount__c":  5181000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001br9KZYAY",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001br9KZYAY"
+                                                  },
+                                   "Name":  "福井コンピュータアーキテクト"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wj5UO2AZ"
+                       },
+        "Id":  "a0FRB00000Wj5UO2AZ",
+        "Name":  "MFIW-000327",
+        "FreeeInvoiceId__c":  "56676178",
+        "FreeeInvoiceNumber__c":  "INV-0000001163",
+        "PartnerName__c":  "東急建設株式会社",
+        "BillingDate__c":  "2026-04-20",
+        "InvoiceAmount__c":  105600,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrseYAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrseYAD"
+                                                  },
+                                   "Name":  "東急建設株式会社"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUANhYAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUANhYAO"
+                                                   },
+                                    "Name":  "CN-00000007"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynb5c2AA",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynb5c2AA"
+                                                         },
+                                          "Name":  "CP-00000005"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wj5UQ2AZ"
+                       },
+        "Id":  "a0FRB00000Wj5UQ2AZ",
+        "Name":  "MFIW-000329",
+        "FreeeInvoiceId__c":  "56678351",
+        "FreeeInvoiceNumber__c":  "INV-0000001165",
+        "PartnerName__c":  "株式会社大塚商会",
+        "BillingDate__c":  "2026-04-20",
+        "InvoiceAmount__c":  14080,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTqleYAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTqleYAD"
+                                                  },
+                                   "Name":  "株式会社大塚商会"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAObYAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAObYAO"
+                                                   },
+                                    "Name":  "CN-00000063"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynb6W2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynb6W2AQ"
+                                                         },
+                                          "Name":  "CP-00000061"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wj5UR2AZ"
+                       },
+        "Id":  "a0FRB00000Wj5UR2AZ",
+        "Name":  "MFIW-000330",
+        "FreeeInvoiceId__c":  "56678813",
+        "FreeeInvoiceNumber__c":  "INV-0000001166",
+        "PartnerName__c":  "株式会社大塚商会",
+        "BillingDate__c":  "2026-04-20",
+        "InvoiceAmount__c":  7040,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTqleYAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTqleYAD"
+                                                  },
+                                   "Name":  "株式会社大塚商会"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAObYAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAObYAO"
+                                                   },
+                                    "Name":  "CN-00000063"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynb6W2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynb6W2AQ"
+                                                         },
+                                          "Name":  "CP-00000061"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjFOi2AN"
+                       },
+        "Id":  "a0FRB00000WjFOi2AN",
+        "Name":  "MFIW-000334",
+        "FreeeInvoiceId__c":  "56681536",
+        "FreeeInvoiceNumber__c":  "INV-0000001170",
+        "PartnerName__c":  "株式会社石勝エクステリア",
+        "BillingDate__c":  "2026-04-20",
+        "InvoiceAmount__c":  1716000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTqnMYAT",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTqnMYAT"
+                                                  },
+                                   "Name":  "株式会社石勝エクステリア"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjFOq2AN"
+                       },
+        "Id":  "a0FRB00000WjFOq2AN",
+        "Name":  "MFIW-000342",
+        "FreeeInvoiceId__c":  "56685582",
+        "FreeeInvoiceNumber__c":  "INV-0000001178",
+        "PartnerName__c":  "近鉄不動産株式会社",
+        "BillingDate__c":  "2026-04-20",
+        "InvoiceAmount__c":  676500,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrvcYAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrvcYAD"
+                                                  },
+                                   "Name":  "近鉄不動産株式会社"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjFOu2AN"
+                       },
+        "Id":  "a0FRB00000WjFOu2AN",
+        "Name":  "MFIW-000346",
+        "FreeeInvoiceId__c":  "56693657",
+        "FreeeInvoiceNumber__c":  "INV-0000001182",
+        "PartnerName__c":  "株式会社フジタ",
+        "BillingDate__c":  "2026-04-20",
+        "InvoiceAmount__c":  924000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrwFYAT",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrwFYAT"
+                                                  },
+                                   "Name":  "株式会社フジタ"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjFOx2AN"
+                       },
+        "Id":  "a0FRB00000WjFOx2AN",
+        "Name":  "MFIW-000349",
+        "FreeeInvoiceId__c":  "56697026",
+        "FreeeInvoiceNumber__c":  "INV-0000001185",
+        "PartnerName__c":  "株式会社フジタ",
+        "BillingDate__c":  "2026-04-20",
+        "InvoiceAmount__c":  1293600,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrwFYAT",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrwFYAT"
+                                                  },
+                                   "Name":  "株式会社フジタ"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjFOy2AN"
+                       },
+        "Id":  "a0FRB00000WjFOy2AN",
+        "Name":  "MFIW-000350",
+        "FreeeInvoiceId__c":  "56698344",
+        "FreeeInvoiceNumber__c":  "INV-0000001186",
+        "PartnerName__c":  "株式会社フジタ",
+        "BillingDate__c":  "2026-04-20",
+        "InvoiceAmount__c":  554400,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrwFYAT",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrwFYAT"
+                                                  },
+                                   "Name":  "株式会社フジタ"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjSKT2A3"
+                       },
+        "Id":  "a0FRB00000WjSKT2A3",
+        "Name":  "MFIW-000229",
+        "FreeeInvoiceId__c":  "58573614",
+        "FreeeInvoiceNumber__c":  "INV-0000001231",
+        "PartnerName__c":  "株式会社ヨコハマ地所",
+        "BillingDate__c":  "2026-05-20",
+        "InvoiceAmount__c":  12100,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001br9KKYAY",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001br9KKYAY"
+                                                  },
+                                   "Name":  "株式会社ヨコハマ地所"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjSKU2A3"
+                       },
+        "Id":  "a0FRB00000WjSKU2A3",
+        "Name":  "MFIW-000230",
+        "FreeeInvoiceId__c":  "58573616",
+        "FreeeInvoiceNumber__c":  "INV-0000001232",
+        "PartnerName__c":  "リアルティホールディングス株式会社",
+        "BillingDate__c":  "2026-05-20",
+        "InvoiceAmount__c":  175450,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTtIUYA1",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTtIUYA1"
+                                                  },
+                                   "Name":  "リアルティホールディングス株式会社"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAPdYAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAPdYAO"
+                                                   },
+                                    "Name":  "CN-00000127"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynn5V2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynn5V2AQ"
+                                                         },
+                                          "Name":  "CP-00000126"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjSKX2A3"
+                       },
+        "Id":  "a0FRB00000WjSKX2A3",
+        "Name":  "MFIW-000233",
+        "FreeeInvoiceId__c":  "58573621",
+        "FreeeInvoiceNumber__c":  "INV-0000001235",
+        "PartnerName__c":  "アグレ都市デザイン株式会社",
+        "BillingDate__c":  "2026-05-20",
+        "InvoiceAmount__c":  12100,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTCYzYAP",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTCYzYAP"
+                                                  },
+                                   "Name":  "アグレ都市デザイン株式会社"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjTBg2AN"
+                       },
+        "Id":  "a0FRB00000WjTBg2AN",
+        "Name":  "MFIW-000248",
+        "FreeeInvoiceId__c":  "58573648",
+        "FreeeInvoiceNumber__c":  "INV-0000001250",
+        "PartnerName__c":  "東急リゾーツ＆ステイ株式会社",
+        "BillingDate__c":  "2026-05-20",
+        "InvoiceAmount__c":  108900,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001br9KMYAY",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001br9KMYAY"
+                                                  },
+                                   "Name":  "東急リゾーツ＆ステイ株式会社"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjTmd2AF"
+                       },
+        "Id":  "a0FRB00000WjTmd2AF",
+        "Name":  "MFIW-000259",
+        "FreeeInvoiceId__c":  "58690508",
+        "FreeeInvoiceNumber__c":  "INV-0000001263",
+        "PartnerName__c":  "株式会社大塚商会",
+        "BillingDate__c":  "2026-05-20",
+        "InvoiceAmount__c":  42240,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTqleYAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTqleYAD"
+                                                  },
+                                   "Name":  "株式会社大塚商会"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAObYAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAObYAO"
+                                                   },
+                                    "Name":  "CN-00000063"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynb6W2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynb6W2AQ"
+                                                         },
+                                          "Name":  "CP-00000061"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjTme2AF"
+                       },
+        "Id":  "a0FRB00000WjTme2AF",
+        "Name":  "MFIW-000260",
+        "FreeeInvoiceId__c":  "58690758",
+        "FreeeInvoiceNumber__c":  "INV-0000001264",
+        "PartnerName__c":  "株式会社大塚商会",
+        "BillingDate__c":  "2026-05-20",
+        "InvoiceAmount__c":  14080,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTqleYAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTqleYAD"
+                                                  },
+                                   "Name":  "株式会社大塚商会"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAObYAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAObYAO"
+                                                   },
+                                    "Name":  "CN-00000063"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynb6W2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynb6W2AQ"
+                                                         },
+                                          "Name":  "CP-00000061"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjTmi2AF"
+                       },
+        "Id":  "a0FRB00000WjTmi2AF",
+        "Name":  "MFIW-000264",
+        "FreeeInvoiceId__c":  "58709686",
+        "FreeeInvoiceNumber__c":  "INV-0000001269",
+        "PartnerName__c":  "日鉄興和不動産株式会社",
+        "BillingDate__c":  "2026-05-20",
+        "InvoiceAmount__c":  1848000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrnKYAT",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrnKYAT"
+                                                  },
+                                   "Name":  "日鉄興和不動産株式会社"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAOqYAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAOqYAO"
+                                                   },
+                                    "Name":  "CN-00000078"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynb6l2AA",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynb6l2AA"
+                                                         },
+                                          "Name":  "CP-00000076"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "年契約月額按分料金が商品マスタにないため、契約月次明細を自動作成できません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjTml2AF"
+                       },
+        "Id":  "a0FRB00000WjTml2AF",
+        "Name":  "MFIW-000267",
+        "FreeeInvoiceId__c":  "58711460",
+        "FreeeInvoiceNumber__c":  "INV-0000001272",
+        "PartnerName__c":  "近鉄不動産株式会社",
+        "BillingDate__c":  "2026-05-20",
+        "InvoiceAmount__c":  291500,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrvcYAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrvcYAD"
+                                                  },
+                                   "Name":  "近鉄不動産株式会社"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjTmm2AF"
+                       },
+        "Id":  "a0FRB00000WjTmm2AF",
+        "Name":  "MFIW-000268",
+        "FreeeInvoiceId__c":  "58712318",
+        "FreeeInvoiceNumber__c":  "INV-0000001273",
+        "PartnerName__c":  "若築建設株式会社",
+        "BillingDate__c":  "2026-05-20",
+        "InvoiceAmount__c":  105600,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrmvYAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrmvYAD"
+                                                  },
+                                   "Name":  "若築建設株式会社"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAPGYA4",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAPGYA4"
+                                                   },
+                                    "Name":  "CN-00000104"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynn572AA",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynn572AA"
+                                                         },
+                                          "Name":  "CP-00000102"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000UtKuT2AV"
+                       },
+        "Id":  "a0FRB00000UtKuT2AV",
+        "Name":  "MFIW-000114",
+        "FreeeInvoiceId__c":  "58733986",
+        "FreeeInvoiceNumber__c":  "INV-0000001275",
+        "PartnerName__c":  "SFテスト",
+        "BillingDate__c":  "2026-05-21",
+        "InvoiceAmount__c":  33000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001OSC9bYAH",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001OSC9bYAH"
+                                                  },
+                                   "Name":  "SFテスト"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。",
+        "ProvisioningMessage__c":  "承認済みのFreee請求契約ルールがないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000UtM9t2AF"
+                       },
+        "Id":  "a0FRB00000UtM9t2AF",
+        "Name":  "MFIW-000125",
+        "FreeeInvoiceId__c":  "58810995",
+        "FreeeInvoiceNumber__c":  "INV-0000001276",
+        "PartnerName__c":  "どさんこ不動産",
+        "BillingDate__c":  "2026-06-19",
+        "InvoiceAmount__c":  33000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001c9XXpYAM",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001c9XXpYAM"
+                                                  },
+                                   "Name":  "どさんこ不動産"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。",
+        "ProvisioningMessage__c":  "承認済みのFreee請求契約ルールがないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000UtM9u2AF"
+                       },
+        "Id":  "a0FRB00000UtM9u2AF",
+        "Name":  "MFIW-000126",
+        "FreeeInvoiceId__c":  "59151137",
+        "FreeeInvoiceNumber__c":  "INV-0000001282",
+        "PartnerName__c":  "帝国不動産株式会社",
+        "BillingDate__c":  "2026-06-19",
+        "InvoiceAmount__c":  52800,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VcyFPYAZ",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VcyFPYAZ"
+                                                  },
+                                   "Name":  "帝国不動産株式会社"
+                               },
+        "ResolvedContract__c":  "a04RB00000kVL7hYAG",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kVL7hYAG"
+                                                   },
+                                    "Name":  "CN-00000188"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ypw6N2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ypw6N2AQ"
+                                                         },
+                                          "Name":  "CP-00000196"
+                                      },
+        "CreatedInvoice__c":  "a00RB000024Vf24YAC",
+        "CreatedInvoice__r":  {
+                                  "attributes":  {
+                                                     "type":  "Invoice__c",
+                                                     "url":  "/services/data/v67.0/sobjects/Invoice__c/a00RB000024Vf24YAC"
+                                                 },
+                                  "Name":  "INV-0000000109"
+                              },
+        "ValidationMessage__c":  "請求金額と明細合計が一致していません。請求金額=52800、明細合計=105600",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WicaT2AR"
+                       },
+        "Id":  "a0FRB00000WicaT2AR",
+        "Name":  "MFIW-000174",
+        "FreeeInvoiceId__c":  "60861161",
+        "FreeeInvoiceNumber__c":  "INV-0000001325",
+        "PartnerName__c":  "リアルティホールディングス株式会社",
+        "BillingDate__c":  "2026-06-20",
+        "InvoiceAmount__c":  175450,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTtIUYA1",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTtIUYA1"
+                                                  },
+                                   "Name":  "リアルティホールディングス株式会社"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAPdYAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAPdYAO"
+                                                   },
+                                    "Name":  "CN-00000127"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynn5V2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynn5V2AQ"
+                                                         },
+                                          "Name":  "CP-00000126"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WhTPP2A3"
+                       },
+        "Id":  "a0FRB00000WhTPP2A3",
+        "Name":  "MFIW-000183",
+        "FreeeInvoiceId__c":  "60861173",
+        "FreeeInvoiceNumber__c":  "INV-0000001334",
+        "PartnerName__c":  "株式会社デザインアーク",
+        "BillingDate__c":  "2026-06-20",
+        "InvoiceAmount__c":  181500,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTruAYAT",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTruAYAT"
+                                                  },
+                                   "Name":  "株式会社デザインアーク"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。",
+        "ProvisioningMessage__c":  "承認済みのFreee請求契約ルールがないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WihDQ2AZ"
+                       },
+        "Id":  "a0FRB00000WihDQ2AZ",
+        "Name":  "MFIW-000206",
+        "FreeeInvoiceId__c":  "60906771",
+        "FreeeInvoiceNumber__c":  "INV-0000001357",
+        "PartnerName__c":  "梅林建設株式会社",
+        "BillingDate__c":  "2026-06-20",
+        "InvoiceAmount__c":  924000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrkSYAT",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrkSYAT"
+                                                  },
+                                   "Name":  "梅林建設株式会社"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAPJYA4",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAPJYA4"
+                                                   },
+                                    "Name":  "CN-00000107"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynn5A2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynn5A2AQ"
+                                                         },
+                                          "Name":  "CP-00000105"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "年契約月額按分料金が商品マスタにないため、契約月次明細を自動作成できません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WihDS2AZ"
+                       },
+        "Id":  "a0FRB00000WihDS2AZ",
+        "Name":  "MFIW-000208",
+        "FreeeInvoiceId__c":  "60907570",
+        "FreeeInvoiceNumber__c":  "INV-0000001359",
+        "PartnerName__c":  "株式会社NTTファシリティーズ",
+        "BillingDate__c":  "2026-06-20",
+        "InvoiceAmount__c":  1650000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001br9KJYAY",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001br9KJYAY"
+                                                  },
+                                   "Name":  "株式会社NTTファシリティーズ"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WihDV2AZ"
+                       },
+        "Id":  "a0FRB00000WihDV2AZ",
+        "Name":  "MFIW-000211",
+        "FreeeInvoiceId__c":  "60952602",
+        "FreeeInvoiceNumber__c":  "INV-0000001362",
+        "PartnerName__c":  "創建ホーム株式会社",
+        "BillingDate__c":  "2026-06-20",
+        "InvoiceAmount__c":  1108800,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrm3YAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrm3YAD"
+                                                  },
+                                   "Name":  "創建ホーム株式会社"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAPOYA4",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAPOYA4"
+                                                   },
+                                    "Name":  "CN-00000112"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynn5F2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynn5F2AQ"
+                                                         },
+                                          "Name":  "CP-00000110"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "年契約月額按分料金が商品マスタにないため、契約月次明細を自動作成できません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WieAb2AJ"
+                       },
+        "Id":  "a0FRB00000WieAb2AJ",
+        "Name":  "MFIW-000156",
+        "FreeeInvoiceId__c":  "61438597",
+        "FreeeInvoiceNumber__c":  "INV-0000001370",
+        "PartnerName__c":  "コクヨ株式会社 ワークプレイス事業本部 スペースソリューション本部",
+        "BillingDate__c":  "2026-06-25",
+        "InvoiceAmount__c":  544500,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001br9KXYAY",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001br9KXYAY"
+                                                  },
+                                   "Name":  "コクヨ株式会社 ワークプレイス事業本部 スペースソリューション本部"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wi6a42AB"
+                       },
+        "Id":  "a0FRB00000Wi6a42AB",
+        "Name":  "MFIW-000157",
+        "FreeeInvoiceId__c":  "61466312",
+        "FreeeInvoiceNumber__c":  "INV-0000001371",
+        "PartnerName__c":  "株式会社コスモスイニシア",
+        "BillingDate__c":  "2026-06-26",
+        "InvoiceAmount__c":  440000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTqgBYAT",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTqgBYAT"
+                                                  },
+                                   "Name":  "株式会社コスモスイニシア"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wi4gd2AB"
+                       },
+        "Id":  "a0FRB00000Wi4gd2AB",
+        "Name":  "MFIW-000150",
+        "FreeeInvoiceId__c":  "61624916",
+        "FreeeInvoiceNumber__c":  "INV-0000001372",
+        "PartnerName__c":  "株式会社オリバー",
+        "BillingDate__c":  "2026-06-29",
+        "InvoiceAmount__c":  3300000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTqjbYAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTqjbYAD"
+                                                  },
+                                   "Name":  "株式会社オリバー"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wi4ge2AB"
+                       },
+        "Id":  "a0FRB00000Wi4ge2AB",
+        "Name":  "MFIW-000151",
+        "FreeeInvoiceId__c":  "61633340",
+        "FreeeInvoiceNumber__c":  "INV-0000001373",
+        "PartnerName__c":  "株式会社ＬＩＸＩＬ",
+        "BillingDate__c":  "2026-06-29",
+        "InvoiceAmount__c":  13624600,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001br9KhYAI",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001br9KhYAI"
+                                                  },
+                                   "Name":  "株式会社ＬＩＸＩＬ"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wi4gf2AB"
+                       },
+        "Id":  "a0FRB00000Wi4gf2AB",
+        "Name":  "MFIW-000152",
+        "FreeeInvoiceId__c":  "61633945",
+        "FreeeInvoiceNumber__c":  "INV-0000001374",
+        "PartnerName__c":  "株式会社ＬＩＸＩＬ",
+        "BillingDate__c":  "2026-06-29",
+        "InvoiceAmount__c":  3861000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001br9KhYAI",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001br9KhYAI"
+                                                  },
+                                   "Name":  "株式会社ＬＩＸＩＬ"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WiSXe2AN"
+                       },
+        "Id":  "a0FRB00000WiSXe2AN",
+        "Name":  "MFIW-000153",
+        "FreeeInvoiceId__c":  "62159546",
+        "FreeeInvoiceNumber__c":  "INV-0000001375",
+        "PartnerName__c":  "クウジット株式会社",
+        "BillingDate__c":  "2026-07-02",
+        "InvoiceAmount__c":  247500,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VcyFKYAZ",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VcyFKYAZ"
+                                                  },
+                                   "Name":  "クウジット株式会社"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wic2L2AR"
+                       },
+        "Id":  "a0FRB00000Wic2L2AR",
+        "Name":  "MFIW-000154",
+        "FreeeInvoiceId__c":  "62334543",
+        "FreeeInvoiceNumber__c":  "INV-0000001376",
+        "PartnerName__c":  "梅林建設株式会社",
+        "BillingDate__c":  "2026-07-03",
+        "InvoiceAmount__c":  72630,
+        "TaxAmount__c":  6602,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrkSYAT",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrkSYAT"
+                                                  },
+                                   "Name":  "梅林建設株式会社"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAPJYA4",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAPJYA4"
+                                                   },
+                                    "Name":  "CN-00000107"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynn5A2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynn5A2AQ"
+                                                         },
+                                          "Name":  "CP-00000105"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000XX8tV2AT"
+                       },
+        "Id":  "a0FRB00000XX8tV2AT",
+        "Name":  "MFIW-000373",
+        "FreeeInvoiceId__c":  "62557474",
+        "FreeeInvoiceNumber__c":  "INV-0000001379",
+        "PartnerName__c":  "愛知建築士会",
+        "BillingDate__c":  "2026-07-07",
+        "InvoiceAmount__c":  127800,
+        "TaxAmount__c":  11618,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001br9KUYAY",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001br9KUYAY"
+                                                  },
+                                   "Name":  "愛知建築士会"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YomM12AJ"
+                       },
+        "Id":  "a0FRB00000YomM12AJ",
+        "Name":  "MFIW-000374",
+        "FreeeInvoiceId__c":  "62989809",
+        "FreeeInvoiceNumber__c":  "INV-0000001380",
+        "PartnerName__c":  "野村不動産株式会社",
+        "BillingDate__c":  "2026-07-14",
+        "InvoiceAmount__c":  495000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTCYEYA5",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTCYEYA5"
+                                                  },
+                                   "Name":  "野村不動産株式会社"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Ypg4v2AB"
+                       },
+        "Id":  "a0FRB00000Ypg4v2AB",
+        "Name":  "MFIW-000378",
+        "FreeeInvoiceId__c":  "63077930",
+        "FreeeInvoiceNumber__c":  "INV-0000001384",
+        "PartnerName__c":  "株式会社アールシーコア",
+        "BillingDate__c":  "2026-07-20",
+        "InvoiceAmount__c":  275000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTqxQYAT",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTqxQYAT"
+                                                  },
+                                   "Name":  "株式会社アールシーコア"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YptF22AJ"
+                       },
+        "Id":  "a0FRB00000YptF22AJ",
+        "Name":  "MFIW-000388",
+        "FreeeInvoiceId__c":  "63077956",
+        "FreeeInvoiceNumber__c":  "INV-0000001394",
+        "PartnerName__c":  "コンチネンタルホーム株式会社",
+        "BillingDate__c":  "2026-07-20",
+        "InvoiceAmount__c":  44000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTqgHYAT",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTqgHYAT"
+                                                  },
+                                   "Name":  "コンチネンタルホーム株式会社"
+                               },
+        "ResolvedContract__c":  "a04RB00000miHmIYAU",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000miHmIYAU"
+                                                   },
+                                    "Name":  "CN-00000196"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB000011R30j2AC",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB000011R30j2AC"
+                                                         },
+                                          "Name":  "CP-00000285"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Yq7Em2AJ"
+                       },
+        "Id":  "a0FRB00000Yq7Em2AJ",
+        "Name":  "MFIW-000398",
+        "FreeeInvoiceId__c":  "63077980",
+        "FreeeInvoiceNumber__c":  "INV-0000001404",
+        "PartnerName__c":  "近鉄不動産株式会社",
+        "BillingDate__c":  "2026-07-20",
+        "InvoiceAmount__c":  308000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrvcYAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrvcYAD"
+                                                  },
+                                   "Name":  "近鉄不動産株式会社"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK3t2AF"
+                       },
+        "Id":  "a0FRB00000YqK3t2AF",
+        "Name":  "MFIW-000405",
+        "FreeeInvoiceId__c":  "63110944",
+        "FreeeInvoiceNumber__c":  "INV-0000001411",
+        "PartnerName__c":  "株式会社野村工務店",
+        "BillingDate__c":  "2026-07-20",
+        "InvoiceAmount__c":  1584000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrr2YAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrr2YAD"
+                                                  },
+                                   "Name":  "株式会社野村工務店"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK3u2AF"
+                       },
+        "Id":  "a0FRB00000YqK3u2AF",
+        "Name":  "MFIW-000406",
+        "FreeeInvoiceId__c":  "63110969",
+        "FreeeInvoiceNumber__c":  "INV-0000001412",
+        "PartnerName__c":  "株式会社サンテン・コーポレーション",
+        "BillingDate__c":  "2026-07-20",
+        "InvoiceAmount__c":  35200,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrRuYAL",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrRuYAL"
+                                                  },
+                                   "Name":  "株式会社サンテン・コーポレーション"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK3v2AF"
+                       },
+        "Id":  "a0FRB00000YqK3v2AF",
+        "Name":  "MFIW-000407",
+        "FreeeInvoiceId__c":  "63120578",
+        "FreeeInvoiceNumber__c":  "INV-0000001413",
+        "PartnerName__c":  "株式会社パインウェル",
+        "BillingDate__c":  "2026-07-20",
+        "InvoiceAmount__c":  8800,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001b3qNeYAI",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001b3qNeYAI"
+                                                  },
+                                   "Name":  "株式会社パインウェル"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK3y2AF"
+                       },
+        "Id":  "a0FRB00000YqK3y2AF",
+        "Name":  "MFIW-000410",
+        "FreeeInvoiceId__c":  "63125575",
+        "FreeeInvoiceNumber__c":  "INV-0000001416",
+        "PartnerName__c":  "株式会社大塚商会",
+        "BillingDate__c":  "2026-07-20",
+        "InvoiceAmount__c":  14080,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTqleYAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTqleYAD"
+                                                  },
+                                   "Name":  "株式会社大塚商会"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAObYAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAObYAO"
+                                                   },
+                                    "Name":  "CN-00000063"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynb6W2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynb6W2AQ"
+                                                         },
+                                          "Name":  "CP-00000061"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK412AF"
+                       },
+        "Id":  "a0FRB00000YqK412AF",
+        "Name":  "MFIW-000413",
+        "FreeeInvoiceId__c":  "63126510",
+        "FreeeInvoiceNumber__c":  "INV-0000001419",
+        "PartnerName__c":  "野村不動産株式会社",
+        "BillingDate__c":  "2026-07-20",
+        "InvoiceAmount__c":  2244000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTCYEYA5",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTCYEYA5"
+                                                  },
+                                   "Name":  "野村不動産株式会社"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK422AF"
+                       },
+        "Id":  "a0FRB00000YqK422AF",
+        "Name":  "MFIW-000414",
+        "FreeeInvoiceId__c":  "63127138",
+        "FreeeInvoiceNumber__c":  "INV-0000001420",
+        "PartnerName__c":  "株式会社大塚商会",
+        "BillingDate__c":  "2026-07-20",
+        "InvoiceAmount__c":  1584000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTqleYAD",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTqleYAD"
+                                                  },
+                                   "Name":  "株式会社大塚商会"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAObYAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAObYAO"
+                                                   },
+                                    "Name":  "CN-00000063"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynb6W2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynb6W2AQ"
+                                                         },
+                                          "Name":  "CP-00000061"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqSO22AN"
+                       },
+        "Id":  "a0FRB00000YqSO22AN",
+        "Name":  "MFIW-000415",
+        "FreeeInvoiceId__c":  "63128994",
+        "FreeeInvoiceNumber__c":  "INV-0000001421",
+        "PartnerName__c":  "株式会社ワンズ・レーニア",
+        "BillingDate__c":  "2026-07-20",
+        "InvoiceAmount__c":  82500,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTrrHYAT",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTrrHYAT"
+                                                  },
+                                   "Name":  "株式会社ワンズ・レーニア"
+                               },
+        "ResolvedContract__c":  "a04RB00000n5JeAYAU",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000n5JeAYAU"
+                                                   },
+                                    "Name":  "CN-00000228"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB000012ECiM2AW",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB000012ECiM2AW"
+                                                         },
+                                          "Name":  "CP-00000368"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "同じfreee請求書IDのSalesforce請求は存在しますが、すべての請求明細を照合できませんでした。既存の請求明細と移行Workの明細を確認してください。",
+        "ProvisioningMessage__c":  "承認済みルールからFreee管理の継続契約を自動作成しました。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqSO82AN"
+                       },
+        "Id":  "a0FRB00000YqSO82AN",
+        "Name":  "MFIW-000421",
+        "FreeeInvoiceId__c":  "63150544",
+        "FreeeInvoiceNumber__c":  "INV-0000001427",
+        "PartnerName__c":  "株式会社ヨコハマ地所",
+        "BillingDate__c":  "2026-07-20",
+        "InvoiceAmount__c":  12100,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001br9KKYAY",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001br9KKYAY"
+                                                  },
+                                   "Name":  "株式会社ヨコハマ地所"
+                               },
+        "ResolvedContract__c":  "a04RB00000n5JdsYAE",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000n5JdsYAE"
+                                                   },
+                                    "Name":  "CN-00000210"
+                                },
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqSO92AN"
+                       },
+        "Id":  "a0FRB00000YqSO92AN",
+        "Name":  "MFIW-000422",
+        "FreeeInvoiceId__c":  "63150545",
+        "FreeeInvoiceNumber__c":  "INV-0000001428",
+        "PartnerName__c":  "リアルティホールディングス株式会社",
+        "BillingDate__c":  "2026-07-20",
+        "InvoiceAmount__c":  175450,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTtIUYA1",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTtIUYA1"
+                                                  },
+                                   "Name":  "リアルティホールディングス株式会社"
+                               },
+        "ResolvedContract__c":  "a04RB00000kUAPdYAO",
+        "ResolvedContract__r":  {
+                                    "attributes":  {
+                                                       "type":  "Contract__c",
+                                                       "url":  "/services/data/v67.0/sobjects/Contract__c/a04RB00000kUAPdYAO"
+                                                   },
+                                    "Name":  "CN-00000127"
+                                },
+        "ResolvedContractPeriod__c":  "a0BRB00000ynn5V2AQ",
+        "ResolvedContractPeriod__r":  {
+                                          "attributes":  {
+                                                             "type":  "ContractPeriod__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ContractPeriod__c/a0BRB00000ynn5V2AQ"
+                                                         },
+                                          "Name":  "CP-00000126"
+                                      },
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "既存の契約管理を使用します。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqLuW2AV"
+                       },
+        "Id":  "a0FRB00000YqLuW2AV",
+        "Name":  "MFIW-000431",
+        "FreeeInvoiceId__c":  "63150560",
+        "FreeeInvoiceNumber__c":  "INV-0000001437",
+        "PartnerName__c":  "株式会社デザインアーク",
+        "BillingDate__c":  "2026-07-20",
+        "InvoiceAmount__c":  181500,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTruAYAT",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTruAYAT"
+                                                  },
+                                   "Name":  "株式会社デザインアーク"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。",
+        "ProvisioningMessage__c":  "承認済みのFreee請求契約ルールがないため、契約管理を自動作成しません。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YswQ42AJ"
+                       },
+        "Id":  "a0FRB00000YswQ42AJ",
+        "Name":  "MFIW-000447",
+        "FreeeInvoiceId__c":  "63150583",
+        "FreeeInvoiceNumber__c":  "INV-0000001453",
+        "PartnerName__c":  "プラス株式会社",
+        "BillingDate__c":  "2026-07-31",
+        "InvoiceAmount__c":  6600000,
+        "TaxAmount__c":  null,
+        "ImportStatus__c":  "要確認",
+        "ResolvedAccount__c":  "001RB00001VTCZLYA5",
+        "ResolvedAccount__r":  {
+                                   "attributes":  {
+                                                      "type":  "Account",
+                                                      "url":  "/services/data/v67.0/sobjects/Account/001RB00001VTCZLYA5"
+                                                  },
+                                   "Name":  "プラス株式会社"
+                               },
+        "ResolvedContract__c":  null,
+        "ResolvedContract__r":  null,
+        "ResolvedContractPeriod__c":  null,
+        "ResolvedContractPeriod__r":  null,
+        "CreatedInvoice__c":  null,
+        "CreatedInvoice__r":  null,
+        "ValidationMessage__c":  "契約管理を特定できません。取引先に有効な契約管理があるか確認してください。\n契約期間を特定できません。請求日を含む契約期間があるか確認してください。\n商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。",
+        "ProvisioningMessage__c":  "商品マスタが確定していないため、契約管理を自動作成しません。"
+    }
+]

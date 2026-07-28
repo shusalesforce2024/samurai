@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>取引先固有の例外ルールの場合だけ設定する。共通ルールでは空欄にする。</description>
+    <inlineHelpText>通常は空欄にして商品共通ルールとして使用します。特定取引先だけ処理を変える場合に設定してください。</inlineHelpText>
+    <label>取引先（個別ルールのみ）</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Freee請求契約ルール</relationshipLabel>
+    <relationshipName>FreeeInvoiceContractRules</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

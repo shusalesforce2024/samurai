@@ -28,7 +28,7 @@ System.schedule(
 
 System.schedule(
     'FreeeInvoiceStatusSyncBatch',
-    '0 0 3 * * ?',
+    '0 10 0 * * ?',
     new FreeeInvoiceStatusSyncBatch()
 );
 

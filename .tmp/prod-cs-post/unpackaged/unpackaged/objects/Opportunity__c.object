@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>CsStage__c</fullName>
+        <description>Rendery Enterprise受注後のカスタマーサクセス進捗を管理する。</description>
+        <label>CS進捗</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>S1</fullName>
+                    <default>false</default>
+                    <label>S1 導入直後</label>
+                </value>
+                <value>
+                    <fullName>S2</fullName>
+                    <default>false</default>
+                    <label>S2 初期定着</label>
+                </value>
+                <value>
+                    <fullName>S3</fullName>
+                    <default>false</default>
+                    <label>S3 活用拡張</label>
+                </value>
+                <value>
+                    <fullName>S4</fullName>
+                    <default>false</default>
+                    <label>S4 安定</label>
+                </value>
+                <value>
+                    <fullName>S5</fullName>
+                    <default>false</default>
+                    <label>S5 リスク</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <listViews>
+        <fullName>RenderyCsManagement</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>ProductCategory__c</columns>
+        <columns>PlanCategory__c</columns>
+        <columns>AccountCount__c</columns>
+        <columns>StageName__c</columns>
+        <columns>CsStage__c</columns>
+        <columns>StartDate__c</columns>
+        <columns>MRR__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ProductCategory__c</field>
+            <operation>equals</operation>
+            <value>Rendery</value>
+        </filters>
+        <filters>
+            <field>PlanCategory__c</field>
+            <operation>equals</operation>
+            <value>Enterprise</value>
+        </filters>
+        <filters>
+            <field>StageName__c</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </filters>
+        <label>Rendery CS管理</label>
+    </listViews>
+    <validationRules>
+        <fullName>Require_Cs_Stage</fullName>
+        <active>true</active>
+        <description>Rendery Enterpriseの受注取引ではCS進捗を必須にする。</description>
+        <errorConditionFormula>AND(
+    ISPICKVAL(ProductCategory__c, &quot;Rendery&quot;),
+    ISPICKVAL(PlanCategory__c, &quot;Enterprise&quot;),
+    ISPICKVAL(StageName__c, &quot;Closed Won&quot;),
+    ISBLANK(TEXT(CsStage__c))
+)</errorConditionFormula>
+        <errorDisplayField>CsStage__c</errorDisplayField>
+        <errorMessage>Rendery Enterpriseの受注取引ではCS進捗を入力してください。</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -522,14 +522,7 @@ public with sharing class Mig_FreeeInvoiceFinalizeService {
         List<Mig_FreeeInvoiceWork__c> works
     ) {
         Map<Id, Mig_FreeeInvoiceWork__c> workById = new Map<Id, Mig_FreeeInvoiceWork__c>(works);
-        Map<Id, Id> invoiceIdByPeriodId = new Map<Id, Id>();
         Map<Id, Id> invoiceIdByCliId = new Map<Id, Id>();
-        for (Mig_FreeeInvoiceWork__c workRecord : works) {
-            Id invoiceId = invoiceIdByWorkId.get(workRecord.Id);
-            if (invoiceId != null && workRecord.ResolvedContractPeriod__c != null) {
-                invoiceIdByPeriodId.put(workRecord.ResolvedContractPeriod__c, invoiceId);
-            }
-        }
         for (Mig_FreeeInvoiceLineWork__c lineWork : lineWorks) {
             if (lineWork.ResolvedContractLineItem__c == null) {
                 continue;
@@ -540,25 +533,21 @@ public with sharing class Mig_FreeeInvoiceFinalizeService {
                 invoiceIdByCliId.put(lineWork.ResolvedContractLineItem__c, invoiceId);
             }
         }
-        if (!invoiceIdByPeriodId.isEmpty()) {
-            for (ContractLineItem__c lineRecord : [
-                SELECT Id,
-                       ContractPeriod__c
-                FROM ContractLineItem__c
-                WHERE ContractPeriod__c IN :invoiceIdByPeriodId.keySet()
-            ]) {
-                invoiceIdByCliId.put(
-                    lineRecord.Id,
-                    invoiceIdByPeriodId.get(lineRecord.ContractPeriod__c)
-                );
-            }
-        }
         List<ContractLineItem__c> updates = new List<ContractLineItem__c>();
-        for (Id cliId : invoiceIdByCliId.keySet()) {
-            updates.add(new ContractLineItem__c(
-                Id = cliId,
-                RelatedInvoice__c = invoiceIdByCliId.get(cliId)
-            ));
+        if (!invoiceIdByCliId.isEmpty()) {
+            for (ContractLineItem__c lineRecord : [
+                SELECT Id, RelatedInvoice__c
+                FROM ContractLineItem__c
+                WHERE Id IN :invoiceIdByCliId.keySet()
+            ]) {
+                Id invoiceId = invoiceIdByCliId.get(lineRecord.Id);
+                if (lineRecord.RelatedInvoice__c == null) {
+                    updates.add(new ContractLineItem__c(
+                        Id = lineRecord.Id,
+                        RelatedInvoice__c = invoiceId
+                    ));
+                }
+            }
         }
         if (!updates.isEmpty()) {
             update updates;

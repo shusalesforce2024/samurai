@@ -61,42 +61,132 @@ public with sharing class Mig_FreeeInvoiceWorkService {
             return result;
         }
 
+        Map<String, Mig_FreeeInvoiceWork__c> existingWorkByKey =
+            loadExistingWorks(rawByExternalKey.keySet());
+        for (Mig_FreeeInvoiceWork__c workRecord : works) {
+            Mig_FreeeInvoiceWork__c existingWork =
+                existingWorkByKey.get(workRecord.ExternalKey__c);
+            if (existingWork != null
+                && existingWork.ImportStatus__c == STATUS_IMPORTED
+                && existingWork.CreatedInvoice__c != null) {
+                workRecord.ImportStatus__c = STATUS_IMPORTED;
+                workRecord.ValidationMessage__c = existingWork.ValidationMessage__c;
+            }
+        }
+
         upsert works Mig_FreeeInvoiceWork__c.ExternalKey__c;
         result.headerCount = works.size();
 
         Map<String, Id> workIdByKey = new Map<String, Id>();
+        Set<Id> importedWorkIds = new Set<Id>();
         for (Mig_FreeeInvoiceWork__c workRecord : [
-            SELECT Id, ExternalKey__c
+            SELECT Id, ExternalKey__c, ImportStatus__c, CreatedInvoice__c
             FROM Mig_FreeeInvoiceWork__c
             WHERE ExternalKey__c IN :rawByExternalKey.keySet()
         ]) {
             workIdByKey.put(workRecord.ExternalKey__c, workRecord.Id);
+            if (workRecord.ImportStatus__c == STATUS_IMPORTED
+                && workRecord.CreatedInvoice__c != null) {
+                importedWorkIds.add(workRecord.Id);
+            }
         }
 
         List<Mig_FreeeInvoiceLineWork__c> lineWorks = new List<Mig_FreeeInvoiceLineWork__c>();
+        Map<Id, Set<String>> currentLineKeysByWorkId = new Map<Id, Set<String>>();
         for (String externalKey : rawByExternalKey.keySet()) {
             Id workId = workIdByKey.get(externalKey);
-            if (workId == null) {
+            if (workId == null || importedWorkIds.contains(workId)) {
                 continue;
             }
             Map<String, Object> invoiceMap = rawByExternalKey.get(externalKey);
             String freeeInvoiceId = firstString(invoiceMap, new List<String>{'id', 'invoice_id'});
+            String taxEntryMethod = firstString(invoiceMap, new List<String>{'tax_entry_method'});
+            String taxFraction = firstString(invoiceMap, new List<String>{'tax_fraction'});
             Integer fallbackLineNo = 0;
+            List<Mig_FreeeInvoiceLineWork__c> invoiceLineWorks = new List<Mig_FreeeInvoiceLineWork__c>();
             for (Object lineObject : extractLineObjects(invoiceMap)) {
                 if (!(lineObject instanceof Map<String, Object>)) {
                     continue;
                 }
                 fallbackLineNo++;
                 Map<String, Object> lineMap = (Map<String, Object>) lineObject;
-                lineWorks.add(toLineWork(config.companyId, workId, freeeInvoiceId, fallbackLineNo, lineMap));
+                invoiceLineWorks.add(toLineWork(
+                    config.companyId,
+                    workId,
+                    freeeInvoiceId,
+                    fallbackLineNo,
+                    lineMap,
+                    taxEntryMethod,
+                    taxFraction
+                ));
             }
+            Set<String> currentLineKeys = new Set<String>();
+            for (Mig_FreeeInvoiceLineWork__c lineWork : invoiceLineWorks) {
+                currentLineKeys.add(lineWork.ExternalKey__c);
+            }
+            currentLineKeysByWorkId.put(workId, currentLineKeys);
+            reconcileTaxIncludedLineTax(
+                invoiceLineWorks,
+                resolveTaxAmount(invoiceMap),
+                taxEntryMethod
+            );
+            lineWorks.addAll(invoiceLineWorks);
         }
 
         if (!lineWorks.isEmpty()) {
             upsert lineWorks Mig_FreeeInvoiceLineWork__c.ExternalKey__c;
             result.lineCount = lineWorks.size();
         }
+        removeStaleUnimportedLines(currentLineKeysByWorkId);
         return result;
+    }
+
+    private static Map<String, Mig_FreeeInvoiceWork__c> loadExistingWorks(
+        Set<String> externalKeys
+    ) {
+        Map<String, Mig_FreeeInvoiceWork__c> result =
+            new Map<String, Mig_FreeeInvoiceWork__c>();
+        if (externalKeys == null || externalKeys.isEmpty()) {
+            return result;
+        }
+        for (Mig_FreeeInvoiceWork__c workRecord : [
+            SELECT Id,
+                   ExternalKey__c,
+                   ImportStatus__c,
+                   CreatedInvoice__c,
+                   ValidationMessage__c
+            FROM Mig_FreeeInvoiceWork__c
+            WHERE ExternalKey__c IN :externalKeys
+        ]) {
+            result.put(workRecord.ExternalKey__c, workRecord);
+        }
+        return result;
+    }
+
+    private static void removeStaleUnimportedLines(
+        Map<Id, Set<String>> currentLineKeysByWorkId
+    ) {
+        if (currentLineKeysByWorkId == null || currentLineKeysByWorkId.isEmpty()) {
+            return;
+        }
+        List<Mig_FreeeInvoiceLineWork__c> staleLines =
+            new List<Mig_FreeeInvoiceLineWork__c>();
+        for (Mig_FreeeInvoiceLineWork__c existingLine : [
+            SELECT Id, InvoiceWork__c, ExternalKey__c, CreatedInvoiceLine__c
+            FROM Mig_FreeeInvoiceLineWork__c
+            WHERE InvoiceWork__c IN :currentLineKeysByWorkId.keySet()
+        ]) {
+            Set<String> currentKeys =
+                currentLineKeysByWorkId.get(existingLine.InvoiceWork__c);
+            if (existingLine.CreatedInvoiceLine__c == null
+                && (currentKeys == null
+                    || !currentKeys.contains(existingLine.ExternalKey__c))) {
+                staleLines.add(existingLine);
+            }
+        }
+        if (!staleLines.isEmpty()) {
+            delete staleLines;
+        }
     }
 
     private static Mig_FreeeInvoiceWork__c toWork(Long companyId, String externalKey, Map<String, Object> invoiceMap) {
@@ -148,6 +238,7 @@ public with sharing class Mig_FreeeInvoiceWorkService {
         Decimal taxAmount = firstDecimal(invoiceMap, new List<String>{
             'total_vat',
             'total_tax',
+            'amount_tax',
             'tax_amount',
             'vat',
             'consumption_tax'
@@ -201,7 +292,9 @@ public with sharing class Mig_FreeeInvoiceWorkService {
         Id workId,
         String freeeInvoiceId,
         Integer fallbackLineNo,
-        Map<String, Object> lineMap
+        Map<String, Object> lineMap,
+        String taxEntryMethod,
+        String taxFraction
     ) {
         String freeeLineId = firstString(lineMap, new List<String>{'id', 'line_id'});
         if (String.isBlank(freeeLineId)) {
@@ -210,13 +303,28 @@ public with sharing class Mig_FreeeInvoiceWorkService {
         Decimal quantity = firstDecimal(lineMap, new List<String>{'quantity', 'qty'});
         Decimal unitPrice = firstDecimal(lineMap, new List<String>{'unit_price', 'price'});
         Decimal taxRate = firstDecimal(lineMap, new List<String>{'tax_rate', 'vat_rate'});
-        Decimal lineAmount = firstDecimal(lineMap, new List<String>{'amount_excluding_tax', 'amount', 'line_amount', 'subtotal'});
+        Decimal amountExcludingTax = firstDecimal(lineMap, new List<String>{'amount_excluding_tax'});
+        Decimal lineAmount = amountExcludingTax == null
+            ? firstDecimal(lineMap, new List<String>{'amount', 'line_amount', 'subtotal'})
+            : amountExcludingTax;
         if (lineAmount == null && unitPrice != null && quantity != null) {
             lineAmount = unitPrice * quantity;
         }
         Decimal taxAmount = firstDecimal(lineMap, new List<String>{'tax_amount', 'vat'});
-        if (taxAmount == null && lineAmount != null && taxRate != null) {
-            taxAmount = (lineAmount * taxRate / 100).setScale(0, System.RoundingMode.HALF_UP);
+        Boolean taxIncluded = amountExcludingTax == null
+            && !String.isBlank(taxEntryMethod)
+            && taxEntryMethod.trim().toLowerCase() == 'in';
+        if (taxIncluded && lineAmount != null && taxRate != null) {
+            Decimal amountIncludingTax = lineAmount;
+            if (taxAmount == null) {
+                taxAmount = roundTax(
+                    amountIncludingTax * taxRate / (100 + taxRate),
+                    taxFraction
+                );
+            }
+            lineAmount = amountIncludingTax - taxAmount;
+        } else if (taxAmount == null && lineAmount != null && taxRate != null) {
+            taxAmount = roundTax(lineAmount * taxRate / 100, taxFraction);
         }
 
         return new Mig_FreeeInvoiceLineWork__c(
@@ -234,6 +342,47 @@ public with sharing class Mig_FreeeInvoiceWorkService {
             ProductResolveStatus__c = PRODUCT_STATUS_NEEDS_REVIEW,
             ImportStatus__c = STATUS_FETCHED
         );
+    }
+
+    private static Decimal roundTax(Decimal value, String taxFraction) {
+        if (value == null) {
+            return null;
+        }
+        String normalized = String.isBlank(taxFraction) ? '' : taxFraction.trim().toLowerCase();
+        if (normalized == 'round_up' || normalized == 'ceil' || normalized == 'ceiling') {
+            return value.setScale(0, System.RoundingMode.CEILING);
+        }
+        if (normalized == 'round' || normalized == 'half_up') {
+            return value.setScale(0, System.RoundingMode.HALF_UP);
+        }
+        return value.setScale(0, System.RoundingMode.DOWN);
+    }
+
+    private static void reconcileTaxIncludedLineTax(
+        List<Mig_FreeeInvoiceLineWork__c> lineWorks,
+        Decimal expectedTaxAmount,
+        String taxEntryMethod
+    ) {
+        if (lineWorks == null
+            || lineWorks.isEmpty()
+            || expectedTaxAmount == null
+            || String.isBlank(taxEntryMethod)
+            || taxEntryMethod.trim().toLowerCase() != 'in') {
+            return;
+        }
+        Decimal currentTaxAmount = 0;
+        for (Mig_FreeeInvoiceLineWork__c lineWork : lineWorks) {
+            currentTaxAmount += lineWork.TaxAmount__c == null ? 0 : lineWork.TaxAmount__c;
+        }
+        Decimal difference = expectedTaxAmount - currentTaxAmount;
+        if (difference == 0) {
+            return;
+        }
+        Mig_FreeeInvoiceLineWork__c adjustmentLine = lineWorks[lineWorks.size() - 1];
+        adjustmentLine.TaxAmount__c =
+            (adjustmentLine.TaxAmount__c == null ? 0 : adjustmentLine.TaxAmount__c) + difference;
+        adjustmentLine.LineAmount__c =
+            (adjustmentLine.LineAmount__c == null ? 0 : adjustmentLine.LineAmount__c) - difference;
     }
 
     public static String buildInvoiceExternalKey(Long companyId, String freeeInvoiceId) {

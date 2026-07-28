@@ -30,11 +30,13 @@
             <layoutItems><behavior>Edit</behavior><field>ResolvedAccount__c</field></layoutItems>
             <layoutItems><behavior>Edit</behavior><field>ResolvedContract__c</field></layoutItems>
             <layoutItems><behavior>Edit</behavior><field>ResolvedContractPeriod__c</field></layoutItems>
+            <layoutItems><behavior>Readonly</behavior><field>ResolutionAction__c</field></layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems><behavior>Edit</behavior><field>CreatedInvoice__c</field></layoutItems>
             <layoutItems><behavior>Edit</behavior><field>TargetPeriodStartDate__c</field></layoutItems>
             <layoutItems><behavior>Edit</behavior><field>TargetPeriodEndDate__c</field></layoutItems>
+            <layoutItems><behavior>Readonly</behavior><field>ProvisioningMessage__c</field></layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>

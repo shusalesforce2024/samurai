@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CustomDevelopmentOpportunityManagement</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>ProductCategory__c</columns>
+    <columns>StageName__c</columns>
+    <columns>ExpectedCloseDate__c</columns>
+    <columns>ACV__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ProductCategory__c</field>
+        <operation>equals</operation>
+        <value>受託開発</value>
+    </filters>
+    <filters>
+        <field>StageName__c</field>
+        <operation>notEqual</operation>
+        <value>Closed Won</value>
+    </filters>
+    <filters>
+        <field>StageName__c</field>
+        <operation>notEqual</operation>
+        <value>Closed Lost</value>
+    </filters>
+    <label>受託案件商談管理</label>
+</ListView>

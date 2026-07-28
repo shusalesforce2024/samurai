@@ -1,0 +1,1220 @@
+﻿[
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000OUtio2AD"
+                       },
+        "Id":  "a0ERB00000OUtio2AD",
+        "Name":  "MFILW-000233",
+        "InvoiceWork__c":  "a0FRB00000UtM9u2AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000UtM9u2AF"
+                                              },
+                               "Name":  "MFIW-000126"
+                           },
+        "Description__c":  "Rendery(Pro用)・月額料金",
+        "Quantity__c":  6,
+        "UnitPrice__c":  8000,
+        "LineAmount__c":  48000,
+        "TaxAmount__c":  4800,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6Q2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6Q2QW"
+                                                         },
+                                          "Name":  "Rendery Proプラン"
+                                      },
+        "ConfirmedProductMaster__c":  "a0CRB0000CcXZ6Q2QW",
+        "ConfirmedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6Q2QW"
+                                                         },
+                                          "Name":  "Rendery Proプラン"
+                                      },
+        "ProductResolveStatus__c":  "要確認",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000Ojmlp2AB"
+                       },
+        "Id":  "a0ERB00000Ojmlp2AB",
+        "Name":  "MFILW-000248",
+        "InvoiceWork__c":  "a0FRB00000Wic2L2AR",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wic2L2AR"
+                                              },
+                               "Name":  "MFIW-000154"
+                           },
+        "Description__c":  "交通費",
+        "Quantity__c":  1,
+        "UnitPrice__c":  72630,
+        "LineAmount__c":  66028,
+        "TaxAmount__c":  6602,
+        "SuggestedProductMaster__c":  null,
+        "SuggestedProductMaster__r":  null,
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "要確認",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "No ProductMaster candidate found."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000OjnWr2AJ"
+                       },
+        "Id":  "a0ERB00000OjnWr2AJ",
+        "Name":  "MFILW-000270",
+        "InvoiceWork__c":  "a0FRB00000WicaT2AR",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WicaT2AR"
+                                              },
+                               "Name":  "MFIW-000174"
+                           },
+        "Description__c":  "knock knock AI_Enterpriseプラン_1200クレジット",
+        "Quantity__c":  1100,
+        "UnitPrice__c":  145,
+        "LineAmount__c":  159500,
+        "TaxAmount__c":  15950,
+        "SuggestedProductMaster__c":  null,
+        "SuggestedProductMaster__r":  null,
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "要確認",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "No ProductMaster candidate found."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000Ojni12AB"
+                       },
+        "Id":  "a0ERB00000Ojni12AB",
+        "Name":  "MFILW-000303",
+        "InvoiceWork__c":  "a0FRB00000WihDQ2AZ",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WihDQ2AZ"
+                                              },
+                               "Name":  "MFIW-000206"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン5アカウント_年額",
+        "Quantity__c":  5,
+        "UnitPrice__c":  180000,
+        "LineAmount__c":  900000,
+        "TaxAmount__c":  90000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6Z2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6Z2QW"
+                                                         },
+                                          "Name":  "[年払] Rendery Enterpriseプラン"
+                                      },
+        "ConfirmedProductMaster__c":  "a0CRB0000CcXZ6Z2QW",
+        "ConfirmedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6Z2QW"
+                                                         },
+                                          "Name":  "[年払] Rendery Enterpriseプラン"
+                                      },
+        "ProductResolveStatus__c":  "確定済み",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "年払い明細のため、請求タイミングが「年一括」の商品マスタへ確定しました。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000Ojni22AB"
+                       },
+        "Id":  "a0ERB00000Ojni22AB",
+        "Name":  "MFILW-000304",
+        "InvoiceWork__c":  "a0FRB00000WihDQ2AZ",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WihDQ2AZ"
+                                              },
+                               "Name":  "MFIW-000206"
+                           },
+        "Description__c":  "年払い割引",
+        "Quantity__c":  5,
+        "UnitPrice__c":  -12000,
+        "LineAmount__c":  -60000,
+        "TaxAmount__c":  -6000,
+        "SuggestedProductMaster__c":  null,
+        "SuggestedProductMaster__r":  null,
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "要確認",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "No ProductMaster candidate found."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000Ojni72AB"
+                       },
+        "Id":  "a0ERB00000Ojni72AB",
+        "Name":  "MFILW-000309",
+        "InvoiceWork__c":  "a0FRB00000WihDV2AZ",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WihDV2AZ"
+                                              },
+                               "Name":  "MFIW-000211"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン6アカウント_年払い",
+        "Quantity__c":  6,
+        "UnitPrice__c":  180000,
+        "LineAmount__c":  1080000,
+        "TaxAmount__c":  108000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6Z2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6Z2QW"
+                                                         },
+                                          "Name":  "[年払] Rendery Enterpriseプラン"
+                                      },
+        "ConfirmedProductMaster__c":  "a0CRB0000CcXZ6Z2QW",
+        "ConfirmedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6Z2QW"
+                                                         },
+                                          "Name":  "[年払] Rendery Enterpriseプラン"
+                                      },
+        "ProductResolveStatus__c":  "確定済み",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "年払い明細のため、請求タイミングが「年一括」の商品マスタへ確定しました。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000Ojni82AB"
+                       },
+        "Id":  "a0ERB00000Ojni82AB",
+        "Name":  "MFILW-000310",
+        "InvoiceWork__c":  "a0FRB00000WihDV2AZ",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WihDV2AZ"
+                                              },
+                               "Name":  "MFIW-000211"
+                           },
+        "Description__c":  "年払い割引",
+        "Quantity__c":  6,
+        "UnitPrice__c":  -12000,
+        "LineAmount__c":  -72000,
+        "TaxAmount__c":  -7200,
+        "SuggestedProductMaster__c":  null,
+        "SuggestedProductMaster__r":  null,
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "要確認",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "No ProductMaster candidate found."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000OjwBu2AJ"
+                       },
+        "Id":  "a0ERB00000OjwBu2AJ",
+        "Name":  "MFILW-000329",
+        "InvoiceWork__c":  "a0FRB00000WjSKU2A3",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjSKU2A3"
+                                              },
+                               "Name":  "MFIW-000230"
+                           },
+        "Description__c":  "knock knock AI_Enterpriseプラン_1200クレジット",
+        "Quantity__c":  1100,
+        "UnitPrice__c":  145,
+        "LineAmount__c":  159500,
+        "TaxAmount__c":  15950,
+        "SuggestedProductMaster__c":  null,
+        "SuggestedProductMaster__r":  null,
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "要確認",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "No ProductMaster candidate found."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000OjwWh2AJ"
+                       },
+        "Id":  "a0ERB00000OjwWh2AJ",
+        "Name":  "MFILW-000358",
+        "InvoiceWork__c":  "a0FRB00000WjTmd2AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjTmd2AF"
+                                              },
+                               "Name":  "MFIW-000259"
+                           },
+        "Description__c":  "Rendery_Pro_月額利用料(ジェイアール北海道エンジニアリング株式会社分)",
+        "Quantity__c":  6,
+        "UnitPrice__c":  6400,
+        "LineAmount__c":  38400,
+        "TaxAmount__c":  3840,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6R2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6R2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Proプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000OjwWi2AJ"
+                       },
+        "Id":  "a0ERB00000OjwWi2AJ",
+        "Name":  "MFILW-000359",
+        "InvoiceWork__c":  "a0FRB00000WjTme2AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjTme2AF"
+                                              },
+                               "Name":  "MFIW-000260"
+                           },
+        "Description__c":  "Rendery_Pro_月額利用料_注文番号：405342479",
+        "Quantity__c":  2,
+        "UnitPrice__c":  6400,
+        "LineAmount__c":  12800,
+        "TaxAmount__c":  1280,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6R2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6R2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Proプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000OjwWm2AJ"
+                       },
+        "Id":  "a0ERB00000OjwWm2AJ",
+        "Name":  "MFILW-000363",
+        "InvoiceWork__c":  "a0FRB00000WjTmi2AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjTmi2AF"
+                                              },
+                               "Name":  "MFIW-000264"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン10アカウント_年払い",
+        "Quantity__c":  10,
+        "UnitPrice__c":  180000,
+        "LineAmount__c":  1800000,
+        "TaxAmount__c":  180000,
+        "SuggestedProductMaster__c":  null,
+        "SuggestedProductMaster__r":  null,
+        "ConfirmedProductMaster__c":  "a0CRB0000CcXZ6Z2QW",
+        "ConfirmedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6Z2QW"
+                                                         },
+                                          "Name":  "[年払] Rendery Enterpriseプラン"
+                                      },
+        "ProductResolveStatus__c":  "確定済み",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "年払い明細のため、請求タイミングが「年一括」の商品マスタへ確定しました。"
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000OjwWt2AJ"
+                       },
+        "Id":  "a0ERB00000OjwWt2AJ",
+        "Name":  "MFILW-000370",
+        "InvoiceWork__c":  "a0FRB00000WjTmm2AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjTmm2AF"
+                                              },
+                               "Name":  "MFIW-000268"
+                           },
+        "Description__c":  "Rendery Proプラン1アカウント_年払い",
+        "Quantity__c":  1,
+        "UnitPrice__c":  96000,
+        "LineAmount__c":  96000,
+        "TaxAmount__c":  9600,
+        "SuggestedProductMaster__c":  null,
+        "SuggestedProductMaster__r":  null,
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "要確認",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "No ProductMaster candidate found."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000OjzO92AJ"
+                       },
+        "Id":  "a0ERB00000OjzO92AJ",
+        "Name":  "MFILW-000377",
+        "InvoiceWork__c":  "a0FRB00000Wj59H2AR",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wj59H2AR"
+                                              },
+                               "Name":  "MFIW-000275"
+                           },
+        "Description__c":  "knock knock AI_Basicプラン",
+        "Quantity__c":  1,
+        "UnitPrice__c":  11000,
+        "LineAmount__c":  11000,
+        "TaxAmount__c":  1100,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6i2QG",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6i2QG"
+                                                         },
+                                          "Name":  "knock knock AI Basicプラン(50クレジット)"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by migration product map."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000OjzOB2AZ"
+                       },
+        "Id":  "a0ERB00000OjzOB2AZ",
+        "Name":  "MFILW-000379",
+        "InvoiceWork__c":  "a0FRB00000Wj59J2AR",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wj59J2AR"
+                                              },
+                               "Name":  "MFIW-000277"
+                           },
+        "Description__c":  "knock knock AI_Enterpriseプラン_1100クレジット",
+        "Quantity__c":  1100,
+        "UnitPrice__c":  145,
+        "LineAmount__c":  159500,
+        "TaxAmount__c":  15950,
+        "SuggestedProductMaster__c":  null,
+        "SuggestedProductMaster__r":  null,
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "要確認",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "No ProductMaster candidate found."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000OjzOE2AZ"
+                       },
+        "Id":  "a0ERB00000OjzOE2AZ",
+        "Name":  "MFILW-000382",
+        "InvoiceWork__c":  "a0FRB00000Wj59M2AR",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wj59M2AR"
+                                              },
+                               "Name":  "MFIW-000280"
+                           },
+        "Description__c":  "knock knock AI_Basicプラン",
+        "Quantity__c":  1,
+        "UnitPrice__c":  11000,
+        "LineAmount__c":  11000,
+        "TaxAmount__c":  1100,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6i2QG",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6i2QG"
+                                                         },
+                                          "Name":  "knock knock AI Basicプラン(50クレジット)"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by migration product map."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000Ok0FK2AZ"
+                       },
+        "Id":  "a0ERB00000Ok0FK2AZ",
+        "Name":  "MFILW-000394",
+        "InvoiceWork__c":  "a0FRB00000Wio6l2AB",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wio6l2AB"
+                                              },
+                               "Name":  "MFIW-000292"
+                           },
+        "Description__c":  "Rendery_Pro_10アカウント_年間一括払い",
+        "Quantity__c":  120,
+        "UnitPrice__c":  80000,
+        "LineAmount__c":  960000,
+        "TaxAmount__c":  96000,
+        "SuggestedProductMaster__c":  null,
+        "SuggestedProductMaster__r":  null,
+        "ConfirmedProductMaster__c":  "a0CRB0000CcXZ6Q2QW",
+        "ConfirmedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6Q2QW"
+                                                         },
+                                          "Name":  "Rendery Proプラン"
+                                      },
+        "ProductResolveStatus__c":  "確定済み",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "No ProductMaster candidate found."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000Ok0Yi2AJ"
+                       },
+        "Id":  "a0ERB00000Ok0Yi2AJ",
+        "Name":  "MFILW-000398",
+        "InvoiceWork__c":  "a0FRB00000Wjfvs2AB",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wjfvs2AB"
+                                              },
+                               "Name":  "MFIW-000296"
+                           },
+        "Description__c":  "knock knock AI_Enterpriseプラン_1200クレジット",
+        "Quantity__c":  1100,
+        "UnitPrice__c":  145,
+        "LineAmount__c":  159500,
+        "TaxAmount__c":  15950,
+        "SuggestedProductMaster__c":  null,
+        "SuggestedProductMaster__r":  null,
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "要確認",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "No ProductMaster candidate found."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000Ok10J2AR"
+                       },
+        "Id":  "a0ERB00000Ok10J2AR",
+        "Name":  "MFILW-000429",
+        "InvoiceWork__c":  "a0FRB00000Wj5UO2AZ",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wj5UO2AZ"
+                                              },
+                               "Name":  "MFIW-000327"
+                           },
+        "Description__c":  "Rendery_Pro(2026年4月- 2027年3月)",
+        "Quantity__c":  1,
+        "UnitPrice__c":  96000,
+        "LineAmount__c":  96000,
+        "TaxAmount__c":  9600,
+        "SuggestedProductMaster__c":  null,
+        "SuggestedProductMaster__r":  null,
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "要確認",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "No ProductMaster candidate found."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000Ok10L2AR"
+                       },
+        "Id":  "a0ERB00000Ok10L2AR",
+        "Name":  "MFILW-000431",
+        "InvoiceWork__c":  "a0FRB00000Wj5UQ2AZ",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wj5UQ2AZ"
+                                              },
+                               "Name":  "MFIW-000329"
+                           },
+        "Description__c":  "Rendery_Pro_月額利用料_注文番号：405016881",
+        "Quantity__c":  2,
+        "UnitPrice__c":  6400,
+        "LineAmount__c":  12800,
+        "TaxAmount__c":  1280,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6R2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6R2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Proプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000Ok10M2AR"
+                       },
+        "Id":  "a0ERB00000Ok10M2AR",
+        "Name":  "MFILW-000432",
+        "InvoiceWork__c":  "a0FRB00000Wj5UR2AZ",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000Wj5UR2AZ"
+                                              },
+                               "Name":  "MFIW-000330"
+                           },
+        "Description__c":  "Rendery_Pro_４月利用料(株式会社長谷建築設計事務所様)",
+        "Quantity__c":  1,
+        "UnitPrice__c":  6400,
+        "LineAmount__c":  6400,
+        "TaxAmount__c":  640,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6R2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6R2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Proプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000Ok2Dz2AJ"
+                       },
+        "Id":  "a0ERB00000Ok2Dz2AJ",
+        "Name":  "MFILW-000469",
+        "InvoiceWork__c":  "a0FRB00000WjhrH2AR",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000WjhrH2AR"
+                                              },
+                               "Name":  "MFIW-000359"
+                           },
+        "Description__c":  "Rendery(エンタープライズプラン：1ヶ月)",
+        "Quantity__c":  5,
+        "UnitPrice__c":  11000,
+        "LineAmount__c":  55000,
+        "TaxAmount__c":  5500,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6T2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6T2QW"
+                                                         },
+                                          "Name":  "[OLD] Rendery Enterpriseプラン(2025年9月まで)"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PIHgm2AH"
+                       },
+        "Id":  "a0ERB00000PIHgm2AH",
+        "Name":  "MFILW-000500",
+        "InvoiceWork__c":  "a0FRB00000YptF22AJ",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YptF22AJ"
+                                              },
+                               "Name":  "MFIW-000388"
+                           },
+        "Description__c":  "Rendery_Proプラン_5アカウント(月額費用)",
+        "Quantity__c":  5,
+        "UnitPrice__c":  8000,
+        "LineAmount__c":  40000,
+        "TaxAmount__c":  4000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6Q2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6Q2QW"
+                                                         },
+                                          "Name":  "Rendery Proプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PISan2AH"
+                       },
+        "Id":  "a0ERB00000PISan2AH",
+        "Name":  "MFILW-000534",
+        "InvoiceWork__c":  "a0FRB00000YqK3y2AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK3y2AF"
+                                              },
+                               "Name":  "MFIW-000410"
+                           },
+        "Description__c":  "Rendery_Pro_月額利用料_注文番号：405342481",
+        "Quantity__c":  2,
+        "UnitPrice__c":  6400,
+        "LineAmount__c":  12800,
+        "TaxAmount__c":  1280,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6R2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6R2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Proプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PISas2AH"
+                       },
+        "Id":  "a0ERB00000PISas2AH",
+        "Name":  "MFILW-000539",
+        "InvoiceWork__c":  "a0FRB00000YqK422AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK422AF"
+                                              },
+                               "Name":  "MFIW-000414"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン_10アカウント_月額費用",
+        "Quantity__c":  10,
+        "UnitPrice__c":  12000,
+        "LineAmount__c":  120000,
+        "TaxAmount__c":  12000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6W2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6W2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Enterpriseプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PISat2AH"
+                       },
+        "Id":  "a0ERB00000PISat2AH",
+        "Name":  "MFILW-000540",
+        "InvoiceWork__c":  "a0FRB00000YqK422AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK422AF"
+                                              },
+                               "Name":  "MFIW-000414"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン_10アカウント_月額費用",
+        "Quantity__c":  10,
+        "UnitPrice__c":  12000,
+        "LineAmount__c":  120000,
+        "TaxAmount__c":  12000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6W2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6W2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Enterpriseプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PISau2AH"
+                       },
+        "Id":  "a0ERB00000PISau2AH",
+        "Name":  "MFILW-000541",
+        "InvoiceWork__c":  "a0FRB00000YqK422AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK422AF"
+                                              },
+                               "Name":  "MFIW-000414"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン_10アカウント_月額費用",
+        "Quantity__c":  10,
+        "UnitPrice__c":  12000,
+        "LineAmount__c":  120000,
+        "TaxAmount__c":  12000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6W2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6W2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Enterpriseプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PISav2AH"
+                       },
+        "Id":  "a0ERB00000PISav2AH",
+        "Name":  "MFILW-000542",
+        "InvoiceWork__c":  "a0FRB00000YqK422AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK422AF"
+                                              },
+                               "Name":  "MFIW-000414"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン_10アカウント_月額費用",
+        "Quantity__c":  10,
+        "UnitPrice__c":  12000,
+        "LineAmount__c":  120000,
+        "TaxAmount__c":  12000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6W2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6W2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Enterpriseプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PISaw2AH"
+                       },
+        "Id":  "a0ERB00000PISaw2AH",
+        "Name":  "MFILW-000543",
+        "InvoiceWork__c":  "a0FRB00000YqK422AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK422AF"
+                                              },
+                               "Name":  "MFIW-000414"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン_10アカウント_月額費用",
+        "Quantity__c":  10,
+        "UnitPrice__c":  12000,
+        "LineAmount__c":  120000,
+        "TaxAmount__c":  12000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6W2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6W2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Enterpriseプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PISax2AH"
+                       },
+        "Id":  "a0ERB00000PISax2AH",
+        "Name":  "MFILW-000544",
+        "InvoiceWork__c":  "a0FRB00000YqK422AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK422AF"
+                                              },
+                               "Name":  "MFIW-000414"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン_10アカウント_月額費用",
+        "Quantity__c":  10,
+        "UnitPrice__c":  12000,
+        "LineAmount__c":  120000,
+        "TaxAmount__c":  12000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6W2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6W2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Enterpriseプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PISay2AH"
+                       },
+        "Id":  "a0ERB00000PISay2AH",
+        "Name":  "MFILW-000545",
+        "InvoiceWork__c":  "a0FRB00000YqK422AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK422AF"
+                                              },
+                               "Name":  "MFIW-000414"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン_10アカウント_月額費用",
+        "Quantity__c":  10,
+        "UnitPrice__c":  12000,
+        "LineAmount__c":  120000,
+        "TaxAmount__c":  12000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6W2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6W2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Enterpriseプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PISaz2AH"
+                       },
+        "Id":  "a0ERB00000PISaz2AH",
+        "Name":  "MFILW-000546",
+        "InvoiceWork__c":  "a0FRB00000YqK422AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK422AF"
+                                              },
+                               "Name":  "MFIW-000414"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン_10アカウント_月額費用",
+        "Quantity__c":  10,
+        "UnitPrice__c":  12000,
+        "LineAmount__c":  120000,
+        "TaxAmount__c":  12000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6W2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6W2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Enterpriseプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PISb02AH"
+                       },
+        "Id":  "a0ERB00000PISb02AH",
+        "Name":  "MFILW-000547",
+        "InvoiceWork__c":  "a0FRB00000YqK422AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK422AF"
+                                              },
+                               "Name":  "MFIW-000414"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン_10アカウント_月額費用",
+        "Quantity__c":  10,
+        "UnitPrice__c":  12000,
+        "LineAmount__c":  120000,
+        "TaxAmount__c":  12000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6W2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6W2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Enterpriseプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PISb12AH"
+                       },
+        "Id":  "a0ERB00000PISb12AH",
+        "Name":  "MFILW-000548",
+        "InvoiceWork__c":  "a0FRB00000YqK422AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK422AF"
+                                              },
+                               "Name":  "MFIW-000414"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン_10アカウント_月額費用",
+        "Quantity__c":  10,
+        "UnitPrice__c":  12000,
+        "LineAmount__c":  120000,
+        "TaxAmount__c":  12000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6W2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6W2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Enterpriseプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PISb22AH"
+                       },
+        "Id":  "a0ERB00000PISb22AH",
+        "Name":  "MFILW-000549",
+        "InvoiceWork__c":  "a0FRB00000YqK422AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK422AF"
+                                              },
+                               "Name":  "MFIW-000414"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン_10アカウント_月額費用",
+        "Quantity__c":  10,
+        "UnitPrice__c":  12000,
+        "LineAmount__c":  120000,
+        "TaxAmount__c":  12000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6W2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6W2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Enterpriseプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PISb32AH"
+                       },
+        "Id":  "a0ERB00000PISb32AH",
+        "Name":  "MFILW-000550",
+        "InvoiceWork__c":  "a0FRB00000YqK422AF",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqK422AF"
+                                              },
+                               "Name":  "MFIW-000414"
+                           },
+        "Description__c":  "Rendery Enterpriseプラン_10アカウント_月額費用",
+        "Quantity__c":  10,
+        "UnitPrice__c":  12000,
+        "LineAmount__c":  120000,
+        "TaxAmount__c":  12000,
+        "SuggestedProductMaster__c":  "a0CRB0000CcXZ6W2QW",
+        "SuggestedProductMaster__r":  {
+                                          "attributes":  {
+                                                             "type":  "ProductMaster__c",
+                                                             "url":  "/services/data/v67.0/sobjects/ProductMaster__c/a0CRB0000CcXZ6W2QW"
+                                                         },
+                                          "Name":  "[代理販売20%] Rendery Enterpriseプラン"
+                                      },
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "候補あり",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "Matched by unit price and product name."
+    },
+    {
+        "attributes":  {
+                           "type":  "Mig_FreeeInvoiceLineWork__c",
+                           "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceLineWork__c/a0ERB00000PIXwu2AH"
+                       },
+        "Id":  "a0ERB00000PIXwu2AH",
+        "Name":  "MFILW-000558",
+        "InvoiceWork__c":  "a0FRB00000YqSO92AN",
+        "InvoiceWork__r":  {
+                               "attributes":  {
+                                                  "type":  "Mig_FreeeInvoiceWork__c",
+                                                  "url":  "/services/data/v67.0/sobjects/Mig_FreeeInvoiceWork__c/a0FRB00000YqSO92AN"
+                                              },
+                               "Name":  "MFIW-000422"
+                           },
+        "Description__c":  "knock knock AI_Enterpriseプラン_1200クレジット",
+        "Quantity__c":  1100,
+        "UnitPrice__c":  145,
+        "LineAmount__c":  159500,
+        "TaxAmount__c":  15950,
+        "SuggestedProductMaster__c":  null,
+        "SuggestedProductMaster__r":  null,
+        "ConfirmedProductMaster__c":  null,
+        "ConfirmedProductMaster__r":  null,
+        "ProductResolveStatus__c":  "要確認",
+        "ImportStatus__c":  "取得済み",
+        "CreatedInvoiceLine__c":  null,
+        "ResolveMessage__c":  "No ProductMaster candidate found."
+    }
+]

@@ -43,6 +43,11 @@ public with sharing class FreeeInvoiceMapper {
         if (String.isNotBlank(invoice.Memo__c)) {
             body.put('memo', invoice.Memo__c);
         }
+        if (invoice.CompanyContactUser__r != null
+            && String.isNotBlank(invoice.CompanyContactUser__r.Name)
+        ) {
+            body.put('company_contact_name', invoice.CompanyContactUser__r.Name);
+        }
 
         List<Object> freeeLines = new List<Object>();
         for (InvoiceLine__c line : lines) {

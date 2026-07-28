@@ -1,6 +1,6 @@
 String statusJobId = System.schedule(
     'FreeeInvoiceStatusSyncBatch',
-    '0 0 3 * * ?',
+    '0 10 0 * * ?',
     new FreeeInvoiceStatusSyncBatch()
 );
 System.debug('Scheduled FreeeInvoiceStatusSyncBatch=' + statusJobId);

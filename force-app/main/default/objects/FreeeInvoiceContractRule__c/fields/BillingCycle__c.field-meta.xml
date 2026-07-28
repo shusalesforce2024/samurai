@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BillingCycle__c</fullName>
+    <label>請求区分</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Monthly</fullName>
+                <default>true</default>
+                <label>月払い</label>
+            </value>
+            <value>
+                <fullName>Yearly</fullName>
+                <default>false</default>
+                <label>年払い</label>
+            </value>
+            <value>
+                <fullName>OneTime</fullName>
+                <default>false</default>
+                <label>単発</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

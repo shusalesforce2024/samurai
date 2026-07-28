@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CommonRuleCannotHavePartnerId</fullName>
+    <active>true</active>
+    <description>共通ルールを特定freee取引先へ限定する矛盾した設定を防止する。</description>
+    <errorConditionFormula>AND(ISBLANK(Account__c), NOT(ISBLANK(FreeePartnerId__c)))</errorConditionFormula>
+    <errorDisplayField>FreeePartnerId__c</errorDisplayField>
+    <errorMessage>共通ルールではFreee取引先IDを空欄にしてください。</errorMessage>
+</ValidationRule>

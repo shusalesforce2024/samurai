@@ -1,0 +1,30 @@
+﻿"Id","Name","ImportStatus__c","ResolvedAccount__c","ResolvedContract__c","ResolvedContractPeriod__c","CreatedInvoice__c","ValidationMessage__c"
+"a0FRB00000WhTPa2AN","MFIW-000194","要確認","001RB00001VTqnbYAD","a04RB00000kUAQ2YAO","a0BRB00000ynn5u2AA","a00RB000027fzNaYAI","請求明細の件名と商品マスタ名が類似していないため、請求作成を停止しました。金額一致だけで商品が選ばれている可能性があります。明細「knock knock AI_Basicプラン(月額)」の商品マスタを確認してください。"
+"a0FRB00000WhTPb2AN","MFIW-000195","要確認","001RB00001VTqnHYAT","a04RB00000kUAQ3YAO","a0BRB00000ynn5v2AA","a00RB000027fzNbYAI","請求明細の件名と商品マスタ名が類似していないため、請求作成を停止しました。金額一致だけで商品が選ばれている可能性があります。明細「knock knock AI_Basicプラン(月額)」の商品マスタを確認してください。"
+"a0FRB00000WicaL2AR","MFIW-000166","要確認","001RB00001VTtIfYAL","a04RB00000kUAQ0YAO","a0BRB00000ynn5s2AA","a00RB000027fzNjYAI","請求明細の件名と商品マスタ名が類似していないため、請求作成を停止しました。金額一致だけで商品が選ばれている可能性があります。明細「knock knock AI_Basicプラン(月額)」の商品マスタを確認してください。"
+"a0FRB00000WicaN2AR","MFIW-000168","要確認","001RB00001VTtIcYAL",,,,"契約管理を特定できません。取引先に有効な契約管理があるか確認してください。
+契約期間を特定できません。請求日を含む契約期間があるか確認してください。"
+"a0FRB00000WicaU2AR","MFIW-000175","要確認","001RB00001VTqaGYAT","a04RB00000kUAPbYAO","a0BRB00000ynn5T2AQ","a00RB000027fzNnYAI","請求明細の件名と商品マスタ名が類似していないため、請求作成を停止しました。金額一致だけで商品が選ばれている可能性があります。明細「knock knock AI_Basicプラン(月額)」の商品マスタを確認してください。"
+"a0FRB00000Wifcv2AB","MFIW-000158","要確認","001RB00001VTqfsYAD","a04RB00000kUAPzYAO","a0BRB0000124lpu2AA","a00RB000027flsLYAQ","同じfreee請求書IDのSalesforce請求は存在しますが、すべての請求明細を照合できませんでした。既存の請求明細と移行Workの明細を確認してください。"
+"a0FRB00000Wj59K2AR","MFIW-000278","要確認","001RB00001VTqaGYAT","a04RB00000kUAPbYAO","a0BRB00000ynn5T2AQ",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000Wj5UG2AZ","MFIW-000319","要確認","001RB00001VTqnbYAD","a04RB00000kUAQ2YAO","a0BRB00000ynn5u2AA",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000Wj5UH2AZ","MFIW-000320","要確認","001RB00001VTqnHYAT","a04RB00000kUAQ3YAO","a0BRB00000ynn5v2AA",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000WjFOz2AN","MFIW-000351","要確認","001RB00001br9KRYAY",,,,"契約管理を特定できません。取引先に有効な契約管理があるか確認してください。
+契約期間を特定できません。請求日を含む契約期間があるか確認してください。
+商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000WjSKK2A3","MFIW-000220","要確認","001RB00001VTtIfYAL","a04RB00000kUAQ0YAO","a0BRB00000ynn5s2AA",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000WjSKO2A3","MFIW-000224","要確認","001RB00001VTtIcYAL",,,,"契約管理を特定できません。取引先に有効な契約管理があるか確認してください。
+契約期間を特定できません。請求日を含む契約期間があるか確認してください。
+商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000WjSKV2A3","MFIW-000231","要確認","001RB00001VTqaGYAT","a04RB00000kUAPbYAO","a0BRB00000ynn5T2AQ",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000WjTBl2AN","MFIW-000253","要確認","001RB00001VTqnbYAD","a04RB00000kUAQ2YAO","a0BRB00000ynn5u2AA",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000WjTBm2AN","MFIW-000254","要確認","001RB00001VTqnHYAT","a04RB00000kUAQ3YAO","a0BRB00000ynn5v2AA",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000Wjfvt2AB","MFIW-000297","要確認","001RB00001VTqaGYAT","a04RB00000kUAPbYAO","a0BRB00000ynn5T2AQ",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000WjhzF2AR","MFIW-000363","要確認","001RB00001VTqnbYAD","a04RB00000kUAQ2YAO","a0BRB00000ynn5u2AA",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000WjhzG2AR","MFIW-000364","要確認","001RB00001VTqnHYAT","a04RB00000kUAQ3YAO","a0BRB00000ynn5v2AA",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000Ypg4t2AB","MFIW-000376","要確認","001RB00001VTrGkYAL","a04RB00000kUAQAYA4","a0BRB00000ynn622AA",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000Ypg512AB","MFIW-000384","要確認","001RB00001VTtIiYAL","a04RB00000kUAQBYA4","a0BRB00000ynn632AA",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000YqSO32AN","MFIW-000416","要確認","001RB00001VTtIfYAL","a04RB00000kUAQ0YAO","a0BRB00000ynn5s2AA",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000YqSOA2A3","MFIW-000423","要確認","001RB00001VTqaGYAT","a04RB00000kUAPbYAO","a0BRB00000ynn5T2AQ",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000Yr46p2AB","MFIW-000441","要確認","001RB00001VTqnbYAD","a04RB00000kUAQ2YAO","a0BRB00000ynn5u2AA",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"
+"a0FRB00000Yr46q2AB","MFIW-000442","要確認","001RB00001VTqnHYAT","a04RB00000kUAQ3YAO","a0BRB00000ynn5v2AA",,"商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。"

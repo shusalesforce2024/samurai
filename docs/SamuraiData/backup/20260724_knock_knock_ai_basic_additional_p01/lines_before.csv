@@ -1,0 +1,15 @@
+Id,Name,InvoiceWork__c,Description__c,Quantity__c,UnitPrice__c,LineAmount__c,SuggestedProductMaster__c,ConfirmedProductMaster__c,ProductResolveStatus__c,ImportStatus__c,CreatedInvoiceLine__c,ResolveMessage__c
+a0ERB00000OjwBn2AJ,MFILW-000322,a0FRB00000WjSKN2A3,KnockKnockAI_Basicプラン(月額),1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by unit price and product name.
+a0ERB00000OjwBr2AJ,MFILW-000326,a0FRB00000WjSKR2A3,knock knock AI_Basicプラン,1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by unit price and product name.
+a0ERB00000OjwBw2AJ,MFILW-000331,a0FRB00000WjSKW2A3,knock knock AI_Basicプラン,1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by unit price and product name.
+a0ERB00000OjwBy2AJ,MFILW-000333,a0FRB00000WjSKY2A3,knock knock AI_Basicプラン,1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by unit price and product name.
+a0ERB00000OjzO72AJ,MFILW-000375,a0FRB00000Wj59F2AR,knock knock AI_Basicプラン,1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by unit price and product name.
+a0ERB00000OjzOD2AZ,MFILW-000381,a0FRB00000Wj59L2AR,knock knock AI_Basicプラン,1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by unit price and product name.
+a0ERB00000OjzOF2AZ,MFILW-000383,a0FRB00000Wj59N2AR,knock knock AI_Basicプラン,1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by unit price and product name.
+a0ERB00000Ok0Yf2AJ,MFILW-000395,a0FRB00000Wjfvp2AB,knock knock AI_Basicプラン,1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by unit price and product name.
+a0ERB00000Ok0Yk2AJ,MFILW-000400,a0FRB00000Wjfvu2AB,knock knock AI_Basicプラン,1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by unit price and product name.
+a0ERB00000Ok0Ym2AJ,MFILW-000402,a0FRB00000Wjfvw2AB,knock knock AI_Basicプラン,1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by unit price and product name.
+a0ERB00000PIXwp2AH,MFILW-000553,a0FRB00000YqSO42AN,KnockKnockAI_Basicプラン(月額),1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by unit price and product name.
+a0ERB00000PIXwr2AH,MFILW-000555,a0FRB00000YqSO62AN,knock knock AI_Basicプラン,1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by unit price and product name.
+a0ERB00000PIXww2AH,MFILW-000560,a0FRB00000YqSOB2A3,knock knock AI_Basicプラン,1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by unit price and product name.
+a0ERB00000PIdKf2AL,MFILW-000561,a0FRB00000YqLuQ2AV,knock knock AI_Basicプラン,1,11000,11000,a0CRB0000CcXZ6i2QG,,候補あり,取得済み,,Matched by unit price and product name.
