@@ -1,0 +1,1 @@
+SELECT Id,Name,Oppotunity__c,Quotation_Status__c,TotalAmount__c,CreatedDate,LastModifiedDate FROM Quotation__c

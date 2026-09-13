@@ -1,0 +1,7 @@
+Salesforce本番読み取り専用クエリ実行結果
+日時: 2026-09-13
+対象: Invoice__c ParentContract__c
+結果: 取得失敗
+エラー: EPERM operation not permitted, open AppData\\Local\\sf\\package.json および .sf\\sf-2026-09-13.log
+影響: 追加参照IDは未取得。既存スナップショットを代替証跡として維持。
+本番更新: なし

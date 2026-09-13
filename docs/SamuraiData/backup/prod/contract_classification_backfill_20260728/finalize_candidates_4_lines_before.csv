@@ -1,0 +1,7 @@
+﻿Id,Name,InvoiceWork__c,InvoiceWork__r.Name,Description__c,Quantity__c,UnitPrice__c,LineAmount__c,SuggestedProductMaster__c,SuggestedProductMaster__r.Name,ConfirmedProductMaster__c,ConfirmedProductMaster__r.Name,ProductResolveStatus__c,ResolveConfidence__c,ResolveMessage__c
+a0ERB00000Pk8Qp2AJ,MFILW-000621,a0FRB00000aE0GN2A0,MFIW-000472,Rendery_Pro_月額利用料(1アカウント)),6,8000,48000,a0CRB0000CcXZ6Q2QW,Rendery Proプラン,,,候補あり,0.75,Matched by unit price and product name.
+a0ERB00000Pk8aY2AR,MFILW-000629,a0FRB00000aCDG82AO,MFIW-000477,Rendery_Pro_年額一括払い_3アカウント,12,24000,288000,,,,,要確認,,No ProductMaster candidate found.
+a0ERB00000Pk8aZ2AR,MFILW-000630,a0FRB00000aCDG92AO,MFIW-000478,knock knock AI_Enterpriseプラン_2000クレジット,12,261000,3132000,,,,,要確認,,No ProductMaster candidate found.
+a0ERB00000Pk8aa2AB,MFILW-000631,a0FRB00000aCDG92AO,MFIW-000478,クレジット単価割引(8.05%),12,-21000,-252000,,,,,要確認,,No ProductMaster candidate found.
+a0ERB00000Pk8ab2AB,MFILW-000632,a0FRB00000aCDG92AO,MFIW-000478,knock knock AI_Enterpriseプラン_200クレジット(返金分),3,-24000,-72000,,,,,要確認,,No ProductMaster candidate found.
+a0ERB00000Pk8k92AB,MFILW-000634,a0FRB00000aDzP82AK,MFIW-000480,Rendery Enterpriseプラン5アカウント_26年2-3月,5,30000,150000,a0CRB0000CcXZ6b2QG,Rendery セキュリティオプション(SSO)_運用費用,,,候補あり,0.75,Matched by unit price and product name.

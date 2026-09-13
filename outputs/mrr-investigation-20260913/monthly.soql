@@ -1,0 +1,1 @@
+SELECT Id,Name,Account__c,MasterContract__c,ContractPeriod__c,ContractYearMonth__c,Month__c,PeriodStartDate__c,PeriodEndDate__c,ProductMaster__c,QuotationLine__c,RelatedInvoice__c,RevenueAmount__c,Total__c,MRR_Target__c,InitialFee__c,PeopleNumber__c,CreatedDate,LastModifiedDate FROM ContractLineItem__c

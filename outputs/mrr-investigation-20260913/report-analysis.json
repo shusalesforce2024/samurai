@@ -1,0 +1,67 @@
+{
+  "rendery_current": {
+    "Rows": 476,
+    "Total": "28657872.5",
+    "MRRFlagRevenue": "7801500",
+    "NonMRRTotal": "20856372.5",
+    "InitialTotal": "0",
+    "DraftTotal": "0",
+    "MigrationTotal": "0",
+    "NoProductTotal": "7695920"
+  },
+  "rendery_total": {
+    "Rows": 962,
+    "Total": "47938140.000000000052",
+    "MRRFlagRevenue": "16149000.000000000052",
+    "NonMRRTotal": "31789140",
+    "InitialTotal": "900000",
+    "DraftTotal": "12928740.000000000048",
+    "MigrationTotal": "6603940",
+    "NoProductTotal": "0"
+  },
+  "current_report_api": {
+    "allData": true,
+    "fact_total": {
+      "aggregates": [
+        {
+          "label": "￥28,657,873",
+          "value": 28657872.5
+        },
+        {
+          "label": "￥4,451,000",
+          "value": 4451000.0
+        },
+        {
+          "label": "476",
+          "value": 476
+        }
+      ],
+      "rows": []
+    },
+    "reportMetadata": [
+      "s!ContractLineItem__c.Total__c",
+      "s!Contract__c.MRR__c",
+      "RowCount"
+    ]
+  },
+  "total_report_api": {
+    "allData": true,
+    "fact_total": {
+      "aggregates": [
+        {
+          "label": "￥47,938,140",
+          "value": 47938140.0
+        },
+        {
+          "label": "962",
+          "value": 962
+        }
+      ],
+      "rows": []
+    },
+    "reportMetadata": [
+      "s!ContractLineItem__c.Total__c",
+      "RowCount"
+    ]
+  }
+}

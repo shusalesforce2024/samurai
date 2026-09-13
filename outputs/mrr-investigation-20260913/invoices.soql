@@ -1,0 +1,1 @@
+SELECT Id,Name,Account__c,ParentContract__c,ContractPeriod__c,Billing_Date__c,TargetPeriodStartDate__c,TargetPeriodEndDate__c,TotalAmount__c,AmountWithTax__c,CancelStatus__c,Freee_Invoice_Id__c,CreatedDate FROM Invoice__c

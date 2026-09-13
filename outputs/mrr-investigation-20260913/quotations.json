@@ -1,0 +1,868 @@
+{
+  "status": 0,
+  "result": {
+    "records": [
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000cID8z2AG"
+        },
+        "Id": "a0ARB00000cID8z2AG",
+        "Name": "QT-000002",
+        "Oppotunity__c": null,
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 24000,
+        "CreatedDate": "2026-06-18T10:25:13.000+0000",
+        "LastModifiedDate": "2026-07-02T03:43:48.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000coij82AA"
+        },
+        "Id": "a0ARB00000coij82AA",
+        "Name": "QT-000003",
+        "Oppotunity__c": "a08RB00001Z1G9HYAV",
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 325000,
+        "CreatedDate": "2026-06-25T05:55:28.000+0000",
+        "LastModifiedDate": "2026-06-25T08:56:13.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000cq3Yc2AI"
+        },
+        "Id": "a0ARB00000cq3Yc2AI",
+        "Name": "QT-000004",
+        "Oppotunity__c": "a08RB00001Z1G9HYAV",
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 20000,
+        "CreatedDate": "2026-06-25T08:58:15.000+0000",
+        "LastModifiedDate": "2026-06-25T08:59:56.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000dKnxN2AS"
+        },
+        "Id": "a0ARB00000dKnxN2AS",
+        "Name": "QT-000005",
+        "Oppotunity__c": "a08RB00001Z16QFYAZ",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 2040000,
+        "CreatedDate": "2026-07-01T09:41:41.000+0000",
+        "LastModifiedDate": "2026-07-07T10:42:09.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000dRU0L2AW"
+        },
+        "Id": "a0ARB00000dRU0L2AW",
+        "Name": "QT-000006",
+        "Oppotunity__c": "a08RB00001bBu13YAC",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 32000,
+        "CreatedDate": "2026-07-02T08:55:03.000+0000",
+        "LastModifiedDate": "2026-07-06T06:02:11.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000dtdez2AA"
+        },
+        "Id": "a0ARB00000dtdez2AA",
+        "Name": "QT-000007",
+        "Oppotunity__c": null,
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 960000,
+        "CreatedDate": "2026-07-07T16:20:34.000+0000",
+        "LastModifiedDate": "2026-07-07T16:21:21.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000e3mvV2AQ"
+        },
+        "Id": "a0ARB00000e3mvV2AQ",
+        "Name": "QT-000008",
+        "Oppotunity__c": "a08RB00001Z1GBNYA3",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 1440000,
+        "CreatedDate": "2026-07-09T08:09:37.000+0000",
+        "LastModifiedDate": "2026-07-09T08:14:33.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000eP0x32AC"
+        },
+        "Id": "a0ARB00000eP0x32AC",
+        "Name": "QT-000009",
+        "Oppotunity__c": "a08RB00001dLVHzYAO",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 8000,
+        "CreatedDate": "2026-07-14T03:41:15.000+0000",
+        "LastModifiedDate": "2026-07-14T03:42:15.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000eaStC2AU"
+        },
+        "Id": "a0ARB00000eaStC2AU",
+        "Name": "QT-000011",
+        "Oppotunity__c": "a08RB00001Z1G6uYAF",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 40000,
+        "CreatedDate": "2026-07-16T05:02:06.000+0000",
+        "LastModifiedDate": "2026-07-16T05:07:34.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000eaimf2AA"
+        },
+        "Id": "a0ARB00000eaimf2AA",
+        "Name": "QT-000012",
+        "Oppotunity__c": "a08RB00001ds1L7YAI",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 8000,
+        "CreatedDate": "2026-07-16T05:53:17.000+0000",
+        "LastModifiedDate": "2026-07-16T05:53:46.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000eb9DN2AY"
+        },
+        "Id": "a0ARB00000eb9DN2AY",
+        "Name": "QT-000013",
+        "Oppotunity__c": "a08RB00001dtYIDYA2",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 75000,
+        "CreatedDate": "2026-07-16T07:19:50.000+0000",
+        "LastModifiedDate": "2026-07-16T07:21:30.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000ebCG62AM"
+        },
+        "Id": "a0ARB00000ebCG62AM",
+        "Name": "QT-000015",
+        "Oppotunity__c": null,
+        "Quotation_Status__c": "Sent",
+        "TotalAmount__c": 1008000,
+        "CreatedDate": "2026-07-16T08:25:55.000+0000",
+        "LastModifiedDate": "2026-07-29T03:00:10.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000ebUCz2AM"
+        },
+        "Id": "a0ARB00000ebUCz2AM",
+        "Name": "QT-000014",
+        "Oppotunity__c": null,
+        "Quotation_Status__c": "Sent",
+        "TotalAmount__c": 90000,
+        "CreatedDate": "2026-07-16T08:22:43.000+0000",
+        "LastModifiedDate": "2026-07-29T03:00:10.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000eho5m2AA"
+        },
+        "Id": "a0ARB00000eho5m2AA",
+        "Name": "QT-000017",
+        "Oppotunity__c": "a08RB00001Z1G69YAF",
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 75000,
+        "CreatedDate": "2026-07-17T14:41:24.000+0000",
+        "LastModifiedDate": "2026-07-17T14:42:22.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000ei0q52AA"
+        },
+        "Id": "a0ARB00000ei0q52AA",
+        "Name": "QT-000018",
+        "Oppotunity__c": "a08RB00001Z1G69YAF",
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 90000,
+        "CreatedDate": "2026-07-17T14:42:55.000+0000",
+        "LastModifiedDate": "2026-07-17T14:44:54.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000evFWL2A2"
+        },
+        "Id": "a0ARB00000evFWL2A2",
+        "Name": "QT-000019",
+        "Oppotunity__c": null,
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 75000,
+        "CreatedDate": "2026-07-21T07:59:01.000+0000",
+        "LastModifiedDate": "2026-07-29T03:00:10.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000evHEn2AM"
+        },
+        "Id": "a0ARB00000evHEn2AM",
+        "Name": "QT-000020",
+        "Oppotunity__c": null,
+        "Quotation_Status__c": "Sent",
+        "TotalAmount__c": 840000,
+        "CreatedDate": "2026-07-21T08:03:49.000+0000",
+        "LastModifiedDate": "2026-07-29T03:00:10.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000f1IzN2AU"
+        },
+        "Id": "a0ARB00000f1IzN2AU",
+        "Name": "QT-000021",
+        "Oppotunity__c": "a08RB00001el1SaYAI",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 150000,
+        "CreatedDate": "2026-07-22T09:34:23.000+0000",
+        "LastModifiedDate": "2026-07-28T06:27:31.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000f543P2AQ"
+        },
+        "Id": "a0ARB00000f543P2AQ",
+        "Name": "QT-000022",
+        "Oppotunity__c": "a08RB00001eu7aQYAQ",
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 8000,
+        "CreatedDate": "2026-07-23T04:30:06.000+0000",
+        "LastModifiedDate": "2026-07-23T04:33:03.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fAvqD2AS"
+        },
+        "Id": "a0ARB00000fAvqD2AS",
+        "Name": "QT-000023",
+        "Oppotunity__c": "a08RB00001f7XjtYAE",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 150000,
+        "CreatedDate": "2026-07-24T04:17:55.000+0000",
+        "LastModifiedDate": "2026-08-31T07:19:23.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fBM7F2AW"
+        },
+        "Id": "a0ARB00000fBM7F2AW",
+        "Name": "QT-000024",
+        "Oppotunity__c": "a08RB00001f7XjtYAE",
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 900000,
+        "CreatedDate": "2026-07-24T05:55:27.000+0000",
+        "LastModifiedDate": "2026-07-24T05:57:36.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fBNmT2AW"
+        },
+        "Id": "a0ARB00000fBNmT2AW",
+        "Name": "QT-000025",
+        "Oppotunity__c": "a08RB00001eoJRKYA2",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 600000,
+        "CreatedDate": "2026-07-24T06:01:05.000+0000",
+        "LastModifiedDate": "2026-08-20T02:21:51.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fCTEk2AO"
+        },
+        "Id": "a0ARB00000fCTEk2AO",
+        "Name": "QT-000026",
+        "Oppotunity__c": "a08RB00001fC2sNYAS",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 8000,
+        "CreatedDate": "2026-07-24T09:51:09.000+0000",
+        "LastModifiedDate": "2026-07-28T06:12:39.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fLJJO2A4"
+        },
+        "Id": "a0ARB00000fLJJO2A4",
+        "Name": "QT-000027",
+        "Oppotunity__c": "a08RB00001etCloYAE",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 76800,
+        "CreatedDate": "2026-07-27T02:11:34.000+0000",
+        "LastModifiedDate": "2026-08-05T08:35:53.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fR5s12AC"
+        },
+        "Id": "a0ARB00000fR5s12AC",
+        "Name": "QT-000028",
+        "Oppotunity__c": "a08RB00001fc1z4YAA",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 384000,
+        "CreatedDate": "2026-07-28T01:51:31.000+0000",
+        "LastModifiedDate": "2026-08-19T07:07:30.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fSEtF2AW"
+        },
+        "Id": "a0ARB00000fSEtF2AW",
+        "Name": "QT-000029",
+        "Oppotunity__c": "a08RB00001Z1G69YAF",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 105000,
+        "CreatedDate": "2026-07-28T05:55:35.000+0000",
+        "LastModifiedDate": "2026-07-28T10:58:36.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fTAQz2AO"
+        },
+        "Id": "a0ARB00000fTAQz2AO",
+        "Name": "QT-000030",
+        "Oppotunity__c": "a08RB00001Z1G6mYAF",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 150000,
+        "CreatedDate": "2026-07-28T09:03:15.000+0000",
+        "LastModifiedDate": "2026-08-24T13:26:35.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fbyjx2AA"
+        },
+        "Id": "a0ARB00000fbyjx2AA",
+        "Name": "QT-000031",
+        "Oppotunity__c": null,
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 75000,
+        "CreatedDate": "2026-07-30T04:09:47.000+0000",
+        "LastModifiedDate": "2026-08-10T02:55:52.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fhtBJ2AY"
+        },
+        "Id": "a0ARB00000fhtBJ2AY",
+        "Name": "QT-000032",
+        "Oppotunity__c": "a08RB00001Z1G6mYAF",
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 540000,
+        "CreatedDate": "2026-07-31T05:10:17.000+0000",
+        "LastModifiedDate": "2026-07-31T05:17:44.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fhuiT2AQ"
+        },
+        "Id": "a0ARB00000fhuiT2AQ",
+        "Name": "QT-000033",
+        "Oppotunity__c": "a08RB00001Z1G6mYAF",
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 1080000,
+        "CreatedDate": "2026-07-31T05:18:33.000+0000",
+        "LastModifiedDate": "2026-07-31T05:20:44.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fiPhS2AU"
+        },
+        "Id": "a0ARB00000fiPhS2AU",
+        "Name": "QT-000034",
+        "Oppotunity__c": "a08RB00001eo9oXYAQ",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 215000,
+        "CreatedDate": "2026-07-31T07:34:45.000+0000",
+        "LastModifiedDate": "2026-09-08T05:32:55.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fsohm2AA"
+        },
+        "Id": "a0ARB00000fsohm2AA",
+        "Name": "QT-000036",
+        "Oppotunity__c": "a08RB00001Z1G8CYAV",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 940000,
+        "CreatedDate": "2026-08-03T02:39:59.000+0000",
+        "LastModifiedDate": "2026-08-21T01:06:17.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fsqMz2AI"
+        },
+        "Id": "a0ARB00000fsqMz2AI",
+        "Name": "QT-000035",
+        "Oppotunity__c": "a08RB00001Z1G9GYAV",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 96000,
+        "CreatedDate": "2026-08-03T02:25:51.000+0000",
+        "LastModifiedDate": "2026-08-03T02:28:03.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fuTcP2AU"
+        },
+        "Id": "a0ARB00000fuTcP2AU",
+        "Name": "QT-000037",
+        "Oppotunity__c": "a08RB00001Z16QXYAZ",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 840000,
+        "CreatedDate": "2026-08-03T07:24:49.000+0000",
+        "LastModifiedDate": "2026-08-03T07:27:18.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000furJm2AI"
+        },
+        "Id": "a0ARB00000furJm2AI",
+        "Name": "QT-000038",
+        "Oppotunity__c": "a08RB00001gindqYAA",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 240000,
+        "CreatedDate": "2026-08-03T09:08:26.000+0000",
+        "LastModifiedDate": "2026-08-03T09:11:55.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000fzpZ32AI"
+        },
+        "Id": "a0ARB00000fzpZ32AI",
+        "Name": "QT-000039",
+        "Oppotunity__c": "a08RB00001Z1GB3YAN",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 8000,
+        "CreatedDate": "2026-08-04T04:15:45.000+0000",
+        "LastModifiedDate": "2026-08-04T04:16:32.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000g5qAf2AI"
+        },
+        "Id": "a0ARB00000g5qAf2AI",
+        "Name": "QT-000040",
+        "Oppotunity__c": "a08RB00001h4W9iYAE",
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 222000,
+        "CreatedDate": "2026-08-05T04:14:21.000+0000",
+        "LastModifiedDate": "2026-08-05T04:30:06.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000g5sM92AI"
+        },
+        "Id": "a0ARB00000g5sM92AI",
+        "Name": "QT-000041",
+        "Oppotunity__c": "a08RB00001h4W9iYAE",
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 225000,
+        "CreatedDate": "2026-08-05T04:23:03.000+0000",
+        "LastModifiedDate": "2026-08-05T04:30:18.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000g6KlR2AU"
+        },
+        "Id": "a0ARB00000g6KlR2AU",
+        "Name": "QT-000043",
+        "Oppotunity__c": "a08RB00001h53onYAA",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 8000,
+        "CreatedDate": "2026-08-05T06:03:47.000+0000",
+        "LastModifiedDate": "2026-08-20T03:22:40.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000gCTfa2AG"
+        },
+        "Id": "a0ARB00000gCTfa2AG",
+        "Name": "QT-000045",
+        "Oppotunity__c": "a08RB00001hKG2YYAW",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 150000,
+        "CreatedDate": "2026-08-06T07:34:18.000+0000",
+        "LastModifiedDate": "2026-08-12T03:19:14.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000gD2S12AK"
+        },
+        "Id": "a0ARB00000gD2S12AK",
+        "Name": "QT-000044",
+        "Oppotunity__c": "a08RB00001hKGgsYAG",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 32000,
+        "CreatedDate": "2026-08-06T07:19:23.000+0000",
+        "LastModifiedDate": "2026-08-06T07:27:05.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000gDrr72AC"
+        },
+        "Id": "a0ARB00000gDrr72AC",
+        "Name": "QT-000046",
+        "Oppotunity__c": "a08RB00001h4W9iYAE",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 72000,
+        "CreatedDate": "2026-08-06T09:20:48.000+0000",
+        "LastModifiedDate": "2026-08-07T03:17:03.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000gbDqv2AE"
+        },
+        "Id": "a0ARB00000gbDqv2AE",
+        "Name": "QT-000047",
+        "Oppotunity__c": "a08RB00001i0QOrYAM",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 45000,
+        "CreatedDate": "2026-08-12T02:38:21.000+0000",
+        "LastModifiedDate": "2026-08-12T02:41:02.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000gt5TV2AY"
+        },
+        "Id": "a0ARB00000gt5TV2AY",
+        "Name": "QT-000048",
+        "Oppotunity__c": "a08RB00001ewScLYAU",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 1580000,
+        "CreatedDate": "2026-08-17T04:56:25.000+0000",
+        "LastModifiedDate": "2026-09-10T13:06:48.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000gygYr2AI"
+        },
+        "Id": "a0ARB00000gygYr2AI",
+        "Name": "QT-000049",
+        "Oppotunity__c": "a08RB00001eu7aQYAQ",
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 275000,
+        "CreatedDate": "2026-08-18T03:52:19.000+0000",
+        "LastModifiedDate": "2026-08-18T05:32:39.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000h4I0n2AE"
+        },
+        "Id": "a0ARB00000h4I0n2AE",
+        "Name": "QT-000050",
+        "Oppotunity__c": "a08RB00001Z1G6VYAV",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 8000,
+        "CreatedDate": "2026-08-19T05:04:05.000+0000",
+        "LastModifiedDate": "2026-08-19T06:07:56.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000h6AlV2AU"
+        },
+        "Id": "a0ARB00000h6AlV2AU",
+        "Name": "QT-000051",
+        "Oppotunity__c": "a08RB00001hKG2YYAW",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 75000,
+        "CreatedDate": "2026-08-19T12:31:14.000+0000",
+        "LastModifiedDate": "2026-08-19T12:32:05.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000h6DD72AM"
+        },
+        "Id": "a0ARB00000h6DD72AM",
+        "Name": "QT-000052",
+        "Oppotunity__c": "a08RB00001igHkAYAU",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 75000,
+        "CreatedDate": "2026-08-19T13:09:26.000+0000",
+        "LastModifiedDate": "2026-08-19T13:15:42.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000h6DUr2AM"
+        },
+        "Id": "a0ARB00000h6DUr2AM",
+        "Name": "QT-000053",
+        "Oppotunity__c": "a08RB00001igHkAYAU",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 840000,
+        "CreatedDate": "2026-08-19T13:16:14.000+0000",
+        "LastModifiedDate": "2026-08-19T13:16:40.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000h9N422AE"
+        },
+        "Id": "a0ARB00000h9N422AE",
+        "Name": "QT-000054",
+        "Oppotunity__c": "a08RB00001jAjKrYAK",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 55000,
+        "CreatedDate": "2026-08-20T04:21:04.000+0000",
+        "LastModifiedDate": "2026-08-20T05:31:14.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000h9Own2AE"
+        },
+        "Id": "a0ARB00000h9Own2AE",
+        "Name": "QT-000055",
+        "Oppotunity__c": "a08RB00001jAjKrYAK",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 24000,
+        "CreatedDate": "2026-08-20T04:21:58.000+0000",
+        "LastModifiedDate": "2026-08-20T04:22:53.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000hguhl2AA"
+        },
+        "Id": "a0ARB00000hguhl2AA",
+        "Name": "QT-000056",
+        "Oppotunity__c": "a08RB00001kQCSTYA4",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 16000,
+        "CreatedDate": "2026-08-27T07:24:28.000+0000",
+        "LastModifiedDate": "2026-08-27T08:13:44.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000hkyEv2AI"
+        },
+        "Id": "a0ARB00000hkyEv2AI",
+        "Name": "QT-000057",
+        "Oppotunity__c": "a08RB00001Z1G8VYAV",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 150000,
+        "CreatedDate": "2026-08-28T01:50:43.000+0000",
+        "LastModifiedDate": "2026-08-28T01:53:32.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000hmH932AE"
+        },
+        "Id": "a0ARB00000hmH932AE",
+        "Name": "QT-000058",
+        "Oppotunity__c": "a08RB00001Z1G69YAF",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 120000,
+        "CreatedDate": "2026-08-28T06:41:16.000+0000",
+        "LastModifiedDate": "2026-08-28T06:42:07.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000hxW6L2AU"
+        },
+        "Id": "a0ARB00000hxW6L2AU",
+        "Name": "QT-000059",
+        "Oppotunity__c": "a08RB00001l2mmXYAQ",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 120000,
+        "CreatedDate": "2026-08-31T05:33:15.000+0000",
+        "LastModifiedDate": "2026-08-31T08:32:02.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000hyVzR2AU"
+        },
+        "Id": "a0ARB00000hyVzR2AU",
+        "Name": "QT-000060",
+        "Oppotunity__c": "a08RB00001i0QOrYAM",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 90000,
+        "CreatedDate": "2026-08-31T08:31:43.000+0000",
+        "LastModifiedDate": "2026-08-31T08:32:28.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000i9pGT2AY"
+        },
+        "Id": "a0ARB00000i9pGT2AY",
+        "Name": "QT-000061",
+        "Oppotunity__c": "a08RB00001lTUojYAG",
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 76800,
+        "CreatedDate": "2026-09-02T02:30:00.000+0000",
+        "LastModifiedDate": "2026-09-02T02:32:46.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000i9vqX2AQ"
+        },
+        "Id": "a0ARB00000i9vqX2AQ",
+        "Name": "QT-000062",
+        "Oppotunity__c": "a08RB00001lTUojYAG",
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 1440000,
+        "CreatedDate": "2026-09-02T02:52:52.000+0000",
+        "LastModifiedDate": "2026-09-02T02:54:25.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000iGICY2A4"
+        },
+        "Id": "a0ARB00000iGICY2A4",
+        "Name": "QT-000064",
+        "Oppotunity__c": "a08RB00001lik1zYAA",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 840000,
+        "CreatedDate": "2026-09-03T05:09:25.000+0000",
+        "LastModifiedDate": "2026-09-03T05:19:03.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000iGVhd2AG"
+        },
+        "Id": "a0ARB00000iGVhd2AG",
+        "Name": "QT-000063",
+        "Oppotunity__c": "a08RB00001lik1zYAA",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 75000,
+        "CreatedDate": "2026-09-03T05:05:38.000+0000",
+        "LastModifiedDate": "2026-09-03T05:11:42.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000iGZzl2AG"
+        },
+        "Id": "a0ARB00000iGZzl2AG",
+        "Name": "QT-000065",
+        "Oppotunity__c": "a08RB00001lik1zYAA",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 300000,
+        "CreatedDate": "2026-09-03T05:19:38.000+0000",
+        "LastModifiedDate": "2026-09-03T05:30:30.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000iGdaL2AS"
+        },
+        "Id": "a0ARB00000iGdaL2AS",
+        "Name": "QT-000066",
+        "Oppotunity__c": "a08RB00001lik1zYAA",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 3360000,
+        "CreatedDate": "2026-09-03T05:31:14.000+0000",
+        "LastModifiedDate": "2026-09-03T05:32:13.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000iYtgf2AC"
+        },
+        "Id": "a0ARB00000iYtgf2AC",
+        "Name": "QT-000067",
+        "Oppotunity__c": "a08RB00001Z1G73YAF",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 1180000,
+        "CreatedDate": "2026-09-07T05:59:45.000+0000",
+        "LastModifiedDate": "2026-09-07T06:10:51.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000iaK5J2AU"
+        },
+        "Id": "a0ARB00000iaK5J2AU",
+        "Name": "QT-000068",
+        "Oppotunity__c": "a08RB00001Z1G7lYAF",
+        "Quotation_Status__c": "Draft",
+        "TotalAmount__c": 300000,
+        "CreatedDate": "2026-09-07T12:06:41.000+0000",
+        "LastModifiedDate": "2026-09-07T13:43:43.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000ivKv72AE"
+        },
+        "Id": "a0ARB00000ivKv72AE",
+        "Name": "QT-000069",
+        "Oppotunity__c": "a08RB00001n97X1YAI",
+        "Quotation_Status__c": null,
+        "TotalAmount__c": 8000,
+        "CreatedDate": "2026-09-11T02:07:00.000+0000",
+        "LastModifiedDate": "2026-09-11T02:08:53.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "Quotation__c",
+          "url": "/services/data/v67.0/sobjects/Quotation__c/a0ARB00000ivTiH2AU"
+        },
+        "Id": "a0ARB00000ivTiH2AU",
+        "Name": "QT-000070",
+        "Oppotunity__c": "a08RB00001n75N2YAI",
+        "Quotation_Status__c": "Accepted",
+        "TotalAmount__c": 2150400,
+        "CreatedDate": "2026-09-11T02:31:32.000+0000",
+        "LastModifiedDate": "2026-09-11T02:47:14.000+0000"
+      }
+    ],
+    "totalSize": 66,
+    "done": true
+  },
+  "warnings": []
+}

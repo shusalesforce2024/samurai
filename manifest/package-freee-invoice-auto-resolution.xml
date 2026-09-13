@@ -19,12 +19,21 @@
         <members>FreeeInvoiceContractProvisioningService</members>
         <members>FreeeInvoiceContractProvisionTest</members>
         <members>FreeeInvoiceService</members>
+        <members>FreeeInvoiceServiceTest</members>
+        <members>ContractClassBackfillService</members>
+        <members>ContractClassBackfillServiceTest</members>
         <members>Mig_FreeeInvoiceFinalizeService</members>
         <members>Mig_FreeeInvoiceMigrationTest</members>
         <members>Mig_FreeeInvoiceProductResolver</members>
         <members>Mig_FreeeInvoiceValidator</members>
         <members>Mig_FreeeInvoiceWorkService</members>
+        <members>ProductUnitPriceSyncService</members>
+        <members>ProductUnitPriceSyncServiceTest</members>
         <name>ApexClass</name>
+    </types>
+    <types>
+        <members>InvoiceLineTrigger</members>
+        <name>ApexTrigger</name>
     </types>
     <version>64.0</version>
 </Package>

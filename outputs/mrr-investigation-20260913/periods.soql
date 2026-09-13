@@ -1,0 +1,1 @@
+SELECT Id,Name,Contract__c,PeriodStartDate__c,PeriodEndDate__c,RelatedInvoice__c,CreatedDate FROM ContractPeriod__c

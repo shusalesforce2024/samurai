@@ -1,0 +1,90 @@
+{
+  "status": 0,
+  "result": {
+    "records": [
+      {
+        "attributes": {
+          "type": "FreeeInvoiceContractRule__c",
+          "url": "/services/data/v67.0/sobjects/FreeeInvoiceContractRule__c/a0GRB00000j3Wav2AE"
+        },
+        "Id": "a0GRB00000j3Wav2AE",
+        "Name": "Rendery Proプラン 月額共通ルール",
+        "Account__c": null,
+        "ProductMaster__c": "a0CRB0000CcXZ6Q2QW",
+        "AutoCreateAllowed__c": true,
+        "IsActive__c": true,
+        "Contract__c": null,
+        "BillingCycle__c": "Monthly",
+        "StartDate__c": null,
+        "EndDate__c": null
+      },
+      {
+        "attributes": {
+          "type": "FreeeInvoiceContractRule__c",
+          "url": "/services/data/v67.0/sobjects/FreeeInvoiceContractRule__c/a0GRB00000j3Waw2AE"
+        },
+        "Id": "a0GRB00000j3Waw2AE",
+        "Name": "[OLD] Rendery Enterpriseプラン(2025年9月まで) 月額共通ルール",
+        "Account__c": null,
+        "ProductMaster__c": "a0CRB0000CcXZ6T2QW",
+        "AutoCreateAllowed__c": true,
+        "IsActive__c": true,
+        "Contract__c": null,
+        "BillingCycle__c": "Monthly",
+        "StartDate__c": null,
+        "EndDate__c": null
+      },
+      {
+        "attributes": {
+          "type": "FreeeInvoiceContractRule__c",
+          "url": "/services/data/v67.0/sobjects/FreeeInvoiceContractRule__c/a0GRB00000j3Wax2AE"
+        },
+        "Id": "a0GRB00000j3Wax2AE",
+        "Name": "Rendery Enterpriseプラン 月額共通ルール",
+        "Account__c": null,
+        "ProductMaster__c": "a0CRB0000CcXZ6V2QW",
+        "AutoCreateAllowed__c": true,
+        "IsActive__c": true,
+        "Contract__c": null,
+        "BillingCycle__c": "Monthly",
+        "StartDate__c": null,
+        "EndDate__c": null
+      },
+      {
+        "attributes": {
+          "type": "FreeeInvoiceContractRule__c",
+          "url": "/services/data/v67.0/sobjects/FreeeInvoiceContractRule__c/a0GRB00000j3Way2AE"
+        },
+        "Id": "a0GRB00000j3Way2AE",
+        "Name": "knock knock AI Basicプラン(50クレジット) 月額共通ルール",
+        "Account__c": null,
+        "ProductMaster__c": "a0CRB0000CcXZ6i2QG",
+        "AutoCreateAllowed__c": true,
+        "IsActive__c": true,
+        "Contract__c": null,
+        "BillingCycle__c": "Monthly",
+        "StartDate__c": null,
+        "EndDate__c": null
+      },
+      {
+        "attributes": {
+          "type": "FreeeInvoiceContractRule__c",
+          "url": "/services/data/v67.0/sobjects/FreeeInvoiceContractRule__c/a0GRB00000jp5q92AA"
+        },
+        "Id": "a0GRB00000jp5q92AA",
+        "Name": "a0GRB00000jp5q9",
+        "Account__c": "001RB00001VTqgBYAT",
+        "ProductMaster__c": "a0CRB0000DxJR402QG",
+        "AutoCreateAllowed__c": true,
+        "IsActive__c": true,
+        "Contract__c": "a04RB00000nauInYAI",
+        "BillingCycle__c": "OneTime",
+        "StartDate__c": null,
+        "EndDate__c": null
+      }
+    ],
+    "totalSize": 5,
+    "done": true
+  },
+  "warnings": []
+}

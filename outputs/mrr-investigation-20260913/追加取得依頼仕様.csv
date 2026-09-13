@@ -1,0 +1,6 @@
+取得順,対象オブジェクト,取得項目,結合キー,用途,優先度,状態
+1,Invoice__c,Id;ParentContract__c;Amount__c;InvoiceDate__c,Contract__c,請求有無と契約紐付け確認,P0,CLI復旧待ち
+2,Quotation__c,Id;Oppotunity__c;Status__c;TotalAmount__c,Opportunity__c,正式見積・Accepted判定,P0,CLI復旧待ち
+3,QuotationLine__c,Id;Quotation__c;ProductMaster__c;Line_Amount__c,Quotation__c,商品別継続費用・初期費用判定,P0,CLI復旧待ち
+4,Mig_FreeeInvoiceWork__c,Id;Contract__c;FreeeInvoiceId__c;ImportStatus__c,Contract__c,移行由来・取込状態判定,P1,CLI復旧待ち
+5,Mig_FreeeInvoiceLineWork__c,Id;InvoiceWork__c;ContractLineItem__c;FreeeLineId__c,InvoiceWork__c,移行明細と月次明細の紐付け,P1,CLI復旧待ち

@@ -1,0 +1,1 @@
+SELECT Id,Name,ContractName__c,Account__c,Account__r.Name,Status__c,MRR__c,StartDate__c,EndDate__c,ContractUpdate__c,ProductCategory__c,Oppotunity__c,SourceQuotation__c,AutoCreatedFromFreee__c,CreationSource__c,BillingControlSource__c,RenewalStop__c,PreviousContract__c,CreatedDate,LastModifiedDate FROM Contract__c

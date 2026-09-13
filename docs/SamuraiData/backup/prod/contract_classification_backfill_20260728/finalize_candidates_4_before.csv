@@ -1,0 +1,5 @@
+﻿Id,Name,FreeeInvoiceId__c,BillingDate__c,ResolvedAccount__c,ResolvedContract__c,ResolvedContract__r.Name,ResolvedContractPeriod__c,ImportStatus__c,CreatedInvoice__c,ValidationMessage__c
+a0FRB00000aE0GN2A0,MFIW-000472,46403134,2025-12-19,001RB00001VTqmcYAD,a04RB00000kUAOdYAO,CN-00000065,a0BRB00000ynb6Y2AQ,要確認,,商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。
+a0FRB00000aCDG82AO,MFIW-000477,50683953,2026-01-29,001RB00001VTruMYAT,a04RB00000kUAOiYAO,CN-00000070,a0BRB00000ynb6d2AA,要確認,,商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。
+a0FRB00000aCDG92AO,MFIW-000478,50768284,2026-01-30,001RB00001VTqaIYAT,a04RB00000kUAPZYA4,CN-00000123,a0BRB00000ynn5R2AQ,要確認,,商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。
+a0FRB00000aDzP82AK,MFIW-000480,52182829,2026-02-20,001RB00001VTrwFYAT,a04RB00000kUAOlYAO,CN-00000073,a0BRB00000ynb6g2AA,要確認,,商品マスタが未確定の請求明細Workがあります。候補商品を確認し、商品マスタを確定してください。

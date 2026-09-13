@@ -1,0 +1,50 @@
+{
+  "status": 0,
+  "result": {
+    "records": [
+      {
+        "attributes": {
+          "type": "AsyncApexJob",
+          "url": "/services/data/v67.0/sobjects/AsyncApexJob/707RB00002Y5Z9YYAV"
+        },
+        "Id": "707RB00002Y5Z9YYAV",
+        "ApexClass": {
+          "attributes": {
+            "type": "ApexClass",
+            "url": "/services/data/v67.0/sobjects/ApexClass/01pRB00000BVymLYAT"
+          },
+          "Name": "ContractMonthlyLineBatch"
+        },
+        "JobType": "BatchApexWorker",
+        "Status": "Completed",
+        "CreatedDate": "2026-09-10T16:30:01.000+0000",
+        "CompletedDate": "2026-09-10T16:30:03.000+0000",
+        "NumberOfErrors": 1,
+        "ExtendedStatus": null
+      },
+      {
+        "attributes": {
+          "type": "AsyncApexJob",
+          "url": "/services/data/v67.0/sobjects/AsyncApexJob/707RB00002Y6F3GYAV"
+        },
+        "Id": "707RB00002Y6F3GYAV",
+        "ApexClass": {
+          "attributes": {
+            "type": "ApexClass",
+            "url": "/services/data/v67.0/sobjects/ApexClass/01pRB00000BVymLYAT"
+          },
+          "Name": "ContractMonthlyLineBatch"
+        },
+        "JobType": "BatchApex",
+        "Status": "Completed",
+        "CreatedDate": "2026-09-10T16:30:01.000+0000",
+        "CompletedDate": "2026-09-10T16:30:03.000+0000",
+        "NumberOfErrors": 1,
+        "ExtendedStatus": "First error: Insert failed. First exception on row 163; first error: STRING_TOO_LONG, 契約月次明細名: データ値が大きすぎる: アイリスオーヤマ株式会社(ストアソリューション営業部ストアデザインチーム) [OL..."
+      }
+    ],
+    "totalSize": 2,
+    "done": true
+  },
+  "warnings": []
+}

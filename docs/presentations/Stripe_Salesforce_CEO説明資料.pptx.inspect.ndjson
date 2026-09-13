@@ -1,0 +1,122 @@
+{"kind":"deck","id":"pr/7r8ng4","name":"Deck"}
+{"kind":"layout","layoutId":"e7ec9ef9-c152-4f5e-8f2b-f58c6c1cdbd0","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"91fefc6a-7a24-4bf9-b456-4d59bf2977ee","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/fbpv76","slide":1,"title":"CEOご説明資料","textShapes":9}
+{"kind":"shape","id":"sh/rq1wrqt0","slide":1,"name":"accent-field","bbox":[824,0,456,720]}
+{"kind":"shape","id":"sh/sraxkvul","slide":1,"name":"accent-bar","bbox":[824,0,20,720]}
+{"kind":"textbox","id":"sh/dsjetgb6","slide":1,"name":"kicker","text":"CEOご説明資料","textPreview":"CEOご説明資料","textChars":8,"textLines":1,"bbox":[58,62,460,40]}
+{"kind":"textbox","id":"sh/i18fe1cj","slide":1,"name":"cover-title","text":"Stripe請求データを\nSalesforceでMRR管理へ","textPreview":"Stripe請求データを | SalesforceでMRR管理へ","textChars":30,"textLines":2,"bbox":[58,155,700,180]}
+{"kind":"textbox","id":"sh/32hwn6d4","slide":1,"name":"subtitle","text":"月1回のCSV運用から始め、必要性を確認して自動化する段階導入","textPreview":"月1回のCSV運用から始め、必要性を確認して自動化する段階導入","textChars":31,"textLines":1,"bbox":[58,370,680,100]}
+{"kind":"textbox","id":"sh/4nqxgbu9","slide":1,"name":"client","text":"株式会社SAMURAI ARCHITECTS","textPreview":"株式会社SAMURAI ARCHITECTS","textChars":22,"textLines":1,"bbox":[58,600,550,35]}
+{"kind":"textbox","id":"sh/5ozepgbu","slide":1,"name":"date","text":"2026年8月24日","textPreview":"2026年8月24日","textChars":10,"textLines":1,"bbox":[58,642,300,28]}
+{"kind":"textbox","id":"sh/2xsfq5cn","slide":1,"name":"hero-number","text":"154,000円","textPreview":"154,000円","textChars":8,"textLines":1,"bbox":[872,220,330,90]}
+{"kind":"textbox","id":"sh/nylwzat8","slide":1,"name":"hero-label","text":"税込・想定28時間","textPreview":"税込・想定28時間","textChars":9,"textLines":1,"bbox":[872,312,330,42]}
+{"kind":"textbox","id":"sh/vmt43ex0","slide":1,"name":"hero-period","text":"8/24 → 9/30","textPreview":"8/24 → 9/30","textChars":11,"textLines":1,"bbox":[872,430,330,60]}
+{"kind":"textbox","id":"sh/ulk3u9wf","slide":1,"name":"hero-label2","text":"検証を含む導入期間","textPreview":"検証を含む導入期間","textChars":9,"textLines":1,"bbox":[872,494,330,38]}
+{"kind":"notes","id":"nt/fbpv76","slide":1,"text":"本資料の目的は、初期投資を抑えて商品別・月別MRRを把握する導入案について、経営判断をいただくことです。\n\n[Sources]\n- C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\docs\\contracts\\Stripe_CSV_Salesforce投入_見積書_ドラフト.docx\n- C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\docs\\contracts\\Stripe_CSV_Salesforce投入_業務委託契約書_ドラフト.docx"}
+{"kind":"slide","id":"sl/ymg7x2","slide":2,"title":"結論：まず月1回のCSV運用で、MRR把握を実現します","textShapes":13}
+{"kind":"textbox","id":"sh/0j6twva1","slide":2,"name":"title","text":"結論：まず月1回のCSV運用で、MRR把握を実現します","textPreview":"結論：まず月1回のCSV運用で、MRR把握を実現します","textChars":27,"textLines":1,"bbox":[54,35,1160,84]}
+{"kind":"textbox","id":"sh/fixc3q9g","slide":2,"name":"page","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1190,668,42,20]}
+{"kind":"textbox","id":"sh/ehobulsv","slide":2,"name":"lead","text":"常時API連携を先に作らず、実データで必要性を確認してから拡張します。","textPreview":"常時API連携を先に作らず、実データで必要性を確認してから拡張します。","textChars":35,"textLines":1,"bbox":[58,130,1120,62]}
+{"kind":"shape","id":"sh/p8fu90ri","slide":2,"name":"pillar-0","bbox":[58,240,340,300]}
+{"kind":"textbox","id":"sh/on6t0vqx","slide":2,"name":"num-0","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[82,262,75,46]}
+{"kind":"textbox","id":"sh/nmxc7q9c","slide":2,"name":"head-0","text":"早く始める","textPreview":"早く始める","textChars":5,"textLines":1,"bbox":[82,330,285,48]}
+{"kind":"textbox","id":"sh/2lobyl87","slide":2,"name":"body-0","text":"8/24～9/30\n約5週間で整備・検証","textPreview":"8/24～9/30 | 約5週間で整備・検証","textChars":20,"textLines":2,"bbox":[82,395,285,100]}
+{"kind":"shape","id":"sh/xczudkru","slide":2,"name":"pillar-1","bbox":[455,240,340,300]}
+{"kind":"textbox","id":"sh/cbqt4fq9","slide":2,"name":"num-1","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[479,262,75,46]}
+{"kind":"textbox","id":"sh/a5s72hwj","slide":2,"name":"head-1","text":"安全に取り込む","textPreview":"安全に取り込む","textChars":7,"textLines":1,"bbox":[479,330,285,48]}
+{"kind":"textbox","id":"sh/v618vmx4","slide":2,"name":"body-1","text":"Stripe IDでUpsert\n重複と誤更新を防止","textPreview":"Stripe IDでUpsert | 重複と誤更新を防止","textChars":26,"textLines":2,"bbox":[479,395,285,100]}
+{"kind":"shape","id":"sh/wrap47ep","slide":2,"name":"pillar-2","bbox":[852,240,340,300]}
+{"kind":"textbox","id":"sh/xsjqxcfu","slide":2,"name":"num-2","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[876,262,75,46]}
+{"kind":"textbox","id":"sh/itcr6hwf","slide":2,"name":"head-2","text":"必要な分だけ拡張","textPreview":"必要な分だけ拡張","textChars":8,"textLines":1,"bbox":[876,330,285,48]}
+{"kind":"textbox","id":"sh/jul8zmx0","slide":2,"name":"body-2","text":"例外が多い場合のみ\nAPI／Webhookを追加","textPreview":"例外が多い場合のみ | API／Webhookを追加","textChars":24,"textLines":2,"bbox":[876,395,285,100]}
+{"kind":"shape","id":"sh/kvu98rel","slide":2,"name":"outcome","bbox":[58,580,1134,66]}
+{"kind":"textbox","id":"sh/5w3q1wf6","slide":2,"name":"outcome-text","text":"到達点：Stripeと請求情報を合わせた「商品別・月別MRR」をSalesforceで確認できる","textPreview":"到達点：Stripeと請求情報を合わせた「商品別・月別MRR」をSalesforceで確認できる","textChars":48,"textLines":1,"bbox":[84,592,1080,42]}
+{"kind":"notes","id":"nt/ymg7x2","slide":2,"text":"提案の中核は段階導入です。初期は月1回の手動運用で、重複防止と照合を優先します。\n\n[Sources]\n- C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\docs\\contracts\\Stripe_CSV_Salesforce投入_見積書_ドラフト.docx\n- C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\docs\\contracts\\Stripe_CSV_Salesforce投入_業務委託契約書_ドラフト.docx"}
+{"kind":"slide","id":"sl/b9w0bn","slide":3,"title":"運用は4ステップ。Salesforceを経営管理の起点にします","textShapes":21}
+{"kind":"textbox","id":"sh/o76lkrmt","slide":3,"name":"title","text":"運用は4ステップ。Salesforceを経営管理の起点にします","textPreview":"運用は4ステップ。Salesforceを経営管理の起点にします","textChars":31,"textLines":1,"bbox":[54,35,1160,84]}
+{"kind":"textbox","id":"sh/36x4bm58","slide":3,"name":"page","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1190,668,42,20]}
+{"kind":"textbox","id":"sh/25o3ih4n","slide":3,"name":"lead","text":"Stripeは決済状態、Salesforceは契約・請求・MRRを管理します。","textPreview":"Stripeは決済状態、Salesforceは契約・請求・MRRを管理します。","textChars":39,"textLines":1,"bbox":[58,126,980,48]}
+{"kind":"shape","id":"sh/14fm9cn2","slide":3,"name":"connector-0","bbox":[312,326,48,6]}
+{"kind":"shape","id":"sh/g36lg7mx","slide":3,"name":"step-0","bbox":[58,230,250,245]}
+{"kind":"textbox","id":"sh/f2x4725c","slide":3,"name":"stepnum-0","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[78,248,52,52]}
+{"kind":"shape","id":"sh/e1o3ex4r","slide":3,"name":"stepbadge-0","bbox":[78,248,52,52]}
+{"kind":"textbox","id":"sh/t0vm5cn6","slide":3,"name":"stepnumtop-0","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[78,248,52,52]}
+{"kind":"textbox","id":"sh/szmlc7ml","slide":3,"name":"steph-0","text":"Stripe CSV出力","textPreview":"Stripe CSV出力","textChars":12,"textLines":1,"bbox":[78,325,208,62]}
+{"kind":"textbox","id":"sh/qdc7edkv","slide":3,"name":"stepb-0","text":"顧客・契約・請求・決済","textPreview":"顧客・契約・請求・決済","textChars":11,"textLines":1,"bbox":[78,395,208,56]}
+{"kind":"shape","id":"sh/relo7il0","slide":3,"name":"connector-1","bbox":[604,326,48,6]}
+{"kind":"shape","id":"sh/sfupg32l","slide":3,"name":"step-1","bbox":[350,230,250,245]}
+{"kind":"textbox","id":"sh/dg369836","slide":3,"name":"stepnum-1","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[370,248,52,52]}
+{"kind":"shape","id":"sh/i9snat4j","slide":3,"name":"stepbadge-1","bbox":[370,248,52,52]}
+{"kind":"textbox","id":"sh/3alo3yl4","slide":3,"name":"stepnumtop-1","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[370,248,52,52]}
+{"kind":"textbox","id":"sh/4bu5c32p","slide":3,"name":"steph-1","text":"Excel変換・検証","textPreview":"Excel変換・検証","textChars":10,"textLines":1,"bbox":[370,325,208,62]}
+{"kind":"textbox","id":"sh/5c36583a","slide":3,"name":"stepb-1","text":"商品・金額・例外を確認","textPreview":"商品・金額・例外を確認","textChars":11,"textLines":1,"bbox":[370,395,208,56]}
+{"kind":"shape","id":"sh/ulsn6t4n","slide":3,"name":"connector-2","bbox":[896,326,48,6]}
+{"kind":"shape","id":"sh/vm1ozyl8","slide":3,"name":"step-2","bbox":[642,230,250,245]}
+{"kind":"textbox","id":"sh/zexcrqxo","slide":3,"name":"stepnum-2","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[662,248,52,52]}
+{"kind":"shape","id":"sh/yd4bilw3","slide":3,"name":"stepbadge-2","bbox":[662,248,52,52]}
+{"kind":"textbox","id":"sh/lgfut0fe","slide":3,"name":"stepnumtop-2","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[662,248,52,52]}
+{"kind":"textbox","id":"sh/kf6dkve9","slide":3,"name":"steph-2","text":"Data Loader Upsert","textPreview":"Data Loader Upsert","textChars":18,"textLines":1,"bbox":[662,325,208,62]}
+{"kind":"textbox","id":"sh/72xcvaxk","slide":3,"name":"stepb-2","text":"外部IDで重複を防止","textPreview":"外部IDで重複を防止","textChars":10,"textLines":1,"bbox":[662,395,208,56]}
+{"kind":"shape","id":"sh/mhovm5wz","slide":3,"name":"step-3","bbox":[934,230,250,245]}
+{"kind":"textbox","id":"sh/94fux0fq","slide":3,"name":"stepnum-3","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[954,248,52,52]}
+{"kind":"shape","id":"sh/836dofe5","slide":3,"name":"stepbadge-3","bbox":[954,248,52,52]}
+{"kind":"textbox","id":"sh/36dcj6xg","slide":3,"name":"stepnumtop-3","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[954,248,52,52]}
+{"kind":"textbox","id":"sh/2lkba1gv","slide":3,"name":"steph-3","text":"Salesforce照合","textPreview":"Salesforce照合","textChars":12,"textLines":1,"bbox":[954,325,208,62]}
+{"kind":"textbox","id":"sh/sri9k7et","slide":3,"name":"stepb-3","text":"件数・金額・MRRを確認","textPreview":"件数・金額・MRRを確認","textChars":12,"textLines":1,"bbox":[954,395,208,56]}
+{"kind":"textbox","id":"sh/tcradcve","slide":3,"name":"scope-label","text":"初期対象外","textPreview":"初期対象外","textChars":5,"textLines":1,"bbox":[58,540,180,34]}
+{"kind":"textbox","id":"sh/6p0rixwn","slide":3,"name":"scope","text":"常時API連携 ／ Webhook ／ 決済履歴専用オブジェクト ／ Contact・Opportunityの自動作成","textPreview":"常時API連携 ／ Webhook ／ 決済履歴専用オブジェクト ／ Contact・Opportunityの自動作成","textChars":59,"textLines":1,"bbox":[58,580,1120,56]}
+{"kind":"notes","id":"nt/b9w0bn","slide":3,"text":"毎月同じ手順でCSVを取り込み、成功・エラーCSVを保存します。曖昧な名寄せや金額不一致は自動反映しません。\n\n[Sources]\n- C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\docs\\contracts\\Stripe_CSV_Salesforce投入_見積書_ドラフト.docx\n- C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\docs\\contracts\\Stripe_CSV_Salesforce投入_業務委託契約書_ドラフト.docx"}
+{"kind":"slide","id":"sl/36qnl2","slide":4,"title":"投資は154,000円。28時間で設定・運用・検証まで含みます","textShapes":18}
+{"kind":"textbox","id":"sh/ih03eh0z","slide":4,"name":"title","text":"投資は154,000円。28時間で設定・運用・検証まで含みます","textPreview":"投資は154,000円。28時間で設定・運用・検証まで含みます","textChars":31,"textLines":1,"bbox":[54,35,1160,84]}
+{"kind":"textbox","id":"sh/5kbm9wzq","slide":4,"name":"page","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1190,668,42,20]}
+{"kind":"textbox","id":"sh/kjilgri5","slide":4,"name":"lead","text":"追加開発は、実データで必要性が確認された場合のみ別途判断します。","textPreview":"追加開発は、実データで必要性が確認された場合のみ別途判断します。","textChars":32,"textLines":1,"bbox":[58,126,1080,48]}
+{"kind":"shape","id":"sh/be94321o","slide":4,"name":"m-0","bbox":[58,210,350,150]}
+{"kind":"textbox","id":"sh/ad03ah03","slide":4,"name":"mv-0","text":"154,000円","textPreview":"154,000円","textChars":8,"textLines":1,"bbox":[76,235,314,60]}
+{"kind":"textbox","id":"sh/xgrm5cje","slide":4,"name":"ml-0","text":"税込総額","textPreview":"税込総額","textChars":4,"textLines":1,"bbox":[76,304,314,32]}
+{"kind":"shape","id":"sh/wfilc7i9","slide":4,"name":"m-1","bbox":[455,210,350,150]}
+{"kind":"textbox","id":"sh/fat4f6hs","slide":4,"name":"mv-1","text":"28時間","textPreview":"28時間","textChars":4,"textLines":1,"bbox":[473,235,314,60]}
+{"kind":"textbox","id":"sh/u9knm107","slide":4,"name":"ml-1","text":"想定工数","textPreview":"想定工数","textChars":4,"textLines":1,"bbox":[473,304,314,32]}
+{"kind":"shape","id":"sh/wruhc3uh","slide":4,"name":"m-2","bbox":[852,210,350,150]}
+{"kind":"textbox","id":"sh/hs3i58b2","slide":4,"name":"mv-2","text":"約5週間","textPreview":"約5週間","textChars":4,"textLines":1,"bbox":[870,235,314,60]}
+{"kind":"textbox","id":"sh/a5czatcb","slide":4,"name":"ml-2","text":"8/24～9/30","textPreview":"8/24～9/30","textChars":9,"textLines":1,"bbox":[870,304,314,32]}
+{"kind":"textbox","id":"sh/vql03ytw","slide":4,"name":"work-0","text":"Salesforce設定","textPreview":"Salesforce設定","textChars":12,"textLines":1,"bbox":[72,410,430,34]}
+{"kind":"shape","id":"sh/83uh83ul","slide":4,"name":"barbg-0","bbox":[520,416,560,20]}
+{"kind":"shape","id":"sh/943y18bq","slide":4,"name":"bar-0","bbox":[520,416,420,20]}
+{"kind":"textbox","id":"sh/m1cz6tcf","slide":4,"name":"hour-0","text":"6h","textPreview":"6h","textChars":2,"textLines":1,"bbox":[1100,410,70,32]}
+{"kind":"textbox","id":"sh/n2lgzyt0","slide":4,"name":"work-1","text":"Excelテンプレート","textPreview":"Excelテンプレート","textChars":11,"textLines":1,"bbox":[72,460,430,34]}
+{"kind":"shape","id":"sh/0zah4ju9","slide":4,"name":"barbg-1","bbox":[520,466,560,20]}
+{"kind":"shape","id":"sh/l0jyxobu","slide":4,"name":"bar-1","bbox":[520,466,560,20]}
+{"kind":"textbox","id":"sh/1kb6lgjm","slide":4,"name":"hour-1","text":"8h","textPreview":"8h","textChars":2,"textLines":1,"bbox":[1100,460,70,32]}
+{"kind":"textbox","id":"sh/gji5cbi1","slide":4,"name":"work-2","text":"Data Loader・手順書","textPreview":"Data Loader・手順書","textChars":15,"textLines":1,"bbox":[72,510,430,34]}
+{"kind":"shape","id":"sh/fi9oj61g","slide":4,"name":"barbg-2","bbox":[520,516,560,20]}
+{"kind":"shape","id":"sh/eh0nal0v","slide":4,"name":"bar-2","bbox":[520,516,420,20]}
+{"kind":"textbox","id":"sh/tgr6hgja","slide":4,"name":"hour-2","text":"6h","textPreview":"6h","textChars":2,"textLines":1,"bbox":[1100,510,70,32]}
+{"kind":"textbox","id":"sh/sfi58bip","slide":4,"name":"work-3","text":"Sandbox試験・照合","textPreview":"Sandbox試験・照合","textChars":12,"textLines":1,"bbox":[72,560,430,34]}
+{"kind":"shape","id":"sh/re9of614","slide":4,"name":"barbg-3","bbox":[520,566,560,20]}
+{"kind":"shape","id":"sh/6d0n610z","slide":4,"name":"bar-3","bbox":[520,566,560,20]}
+{"kind":"textbox","id":"sh/dcv6t0ze","slide":4,"name":"hour-3","text":"8h","textPreview":"8h","textChars":2,"textLines":1,"bbox":[1100,560,70,32]}
+{"kind":"textbox","id":"sh/cbmpkvi9","slide":4,"name":"add","text":"条件付き追加：Invoice Lines API取得 8～16時間","textPreview":"条件付き追加：Invoice Lines API取得 8～16時間","textChars":33,"textLines":1,"bbox":[72,628,760,32]}
+{"kind":"notes","id":"nt/36qnl2","slide":4,"text":"費用内訳は設定6時間、Excel8時間、Data Loader・手順書6時間、Sandbox試験8時間です。\n\n[Sources]\n- C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\docs\\contracts\\Stripe_CSV_Salesforce投入_見積書_ドラフト.docx\n- C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\docs\\contracts\\Stripe_CSV_Salesforce投入_業務委託契約書_ドラフト.docx"}
+{"kind":"slide","id":"sl/97o2il","slide":5,"title":"承認前に確認するのは3点。問題があれば実装前に止めます","textShapes":16}
+{"kind":"textbox","id":"sh/q9szudsb","slide":5,"name":"title","text":"承認前に確認するのは3点。問題があれば実装前に止めます","textPreview":"承認前に確認するのは3点。問題があれば実装前に止めます","textChars":27,"textLines":1,"bbox":[54,35,1160,84]}
+{"kind":"textbox","id":"sh/dwjip8rm","slide":5,"name":"page","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1190,668,42,20]}
+{"kind":"textbox","id":"sh/svahw3a1","slide":5,"name":"lead","text":"高リスク項目はSandboxで確認し、方式変更・追加費用は事前承認制とします。","textPreview":"高リスク項目はSandboxで確認し、方式変更・追加費用は事前承認制とします。","textChars":39,"textLines":1,"bbox":[58,126,1120,48]}
+{"kind":"shape","id":"sh/36hgjy9k","slide":5,"name":"risk-0","bbox":[58,205,1134,92]}
+{"kind":"textbox","id":"sh/i58zqtsz","slide":5,"name":"riskno-0","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[78,225,56,45]}
+{"kind":"textbox","id":"sh/58zil8rq","slide":5,"name":"riskh-0","text":"複雑な請求明細","textPreview":"複雑な請求明細","textChars":7,"textLines":1,"bbox":[150,219,280,34]}
+{"kind":"textbox","id":"sh/47qhs3a5","slide":5,"name":"riskq-0","text":"割引・日割り・返金等がCSVで再現できるか","textPreview":"割引・日割り・返金等がCSVで再現できるか","textChars":21,"textLines":1,"bbox":[450,219,430,58]}
+{"kind":"textbox","id":"sh/v2hgfy98","slide":5,"name":"riska-0","text":"例外が多い場合のみAPI追加","textPreview":"例外が多い場合のみAPI追加","textChars":14,"textLines":1,"bbox":[900,219,265,58]}
+{"kind":"shape","id":"sh/u18zmts3","slide":5,"name":"risk-1","bbox":[58,321,1134,92]}
+{"kind":"textbox","id":"sh/s3u5gbud","slide":5,"name":"riskno-1","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[78,341,56,45]}
+{"kind":"textbox","id":"sh/d43mpgvy","slide":5,"name":"riskh-1","text":"請求だけでMRR管理","textPreview":"請求だけでMRR管理","textChars":10,"textLines":1,"bbox":[150,335,280,34]}
+{"kind":"textbox","id":"sh/q1c3e1c7","slide":5,"name":"riskq-1","text":"既存MRRと対象月の集計が一致するか","textPreview":"既存MRRと対象月の集計が一致するか","textChars":18,"textLines":1,"bbox":[450,335,430,58]}
+{"kind":"textbox","id":"sh/r2l4n6ds","slide":5,"name":"riska-1","text":"不一致なら月次明細を追加","textPreview":"不一致なら月次明細を追加","textChars":12,"textLines":1,"bbox":[900,335,265,58]}
+{"kind":"shape","id":"sh/4zulcruh","slide":5,"name":"risk-2","bbox":[58,437,1134,92]}
+{"kind":"textbox","id":"sh/503mlwvm","slide":5,"name":"riskno-2","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[78,457,56,45]}
+{"kind":"textbox","id":"sh/ixc3ahcb","slide":5,"name":"riskh-2","text":"既存Freee処理の除外","textPreview":"既存Freee処理の除外","textChars":12,"textLines":1,"bbox":[150,451,280,34]}
+{"kind":"textbox","id":"sh/3yl4jmdw","slide":5,"name":"riskq-2","text":"Stripe契約を既存自動化から除外できるか","textPreview":"Stripe契約を既存自動化から除外できるか","textChars":22,"textLines":1,"bbox":[450,451,430,58]}
+{"kind":"textbox","id":"sh/ove5ovul","slide":5,"name":"riska-2","text":"改修が必要なら別途見積り","textPreview":"改修が必要なら別途見積り","textChars":12,"textLines":1,"bbox":[900,451,265,58]}
+{"kind":"shape","id":"sh/pw7mx0v6","slide":5,"name":"askbar","bbox":[58,584,1134,76]}
+{"kind":"textbox","id":"sh/xs3mhgna","slide":5,"name":"ask","text":"ご承認事項：154,000円（税込）・8/24～9/30で、検証付きの初期導入に着手","textPreview":"ご承認事項：154,000円（税込）・8/24～9/30で、検証付きの初期導入に着手","textChars":42,"textLines":1,"bbox":[78,597,1094,48]}
+{"kind":"notes","id":"nt/97o2il","slide":5,"text":"経営判断としては初期導入への着手承認をお願いします。高リスク3点は実装前に確認し、追加費用が発生する場合は事前に提示します。\n\n[Sources]\n- C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\docs\\contracts\\Stripe_CSV_Salesforce投入_見積書_ドラフト.docx\n- C:\\Users\\ShuKawanami(川波嵩)\\OneDrive - 株式会社Dirbato\\ドキュメント\\Samurai\\samurai\\docs\\contracts\\Stripe_CSV_Salesforce投入_業務委託契約書_ドラフト.docx"}

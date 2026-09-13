@@ -1,0 +1,106 @@
+{
+  "current": {
+    "2026-04": {
+      "Rows": 57,
+      "Total": "2682584",
+      "MRRFlagRevenue": "775000",
+      "NonMRRTotal": "1907584",
+      "InitialTotal": "0",
+      "DraftTotal": "0",
+      "MigrationTotal": "0",
+      "NoProductTotal": "603584"
+    },
+    "2026-06": {
+      "Rows": 90,
+      "Total": "5421484",
+      "MRRFlagRevenue": "1669500",
+      "NonMRRTotal": "3751984",
+      "InitialTotal": "0",
+      "DraftTotal": "0",
+      "MigrationTotal": "0",
+      "NoProductTotal": "792584"
+    },
+    "2026-07": {
+      "Rows": 77,
+      "Total": "5079636.5",
+      "MRRFlagRevenue": "1365000",
+      "NonMRRTotal": "3714636.5",
+      "InitialTotal": "0",
+      "DraftTotal": "0",
+      "MigrationTotal": "0",
+      "NoProductTotal": "975584"
+    },
+    "2026-08": {
+      "Rows": 89,
+      "Total": "6232000",
+      "MRRFlagRevenue": "2300000",
+      "NonMRRTotal": "3932000",
+      "InitialTotal": "0",
+      "DraftTotal": "0",
+      "MigrationTotal": "0",
+      "NoProductTotal": "981000"
+    },
+    "2026-09": {
+      "Rows": 9,
+      "Total": "576000",
+      "MRRFlagRevenue": "8000",
+      "NonMRRTotal": "568000",
+      "InitialTotal": "0",
+      "DraftTotal": "0",
+      "MigrationTotal": "0",
+      "NoProductTotal": "498000"
+    }
+  },
+  "total": {
+    "2026-04": {
+      "Rows": 57,
+      "Total": "5354000",
+      "MRRFlagRevenue": "799000",
+      "NonMRRTotal": "4555000",
+      "InitialTotal": "0",
+      "DraftTotal": "3219000",
+      "MigrationTotal": "3219000",
+      "NoProductTotal": "0"
+    },
+    "2026-06": {
+      "Rows": 93,
+      "Total": "5431900",
+      "MRRFlagRevenue": "1936500",
+      "NonMRRTotal": "3495400",
+      "InitialTotal": "0",
+      "DraftTotal": "607000",
+      "MigrationTotal": "607000",
+      "NoProductTotal": "0"
+    },
+    "2026-07": {
+      "Rows": 82,
+      "Total": "5741000",
+      "MRRFlagRevenue": "2901000",
+      "NonMRRTotal": "2840000",
+      "InitialTotal": "0",
+      "DraftTotal": "1555000",
+      "MigrationTotal": "0",
+      "NoProductTotal": "0"
+    },
+    "2026-08": {
+      "Rows": 128,
+      "Total": "7060400",
+      "MRRFlagRevenue": "3821000",
+      "NonMRRTotal": "3239400",
+      "InitialTotal": "100000",
+      "DraftTotal": "1562400",
+      "MigrationTotal": "0",
+      "NoProductTotal": "0"
+    },
+    "2026-09": {
+      "Rows": 22,
+      "Total": "1118400",
+      "MRRFlagRevenue": "260000",
+      "NonMRRTotal": "858400",
+      "InitialTotal": "350000",
+      "DraftTotal": "996400",
+      "MigrationTotal": "0",
+      "NoProductTotal": "0"
+    }
+  }
+}

@@ -1,0 +1,3 @@
+Id,Name,Description__c,Quantity__c,UnitPrice__c,LineAmount__c,ConfirmedProductMaster__c,ResolveMessage__c,ImportStatus__c
+a0ERB00000PISaq2AH,MFILW-000537,Rendery Enterpriseプラン_年払い,120,14000,1680000,a0CRB0000CcXZ6Z2QW,年払い明細のため、請求タイミングが「年一括」の商品マスタへ確定しました。,取得済み
+a0ERB00000PISar2AH,MFILW-000538,セキュリティオプション(シングルサインオン)月額費用,12,30000,360000,,No ProductMaster candidate found.,取得済み

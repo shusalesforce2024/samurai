@@ -1,0 +1,1 @@
+SELECT Id,Name,MRR_Target__c,ProductType__c,BillingTiming__c,AnnualMonthlyPrice__c FROM ProductMaster__c

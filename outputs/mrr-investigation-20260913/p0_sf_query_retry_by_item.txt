@@ -1,0 +1,6 @@
+Salesforce追加取得再試行（2026-09-13）
+Invoice__c: 失敗。SF_LOG_LEVEL=off はpino設定エラー（default level off must be included in custom levels）。
+Quotation__c: 未実行。CLI共通ログ初期化失敗が想定されるため。
+QuotationLine__c: 未実行。CLI共通ログ初期化失敗が想定されるため。
+代替: 既存contracts.json/monthly.json/invoices.jsonから契約・月次・商品・請求IDを26件紐付け済み。見積・Freee移行IDは未取得。
+本番更新: なし

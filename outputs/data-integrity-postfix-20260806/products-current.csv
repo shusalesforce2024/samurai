@@ -1,0 +1,50 @@
+Id,Name,MRR_Target__c,ARR_Target__c,ProductType__c,BillingTiming__c
+a0CRB0000CcXZ6P2QW,Rendery Basicプラン,true,true,継続費用,毎月
+a0CRB0000CcXZ6Q2QW,Rendery Proプラン,true,true,継続費用,毎月
+a0CRB0000CcXZ6R2QW,[代理販売20%] Rendery Proプラン,true,true,継続費用,毎月
+a0CRB0000CcXZ6S2QW,[年払_代理販売20%] Rendery Proプランネンバライ,false,true,継続費用,年一括
+a0CRB0000CcXZ6T2QW,[OLD] Rendery Enterpriseプラン(2025年9月まで),true,true,継続費用,毎月
+a0CRB0000CcXZ6U2QW,[OLD_年払]Rendery Enterpriseプラン(2025年9月まで),true,true,継続費用,毎月
+a0CRB0000CcXZ6V2QW,Rendery Enterpriseプラン,true,true,継続費用,毎月
+a0CRB0000CcXZ6W2QW,[代理販売20%] Rendery Enterpriseプラン,true,true,継続費用,毎月
+a0CRB0000CcXZ6X2QW,[年払] Rendery Enterpriseプラン　※MRR計上用,true,true,継続費用,毎月
+a0CRB0000CcXZ6Y2QW,代理販売20%] Rendery Enterpriseプラン,false,true,継続費用,年一括
+a0CRB0000CcXZ6Z2QW,[年払] Rendery Enterpriseプラン,false,true,継続費用,年一括
+a0CRB0000CcXZ6a2QG,Rendery セキュリティオプション(SSO)_初期費用,false,true,初期費用,初回のみ
+a0CRB0000CcXZ6b2QG,Rendery セキュリティオプション(SSO)_運用費用,true,true,オプション,毎月
+a0CRB0000CcXZ6c2QG,Rendery セキュリティオプション(IP制限)_初期費用,false,true,初期費用,初回のみ
+a0CRB0000CcXZ6d2QG,Rendery セキュリティオプション(IP制限)_運用費用,true,true,オプション,毎月
+a0CRB0000CcXZ6e2QG,Rendery セキュリティオプション(ドメイン制限)_初期費用,false,true,初期費用,初回のみ
+a0CRB0000CcXZ6f2QG,Rendery セキュリティオプション(ドメイン制限)_運用費用,true,true,オプション,毎月
+a0CRB0000CcXZ6g2QG,Rendery セキュリティオプション+_初期費用,false,true,初期費用,初回のみ
+a0CRB0000CcXZ6h2QG,Rendery セキュリティオプション+_運用費用,true,true,オプション,毎月
+a0CRB0000CcXZ6i2QG,knock knock AI Basicプラン(50クレジット),true,true,継続費用,毎月
+a0CRB0000CcXZ6j2QG,knock knock AI Proプラン(300クレジット),true,true,継続費用,毎月
+a0CRB0000CcXZ6k2QG,[月払] knock knock AI Enterpriseプラン 500クレジット,true,true,継続費用,毎月
+a0CRB0000CcXZ6l2QG,[月払] knock knock AI Enterpriseプラン 600クレジット,true,true,継続費用,毎月
+a0CRB0000CcXZ6m2QG,[月払] knock knock AI Enterpriseプラン 700クレジット,true,true,継続費用,毎月
+a0CRB0000CcXZ6n2QG,[月払] knock knock AI Enterpriseプラン 800クレジット,true,true,継続費用,毎月
+a0CRB0000CcXZ6o2QG,[月払] knock knock AI Enterpriseプラン 900クレジット,true,true,継続費用,毎月
+a0CRB0000CcXZ6p2QG,[月払] knock knock AI Enterpriseプラン 1000クレジット,true,true,継続費用,毎月
+a0CRB0000CcXZ6q2QG,[年払] knock knock AI Enterpriseプラン 500クレジット,true,true,継続費用,年一括
+a0CRB0000CcXZ6r2QG,[年払] knock knock AI Enterpriseプラン 600クレジット,true,true,継続費用,年一括
+a0CRB0000CcXZ6s2QG,[年払] knock knock AI Enterpriseプラン 700クレジット,true,true,継続費用,年一括
+a0CRB0000CcXZ6t2QG,[年払] knock knock AI Enterpriseプラン 800クレジット,true,true,継続費用,年一括
+a0CRB0000CcXZ6u2QG,[年払] knock knock AI Enterpriseプラン 900クレジット,true,true,継続費用,年一括
+a0CRB0000CcXZ6v2QG,[年払] knock knock AI Enterpriseプラン 1000クレジット,true,true,継続費用,年一括
+a0CRB0000CcXZ6w2QG,knock knock AI 都度払い,false,true,初期費用,初回のみ
+a0CRB0000CcXZ6x2QG,受託開発,false,true,初期費用,初回のみ
+a0CRB0000Ck3ReH2QU,Rendery_Enterpriseプラン,false,false,継続費用,毎月
+a0CRB0000CkDPuP2QW,Rendery_Enterpriseプラン＿セキュリティオプション+（月額）,false,false,継続費用,毎月
+a0CRB0000DWnXFo2QN,VISIOAL,false,false,初期費用,初回のみ
+a0CRB0000DaCRfV2QW,[月払] knock knock AI Enterpriseプラン 1100クレジット,true,true,継続費用,毎月
+a0CRB0000DeL3CL2Q0,VISIOAL_Basicプラン,false,false,,初回のみ
+a0CRB0000DeLaE72QK,確認タイミング追加,false,false,,
+a0CRB0000DeNntf2QC,追加修正,false,false,,
+a0CRB0000DeNxPu2QK,既存写真との整合（敷地）,false,false,,
+a0CRB0000DeOKkf2QG,詳細整合（インテリア）,false,false,,
+a0CRB0000DeVodR2QS,イレギュラー費用,false,false,,
+a0CRB0000Dgrzsx2QA,[月払] knock knock AI Enterpriseプラン 200クレジット,true,true,継続費用,毎月
+a0CRB0000Dgv0pF2QQ,[月払] knock knock AI Enterpriseプラン 2000クレジット,true,true,継続費用,毎月
+a0CRB0000Dgv0pG2QQ,[年払] knock knock AI Enterpriseプラン 2000クレジット,true,true,継続費用,年一括
+a0CRB0000DvLUX92QO,Rendery 初回レクチャー,false,false,オプション,初回のみ

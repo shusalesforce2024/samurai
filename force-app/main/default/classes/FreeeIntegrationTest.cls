@@ -139,6 +139,11 @@ private class FreeeIntegrationTest {
 
     @isTest
     static void quotationMapperBuildsExpectedJson() {
+        User currentUser = [
+            SELECT Id, Name
+            FROM User
+            WHERE Id = :UserInfo.getUserId()
+        ];
         Quotation__c quotationRecord = new Quotation__c(
             Account__r = new Account(Freee_Partner_Id__c = 777),
             Issue_Date__c = Date.newInstance(2026, 5, 2),
@@ -147,6 +152,7 @@ private class FreeeIntegrationTest {
             Memo__c = 'Quotation memo',
             QuotationNote__c = 'Customer-facing quotation note'
         );
+        quotationRecord.putSObject('Owner', currentUser);
         List<QuotationLine__c> lines = new List<QuotationLine__c>{
             new QuotationLine__c(
                 Description__c = 'Quoted service',
@@ -171,6 +177,7 @@ private class FreeeIntegrationTest {
         System.assertEquals('98765', String.valueOf(parsed.get('template_id')));
         System.assertEquals('777', String.valueOf(parsed.get('partner_id')));
         System.assertEquals('2026-05-02', parsed.get('quotation_date'));
+        System.assertEquals(currentUser.Name, parsed.get('company_contact_name'));
         System.assertEquals('Quotation memo', parsed.get('memo'));
         System.assertEquals('Customer-facing quotation note', parsed.get('quotation_note'));
         System.assertEquals('月', firstLine.get('unit'));

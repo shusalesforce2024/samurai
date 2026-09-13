@@ -1,0 +1,3052 @@
+{
+  "status": 0,
+  "result": {
+    "records": [
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001NPxIUYA1"
+        },
+        "Id": "08eRB00001NPxIUYA1",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001NPwuIYAT"
+          },
+          "Name": "SRT Semantic Graph Edge Update Job for Org : 00Dd500000DrM69"
+        },
+        "CronExpression": "57 40 1 ? FEB,JUN,OCT 2#3",
+        "State": "WAITING",
+        "PreviousFireTime": "2026-06-15T08:41:03.747+0000",
+        "NextFireTime": "2026-10-19T08:40:57.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001NPxIVYA1"
+        },
+        "Id": "08eRB00001NPxIVYA1",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001NPwuJYAT"
+          },
+          "Name": "ReportType Edge Data Loader Job for Org : 00Dd500000DrM69"
+        },
+        "CronExpression": "0 43 20 ? * 6",
+        "State": "WAITING",
+        "PreviousFireTime": "2026-09-12T03:43:00.002+0000",
+        "NextFireTime": "2026-09-19T03:43:00.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001cFbKFYA0"
+        },
+        "Id": "08eRB00001cFbKFYA0",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001cFcJXYA0"
+          },
+          "Name": "ContractMonthlyLineBatch_毎月11日1時30分"
+        },
+        "CronExpression": "0 30 1 11 * ?",
+        "State": "WAITING",
+        "PreviousFireTime": "2026-09-10T16:30:00.251+0000",
+        "NextFireTime": "2026-10-10T16:30:00.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001cFbKIYA0"
+        },
+        "Id": "08eRB00001cFbKIYA0",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001cFcJaYAK"
+          },
+          "Name": "Mig_FreeeInvoiceWorkRetentionMonthly"
+        },
+        "CronExpression": "0 0 3 1 * ?",
+        "State": "WAITING",
+        "PreviousFireTime": "2026-08-31T18:00:01.251+0000",
+        "NextFireTime": "2026-09-30T18:00:00.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001cXGE5YAO"
+        },
+        "Id": "08eRB00001cXGE5YAO",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001cXHBlYAO"
+          },
+          "Name": "FreeeInvoiceImportScheduler_毎週土曜2時30分"
+        },
+        "CronExpression": "0 30 2 ? * SAT",
+        "State": "WAITING",
+        "PreviousFireTime": "2026-09-11T17:30:00.320+0000",
+        "NextFireTime": "2026-09-18T17:30:00.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001czTQBYA2"
+        },
+        "Id": "08eRB00001czTQBYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001czUNrYAM"
+          },
+          "Name": "FreeeInvoiceStatusSyncBatch"
+        },
+        "CronExpression": "0 10 0 * * ?",
+        "State": "WAITING",
+        "PreviousFireTime": "2026-09-12T15:10:00.047+0000",
+        "NextFireTime": "2026-09-13T15:10:00.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001d2hA2YAI"
+        },
+        "Id": "08eRB00001d2hA2YAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001d2i7iYAA"
+          },
+          "Name": "be739f55-d514-1bdd-4dd3-bbfc09b249e7"
+        },
+        "CronExpression": "0 0 7 ? * 1-7",
+        "State": "WAITING",
+        "PreviousFireTime": "2026-09-12T22:00:00.442+0000",
+        "NextFireTime": "2026-09-13T22:00:00.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001d2lrvYAA"
+        },
+        "Id": "08eRB00001d2lrvYAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001d2mpbYAA"
+          },
+          "Name": "a49dd983-b0a1-5e89-e4c6-7e75fd00518b"
+        },
+        "CronExpression": "0 0 7 ? * 1-7",
+        "State": "WAITING",
+        "PreviousFireTime": "2026-09-12T22:00:00.364+0000",
+        "NextFireTime": "2026-09-13T22:00:00.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jA2uEYAS"
+        },
+        "Id": "08eRB00001jA2uEYAS",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jA4EUYA0"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260902_152113_1918236467"
+        },
+        "CronExpression": "13 21 0 3 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-02T15:21:13.006+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jAKOCYA4"
+        },
+        "Id": "08eRB00001jAKOCYA4",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jALiSYAW"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260902_151850_1237071611"
+        },
+        "CronExpression": "50 18 0 3 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-02T15:19:00.024+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jANHCYA4"
+        },
+        "Id": "08eRB00001jANHCYA4",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jAObSYAW"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260902_151213_392845643"
+        },
+        "CronExpression": "13 12 0 3 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-02T15:12:13.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jASiEYAW"
+        },
+        "Id": "08eRB00001jASiEYAW",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jAU2UYAW"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260902_152325_220294271"
+        },
+        "CronExpression": "25 23 0 3 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-02T15:23:45.257+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jAXWcYAO"
+        },
+        "Id": "08eRB00001jAXWcYAO",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jAYqsYAG"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260902_151424_1948679289"
+        },
+        "CronExpression": "24 14 0 3 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-02T15:14:24.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jAbVLYA0"
+        },
+        "Id": "08eRB00001jAbVLYA0",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jAcpbYAC"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260902_151636_547443321"
+        },
+        "CronExpression": "36 16 0 3 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-02T15:16:37.419+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jPjvlYAC"
+        },
+        "Id": "08eRB00001jPjvlYAC",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jPlG1YAK"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260903_151426_1695701048"
+        },
+        "CronExpression": "26 14 0 4 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-03T15:14:26.001+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jPz17YAC"
+        },
+        "Id": "08eRB00001jPz17YAC",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jQ0LNYA0"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260903_151215_222935923"
+        },
+        "CronExpression": "15 12 0 4 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-03T15:12:15.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jPzsVYAS"
+        },
+        "Id": "08eRB00001jPzsVYAS",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jQ1ClYAK"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260903_151852_672187665"
+        },
+        "CronExpression": "52 18 0 4 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-03T15:18:52.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jQF2cYAG"
+        },
+        "Id": "08eRB00001jQF2cYAG",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jQGMsYAO"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260903_151640_1566740314"
+        },
+        "CronExpression": "40 16 0 4 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-03T15:16:40.006+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jQHAsYAO"
+        },
+        "Id": "08eRB00001jQHAsYAO",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jQIV8YAO"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260903_152104_2079717785"
+        },
+        "CronExpression": "4 21 0 4 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-03T15:21:04.007+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jclOYYAY"
+        },
+        "Id": "08eRB00001jclOYYAY",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jcmioYAA"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260904_151438_560848695"
+        },
+        "CronExpression": "38 14 0 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-04T15:14:38.358+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jczmSYAQ"
+        },
+        "Id": "08eRB00001jczmSYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jd16iYAA"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260904_151912_349081784"
+        },
+        "CronExpression": "12 19 0 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-04T15:19:12.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jd99IYAQ"
+        },
+        "Id": "08eRB00001jd99IYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jdATYYA2"
+          },
+          "Name": "FreeeInvoiceImport_20260801_p1_1865481110"
+        },
+        "CronExpression": "1 31 2 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-04T17:31:01.617+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jdEf6YAE"
+        },
+        "Id": "08eRB00001jdEf6YAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jdFzMYAU"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260904_151215_2063510451"
+        },
+        "CronExpression": "15 12 0 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-04T15:12:26.012+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jdKuAYAU"
+        },
+        "Id": "08eRB00001jdKuAYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jdMEQYA2"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260904_152123_1281725099"
+        },
+        "CronExpression": "23 21 0 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-04T15:21:44.028+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jdMENYA2"
+        },
+        "Id": "08eRB00001jdMENYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jdNYdYAM"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260904_151650_2029782890"
+        },
+        "CronExpression": "50 16 0 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-04T15:17:00.055+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jdgY7YAI"
+        },
+        "Id": "08eRB00001jdgY7YAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jdhsNYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260802_p1_1764809429"
+        },
+        "CronExpression": "3 31 3 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-04T18:31:03.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jdwg1YAA"
+        },
+        "Id": "08eRB00001jdwg1YAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jdy0HYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260803_p1_1258691908"
+        },
+        "CronExpression": "12 31 4 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-04T19:31:12.001+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jeEi0YAE"
+        },
+        "Id": "08eRB00001jeEi0YAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jeG2GYAU"
+          },
+          "Name": "FreeeInvoiceImport_20260808_p1_1035746835"
+        },
+        "CronExpression": "7 32 9 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T00:32:07.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jeMEDYA2"
+        },
+        "Id": "08eRB00001jeMEDYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jeNYTYA2"
+          },
+          "Name": "FreeeInvoiceImport_20260809_p1_1050763988"
+        },
+        "CronExpression": "7 32 10 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T01:32:07.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jeVKbYAM"
+        },
+        "Id": "08eRB00001jeVKbYAM",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jeWerYAE"
+          },
+          "Name": "FreeeInvoiceImport_20260807_p1_1934185897"
+        },
+        "CronExpression": "6 32 8 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-04T23:32:06.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jebODYAY"
+        },
+        "Id": "08eRB00001jebODYAY",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jeciTYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260804_p1_1472114875"
+        },
+        "CronExpression": "15 31 5 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-04T20:32:00.326+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jebg3YAA"
+        },
+        "Id": "08eRB00001jebg3YAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jed0JYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260805_p1_1308821365"
+        },
+        "CronExpression": "4 32 6 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-04T21:32:04.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jeoDTYAY"
+        },
+        "Id": "08eRB00001jeoDTYAY",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jepXjYAI"
+          },
+          "Name": "FreeeInvoiceImport_20260806_p1_2123221669"
+        },
+        "CronExpression": "6 32 7 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-04T22:32:06.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jfYjFYAU"
+        },
+        "Id": "08eRB00001jfYjFYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jfa3VYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260810_p1_417489507"
+        },
+        "CronExpression": "8 32 11 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T02:32:13.042+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jfl2BYAQ"
+        },
+        "Id": "08eRB00001jfl2BYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jfmMRYAY"
+          },
+          "Name": "FreeeInvoiceImport_20260811_p1_1648582546"
+        },
+        "CronExpression": "14 32 12 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T03:32:14.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jg1F3YAI"
+        },
+        "Id": "08eRB00001jg1F3YAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jg2ZJYAY"
+          },
+          "Name": "FreeeInvoiceImport_20260812_p1_46939672"
+        },
+        "CronExpression": "15 32 13 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T04:32:15.006+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jg2ZOYAY"
+        },
+        "Id": "08eRB00001jg2ZOYAY",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jg3teYAA"
+          },
+          "Name": "FreeeInvoiceImport_20260815_p1_1599201053"
+        },
+        "CronExpression": "0 33 16 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T07:33:00.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jgHEzYAM"
+        },
+        "Id": "08eRB00001jgHEzYAM",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jgIZFYA2"
+          },
+          "Name": "FreeeInvoiceImport_20260813_p1_239534002"
+        },
+        "CronExpression": "16 32 14 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T05:32:47.020+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jgLTyYAM"
+        },
+        "Id": "08eRB00001jgLTyYAM",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jgMoEYAU"
+          },
+          "Name": "FreeeInvoiceImport_20260817_p1_1176032376"
+        },
+        "CronExpression": "4 33 18 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T09:33:11.476+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jgVA3YAM"
+        },
+        "Id": "08eRB00001jgVA3YAM",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jgWUJYA2"
+          },
+          "Name": "FreeeInvoiceImport_20260816_p1_968542291"
+        },
+        "CronExpression": "1 33 17 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T08:33:01.684+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jgWttYAE"
+        },
+        "Id": "08eRB00001jgWttYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jgYE9YAM"
+          },
+          "Name": "FreeeInvoiceImport_20260814_p1_1037325062"
+        },
+        "CronExpression": "48 32 15 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T06:32:48.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jgcZhYAI"
+        },
+        "Id": "08eRB00001jgcZhYAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jgdtxYAA"
+          },
+          "Name": "FreeeInvoiceImport_20260819_p1_1604832819"
+        },
+        "CronExpression": "16 33 20 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T11:33:16.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jhAt1YAE"
+        },
+        "Id": "08eRB00001jhAt1YAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jhCDHYA2"
+          },
+          "Name": "FreeeInvoiceImport_20260818_p1_1748734435"
+        },
+        "CronExpression": "14 33 19 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T10:33:14.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jhS5IYAU"
+        },
+        "Id": "08eRB00001jhS5IYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jhTPYYA2"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p2_104018252"
+        },
+        "CronExpression": "37 33 22 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T13:33:37.065+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jhSrYYAU"
+        },
+        "Id": "08eRB00001jhSrYYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jhUBoYAM"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p1_1034340406"
+        },
+        "CronExpression": "18 33 21 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T12:33:28.933+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jhpDDYAY"
+        },
+        "Id": "08eRB00001jhpDDYAY",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jhqXTYAY"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p8_435898614"
+        },
+        "CronExpression": "28 34 4 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T19:34:28.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jhrraYAA"
+        },
+        "Id": "08eRB00001jhrraYAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jhtBqYAI"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p5_2010342745"
+        },
+        "CronExpression": "5 34 1 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T16:34:07.369+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jhvC6YAI"
+        },
+        "Id": "08eRB00001jhvC6YAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jhwWMYAY"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p4_909827580"
+        },
+        "CronExpression": "53 33 0 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T15:33:53.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ji08lYAA"
+        },
+        "Id": "08eRB00001ji08lYAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001ji1T1YAI"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p7_1399318951"
+        },
+        "CronExpression": "22 34 3 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T18:34:22.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ji2ZyYAI"
+        },
+        "Id": "08eRB00001ji2ZyYAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001ji3uEYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p3_345186729"
+        },
+        "CronExpression": "44 33 23 5 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T14:33:44.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jiBbgYAE"
+        },
+        "Id": "08eRB00001jiBbgYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jiCvwYAE"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260905_152138_286924160"
+        },
+        "CronExpression": "38 21 0 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T15:22:00.028+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jiCszYAE"
+        },
+        "Id": "08eRB00001jiCszYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jiEDFYA2"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p9_1288375872"
+        },
+        "CronExpression": "36 34 5 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T20:35:00.061+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jiGRhYAM"
+        },
+        "Id": "08eRB00001jiGRhYAM",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jiHlxYAE"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260905_151927_278626881"
+        },
+        "CronExpression": "27 19 0 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T15:19:27.006+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jiItOYAU"
+        },
+        "Id": "08eRB00001jiItOYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jiKDeYAM"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p6_1388594092"
+        },
+        "CronExpression": "14 34 2 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T17:34:14.006+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jiLxcYAE"
+        },
+        "Id": "08eRB00001jiLxcYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jiNHsYAM"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260905_151213_890079399"
+        },
+        "CronExpression": "13 12 0 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T15:12:13.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jiQVpYAM"
+        },
+        "Id": "08eRB00001jiQVpYAM",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jiRq5YAE"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260905_151424_210943349"
+        },
+        "CronExpression": "24 14 0 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T15:15:00.272+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jiRDNYA2"
+        },
+        "Id": "08eRB00001jiRDNYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jiSXdYAM"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260905_151714_127298031"
+        },
+        "CronExpression": "14 17 0 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T15:17:14.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jiyfeYAA"
+        },
+        "Id": "08eRB00001jiyfeYAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jizzuYAA"
+          },
+          "Name": "FreeeInvoiceImport_20260821_p1_1435392441"
+        },
+        "CronExpression": "3 35 6 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T21:35:06.225+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jj314YAA"
+        },
+        "Id": "08eRB00001jj314YAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jj4LKYAY"
+          },
+          "Name": "FreeeInvoiceImport_20260823_p1_942361588"
+        },
+        "CronExpression": "11 35 8 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T23:35:11.001+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jjA92YAE"
+        },
+        "Id": "08eRB00001jjA92YAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jjBTIYA2"
+          },
+          "Name": "FreeeInvoiceImport_20260824_p1_1574034609"
+        },
+        "CronExpression": "12 35 9 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T00:35:24.979+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jjCyiYAE"
+        },
+        "Id": "08eRB00001jjCyiYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jjEIyYAM"
+          },
+          "Name": "FreeeInvoiceImport_20260822_p1_288944038"
+        },
+        "CronExpression": "8 35 7 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-05T22:35:08.006+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jjMlPYAU"
+        },
+        "Id": "08eRB00001jjMlPYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jjO5fYAE"
+          },
+          "Name": "FreeeInvoiceImport_20260826_p1_2039347481"
+        },
+        "CronExpression": "27 35 11 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T02:35:32.378+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jjTrfYAE"
+        },
+        "Id": "08eRB00001jjTrfYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jjVBvYAM"
+          },
+          "Name": "FreeeInvoiceImport_20260825_p1_1290312020"
+        },
+        "CronExpression": "26 35 10 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T01:35:26.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jk7FQYAY"
+        },
+        "Id": "08eRB00001jk7FQYAY",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jk8ZgYAI"
+          },
+          "Name": "FreeeInvoiceImport_20260827_p1_2066299071"
+        },
+        "CronExpression": "33 35 12 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T03:35:35.352+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jkPqjYAE"
+        },
+        "Id": "08eRB00001jkPqjYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jkRAzYAM"
+          },
+          "Name": "FreeeInvoiceImport_20260829_p1_546499153"
+        },
+        "CronExpression": "33 36 14 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T05:36:33.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jkRRJYA2"
+        },
+        "Id": "08eRB00001jkRRJYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jkSlZYAU"
+          },
+          "Name": "FreeeInvoiceImport_20260830_p1_164342980"
+        },
+        "CronExpression": "35 36 15 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T06:36:35.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jkSbZYAU"
+        },
+        "Id": "08eRB00001jkSbZYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jkTvpYAE"
+          },
+          "Name": "FreeeInvoiceImport_20260828_p1_1835737665"
+        },
+        "CronExpression": "44 35 13 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T04:35:44.001+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jl3jJYAQ"
+        },
+        "Id": "08eRB00001jl3jJYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jl53ZYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260831_p1_1249254235"
+        },
+        "CronExpression": "36 36 16 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T07:36:36.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jlG3lYAE"
+        },
+        "Id": "08eRB00001jlG3lYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jlHO1YAM"
+          },
+          "Name": "FreeeInvoiceImport_20260901_p1_1274204411"
+        },
+        "CronExpression": "39 36 17 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T08:37:00.039+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jlPgdYAE"
+        },
+        "Id": "08eRB00001jlPgdYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jlR0tYAE"
+          },
+          "Name": "FreeeInvoiceImport_20260902_p1_1289298090"
+        },
+        "CronExpression": "4 37 18 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T09:37:16.072+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jlWGnYAM"
+        },
+        "Id": "08eRB00001jlWGnYAM",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jlXb3YAE"
+          },
+          "Name": "FreeeInvoiceImport_20260903_p1_322645451"
+        },
+        "CronExpression": "17 37 19 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T10:37:17.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jlfYNYAY"
+        },
+        "Id": "08eRB00001jlfYNYAY",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jlgsdYAA"
+          },
+          "Name": "FreeeInvoiceImport_20260904_p1_1638442413"
+        },
+        "CronExpression": "21 37 20 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T11:37:21.001+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jlx90YAA"
+        },
+        "Id": "08eRB00001jlx90YAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jlyTGYAY"
+          },
+          "Name": "FreeeInvoiceImport_20260911_p1_1644727521"
+        },
+        "CronExpression": "54 37 3 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T18:37:54.001+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jm8H8YAI"
+        },
+        "Id": "08eRB00001jm8H8YAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jm9bOYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260905_p1_1156688458"
+        },
+        "CronExpression": "21 37 21 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T12:37:21.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jmDqMYAU"
+        },
+        "Id": "08eRB00001jmDqMYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jmFAcYAM"
+          },
+          "Name": "FreeeInvoiceImport_20260907_p1_525434907"
+        },
+        "CronExpression": "22 37 23 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T14:37:44.386+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jmGBYYA2"
+        },
+        "Id": "08eRB00001jmGBYYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jmHVoYAM"
+          },
+          "Name": "FreeeInvoiceImport_20260908_p1_780913156"
+        },
+        "CronExpression": "46 37 0 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T15:37:46.009+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jmIzpYAE"
+        },
+        "Id": "08eRB00001jmIzpYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jmKK5YAM"
+          },
+          "Name": "FreeeInvoiceImport_20260910_p1_830028437"
+        },
+        "CronExpression": "52 37 2 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T17:37:52.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jmKAMYA2"
+        },
+        "Id": "08eRB00001jmKAMYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jmLUcYAM"
+          },
+          "Name": "FreeeInvoiceImport_20260906_p1_2135641236"
+        },
+        "CronExpression": "22 37 22 6 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T13:37:22.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jmYwPYAU"
+        },
+        "Id": "08eRB00001jmYwPYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jmaGfYAI"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260906_151213_171109048"
+        },
+        "CronExpression": "13 12 0 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T15:12:13.374+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jmgUMYAY"
+        },
+        "Id": "08eRB00001jmgUMYAY",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jmhocYAA"
+          },
+          "Name": "FreeeInvoiceImport_20260912_p1_1931440538"
+        },
+        "CronExpression": "55 37 4 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T19:38:00.464+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jmgxGYAQ"
+        },
+        "Id": "08eRB00001jmgxGYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jmiHWYAY"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260906_151911_1131764595"
+        },
+        "CronExpression": "11 19 0 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T15:19:11.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jmhtFYAQ"
+        },
+        "Id": "08eRB00001jmhtFYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jmjDVYAY"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260906_151637_1498013682"
+        },
+        "CronExpression": "37 16 0 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T15:17:00.023+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jmsN5YAI"
+        },
+        "Id": "08eRB00001jmsN5YAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jmthLYAQ"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260906_152122_2022214020"
+        },
+        "CronExpression": "22 21 0 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T15:21:22.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jmuThYAI"
+        },
+        "Id": "08eRB00001jmuThYAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jmvnxYAA"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260906_151425_2031653609"
+        },
+        "CronExpression": "25 14 0 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T15:14:25.006+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jmwgrYAA"
+        },
+        "Id": "08eRB00001jmwgrYAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jmy17YAA"
+          },
+          "Name": "FreeeInvoiceImport_20260909_p1_1879843192"
+        },
+        "CronExpression": "47 37 1 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T16:37:47.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jnVtBYAU"
+        },
+        "Id": "08eRB00001jnVtBYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jnXDRYA2"
+          },
+          "Name": "FreeeInvoiceImport_20260914_p1_1191367943"
+        },
+        "CronExpression": "8 38 6 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T21:38:29.393+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jnfOCYAY"
+        },
+        "Id": "08eRB00001jnfOCYAY",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jngiSYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260916_p1_1629347748"
+        },
+        "CronExpression": "39 38 8 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T23:38:39.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jns9rYAA"
+        },
+        "Id": "08eRB00001jns9rYAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jntU7YAI"
+          },
+          "Name": "FreeeInvoiceImport_20260915_p1_1590592639"
+        },
+        "CronExpression": "31 38 7 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T22:38:39.028+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jnya7YAA"
+        },
+        "Id": "08eRB00001jnya7YAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jnzuNYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260913_p1_1162286344"
+        },
+        "CronExpression": "2 38 5 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-06T20:38:06.020+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jos4RYAQ"
+        },
+        "Id": "08eRB00001jos4RYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jotOhYAI"
+          },
+          "Name": "FreeeInvoiceImport_20260917_p1_644854224"
+        },
+        "CronExpression": "40 38 9 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T00:38:46.449+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jp3hSYAQ"
+        },
+        "Id": "08eRB00001jp3hSYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jp51iYAA"
+          },
+          "Name": "FreeeInvoiceImport_20260918_p1_187327796"
+        },
+        "CronExpression": "49 38 10 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T01:38:49.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jr9h3YAA"
+        },
+        "Id": "08eRB00001jr9h3YAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jrB1JYAU"
+          },
+          "Name": "FreeeInvoiceImport_20260919_p1_1304359779"
+        },
+        "CronExpression": "51 38 11 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T02:38:51.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jrzxQYAQ"
+        },
+        "Id": "08eRB00001jrzxQYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001js1HgYAI"
+          },
+          "Name": "FreeeInvoiceImport_20260921_p1_302382148"
+        },
+        "CronExpression": "56 38 13 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T04:38:56.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jsEDFYA2"
+        },
+        "Id": "08eRB00001jsEDFYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jsFXVYA2"
+          },
+          "Name": "FreeeInvoiceImport_20260920_p1_182552426"
+        },
+        "CronExpression": "53 38 12 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T03:38:53.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jtWzKYAU"
+        },
+        "Id": "08eRB00001jtWzKYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jtYJaYAM"
+          },
+          "Name": "FreeeInvoiceImport_20260922_p1_1076096476"
+        },
+        "CronExpression": "58 38 14 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T05:38:58.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jtxHyYAI"
+        },
+        "Id": "08eRB00001jtxHyYAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jtycEYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260923_p1_1860737153"
+        },
+        "CronExpression": "4 39 15 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T06:39:04.007+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jvKCUYA2"
+        },
+        "Id": "08eRB00001jvKCUYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jvLWkYAM"
+          },
+          "Name": "FreeeInvoiceImport_20260924_p1_1449554426"
+        },
+        "CronExpression": "6 39 16 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T07:39:09.013+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jvc6BYAQ"
+        },
+        "Id": "08eRB00001jvc6BYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jvdQRYAY"
+          },
+          "Name": "FreeeInvoiceImport_20260925_p1_1822263461"
+        },
+        "CronExpression": "11 39 17 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T08:39:11.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jwxmtYAA"
+        },
+        "Id": "08eRB00001jwxmtYAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jwz79YAA"
+          },
+          "Name": "FreeeInvoiceImport_20260926_p1_798470727"
+        },
+        "CronExpression": "16 39 18 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T09:39:16.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jyTpaYAE"
+        },
+        "Id": "08eRB00001jyTpaYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jyV9qYAE"
+          },
+          "Name": "FreeeInvoiceImport_20260928_p1_519226145"
+        },
+        "CronExpression": "22 39 20 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T11:39:26.523+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jyZ0TYAU"
+        },
+        "Id": "08eRB00001jyZ0TYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jyaKjYAI"
+          },
+          "Name": "FreeeInvoiceImport_20260927_p1_182117347"
+        },
+        "CronExpression": "19 39 19 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T10:39:19.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jzbY8YAI"
+        },
+        "Id": "08eRB00001jzbY8YAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jzcsOYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260929_p1_1884535406"
+        },
+        "CronExpression": "29 39 21 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T12:39:29.006+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jzd2QYAQ"
+        },
+        "Id": "08eRB00001jzd2QYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jzeMgYAI"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260907_151653_1446275013"
+        },
+        "CronExpression": "53 16 0 8 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T15:16:53.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001jztJkYAI"
+        },
+        "Id": "08eRB00001jztJkYAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001jzue0YAA"
+          },
+          "Name": "FreeeInvoiceImport_20260930_p1_1566864626"
+        },
+        "CronExpression": "31 39 22 7 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T13:40:00.756+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001k08h1YAA"
+        },
+        "Id": "08eRB00001k08h1YAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001k0A1HYAU"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260907_152129_2034778808"
+        },
+        "CronExpression": "29 21 0 8 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T15:21:31.333+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001k0M8wYAE"
+        },
+        "Id": "08eRB00001k0M8wYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001k0NTCYA2"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260907_151441_834582048"
+        },
+        "CronExpression": "41 14 0 8 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T15:14:41.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001k0PprYAE"
+        },
+        "Id": "08eRB00001k0PprYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001k0RA7YAM"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260907_151214_1981272791"
+        },
+        "CronExpression": "14 12 0 8 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T15:12:29.866+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001k0ZFkYAM"
+        },
+        "Id": "08eRB00001k0ZFkYAM",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001k0aa0YAA"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260907_151906_106907187"
+        },
+        "CronExpression": "6 19 0 8 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-07T15:19:16.354+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kDnmOYAS"
+        },
+        "Id": "08eRB00001kDnmOYAS",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kDp8GYAS"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260908_151853_1098623861"
+        },
+        "CronExpression": "53 18 0 9 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-08T15:18:53.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kDpWRYA0"
+        },
+        "Id": "08eRB00001kDpWRYA0",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kDqsJYAS"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260908_151216_762614644"
+        },
+        "CronExpression": "16 12 0 9 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-08T15:12:16.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kDvLiYAK"
+        },
+        "Id": "08eRB00001kDvLiYAK",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kDwhaYAC"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260908_152108_716549212"
+        },
+        "CronExpression": "8 21 0 9 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-08T15:21:08.853+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kE5UhYAK"
+        },
+        "Id": "08eRB00001kE5UhYAK",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kE6qZYAS"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260908_151640_1814703493"
+        },
+        "CronExpression": "40 16 0 9 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-08T15:16:40.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kE6VaYAK"
+        },
+        "Id": "08eRB00001kE6VaYAK",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kE7rSYAS"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260908_151428_1458135704"
+        },
+        "CronExpression": "28 14 0 9 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-08T15:14:28.006+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kR52HYAS"
+        },
+        "Id": "08eRB00001kR52HYAS",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kR6MXYA0"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260909_151854_947343454"
+        },
+        "CronExpression": "54 18 0 10 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-09T15:18:54.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kRALPYA4"
+        },
+        "Id": "08eRB00001kRALPYA4",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kRBffYAG"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260909_152107_89477139"
+        },
+        "CronExpression": "7 21 0 10 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-09T15:21:13.557+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kRDxTYAW"
+        },
+        "Id": "08eRB00001kRDxTYAW",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kRFHjYAO"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260909_151429_942106257"
+        },
+        "CronExpression": "29 14 0 10 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-09T15:14:29.480+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kRU76YAG"
+        },
+        "Id": "08eRB00001kRU76YAG",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kRVRMYA4"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260909_151641_90780089"
+        },
+        "CronExpression": "41 16 0 10 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-09T15:16:41.001+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kRmtZYAS"
+        },
+        "Id": "08eRB00001kRmtZYAS",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kRoDpYAK"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260909_151216_2104173389"
+        },
+        "CronExpression": "16 12 0 10 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-09T15:12:16.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001keRRjYAM"
+        },
+        "Id": "08eRB00001keRRjYAM",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001keSlzYAE"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260910_151217_526341820"
+        },
+        "CronExpression": "17 12 0 11 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-10T15:12:38.621+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001keeAPYAY"
+        },
+        "Id": "08eRB00001keeAPYAY",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kefUfYAI"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260910_151455_441612426"
+        },
+        "CronExpression": "55 14 0 11 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-10T15:14:55.007+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kemeCYAQ"
+        },
+        "Id": "08eRB00001kemeCYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kenySYAQ"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260910_151924_1655834697"
+        },
+        "CronExpression": "24 19 0 11 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-10T15:19:24.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kfIveYAE"
+        },
+        "Id": "08eRB00001kfIveYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kfKFuYAM"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260910_151709_1448002618"
+        },
+        "CronExpression": "9 17 0 11 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-10T15:17:09.006+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kfKFvYAM"
+        },
+        "Id": "08eRB00001kfKFvYAM",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kfLaBYAU"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260910_152135_158180521"
+        },
+        "CronExpression": "35 21 0 11 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-10T15:21:35.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kruAvYAI"
+        },
+        "Id": "08eRB00001kruAvYAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001krvTZYAY"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260911_151722_853149669"
+        },
+        "CronExpression": "22 17 0 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-11T15:17:22.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ksFIYYA2"
+        },
+        "Id": "08eRB00001ksFIYYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001ksGbCYAU"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260911_152147_257817163"
+        },
+        "CronExpression": "47 21 0 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-11T15:21:47.007+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ksIgIYAU"
+        },
+        "Id": "08eRB00001ksIgIYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001ksJywYAE"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260911_151220_827583350"
+        },
+        "CronExpression": "20 12 0 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-11T15:12:20.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ksp9IYAQ"
+        },
+        "Id": "08eRB00001ksp9IYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001ksqRwYAI"
+          },
+          "Name": "FreeeInvoiceImport_20260805_p1_1347320828"
+        },
+        "CronExpression": "59 31 6 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-11T21:31:59.007+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ksqLUYAY"
+        },
+        "Id": "08eRB00001ksqLUYAY",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001ksre8YAA"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260911_151934_1281991871"
+        },
+        "CronExpression": "34 19 0 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-11T15:19:34.006+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ksyKPYAY"
+        },
+        "Id": "08eRB00001ksyKPYAY",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kszd3YAA"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260911_151435_54266589"
+        },
+        "CronExpression": "35 14 0 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-11T15:15:02.074+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ktGfXYAU"
+        },
+        "Id": "08eRB00001ktGfXYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001ktHyBYAU"
+          },
+          "Name": "FreeeInvoiceImport_20260801_p1_1413470696"
+        },
+        "CronExpression": "7 31 2 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-11T17:31:07.003+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ktHeuYAE"
+        },
+        "Id": "08eRB00001ktHeuYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001ktIxYYAU"
+          },
+          "Name": "FreeeInvoiceImport_20260804_p1_1366372887"
+        },
+        "CronExpression": "56 31 5 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-11T20:31:56.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ktK4pYAE"
+        },
+        "Id": "08eRB00001ktK4pYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001ktLNTYA2"
+          },
+          "Name": "FreeeInvoiceImport_20260803_p1_831926537"
+        },
+        "CronExpression": "38 31 4 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-11T19:31:55.651+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ktKvzYAE"
+        },
+        "Id": "08eRB00001ktKvzYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001ktMEdYAM"
+          },
+          "Name": "FreeeInvoiceImport_20260802_p1_810523845"
+        },
+        "CronExpression": "9 31 3 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-11T18:31:29.029+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ktmM2YAI"
+        },
+        "Id": "08eRB00001ktmM2YAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001ktnegYAA"
+          },
+          "Name": "FreeeInvoiceImport_20260806_p1_1660232965"
+        },
+        "CronExpression": "2 32 7 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-11T22:32:02.266+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ktyAKYAY"
+        },
+        "Id": "08eRB00001ktyAKYAY",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001ktzSyYAI"
+          },
+          "Name": "FreeeInvoiceImport_20260807_p1_1983093242"
+        },
+        "CronExpression": "3 32 8 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-11T23:32:10.324+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ku6G0YAI"
+        },
+        "Id": "08eRB00001ku6G0YAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001ku7YeYAI"
+          },
+          "Name": "FreeeInvoiceImport_20260810_p1_113626861"
+        },
+        "CronExpression": "2 33 11 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T02:33:12.508+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kuCA1YAM"
+        },
+        "Id": "08eRB00001kuCA1YAM",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kuDSfYAM"
+          },
+          "Name": "FreeeInvoiceImport_20260809_p1_809562917"
+        },
+        "CronExpression": "31 32 10 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T01:33:00.028+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kuMZ8YAM"
+        },
+        "Id": "08eRB00001kuMZ8YAM",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kuNrmYAE"
+          },
+          "Name": "FreeeInvoiceImport_20260808_p1_173295345"
+        },
+        "CronExpression": "11 32 9 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T00:32:30.012+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kuihoYAA"
+        },
+        "Id": "08eRB00001kuihoYAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kuk0SYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260811_p1_875619913"
+        },
+        "CronExpression": "13 33 12 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T03:33:13.003+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kuqgxYAA"
+        },
+        "Id": "08eRB00001kuqgxYAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kurzbYAA"
+          },
+          "Name": "FreeeInvoiceImport_20260812_p1_156907363"
+        },
+        "CronExpression": "40 33 13 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T04:33:40.003+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kv4FKYAY"
+        },
+        "Id": "08eRB00001kv4FKYAY",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kv5XyYAI"
+          },
+          "Name": "FreeeInvoiceImport_20260814_p1_1543281846"
+        },
+        "CronExpression": "44 33 15 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T06:34:00.040+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kvUpnYAE"
+        },
+        "Id": "08eRB00001kvUpnYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kvW8RYAU"
+          },
+          "Name": "FreeeInvoiceImport_20260816_p1_710476331"
+        },
+        "CronExpression": "4 34 17 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T08:34:06.499+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kvXViYAM"
+        },
+        "Id": "08eRB00001kvXViYAM",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kvYoMYAU"
+          },
+          "Name": "FreeeInvoiceImport_20260813_p1_1575670773"
+        },
+        "CronExpression": "42 33 14 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T05:33:42.006+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kvv3RYAQ"
+        },
+        "Id": "08eRB00001kvv3RYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kvwM5YAI"
+          },
+          "Name": "FreeeInvoiceImport_20260815_p1_367362394"
+        },
+        "CronExpression": "1 34 16 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T07:34:01.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kwBLIYA2"
+        },
+        "Id": "08eRB00001kwBLIYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kwCdwYAE"
+          },
+          "Name": "FreeeInvoiceImport_20260817_p1_1632540659"
+        },
+        "CronExpression": "17 34 18 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T09:34:27.386+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kwKYBYA2"
+        },
+        "Id": "08eRB00001kwKYBYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kwLqpYAE"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p3_1546959456"
+        },
+        "CronExpression": "19 35 23 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T14:35:36.407+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kwTQ8YAM"
+        },
+        "Id": "08eRB00001kwTQ8YAM",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kwUimYAE"
+          },
+          "Name": "FreeeInvoiceImport_20260818_p1_435859752"
+        },
+        "CronExpression": "30 34 19 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T10:34:30.003+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kwugWYAQ"
+        },
+        "Id": "08eRB00001kwugWYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kwvzAYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p1_1717499342"
+        },
+        "CronExpression": "36 34 21 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T12:35:00.193+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kwyIbYAI"
+        },
+        "Id": "08eRB00001kwyIbYAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kwzbFYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260819_p1_1027555685"
+        },
+        "CronExpression": "32 34 20 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T11:34:32.005+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kwz56YAA"
+        },
+        "Id": "08eRB00001kwz56YAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kx0NkYAI"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p2_1380693890"
+        },
+        "CronExpression": "11 35 22 12 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T13:35:11.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kxBJMYA2"
+        },
+        "Id": "08eRB00001kxBJMYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kxCc0YAE"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p5_439123022"
+        },
+        "CronExpression": "57 35 1 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T16:36:00.296+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kxCk3YAE"
+        },
+        "Id": "08eRB00001kxCk3YAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kxE2hYAE"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260912_152127_1755561063"
+        },
+        "CronExpression": "27 21 0 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T15:21:27.002+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kxHurYAE"
+        },
+        "Id": "08eRB00001kxHurYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kxJDVYA2"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p4_1390256434"
+        },
+        "CronExpression": "46 35 0 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T15:35:49.423+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kxK7zYAE"
+        },
+        "Id": "08eRB00001kxK7zYAE",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kxLQdYAM"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260912_151912_786047774"
+        },
+        "CronExpression": "12 19 0 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T15:19:12.006+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kxaSiYAI"
+        },
+        "Id": "08eRB00001kxaSiYAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kxblMYAQ"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260912_151428_2050738858"
+        },
+        "CronExpression": "28 14 0 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T15:14:28.004+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kxd0wYAA"
+        },
+        "Id": "08eRB00001kxd0wYAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kxeJaYAI"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p6_2016347255"
+        },
+        "CronExpression": "8 36 2 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T17:36:31.036+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kxe9jYAA"
+        },
+        "Id": "08eRB00001kxe9jYAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kxfSNYAY"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260912_151214_1760920879"
+        },
+        "CronExpression": "14 12 0 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T15:12:14.001+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kxi22YAA"
+        },
+        "Id": "08eRB00001kxi22YAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kxjKgYAI"
+          },
+          "Name": "FreeeInvoiceStatusSyncChunk_20260912_151641_2130587422"
+        },
+        "CronExpression": "41 16 0 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T15:17:00.088+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kxlUkYAI"
+        },
+        "Id": "08eRB00001kxlUkYAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kxmnOYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p7_1746467736"
+        },
+        "CronExpression": "38 36 3 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T18:36:38.007+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001ky6ijYAA"
+        },
+        "Id": "08eRB00001ky6ijYAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001ky81NYAQ"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p8_1981469759"
+        },
+        "CronExpression": "46 36 4 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T19:36:46.006+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kyk3OYAQ"
+        },
+        "Id": "08eRB00001kyk3OYAQ",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kylM2YAI"
+          },
+          "Name": "FreeeInvoiceImport_20260820_p9_699325534"
+        },
+        "CronExpression": "55 36 5 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T20:37:00.037+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kz8FdYAI"
+        },
+        "Id": "08eRB00001kz8FdYAI",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kz9YHYAY"
+          },
+          "Name": "FreeeInvoiceImport_20260824_p1_633210188"
+        },
+        "CronExpression": "14 37 9 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-13T00:37:24.546+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kzBTNYA2"
+        },
+        "Id": "08eRB00001kzBTNYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kzCm1YAE"
+          },
+          "Name": "FreeeInvoiceImport_20260821_p1_1884400768"
+        },
+        "CronExpression": "3 37 6 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T21:37:03.003+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kzDqKYAU"
+        },
+        "Id": "08eRB00001kzDqKYAU",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kzF8yYAE"
+          },
+          "Name": "FreeeInvoiceImport_20260823_p1_1000880394"
+        },
+        "CronExpression": "5 37 8 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T23:37:13.018+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kzQXQYA2"
+        },
+        "Id": "08eRB00001kzQXQYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kzRq4YAE"
+          },
+          "Name": "FreeeInvoiceImport_20260826_p1_1209740825"
+        },
+        "CronExpression": "1 38 11 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-13T02:38:01.003+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kzazeYAA"
+        },
+        "Id": "08eRB00001kzazeYAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kzcIIYAY"
+          },
+          "Name": "FreeeInvoiceImport_20260822_p1_735873279"
+        },
+        "CronExpression": "5 37 7 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-12T22:37:05.001+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001kznk6YAA"
+        },
+        "Id": "08eRB00001kznk6YAA",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001kzp2kYAA"
+          },
+          "Name": "FreeeInvoiceImport_20260825_p1_1421293827"
+        },
+        "CronExpression": "26 37 10 13 9 ? 2026",
+        "State": "DELETED",
+        "PreviousFireTime": "2026-09-13T01:38:00.100+0000",
+        "NextFireTime": null
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08eRB00001l0FTNYA2"
+        },
+        "Id": "08eRB00001l0FTNYA2",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08aRB00001l0Gm1YAE"
+          },
+          "Name": "FreeeInvoiceImport_20260827_p1_1623542640"
+        },
+        "CronExpression": "2 38 12 13 9 ? 2026",
+        "State": "WAITING",
+        "PreviousFireTime": null,
+        "NextFireTime": "2026-09-13T03:38:02.000+0000"
+      },
+      {
+        "attributes": {
+          "type": "CronTrigger",
+          "url": "/services/data/v67.0/sobjects/CronTrigger/08ed5000007GGEcAAO"
+        },
+        "Id": "08ed5000007GGEcAAO",
+        "CronJobDetail": {
+          "attributes": {
+            "type": "CronJobDetail",
+            "url": "/services/data/v67.0/sobjects/CronJobDetail/08ad50000077mwsAAA"
+          },
+          "Name": "Metalytics Data Loader Job for Org : 00Dd500000DrM69"
+        },
+        "CronExpression": "0 19 22 ? * 1,2,3,4,5,6,7",
+        "State": "WAITING",
+        "PreviousFireTime": "2026-09-12T05:19:00.616+0000",
+        "NextFireTime": "2026-09-13T05:19:00.000+0000"
+      }
+    ],
+    "totalSize": 169,
+    "done": true
+  },
+  "warnings": []
+}

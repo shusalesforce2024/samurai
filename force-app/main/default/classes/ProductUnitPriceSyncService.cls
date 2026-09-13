@@ -103,6 +103,10 @@ public with sharing class ProductUnitPriceSyncService {
         if (record.ProductMaster__c == null) {
             return false;
         }
+        if (record.MigrationSourceLineWork__c != null
+            && record.Unit_Price__c != null) {
+            return false;
+        }
 
         if (oldMap == null || !oldMap.containsKey(record.Id)) {
             return true;

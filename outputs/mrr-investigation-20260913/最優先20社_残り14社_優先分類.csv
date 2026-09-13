@@ -1,0 +1,15 @@
+AccountId,AccountName,ContractCount,ContractMRR,AugTotal,AugMRRTarget,ContractVsMRRTargetDiff,TotalVsMRRTargetDiff,StatusSummary,Priority,Classification
+"001RB00001VTqkwYAD","アイリスオーヤマ株式会社","6","87000","55000","0","87000","55000","解約|解約|Activated|Activated|Activated|Activated",P1,契約MRR超過
+"001RB00001VTqlZYAT","アイリスチトセ株式会社","4","170000","77000","77000","93000","0","解約|解約|Draft|Activated",P1,契約MRR超過
+"001RB00001VTCYwYAP","インフィニティ株式会社","2","16000","8000","8000","8000","0","解約|Activated",P2,契約MRR超過
+"001RB00001VTrqmYAD","センコー産業株式会社","2","8000","16000","16000","-8000","0","Draft|Activated",P2,月次MRR超過
+"001RB00001VTqxQYAT","株式会社アールシーコア","4","250000","500000","250000","0","250000","Activated|Activated|Draft|Activated",P2,月次MRR超過
+"001RB00001VTrRuYAL","株式会社サンテン・コーポレーション","2","64000","32000","32000","32000","0","Draft|Activated",P2,契約MRR超過
+"001RB00001VTtIVYA1","株式会社シアーズホーム","2","22000","11000","11000","11000","0","解約|Activated",P2,契約MRR超過
+"001RB00001VTqkQYAT","株式会社ジョイフル本田","3","118000","63000","63000","55000","0","解約|Activated|Activated",P1,契約MRR超過
+"001RB00001VTrFpYAL","株式会社スタジオ・ノア","2","8000","16000","16000","-8000","0","Draft|Activated",P2,月次MRR超過
+"001RB00001VTtIcYAL","株式会社ハートランド","3","22000","11000","11000","11000","0","解約|Draft|Activated",P2,契約MRR超過
+"001RB00001b3qNeYAI","株式会社パインウェル","2","16000","8000","8000","8000","0","Draft|Activated",P2,契約MRR超過
+"001RB00001VTrrHYAT","株式会社ワンズ・レーニア","2","150000","75000","75000","75000","0","Draft|Activated",P1,契約MRR超過
+"001RB00001eIu0zYAC","株式会社池田工務店","2","8000","16000","16000","-8000","0","Draft|Activated",P2,月次MRR超過
+"001RB00001VTruMYAT","大東建託株式会社","6","402000","306000","306000","96000","0","解約|Activated|解約|Activated|Draft|Draft",P1,契約MRR超過

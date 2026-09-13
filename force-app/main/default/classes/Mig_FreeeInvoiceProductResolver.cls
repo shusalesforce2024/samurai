@@ -134,6 +134,7 @@ public with sharing class Mig_FreeeInvoiceProductResolver {
         for (Mig_FreeeInvoiceLineWork__c line : lines) {
             if (line.ImportStatus__c == Mig_FreeeInvoiceWorkService.STATUS_EXCLUDED
                 || isAdjustmentLine(line)
+                || (line.LineAmount__c != null && line.LineAmount__c < 0)
                 || line.ConfirmedProductMaster__c == null) {
                 continue;
             }
@@ -255,16 +256,20 @@ public with sharing class Mig_FreeeInvoiceProductResolver {
             Date targetDate = line.InvoiceWork__r.TargetPeriodStartDate__c == null
                 ? line.InvoiceWork__r.BillingDate__c
                 : line.InvoiceWork__r.TargetPeriodStartDate__c;
-            ContractLineItem__c selected = null;
+            List<ContractLineItem__c> datedCandidates =
+                new List<ContractLineItem__c>();
             for (ContractLineItem__c candidate : candidates) {
                 if (targetDate != null
                     && (candidate.PeriodStartDate__c == null || candidate.PeriodStartDate__c <= targetDate)
                     && (candidate.PeriodEndDate__c == null || candidate.PeriodEndDate__c >= targetDate)) {
-                    selected = candidate;
-                    break;
+                    datedCandidates.add(candidate);
                 }
             }
-            if (selected == null && candidates.size() == 1) {
+            ContractLineItem__c selected =
+                datedCandidates.size() == 1 ? datedCandidates[0] : null;
+            if (selected == null
+                && datedCandidates.isEmpty()
+                && candidates.size() == 1) {
                 selected = candidates[0];
             }
             if (selected != null) {
@@ -311,6 +316,11 @@ public with sharing class Mig_FreeeInvoiceProductResolver {
                 return new ProductMatch(mapping.ProductMaster__c, 0.9, 'Matched by migration product map.');
             }
         }
+        ProductMatch calculatedUnitPriceMatch =
+            matchUniqueCalculatedUnitPrice(line, products, normalizedDescription);
+        if (calculatedUnitPriceMatch != null) {
+            return calculatedUnitPriceMatch;
+        }
         for (ProductMaster__c product : products) {
             if (line.UnitPrice__c != null
                 && hasProductNameSignal(normalizedDescription, product)
@@ -338,6 +348,45 @@ public with sharing class Mig_FreeeInvoiceProductResolver {
             }
         }
         return null;
+    }
+
+    private static ProductMatch matchUniqueCalculatedUnitPrice(
+        Mig_FreeeInvoiceLineWork__c line,
+        List<ProductMaster__c> products,
+        String normalizedDescription
+    ) {
+        if (line == null
+            || line.LineAmount__c == null
+            || line.Quantity__c == null
+            || line.Quantity__c == 0) {
+            return null;
+        }
+
+        Decimal calculatedUnitPrice =
+            (line.LineAmount__c / line.Quantity__c).abs();
+        Map<Id, ProductMaster__c> matchedProducts =
+            new Map<Id, ProductMaster__c>();
+        for (ProductMaster__c product : products) {
+            if (!hasProductNameSignal(normalizedDescription, product)) {
+                continue;
+            }
+            Boolean priceMatched =
+                (product.UnitPrice__c != null
+                    && product.UnitPrice__c.abs() == calculatedUnitPrice)
+                || (product.AnnualMonthlyPrice__c != null
+                    && product.AnnualMonthlyPrice__c.abs() == calculatedUnitPrice);
+            if (priceMatched) {
+                matchedProducts.put(product.Id, product);
+            }
+        }
+        if (matchedProducts.size() != 1) {
+            return null;
+        }
+        return new ProductMatch(
+            new List<Id>(matchedProducts.keySet())[0],
+            0.96,
+            'Matched uniquely by calculated unit price and product name.'
+        );
     }
 
     private static Boolean hasProductNameSignal(String normalizedDescription, ProductMaster__c product) {

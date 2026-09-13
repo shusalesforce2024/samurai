@@ -1,0 +1,70 @@
+{
+  "source_counts": {
+    "contracts": 259,
+    "monthly": 2330,
+    "periods": 454,
+    "invoices": 528,
+    "invoice-lines": 663,
+    "opportunities": 521,
+    "quotations": 66,
+    "quotation-lines": 157,
+    "products": 53
+  },
+  "contract_status": {
+    "Activated": 143,
+    "解約": 63,
+    "Expired": 1,
+    "Draft": 50,
+    "更新予定": 2
+  },
+  "same-contract-product": {
+    "groups": 71,
+    "rows": 337
+  },
+  "same-contract-source": {
+    "groups": 29,
+    "rows": 58
+  },
+  "cross_contract": {
+    "groups": 23,
+    "rows": 55
+  },
+  "multiple_contract_accounts": 39,
+  "migration": {
+    "contracts": 25,
+    "status": {
+      "Draft": 25
+    },
+    "monthly_rows": 46,
+    "mrr_rows": 3,
+    "all_months_mrr_sum_not_current_mrr": "145000",
+    "invoices": 41
+  },
+  "monthly_anomalies": {
+    "product_missing": 1132,
+    "period_contract_mismatch": 1,
+    "invoice_contract_mismatch": 3
+  },
+  "opportunity_comparison": {
+    "with_quotes": 41,
+    "multiple_quotes": 12,
+    "multiple_accepted": 0,
+    "scenario_diff_count": 27,
+    "annual_with_quotes": 8
+  },
+  "flag_mismatch_rows": 325,
+  "alias_candidate_names": 13,
+  "september_expected_contracts_by_status_dates": 140,
+  "september_missing_contracts": 119,
+  "september_missing_categories": {
+    "Rendery": 72,
+    "未設定": 23,
+    "受託開発": 1,
+    "knock knock AI": 23
+  },
+  "name_length_risk_contracts": 2,
+  "contract_opportunity_linked": 28,
+  "contract_opportunity_different": 11,
+  "current_report_outside_contract_period_rows": 0,
+  "total_revenue_different_rows": 1043
+}

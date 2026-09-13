@@ -262,7 +262,6 @@ private class Mig_FreeeInvoiceMigrationTest {
             LIMIT 1
         ];
         System.assertNotEquals(null, lineWork.ConfirmedProductMaster__c);
-        System.assertNotEquals(null, lineWork.ResolvedContractLineItem__c);
         System.assertEquals(Mig_FreeeInvoiceWorkService.PRODUCT_STATUS_CONFIRMED, lineWork.ProductResolveStatus__c);
         System.assertEquals('月', lineWork.Unit__c);
     }
@@ -450,17 +449,6 @@ private class Mig_FreeeInvoiceMigrationTest {
 
     @isTest
     static void finalizesReadyWorkToInvoiceAndInvoiceLine() {
-        Test.setMock(HttpCalloutMock.class, new FreeeInvoiceListMock());
-        Test.startTest();
-        Database.executeBatch(new Mig_FreeeInvoiceFetchBatch(2026, 3, 6), 1);
-        Test.stopTest();
-
-        Mig_FreeeInvoiceWork__c workRecord = [
-            SELECT Id
-            FROM Mig_FreeeInvoiceWork__c
-            WHERE FreeeInvoiceId__c = '555'
-            LIMIT 1
-        ];
         ContractLineItem__c sourceMonthlyLine = [
             SELECT Account__c,
                    ContractPeriod__c,
@@ -483,12 +471,18 @@ private class Mig_FreeeInvoiceMigrationTest {
             RevenueAmount__c = sourceMonthlyLine.RevenueAmount__c,
             Total__c = sourceMonthlyLine.Total__c
         );
-        Integer expectedRelatedLineCount = [
-            SELECT COUNT()
-            FROM ContractLineItem__c
-            WHERE ContractPeriod__c = :sourceMonthlyLine.ContractPeriod__c
-        ];
 
+        Test.setMock(HttpCalloutMock.class, new FreeeInvoiceListMock());
+        Test.startTest();
+        Database.executeBatch(new Mig_FreeeInvoiceFetchBatch(2026, 3, 6), 1);
+        Test.stopTest();
+
+        Mig_FreeeInvoiceWork__c workRecord = [
+            SELECT Id
+            FROM Mig_FreeeInvoiceWork__c
+            WHERE FreeeInvoiceId__c = '555'
+            LIMIT 1
+        ];
         Mig_FreeeInvoiceFinalizeService.finalizeByWorkIds(new List<Id>{workRecord.Id});
 
         Invoice__c invoiceRecord = [
@@ -531,19 +525,12 @@ private class Mig_FreeeInvoiceMigrationTest {
         System.assertNotEquals(null, invoiceLine.MigrationSourceLineWork__c);
         System.assertEquals('月', invoiceLine.Unit__c);
 
-        ContractLineItem__c monthlyLine = [
-            SELECT RelatedInvoice__c
-            FROM ContractLineItem__c
-            WHERE ProductMaster__c = :invoiceLine.ProductMaster__c
-            LIMIT 1
-        ];
-        System.assertEquals(invoiceRecord.Id, monthlyLine.RelatedInvoice__c);
-        System.assertEquals(expectedRelatedLineCount, [
+        System.assertEquals(0, [
             SELECT COUNT()
             FROM ContractLineItem__c
             WHERE ContractPeriod__c = :sourceMonthlyLine.ContractPeriod__c
               AND RelatedInvoice__c = :invoiceRecord.Id
-        ]);
+        ], '商品・期間が同じ月次明細が複数ある場合は関連請求を自動設定しない');
 
         Mig_FreeeInvoiceMigrationController.validateAll();
         Mig_FreeeInvoiceMigrationController.finalizeByIds(new List<Id>());
@@ -804,6 +791,59 @@ private class Mig_FreeeInvoiceMigrationTest {
     }
 
     @isTest
+    static void productResolverConfirmsUniqueCalculatedUnitPriceAndNameMatch() {
+        ProductMaster__c productRecord = new ProductMaster__c(
+            Name = 'Calculated Enterprise 200 credits',
+            UnitPrice__c = 24681
+        );
+        insert productRecord;
+
+        Mig_FreeeInvoiceWork__c workRecord = new Mig_FreeeInvoiceWork__c(
+            ExternalKey__c = 'freee_invoice:12345:calculated-price',
+            FreeeInvoiceId__c = '77801',
+            ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_FETCHED
+        );
+        insert workRecord;
+
+        insert new Mig_FreeeInvoiceLineWork__c(
+            InvoiceWork__c = workRecord.Id,
+            ExternalKey__c = 'freee_invoice_line:12345:77801:1',
+            FreeeLineId__c = '1',
+            Description__c = 'Refund for Calculated Enterprise 200 credits',
+            UnitPrice__c = -25000,
+            Quantity__c = 3,
+            LineAmount__c = -74043,
+            ImportStatus__c = Mig_FreeeInvoiceWorkService.STATUS_FETCHED
+        );
+
+        Test.startTest();
+        Mig_FreeeInvoiceProductResolver.resolveProducts();
+        Test.stopTest();
+
+        Mig_FreeeInvoiceLineWork__c lineWork = [
+            SELECT SuggestedProductMaster__c,
+                   ConfirmedProductMaster__c,
+                   ProductResolveStatus__c,
+                   ResolveConfidence__c,
+                   ResolveMessage__c
+            FROM Mig_FreeeInvoiceLineWork__c
+            WHERE InvoiceWork__c = :workRecord.Id
+            LIMIT 1
+        ];
+        System.assertEquals(productRecord.Id, lineWork.SuggestedProductMaster__c);
+        System.assertEquals(productRecord.Id, lineWork.ConfirmedProductMaster__c);
+        System.assertEquals(
+            Mig_FreeeInvoiceWorkService.PRODUCT_STATUS_CONFIRMED,
+            lineWork.ProductResolveStatus__c
+        );
+        System.assertEquals(0.96, lineWork.ResolveConfidence__c);
+        System.assertEquals(
+            'Matched uniquely by calculated unit price and product name.',
+            lineWork.ResolveMessage__c
+        );
+    }
+
+    @isTest
     static void productResolverSuggestsWhenPriceAndProductNameMatch() {
         ProductMaster__c productRecord = [
             SELECT Id, UnitPrice__c, AnnualMonthlyPrice__c
@@ -847,9 +887,15 @@ private class Mig_FreeeInvoiceMigrationTest {
             LIMIT 1
         ];
         System.assertEquals(productRecord.Id, lineWork.SuggestedProductMaster__c);
-        System.assertEquals(null, lineWork.ConfirmedProductMaster__c);
-        System.assertEquals(Mig_FreeeInvoiceWorkService.PRODUCT_STATUS_CANDIDATE, lineWork.ProductResolveStatus__c);
-        System.assertEquals('Matched by unit price and product name.', lineWork.ResolveMessage__c);
+        System.assertEquals(productRecord.Id, lineWork.ConfirmedProductMaster__c);
+        System.assertEquals(
+            Mig_FreeeInvoiceWorkService.PRODUCT_STATUS_CONFIRMED,
+            lineWork.ProductResolveStatus__c
+        );
+        System.assertEquals(
+            'Matched uniquely by calculated unit price and product name.',
+            lineWork.ResolveMessage__c
+        );
     }
 
     @isTest

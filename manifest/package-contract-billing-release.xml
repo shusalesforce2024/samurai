@@ -28,6 +28,7 @@
     <members>Contract__c.AccountCount__c</members>
     <members>Contract__c.PlanCategory__c</members>
     <members>Contract__c.ProductCategory__c</members>
+    <members>Opportunity__c.ContractStartMonth__c</members>
     <members>Quotation__c.QuotationNote__c</members>
     <name>CustomField</name>
   </types>
@@ -237,6 +238,7 @@
     <members>ContractMonthlyDetailReport</members>
     <members>ContractPeriodBillingReport</members>
     <members>ContractReport</members>
+    <members>CusOppReportType</members>
     <members>InvoiceBillingReport</members>
     <name>ReportType</name>
   </types>
@@ -255,6 +257,7 @@
     <members>ContractBillingReports/DashPaymentScheduleChart</members>
     <members>ContractBillingReports/DashPaymentWaitingInvoicesChart</members>
     <members>ContractBillingReports/DashUnsentInvoicesChart</members>
+    <members>ContractBillingReports/MRR_qkW</members>
     <name>Report</name>
   </types>
   <types>

@@ -1,0 +1,101 @@
+{
+  "source_counts": {
+    "contracts": 259,
+    "monthly": 2330,
+    "periods": 454,
+    "invoices": 528,
+    "invoice-lines": 663,
+    "opportunities": 521,
+    "quotations": 66,
+    "quotation-lines": 157,
+    "products": 53
+  },
+  "contract_status": {
+    "Activated": 143,
+    "解約": 63,
+    "Expired": 1,
+    "Draft": 50,
+    "更新予定": 2
+  },
+  "same-contract-product": {
+    "groups": 71,
+    "rows": 337
+  },
+  "same-contract-source": {
+    "groups": 29,
+    "rows": 58
+  },
+  "cross_contract": {
+    "groups": 23,
+    "rows": 55
+  },
+  "multiple_contract_accounts": 39,
+  "migration": {
+    "contracts": 25,
+    "status": {
+      "Draft": 25
+    },
+    "monthly_rows": 46,
+    "mrr_rows": 3,
+    "all_months_mrr_sum_not_current_mrr": "145000",
+    "invoices": 41
+  },
+  "monthly_anomalies": {
+    "product_missing": 1132,
+    "period_contract_mismatch": 1,
+    "invoice_contract_mismatch": 3
+  },
+  "opportunity_comparison": {
+    "with_quotes": 41,
+    "multiple_quotes": 12,
+    "multiple_accepted": 0,
+    "scenario_diff_count": 27,
+    "annual_with_quotes": 8
+  },
+  "flag_mismatch_rows": 325,
+  "alias_candidate_names": 13,
+  "september_expected_contracts_by_status_dates": 140,
+  "september_missing_contracts": 119,
+  "september_missing_categories": {
+    "Rendery": 72,
+    "未設定": 23,
+    "受託開発": 1,
+    "knock knock AI": 23
+  },
+  "name_length_risk_contracts": 2,
+  "contract_opportunity_linked": 28,
+  "contract_opportunity_different": 11,
+  "current_report_outside_contract_period_rows": 0,
+  "total_revenue_different_rows": 1043
+}
+[
+  {
+    "check": "current row count and total",
+    "passed": true,
+    "rows": 476,
+    "total": "28657872.50"
+  },
+  {
+    "check": "current all monthly totals",
+    "passed": true,
+    "groups": 12
+  },
+  {
+    "check": "total row count and total",
+    "passed": true,
+    "rows": 962,
+    "total": "47938140.00"
+  },
+  {
+    "check": "total all monthly totals",
+    "passed": true,
+    "groups": 40
+  },
+  {
+    "check": "active contract count",
+    "passed": true,
+    "count": 143
+  }
+]
+longnames [{"Contract": "CN-00000201", "ContractName": "アイリスオーヤマ株式会社(ストアソリューション営業部ストアデザインチーム) [OLD] Rendery Enterpriseプラン(2025年9月まで) Freee自動請求契約", "Length": 96, "Category": "Rendery"}, {"Contract": "CN-00000225", "ContractName": "三井不動産レジデンシャルリース株式会社(ソリューション推進部) [OLD] Rendery Enterpriseプラン(2025年9月まで) Freee自動請求契約", "Length": 90, "Category": "Rendery"}]
+refs [{"attributes": {"type": "ContractLineItem__c", "url": "/services/data/v67.0/sobjects/ContractLineItem__c/a03RB00001VLhyrYAD"}, "Id": "a03RB00001VLhyrYAD", "Name": "a03RB00001VLhyr", "Account__c": "001RB00001VcyFKYAZ", "MasterContract__c": "a04RB00000kVL7KYAW", "ContractPeriod__c": "a0BRB00000ynn552AA", "ContractYearMonth__c": "2026/07", "Month__c": "2026/07", "PeriodStartDate__c": "2026-07-01", "PeriodEndDate__c": "2026-07-31", "ProductMaster__c": "a0CRB0000CcXZ6x2QG", "QuotationLine__c": null, "RelatedInvoice__c": "a00RB00002BahLfYAJ", "RevenueAmount__c": 225000, "Total__c": 225000, "MRR_Target__c": false, "InitialFee__c": false, "PeopleNumber__c": 1, "CreatedDate": "2026-07-27T07:58:17.000+0000", "LastModifiedDate": "2026-07-28T05:08:12.000+0000", "ContractNumber": "CN-00000165", "ContractName": "Mig_freee請求移行_クウジット株式会社", "ContractStatus": "Draft", "AccountName": "クウジット株式会社", "ProductName": "受託開発", "Issue": "period_contract_mismatch"}, {"attributes": {"type": "ContractLineItem__c", "url": "/services/data/v67.0/sobjects/ContractLineItem__c/a03RB00001VUaoZYAT"}, "Id": "a03RB00001VUaoZYAT", "Name": "a03RB00001VUaoZ", "Account__c": "001RB00001VTqleYAD", "MasterContract__c": "a04RB00000kUAObYAO", "ContractPeriod__c": "a0BRB00000ynb6W2AQ", "ContractYearMonth__c": "2026/06", "Month__c": "2026/06", "PeriodStartDate__c": "2026-06-01", "PeriodEndDate__c": "2026-06-30", "ProductMaster__c": "a0CRB0000CcXZ6S2QW", "QuotationLine__c": null, "RelatedInvoice__c": "a00RB00002DAbgvYAD", "RevenueAmount__c": 6400, "Total__c": 6400, "MRR_Target__c": false, "InitialFee__c": false, "PeopleNumber__c": 12, "CreatedDate": "2026-07-28T04:58:43.000+0000", "LastModifiedDate": "2026-08-19T10:25:53.000+0000", "ContractNumber": "CN-00000063", "ContractName": "大塚商会（大和財宅）", "ContractStatus": "Activated", "AccountName": "株式会社大塚商会", "ProductName": "[年払_代理販売20%] Rendery Proプランネンバライ", "Issue": "invoice_contract_mismatch"}, {"attributes": {"type": "ContractLineItem__c", "url": "/services/data/v67.0/sobjects/ContractLineItem__c/a03RB00001XlNH2YAN"}, "Id": "a03RB00001XlNH2YAN", "Name": "a03RB00001XlNH2", "Account__c": "001RB00001VTqWFYA1", "MasterContract__c": "a04RB00000nmHDdYAM", "ContractPeriod__c": "a0BRB00001429CT2AY", "ContractYearMonth__c": "2026/08", "Month__c": "2026/08", "PeriodStartDate__c": "2026-08-01", "PeriodEndDate__c": "2026-08-31", "ProductMaster__c": "a0CRB0000CcXZ6Q2QW", "QuotationLine__c": null, "RelatedInvoice__c": "a00RB00002Cb9PNYAZ", "RevenueAmount__c": 96000, "Total__c": 96000, "MRR_Target__c": true, "InitialFee__c": false, "PeopleNumber__c": 2, "CreatedDate": "2026-08-10T13:41:34.000+0000", "LastModifiedDate": "2026-08-19T10:25:53.000+0000", "ContractNumber": "CN-00000251", "ContractName": "森ビル株式会社 Rendery Proプラン Freee自動請求契約", "ContractStatus": "Activated", "AccountName": "森ビル株式会社", "ProductName": "Rendery Proプラン", "Issue": "invoice_contract_mismatch"}, {"attributes": {"type": "ContractLineItem__c", "url": "/services/data/v67.0/sobjects/ContractLineItem__c/a03RB00001XlNH3YAN"}, "Id": "a03RB00001XlNH3YAN", "Name": "a03RB00001XlNH3", "Account__c": "001RB00001VTrqmYAD", "MasterContract__c": "a04RB00000nmHDeYAM", "ContractPeriod__c": "a0BRB00001429CU2AY", "ContractYearMonth__c": "2026/08", "Month__c": "2026/08", "PeriodStartDate__c": "2026-08-01", "PeriodEndDate__c": "2026-08-31", "ProductMaster__c": "a0CRB0000CcXZ6Q2QW", "QuotationLine__c": null, "RelatedInvoice__c": "a00RB00002Crja9YAB", "RevenueAmount__c": 8000, "Total__c": 8000, "MRR_Target__c": true, "InitialFee__c": false, "PeopleNumber__c": 1, "CreatedDate": "2026-08-10T13:41:34.000+0000", "LastModifiedDate": "2026-08-19T10:25:53.000+0000", "ContractNumber": "CN-00000252", "ContractName": "センコー産業株式会社 Rendery Proプラン Freee自動請求契約", "ContractStatus": "Activated", "AccountName": "センコー産業株式会社", "ProductName": "Rendery Proプラン", "Issue": "invoice_contract_mismatch"}]

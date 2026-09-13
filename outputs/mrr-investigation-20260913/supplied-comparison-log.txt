@@ -1,0 +1,291 @@
+{
+  "sheet1_rows": 476,
+  "sheet1_aug_rows": 89,
+  "sheet1_aug_amount": "6232000",
+  "sheet2_rows": 81,
+  "sheet2_amount": "5587000",
+  "removed_rows": 8,
+  "removed_amount": "645000",
+  "added_rows": 0,
+  "added_amount": "0",
+  "unique_live_match_rows": 554,
+  "amount_match_rows": 554,
+  "comparison_rows": 557,
+  "removed": [
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 365,
+      "Date": "2026/08/01",
+      "Account": "戸田建設株式会社",
+      "Contract": "CN-00000026",
+      "MonthlyName": "a03RB00001Ygjen",
+      "Amount": "55000",
+      "ContractMRR": "55000"
+    },
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 369,
+      "Date": "2026/08/01",
+      "Account": "株式会社デザインアーク",
+      "Contract": "CN-00000036",
+      "MonthlyName": "株式会社デザインアーク_2026/08",
+      "Amount": "55000",
+      "ContractMRR": "165000"
+    },
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 377,
+      "Date": "2026/08/01",
+      "Account": "フロンヴィルホームズ名古屋株式会社",
+      "Contract": "CN-00000069",
+      "MonthlyName": "フロンヴィルホームズ名古屋株式会社_2026/08",
+      "Amount": "20000",
+      "ContractMRR": "8000"
+    },
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 379,
+      "Date": "2026/08/01",
+      "Account": "三菱地所レジデンス株式会社",
+      "Contract": "CN-00000071",
+      "MonthlyName": "三菱地所レジデンス株式会社_2026/08",
+      "Amount": "140000",
+      "ContractMRR": "16000"
+    },
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 411,
+      "Date": "2026/08/01",
+      "Account": "野村不動産株式会社",
+      "Contract": "CN-00000191",
+      "MonthlyName": "野村不動産株式会社　商業事業本部_2026/08",
+      "Amount": "140000",
+      "ContractMRR": "198000"
+    },
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 426,
+      "Date": "2026/08/01",
+      "Account": "野村不動産株式会社",
+      "Contract": "CN-00000213",
+      "MonthlyName": "野村不動産株式会社 Rendery Enterpriseプラン Freee自動請求契約_2026/08",
+      "Amount": "30000",
+      "ContractMRR": "180000"
+    },
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 427,
+      "Date": "2026/08/01",
+      "Account": "野村不動産株式会社",
+      "Contract": "CN-00000213",
+      "MonthlyName": "野村不動産株式会社 Rendery Enterpriseプラン Freee自動請求契約_2026/08",
+      "Amount": "150000",
+      "ContractMRR": "180000"
+    },
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 432,
+      "Date": "2026/08/01",
+      "Account": "株式会社ジョイフル本田",
+      "Contract": "CN-00000219",
+      "MonthlyName": "株式会社ジョイフル本田 [OLD] Rendery Enterpriseプラン(2025年9月まで) Freee自動請求契約_2026/08",
+      "Amount": "55000",
+      "ContractMRR": "55000"
+    }
+  ],
+  "added": [],
+  "removed_candidates": [
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 365,
+      "Date": "2026/08/01",
+      "Account": "戸田建設株式会社",
+      "Contract": "CN-00000026",
+      "MonthlyName": "a03RB00001Ygjen",
+      "Amount": "55000",
+      "ContractMRR": "55000",
+      "LiveMatchCount": 1,
+      "LiveRecords": [
+        {
+          "Id": "a03RB00001YgjenYAB",
+          "ProductMaster__c": "a0CRB0000CcXZ6T2QW",
+          "QuotationLine__c": null,
+          "MRR_Target__c": true,
+          "RelatedInvoice__c": "a00RB00002FLyB7YAL",
+          "Total__c": 55000
+        }
+      ]
+    },
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 369,
+      "Date": "2026/08/01",
+      "Account": "株式会社デザインアーク",
+      "Contract": "CN-00000036",
+      "MonthlyName": "株式会社デザインアーク_2026/08",
+      "Amount": "55000",
+      "ContractMRR": "165000",
+      "LiveMatchCount": 1,
+      "LiveRecords": [
+        {
+          "Id": "a03RB00001STmH2YAL",
+          "ProductMaster__c": "a0CRB0000CcXZ6V2QW",
+          "QuotationLine__c": null,
+          "MRR_Target__c": false,
+          "RelatedInvoice__c": null,
+          "Total__c": 55000
+        }
+      ]
+    },
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 377,
+      "Date": "2026/08/01",
+      "Account": "フロンヴィルホームズ名古屋株式会社",
+      "Contract": "CN-00000069",
+      "MonthlyName": "フロンヴィルホームズ名古屋株式会社_2026/08",
+      "Amount": "20000",
+      "ContractMRR": "8000",
+      "LiveMatchCount": 1,
+      "LiveRecords": [
+        {
+          "Id": "a03RB00001NswgsYAB",
+          "ProductMaster__c": "a0CRB0000CcXZ6Q2QW",
+          "QuotationLine__c": null,
+          "MRR_Target__c": false,
+          "RelatedInvoice__c": "a00RB00002Am2BRYAZ",
+          "Total__c": 20000
+        }
+      ]
+    },
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 379,
+      "Date": "2026/08/01",
+      "Account": "三菱地所レジデンス株式会社",
+      "Contract": "CN-00000071",
+      "MonthlyName": "三菱地所レジデンス株式会社_2026/08",
+      "Amount": "140000",
+      "ContractMRR": "16000",
+      "LiveMatchCount": 1,
+      "LiveRecords": [
+        {
+          "Id": "a03RB00001NswhBYAR",
+          "ProductMaster__c": null,
+          "QuotationLine__c": null,
+          "MRR_Target__c": false,
+          "RelatedInvoice__c": "a00RB00002B4i4HYAR",
+          "Total__c": 140000
+        }
+      ]
+    },
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 411,
+      "Date": "2026/08/01",
+      "Account": "野村不動産株式会社",
+      "Contract": "CN-00000191",
+      "MonthlyName": "野村不動産株式会社　商業事業本部_2026/08",
+      "Amount": "140000",
+      "ContractMRR": "198000",
+      "LiveMatchCount": 2,
+      "LiveRecords": [
+        {
+          "Id": "a03RB00001X5x2QYAR",
+          "ProductMaster__c": "a0CRB0000CcXZ6X2QW",
+          "QuotationLine__c": "a09RB000010S68bYAC",
+          "MRR_Target__c": true,
+          "RelatedInvoice__c": null,
+          "Total__c": 140000
+        },
+        {
+          "Id": "a03RB00001X5x2SYAR",
+          "ProductMaster__c": "a0CRB0000CcXZ6Z2QW",
+          "QuotationLine__c": null,
+          "MRR_Target__c": false,
+          "RelatedInvoice__c": null,
+          "Total__c": 140000
+        }
+      ]
+    },
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 426,
+      "Date": "2026/08/01",
+      "Account": "野村不動産株式会社",
+      "Contract": "CN-00000213",
+      "MonthlyName": "野村不動産株式会社 Rendery Enterpriseプラン Freee自動請求契約_2026/08",
+      "Amount": "30000",
+      "ContractMRR": "180000",
+      "LiveMatchCount": 1,
+      "LiveRecords": [
+        {
+          "Id": "a03RB00001X5x2jYAB",
+          "ProductMaster__c": "a0CRB0000CcXZ6b2QG",
+          "QuotationLine__c": null,
+          "MRR_Target__c": true,
+          "RelatedInvoice__c": null,
+          "Total__c": 30000
+        }
+      ]
+    },
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 427,
+      "Date": "2026/08/01",
+      "Account": "野村不動産株式会社",
+      "Contract": "CN-00000213",
+      "MonthlyName": "野村不動産株式会社 Rendery Enterpriseプラン Freee自動請求契約_2026/08",
+      "Amount": "150000",
+      "ContractMRR": "180000",
+      "LiveMatchCount": 1,
+      "LiveRecords": [
+        {
+          "Id": "a03RB00001X5x2kYAB",
+          "ProductMaster__c": "a0CRB0000CcXZ6V2QW",
+          "QuotationLine__c": null,
+          "MRR_Target__c": true,
+          "RelatedInvoice__c": null,
+          "Total__c": 150000
+        }
+      ]
+    },
+    {
+      "SourceSheet": "【営業】Rendery 月別契約中MRR",
+      "SourceRow": 432,
+      "Date": "2026/08/01",
+      "Account": "株式会社ジョイフル本田",
+      "Contract": "CN-00000219",
+      "MonthlyName": "株式会社ジョイフル本田 [OLD] Rendery Enterpriseプラン(2025年9月まで) Freee自動請求契約_2026/08",
+      "Amount": "55000",
+      "ContractMRR": "55000",
+      "LiveMatchCount": 1,
+      "LiveRecords": [
+        {
+          "Id": "a03RB00001X5x2qYAB",
+          "ProductMaster__c": "a0CRB0000CcXZ6T2QW",
+          "QuotationLine__c": null,
+          "MRR_Target__c": true,
+          "RelatedInvoice__c": null,
+          "Total__c": 55000
+        }
+      ]
+    }
+  ],
+  "sheet1_multiset_matches_live": true
+}
+special rows 【営業】Rendery 月別契約中MRR
+[{'cell': 'B65', 'value': '小計', 'style': '15', 'formula': None}, {'cell': 'C65', 'value': '合計', 'style': '16', 'formula': None}, {'cell': 'G65', 'value': '3064584', 'style': '17', 'formula': None}, {'cell': 'H65', 'value': '2409000', 'style': '17', 'formula': None}]
+[{'cell': 'B124', 'value': '小計', 'style': '15', 'formula': None}, {'cell': 'C124', 'value': '合計', 'style': '16', 'formula': None}, {'cell': 'G124', 'value': '2682584', 'style': '17', 'formula': None}, {'cell': 'H124', 'value': '2886000', 'style': '17', 'formula': None}]
+[{'cell': 'B184', 'value': '小計', 'style': '15', 'formula': None}, {'cell': 'C184', 'value': '合計', 'style': '16', 'formula': None}, {'cell': 'G184', 'value': '2791584', 'style': '17', 'formula': None}, {'cell': 'H184', 'value': '2999000', 'style': '17', 'formula': None}]
+[{'cell': 'B276', 'value': '小計', 'style': '15', 'formula': None}, {'cell': 'C276', 'value': '合計', 'style': '16', 'formula': None}, {'cell': 'G276', 'value': '5421484', 'style': '17', 'formula': None}, {'cell': 'H276', 'value': '3523000', 'style': '17', 'formula': None}]
+[{'cell': 'B355', 'value': '小計', 'style': '15', 'formula': None}, {'cell': 'C355', 'value': '合計', 'style': '16', 'formula': None}, {'cell': 'G355', 'value': '5079636.5', 'style': '17', 'formula': None}, {'cell': 'H355', 'value': '3654000', 'style': '17', 'formula': None}]
+[{'cell': 'B446', 'value': '小計', 'style': '15', 'formula': None}, {'cell': 'C446', 'value': '合計', 'style': '16', 'formula': None}, {'cell': 'G446', 'value': '6232000', 'style': '17', 'formula': None}, {'cell': 'H446', 'value': '4396000', 'style': '17', 'formula': None}]
+[{'cell': 'B457', 'value': '小計', 'style': '15', 'formula': None}, {'cell': 'C457', 'value': '合計', 'style': '16', 'formula': None}, {'cell': 'G457', 'value': '576000', 'style': '17', 'formula': None}, {'cell': 'H457', 'value': '586000', 'style': '17', 'formula': None}]
+[{'cell': 'B468', 'value': '小計', 'style': '15', 'formula': None}, {'cell': 'C468', 'value': '合計', 'style': '16', 'formula': None}, {'cell': 'G468', 'value': '576000', 'style': '17', 'formula': None}, {'cell': 'H468', 'value': '586000', 'style': '17', 'formula': None}]
+[{'cell': 'B479', 'value': '小計', 'style': '15', 'formula': None}, {'cell': 'C479', 'value': '合計', 'style': '16', 'formula': None}, {'cell': 'G479', 'value': '576000', 'style': '17', 'formula': None}, {'cell': 'H479', 'value': '586000', 'style': '17', 'formula': None}]
+[{'cell': 'B490', 'value': '小計', 'style': '15', 'formula': None}, {'cell': 'C490', 'value': '合計', 'style': '16', 'formula': None}, {'cell': 'G490', 'value': '576000', 'style': '17', 'formula': None}, {'cell': 'H490', 'value': '586000', 'style': '17', 'formula': None}]
+[{'cell': 'B501', 'value': '小計', 'style': '15', 'formula': None}, {'cell': 'C501', 'value': '合計', 'style': '16', 'formula': None}, {'cell': 'G501', 'value': '576000', 'style': '17', 'formula': None}, {'cell': 'H501', 'value': '586000', 'style': '17', 'formula': None}]
+[{'cell': 'B511', 'value': '小計', 'style': '15', 'formula': None}, {'cell': 'C511', 'value': '合計', 'style': '16', 'formula': None}, {'cell': 'G511', 'value': '506000', 'style': '17', 'formula': None}, {'cell': 'H511', 'value': '516000', 'style': '17', 'formula': None}]
+special rows 重複削除分
+[{'cell': 'C85', 'value': '小計', 'style': '32', 'formula': None}, {'cell': 'D85', 'value': '合計', 'style': '33', 'formula': None}, {'cell': 'H85', 'value': '6232000', 'style': '17', 'formula': None}, {'cell': 'I85', 'value': '4396000', 'style': '17', 'formula': None}]

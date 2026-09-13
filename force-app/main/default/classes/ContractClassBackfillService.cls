@@ -24,30 +24,87 @@ public without sharing class ContractClassBackfillService {
     }
 
     public static Result dryRun() {
-        return run(true);
+        return run(true, null);
     }
 
     public static Result executeUpdate() {
-        return run(false);
+        return run(false, null);
     }
 
-    public static Result run(Boolean dryRun) {
+    public static Result executeForContractIds(Set<Id> contractIds) {
+        return run(false, contractIds);
+    }
+
+    public static void syncFromInvoiceLines(List<InvoiceLine__c> invoiceLines) {
+        if (invoiceLines == null || invoiceLines.isEmpty()) {
+            return;
+        }
+        Set<Id> invoiceIds = new Set<Id>();
+        for (InvoiceLine__c invoiceLine : invoiceLines) {
+            if (invoiceLine.Invoice__c != null) {
+                invoiceIds.add(invoiceLine.Invoice__c);
+            }
+        }
+        if (invoiceIds.isEmpty()) {
+            return;
+        }
+
+        Set<Id> contractIds = new Set<Id>();
+        for (Invoice__c invoiceRecord : [
+            SELECT ParentContract__c
+            FROM Invoice__c
+            WHERE Id IN :invoiceIds
+              AND ParentContract__c != null
+        ]) {
+            contractIds.add(invoiceRecord.ParentContract__c);
+        }
+        if (!contractIds.isEmpty()) {
+            executeForContractIds(contractIds);
+        }
+    }
+
+    private static Result run(Boolean dryRun, Set<Id> requestedContractIds) {
         Result result = new Result();
-        List<Contract__c> targets = [
-            SELECT Id,
-                   Name,
-                   ContractName__c,
-                   ProductCategory__c,
-                   PlanCategory__c,
-                   AccountCount__c
-            FROM Contract__c
-            WHERE Status__c = :STATUS_ACTIVATED
-              AND (
-                  ProductCategory__c = null
-                  OR PlanCategory__c = null
-                  OR AccountCount__c = null
-              )
-        ];
+        if (requestedContractIds != null && requestedContractIds.isEmpty()) {
+            result.messages.add('対象契約はありません。');
+            return result;
+        }
+
+        List<Contract__c> targets;
+        if (requestedContractIds == null) {
+            targets = [
+                SELECT Id,
+                       Name,
+                       ContractName__c,
+                       ProductCategory__c,
+                       PlanCategory__c,
+                       AccountCount__c
+                FROM Contract__c
+                WHERE Status__c = :STATUS_ACTIVATED
+                  AND (
+                      ProductCategory__c = null
+                      OR PlanCategory__c = null
+                      OR AccountCount__c = null
+                  )
+            ];
+        } else {
+            targets = [
+                SELECT Id,
+                       Name,
+                       ContractName__c,
+                       ProductCategory__c,
+                       PlanCategory__c,
+                       AccountCount__c
+                FROM Contract__c
+                WHERE Id IN :requestedContractIds
+                  AND Status__c = :STATUS_ACTIVATED
+                  AND (
+                      ProductCategory__c = null
+                      OR PlanCategory__c = null
+                      OR AccountCount__c = null
+                  )
+            ];
+        }
         result.targetContracts = targets.size();
         if (targets.isEmpty()) {
             result.messages.add('対象の有効契約はありません。');
@@ -64,7 +121,9 @@ public without sharing class ContractClassBackfillService {
                    AmountWithTax__c,
                    Line_Amount__c,
                    LineType__c,
+                   Unit__c,
                    ProductMaster__r.Name,
+                   ProductMaster__r.BillingTiming__c,
                    Invoice__r.ParentContract__c,
                    Invoice__r.Billing_Date__c,
                    Invoice__r.CreatedDate,
@@ -169,7 +228,10 @@ public without sharing class ContractClassBackfillService {
             detectPlanCategory(lineText),
             detectPlanCategory(productMasterText)
         );
-        candidate.accountCount = coalesceDecimal(parseAccountCount(lineText), line.Quantity__c);
+        candidate.accountCount = coalesceDecimal(
+            parseAccountCount(lineText),
+            inferAccountCount(line)
+        );
         candidate.amountWithTax = line.AmountWithTax__c == null ? line.Line_Amount__c : line.AmountWithTax__c;
         candidate.score = calculateScore(candidate, line);
         candidate.evidence =
@@ -273,6 +335,24 @@ public without sharing class ContractClassBackfillService {
             return Decimal.valueOf(matcher.group(1));
         }
         return null;
+    }
+
+    private static Decimal inferAccountCount(InvoiceLine__c line) {
+        if (line == null || line.Quantity__c == null || line.Quantity__c <= 0) {
+            return null;
+        }
+        String normalizedUnit = normalize(line.Unit__c);
+        if (normalizedUnit.contains('月')
+            || normalizedUnit.contains('ヶ月')
+            || normalizedUnit.contains('年')) {
+            return null;
+        }
+        if (line.ProductMaster__r != null
+            && line.ProductMaster__r.BillingTiming__c == '年一括'
+            && (String.isBlank(normalizedUnit) || normalizedUnit == '月')) {
+            return null;
+        }
+        return line.Quantity__c;
     }
 
     private static String coalesce(String firstValue, String secondValue) {

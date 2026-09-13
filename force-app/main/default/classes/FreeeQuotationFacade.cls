@@ -37,6 +37,7 @@ public with sharing class FreeeQuotationFacade {
 
         List<Quotation__c> quotations = [
             SELECT Id,
+                   Owner.Name,
                    Account__c,
                    Account__r.Freee_Partner_Id__c,
                    Subject__c,

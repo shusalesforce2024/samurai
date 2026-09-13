@@ -469,6 +469,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Opportunity__c.ContractStartMonth__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>ProductMaster__c.ARR_Target__c</field>
         <readable>true</readable>
     </fieldPermissions>

@@ -1,0 +1,25 @@
+﻿Id,Name,InvoiceWork__r.Name,InvoiceWork__r.FreeeInvoiceId__c,InvoiceWork__r.ImportStatus__c,InvoiceWork__r.ResolvedContract__r.Name,Description__c,Quantity__c,UnitPrice__c,LineAmount__c,SuggestedProductMaster__c,SuggestedProductMaster__r.Name,ConfirmedProductMaster__c,ConfirmedProductMaster__r.Name,ProductResolveStatus__c,ResolveConfidence__c,ResolveMessage__c
+a0ERB00000Pk8Lx2AJ,MFILW-000613,MFIW-000466,41780264,反映可能,CN-00000036,Rendery_Enterpriseプラン,6,11000,66000,a0CRB0000Ck3ReH2QU,Rendery_Enterpriseプラン,a0CRB0000Ck3ReH2QU,Rendery_Enterpriseプラン,確定済み,1,Exact ProductMaster.Name match.
+a0ERB00000Pk7sv2AB,MFILW-000589,MFIW-000449,41712745,要確認,,Rendery Enterpriseプラン_月額（請求日が属する月分）,12,11000,132000,a0CRB0000CcXZ6T2QW,[OLD] Rendery Enterpriseプラン(2025年9月まで),,,候補あり,0.75,Matched by unit price and product name.
+a0ERB00000Pk8Lz2AJ,MFILW-000615,MFIW-000467,43542541,要確認,,図面整合用モデリング,1,35000,35000,,,,,要確認,,No ProductMaster candidate found.
+a0ERB00000Pk8M02AJ,MFILW-000616,MFIW-000467,43542541,要確認,,デザイン調整費,2,30000,60000,,,,,要確認,,No ProductMaster candidate found.
+a0ERB00000Pk8Ly2AJ,MFILW-000614,MFIW-000467,43542541,要確認,,VISIOAL_ベーシックプラン,2,70000,140000,,,,,要確認,,No ProductMaster candidate found.
+a0ERB00000Pk8M12AJ,MFILW-000617,MFIW-000468,43817414,反映可能,CN-00000036,Rendery_Enterpriseプラン,6,11000,66000,a0CRB0000Ck3ReH2QU,Rendery_Enterpriseプラン,a0CRB0000Ck3ReH2QU,Rendery_Enterpriseプラン,確定済み,1,Exact ProductMaster.Name match.
+a0ERB00000Pk8M22AJ,MFILW-000618,MFIW-000469,43817434,要確認,,Rendery Enterpriseプラン_月額（請求日が属する月分）,12,11000,132000,a0CRB0000CcXZ6T2QW,[OLD] Rendery Enterpriseプラン(2025年9月まで),,,候補あり,0.75,Matched by unit price and product name.
+a0ERB00000Pk8Qo2AJ,MFILW-000620,MFIW-000471,45844733,反映可能,CN-00000036,Rendery_Enterpriseプラン,6,11000,66000,a0CRB0000Ck3ReH2QU,Rendery_Enterpriseプラン,a0CRB0000Ck3ReH2QU,Rendery_Enterpriseプラン,確定済み,1,Exact ProductMaster.Name match.
+a0ERB00000Pk8Qn2AJ,MFILW-000619,MFIW-000470,45827425,要確認,,Rendery Enterpriseプラン_月額（請求日が属する月分）,12,11000,132000,a0CRB0000CcXZ6T2QW,[OLD] Rendery Enterpriseプラン(2025年9月まで),,,候補あり,0.75,Matched by unit price and product name.
+a0ERB00000Pk8aT2AR,MFILW-000624,MFIW-000475,48078761,要確認,,VISIOAL_ベーシックプラン,1,75000,75000,,,,,要確認,,No ProductMaster candidate found.
+a0ERB00000Pk8aU2AR,MFILW-000625,MFIW-000475,48078761,要確認,,図面整合用モデリング,1,25000,25000,a0CRB0000CcXZ6d2QG,Rendery セキュリティオプション(IP制限)_運用費用,a0CRB0000CcXZ6d2QG,Rendery セキュリティオプション(IP制限)_運用費用,確定済み,0.99,過去に確定した同一の明細名・単価・数量・金額から商品を自動確定しました。
+a0ERB00000Pk8aV2AR,MFILW-000626,MFIW-000475,48078761,要確認,,デザイン調整費,1,20000,20000,,,,,要確認,,No ProductMaster candidate found.
+a0ERB00000Pk8aW2AR,MFILW-000627,MFIW-000475,48078761,要確認,,納期短縮_短納期,1,15000,15000,,,,,要確認,,No ProductMaster candidate found.
+a0ERB00000Pk8Qp2AJ,MFILW-000621,MFIW-000472,46403134,要確認,CN-00000065,Rendery_Pro_月額利用料(1アカウント)),6,8000,48000,a0CRB0000CcXZ6Q2QW,Rendery Proプラン,,,候補あり,0.75,Matched by unit price and product name.
+a0ERB00000Pk8Qq2AJ,MFILW-000622,MFIW-000473,47988999,反映可能,CN-00000036,Rendery_Enterpriseプラン,6,11000,66000,a0CRB0000Ck3ReH2QU,Rendery_Enterpriseプラン,a0CRB0000Ck3ReH2QU,Rendery_Enterpriseプラン,確定済み,1,Exact ProductMaster.Name match.
+a0ERB00000Pk8Qr2AJ,MFILW-000623,MFIW-000474,47989036,要確認,,Rendery Enterpriseプラン_月額（請求日が属する月分）,12,11000,132000,a0CRB0000CcXZ6T2QW,[OLD] Rendery Enterpriseプラン(2025年9月まで),,,候補あり,0.75,Matched by unit price and product name.
+a0ERB00000Pk8aX2AR,MFILW-000628,MFIW-000476,49905610,反映可能,CN-00000036,Rendery_Enterpriseプラン,6,11000,66000,a0CRB0000Ck3ReH2QU,Rendery_Enterpriseプラン,a0CRB0000Ck3ReH2QU,Rendery_Enterpriseプラン,確定済み,1,Exact ProductMaster.Name match.
+a0ERB00000Pk8aY2AR,MFILW-000629,MFIW-000477,50683953,要確認,CN-00000070,Rendery_Pro_年額一括払い_3アカウント,12,24000,288000,,,,,要確認,,No ProductMaster candidate found.
+a0ERB00000Pk8aZ2AR,MFILW-000630,MFIW-000478,50768284,要確認,CN-00000123,knock knock AI_Enterpriseプラン_2000クレジット,12,261000,3132000,,,,,要確認,,No ProductMaster candidate found.
+a0ERB00000Pk8aa2AB,MFILW-000631,MFIW-000478,50768284,要確認,CN-00000123,クレジット単価割引(8.05%),12,-21000,-252000,,,,,要確認,,No ProductMaster candidate found.
+a0ERB00000Pk8ab2AB,MFILW-000632,MFIW-000478,50768284,要確認,CN-00000123,knock knock AI_Enterpriseプラン_200クレジット(返金分),3,-24000,-72000,,,,,要確認,,No ProductMaster candidate found.
+a0ERB00000Pk8ac2AB,MFILW-000633,MFIW-000479,52007304,反映可能,CN-00000036,Rendery_Enterpriseプラン,5,11000,55000,a0CRB0000Ck3ReH2QU,Rendery_Enterpriseプラン,a0CRB0000Ck3ReH2QU,Rendery_Enterpriseプラン,確定済み,1,Exact ProductMaster.Name match.
+a0ERB00000Pk8k92AB,MFILW-000634,MFIW-000480,52182829,要確認,CN-00000073,Rendery Enterpriseプラン5アカウント_26年2-3月,5,30000,150000,a0CRB0000CcXZ6b2QG,Rendery セキュリティオプション(SSO)_運用費用,,,候補あり,0.75,Matched by unit price and product name.
+a0ERB00000Pk8kA2AR,MFILW-000635,MFIW-000481,52556987,要確認,CN-00000070,Rendery Enterpriseプラン_月額,1,15000,15000,a0CRB0000CcXZ6V2QW,Rendery Enterpriseプラン,,,候補あり,0.75,Matched by unit price and product name.

@@ -1,0 +1,757 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/fbpv76",
+    "id": "fbpv76",
+    "slide": 1,
+    "layoutId": "91fefc6a-7a24-4bf9-b456-4d59bf2977ee",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "e7ec9ef9-c152-4f5e-8f2b-f58c6c1cdbd0",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFFFFF",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Arial"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "91fefc6a-7a24-4bf9-b456-4d59bf2977ee",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "e7ec9ef9-c152-4f5e-8f2b-f58c6c1cdbd0",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "e7ec9ef9-c152-4f5e-8f2b-f58c6c1cdbd0",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/rq1wrqt0",
+      "id": "1",
+      "name": "accent-field",
+      "bbox": [
+        824,
+        0,
+        456,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#EAF5FB",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sraxkvul",
+      "id": "2",
+      "name": "accent-bar",
+      "bbox": [
+        824,
+        0,
+        20,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#3D8DFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dsjetgb6",
+      "id": "3",
+      "name": "kicker",
+      "bbox": [
+        58,
+        62,
+        460,
+        40
+      ],
+      "geometry": "rect",
+      "text": "CEOご説明資料",
+      "textPreview": "CEOご説明資料",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 20,
+        "typeface": "Arial",
+        "color": "#3D8DFF",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "CEOご説明資料"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "CEOご説明資料",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "Arial",
+            "color": "#3D8DFF",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "CEOご説明資料",
+              "fontSize": 20,
+              "typeface": "Arial",
+              "color": "#3D8DFF",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i18fe1cj",
+      "id": "4",
+      "name": "cover-title",
+      "bbox": [
+        58,
+        155,
+        700,
+        180
+      ],
+      "geometry": "rect",
+      "text": "Stripe請求データを\nSalesforceでMRR管理へ",
+      "textPreview": "Stripe請求データを | SalesforceでMRR管理へ",
+      "resolvedFontSize": 54,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 54,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Stripe請求データを"
+          },
+          {
+            "index": 2,
+            "text": "SalesforceでMRR管理へ"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Stripe請求データを",
+          "resolvedTextStyle": {
+            "fontSize": 54,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Stripe請求データを",
+              "fontSize": 54,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "SalesforceでMRR管理へ",
+          "resolvedTextStyle": {
+            "fontSize": 54,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "SalesforceでMRR管理へ",
+              "fontSize": 54,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/32hwn6d4",
+      "id": "5",
+      "name": "subtitle",
+      "bbox": [
+        58,
+        370,
+        680,
+        100
+      ],
+      "geometry": "rect",
+      "text": "月1回のCSV運用から始め、必要性を確認して自動化する段階導入",
+      "textPreview": "月1回のCSV運用から始め、必要性を確認して自動化する段階導入",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 26,
+        "typeface": "Arial",
+        "color": "#62666D",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "月1回のCSV運用から始め、必要性を確認して自動化する段階"
+          },
+          {
+            "index": 2,
+            "text": "導入"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "月1回のCSV運用から始め、必要性を確認して自動化する段階導入",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "typeface": "Arial",
+            "color": "#62666D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "月1回のCSV運用から始め、必要性を確認して自動化する段階導入",
+              "fontSize": 26,
+              "typeface": "Arial",
+              "color": "#62666D",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4nqxgbu9",
+      "id": "6",
+      "name": "client",
+      "bbox": [
+        58,
+        600,
+        550,
+        35
+      ],
+      "geometry": "rect",
+      "text": "株式会社SAMURAI ARCHITECTS",
+      "textPreview": "株式会社SAMURAI ARCHITECTS",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 18,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "株式会社SAMURAI ARCHITECTS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "株式会社SAMURAI ARCHITECTS",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "株式会社SAMURAI ARCHITECTS",
+              "fontSize": 18,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5ozepgbu",
+      "id": "7",
+      "name": "date",
+      "bbox": [
+        58,
+        642,
+        300,
+        28
+      ],
+      "geometry": "rect",
+      "text": "2026年8月24日",
+      "textPreview": "2026年8月24日",
+      "resolvedFontSize": 15.33,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "Arial",
+        "color": "#62666D",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.96,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2026年8月24日"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2026年8月24日",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Arial",
+            "color": "#62666D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2026年8月24日",
+              "fontSize": 16,
+              "typeface": "Arial",
+              "color": "#62666D",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2xsfq5cn",
+      "id": "8",
+      "name": "hero-number",
+      "bbox": [
+        872,
+        220,
+        330,
+        90
+      ],
+      "geometry": "rect",
+      "text": "154,000円",
+      "textPreview": "154,000円",
+      "resolvedFontSize": 48,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 48,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "154,000円"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "154,000円",
+          "resolvedTextStyle": {
+            "fontSize": 48,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "154,000円",
+              "fontSize": 48,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nylwzat8",
+      "id": "9",
+      "name": "hero-label",
+      "bbox": [
+        872,
+        312,
+        330,
+        42
+      ],
+      "geometry": "rect",
+      "text": "税込・想定28時間",
+      "textPreview": "税込・想定28時間",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 22,
+        "typeface": "Arial",
+        "color": "#62666D",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "税込・想定28時間"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "税込・想定28時間",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#62666D",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "税込・想定28時間",
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#62666D",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vmt43ex0",
+      "id": "10",
+      "name": "hero-period",
+      "bbox": [
+        872,
+        430,
+        330,
+        60
+      ],
+      "geometry": "rect",
+      "text": "8/24 → 9/30",
+      "textPreview": "8/24 → 9/30",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 32,
+        "typeface": "Arial",
+        "color": "#3D8DFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "8/24 → 9/30"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "8/24 → 9/30",
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "typeface": "Arial",
+            "color": "#3D8DFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "8/24 → 9/30",
+              "fontSize": 32,
+              "typeface": "Arial",
+              "color": "#3D8DFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ulk3u9wf",
+      "id": "11",
+      "name": "hero-label2",
+      "bbox": [
+        872,
+        494,
+        330,
+        38
+      ],
+      "geometry": "rect",
+      "text": "検証を含む導入期間",
+      "textPreview": "検証を含む導入期間",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 20,
+        "typeface": "Arial",
+        "color": "#62666D",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 1,
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "検証を含む導入期間"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "検証を含む導入期間",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "Arial",
+            "color": "#62666D",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "検証を含む導入期間",
+              "fontSize": 20,
+              "typeface": "Arial",
+              "color": "#62666D",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

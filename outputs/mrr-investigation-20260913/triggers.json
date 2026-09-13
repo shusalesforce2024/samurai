@@ -1,0 +1,60 @@
+{
+  "status": 0,
+  "result": {
+    "records": [
+      {
+        "attributes": {
+          "type": "ApexTrigger",
+          "url": "/services/data/v67.0/tooling/sobjects/ApexTrigger/01qRB00000FDnTiYAL"
+        },
+        "Id": "01qRB00000FDnTiYAL",
+        "Name": "OpportunityTrigger",
+        "Body": "trigger OpportunityTrigger on Opportunity__c (before insert, before update, after update) {\n    if (Trigger.isBefore) {\n        OpportunityStageProbabilityService.syncProbability(Trigger.new, Trigger.oldMap);\n        OpportunityCsStageService.initializeCsStage(Trigger.new);\n    }\n    if (Trigger.isAfter && Trigger.isUpdate) {\n        ContractOppClassificationSyncService.syncFromOpportunityUpdates(\n            Trigger.new,\n            Trigger.oldMap\n        );\n    }\n}",
+        "Status": "Active"
+      },
+      {
+        "attributes": {
+          "type": "ApexTrigger",
+          "url": "/services/data/v67.0/tooling/sobjects/ApexTrigger/01qRB00000FDnTjYAL"
+        },
+        "Id": "01qRB00000FDnTjYAL",
+        "Name": "QuotationLineTrigger",
+        "Body": "trigger QuotationLineTrigger on QuotationLine__c (\n    before insert,\n    before update,\n    after insert,\n    after update,\n    after delete,\n    after undelete\n) {\n    if (Trigger.isBefore) {\n        ProductUnitPriceSyncService.syncQuotationLineUnitPrice(Trigger.new, Trigger.oldMap);\n    }\n\n    if (Trigger.isAfter) {\n        OpportunityMrrSyncService.syncFromQuotationLines(Trigger.new, Trigger.old);\n    }\n}",
+        "Status": "Active"
+      },
+      {
+        "attributes": {
+          "type": "ApexTrigger",
+          "url": "/services/data/v67.0/tooling/sobjects/ApexTrigger/01qRB00000FDnTkYAL"
+        },
+        "Id": "01qRB00000FDnTkYAL",
+        "Name": "QuotationTrigger",
+        "Body": "trigger QuotationTrigger on Quotation__c (after insert, after update, after delete, after undelete) {\n    OpportunityMrrSyncService.syncFromQuotations(Trigger.new, Trigger.old);\n}",
+        "Status": "Active"
+      },
+      {
+        "attributes": {
+          "type": "ApexTrigger",
+          "url": "/services/data/v67.0/tooling/sobjects/ApexTrigger/01qRB00000FEEVWYA5"
+        },
+        "Id": "01qRB00000FEEVWYA5",
+        "Name": "ContractTrigger",
+        "Body": "trigger ContractTrigger on Contract__c (after insert, after update) {\n    ContractMonthlyLineBatch.createInitialLinesForActivatedContracts(\n        Trigger.new,\n        Trigger.isUpdate ? Trigger.oldMap : null\n    );\n}",
+        "Status": "Active"
+      },
+      {
+        "attributes": {
+          "type": "ApexTrigger",
+          "url": "/services/data/v67.0/tooling/sobjects/ApexTrigger/01qRB00000HA4mvYAD"
+        },
+        "Id": "01qRB00000HA4mvYAD",
+        "Name": "ContractLineItemTrigger",
+        "Body": "trigger ContractLineItemTrigger on ContractLineItem__c (before insert, before update) {\n    ContractLineItemPeriodService.populatePeriodFields(Trigger.new);\n}",
+        "Status": "Active"
+      }
+    ],
+    "totalSize": 5,
+    "done": true
+  },
+  "warnings": []
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "check": "current row count and total",
+    "passed": true,
+    "rows": 476,
+    "total": "28657872.50"
+  },
+  {
+    "check": "current all monthly totals",
+    "passed": true,
+    "groups": 12
+  },
+  {
+    "check": "total row count and total",
+    "passed": true,
+    "rows": 962,
+    "total": "47938140.00"
+  },
+  {
+    "check": "total all monthly totals",
+    "passed": true,
+    "groups": 40
+  },
+  {
+    "check": "active contract count",
+    "passed": true,
+    "count": 143
+  }
+]

@@ -27,6 +27,9 @@ public with sharing class FreeeQuotationMapper {
         );
         body.put('partner_title', DEFAULT_PARTNER_TITLE);
 
+        if (quotation.Owner != null && String.isNotBlank(quotation.Owner.Name)) {
+            body.put('company_contact_name', quotation.Owner.Name);
+        }
         if (String.isNotBlank(quotation.Subject__c)) {
             body.put('subject', quotation.Subject__c);
         }

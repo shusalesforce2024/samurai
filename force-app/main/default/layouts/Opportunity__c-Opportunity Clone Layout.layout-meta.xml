@@ -57,6 +57,10 @@
                 <field>StartDate__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>ContractStartMonth__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
                 <field>ContractUpdate__c</field>
             </layoutItems>

@@ -1,0 +1,6 @@
+"Id","Name","MasterContract__c","Total__c","RevenueAmount__c","MRR_Target__c","InitialFee__c","RelatedInvoice__c","QuotationLine__c","ProductMaster__c"
+"a03RB00001STmHLYA1","野村不動産株式会社_2026/08","a04RB00000kUAOvYAO","150000","150000","False","False",,,
+"a03RB00001STmHMYA1","野村不動産株式会社（シングルサインオン分）_2026/08","a04RB00000kUAOwYAO","30000","30000","False","False",,,
+"a03RB00001X5x2QYAR","野村不動産株式会社　商業事業本部_2026/08","a04RB00000lZ54zYAC","140000","140000","True","False",,"a09RB000010S68bYAC","a0CRB0000CcXZ6X2QW"
+"a03RB00001X5x2RYAR","野村不動産株式会社　商業事業本部_2026/08","a04RB00000lZ54zYAC","30000","30000","True","False",,"a09RB000010Ty8LYAS","a0CRB0000CcXZ6b2QG"
+"a03RB00001X5x2SYAR","野村不動産株式会社　商業事業本部_2026/08","a04RB00000lZ54zYAC","140000","140000","False","False",,,"a0CRB0000CcXZ6Z2QW"

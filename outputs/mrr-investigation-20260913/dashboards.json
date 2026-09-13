@@ -1,0 +1,120 @@
+{
+  "status": 0,
+  "result": {
+    "records": [
+      {
+        "attributes": {
+          "type": "Dashboard",
+          "url": "/services/data/v67.0/sobjects/Dashboard/01ZRB000005CEAn2AO"
+        },
+        "Id": "01ZRB000005CEAn2AO",
+        "Title": "経理用 請求管理ダッシュボード",
+        "DeveloperName": "AccountingBillingDashboard",
+        "FolderName": "契約請求ダッシュボード"
+      },
+      {
+        "attributes": {
+          "type": "Dashboard",
+          "url": "/services/data/v67.0/sobjects/Dashboard/01ZRB000005CEAo2AO"
+        },
+        "Id": "01ZRB000005CEAo2AO",
+        "Title": "営業用 契約売上ダッシュボード",
+        "DeveloperName": "SalesContractDashboard",
+        "FolderName": "契約請求ダッシュボード"
+      },
+      {
+        "attributes": {
+          "type": "Dashboard",
+          "url": "/services/data/v67.0/sobjects/Dashboard/01Zd50000032npJEAQ"
+        },
+        "Id": "01Zd50000032npJEAQ",
+        "Title": "Commerce Finance Dashboard",
+        "DeveloperName": "CommerceFinanceDashboard",
+        "FolderName": "Commerce Dashboards"
+      },
+      {
+        "attributes": {
+          "type": "Dashboard",
+          "url": "/services/data/v67.0/sobjects/Dashboard/01Zd50000032npKEAQ"
+        },
+        "Id": "01Zd50000032npKEAQ",
+        "Title": "Business Overview Dashboard",
+        "DeveloperName": "CommerceBusinessDashboard",
+        "FolderName": "Commerce Dashboards"
+      },
+      {
+        "attributes": {
+          "type": "Dashboard",
+          "url": "/services/data/v67.0/sobjects/Dashboard/01Zd50000032npLEAQ"
+        },
+        "Id": "01Zd50000032npLEAQ",
+        "Title": "Commerce Promotions Dashboard",
+        "DeveloperName": "CommercePromotionsDashboard",
+        "FolderName": "Commerce Dashboards"
+      },
+      {
+        "attributes": {
+          "type": "Dashboard",
+          "url": "/services/data/v67.0/sobjects/Dashboard/01Zd50000032npMEAQ"
+        },
+        "Id": "01Zd50000032npMEAQ",
+        "Title": "Commerce Payments Dashboard",
+        "DeveloperName": "CommercePaymentsDashboard",
+        "FolderName": "Commerce Dashboards"
+      },
+      {
+        "attributes": {
+          "type": "Dashboard",
+          "url": "/services/data/v67.0/sobjects/Dashboard/01Zd50000036qgXEAQ"
+        },
+        "Id": "01Zd50000036qgXEAQ",
+        "Title": "My Sales Dashboard",
+        "DeveloperName": "my_sales_dashboard",
+        "FolderName": "Sales Dashboards"
+      },
+      {
+        "attributes": {
+          "type": "Dashboard",
+          "url": "/services/data/v67.0/sobjects/Dashboard/01Zd50000036qgYEAQ"
+        },
+        "Id": "01Zd50000036qgYEAQ",
+        "Title": "Sales Dashboard",
+        "DeveloperName": "sales_dashboard",
+        "FolderName": "Sales Dashboards"
+      },
+      {
+        "attributes": {
+          "type": "Dashboard",
+          "url": "/services/data/v67.0/sobjects/Dashboard/01Zd50000036qi9EAA"
+        },
+        "Id": "01Zd50000036qi9EAA",
+        "Title": "Home Page Service Dashboard",
+        "DeveloperName": "Home_Page_Service_Dashboard",
+        "FolderName": "Home Page Dashboards"
+      },
+      {
+        "attributes": {
+          "type": "Dashboard",
+          "url": "/services/data/v67.0/sobjects/Dashboard/01Zd50000036qobEAA"
+        },
+        "Id": "01Zd50000036qobEAA",
+        "Title": "My Service Dashboard",
+        "DeveloperName": "My_Service_Dashboard",
+        "FolderName": "Customer Service Dashboards"
+      },
+      {
+        "attributes": {
+          "type": "Dashboard",
+          "url": "/services/data/v67.0/sobjects/Dashboard/01Zd50000036qocEAA"
+        },
+        "Id": "01Zd50000036qocEAA",
+        "Title": "Service KPIs Dashboard",
+        "DeveloperName": "Service_KPIs_Dashboard",
+        "FolderName": "Customer Service Dashboards"
+      }
+    ],
+    "totalSize": 11,
+    "done": true
+  },
+  "warnings": []
+}

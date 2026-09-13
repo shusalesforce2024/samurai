@@ -1,0 +1,23 @@
+Id,Name,UnitPrice__c,AnnualMonthlyPrice__c,MRR_Target__c,ARR_Target__c,BillingTiming__c
+a0CRB0000CcXZ6P2QW,Rendery Basicプラン,5000,,true,true,毎月
+a0CRB0000CcXZ6Q2QW,Rendery Proプラン,8000,,true,true,毎月
+a0CRB0000CcXZ6R2QW,[代理販売20%] Rendery Proプラン,6400,,true,true,毎月
+a0CRB0000CcXZ6S2QW,[年払_代理販売20%] Rendery Proプランネンバライ,76800,,false,true,年一括
+a0CRB0000CcXZ6T2QW,[OLD] Rendery Enterpriseプラン(2025年9月まで),11000,,true,true,毎月
+a0CRB0000CcXZ6U2QW,[OLD_年払]Rendery Enterpriseプラン(2025年9月まで),10000,,true,true,毎月
+a0CRB0000CcXZ6V2QW,Rendery Enterpriseプラン,15000,,true,true,毎月
+a0CRB0000CcXZ6W2QW,[代理販売20%] Rendery Enterpriseプラン,12000,,true,true,毎月
+a0CRB0000CcXZ6X2QW,[年払] Rendery Enterpriseプラン　※MRR計上用,14000,,true,true,毎月
+a0CRB0000CcXZ6Y2QW,代理販売20%] Rendery Enterpriseプラン,144000,,false,true,年一括
+a0CRB0000CcXZ6Z2QW,[年払] Rendery Enterpriseプラン,168000,,false,true,年一括
+a0CRB0000CcXZ6a2QG,Rendery セキュリティオプション(SSO)_初期費用,100000,,false,true,初回のみ
+a0CRB0000CcXZ6b2QG,Rendery セキュリティオプション(SSO)_運用費用,30000,,true,true,毎月
+a0CRB0000CcXZ6c2QG,Rendery セキュリティオプション(IP制限)_初期費用,100000,,false,true,初回のみ
+a0CRB0000CcXZ6d2QG,Rendery セキュリティオプション(IP制限)_運用費用,25000,,true,true,毎月
+a0CRB0000CcXZ6e2QG,Rendery セキュリティオプション(ドメイン制限)_初期費用,50000,,false,true,初回のみ
+a0CRB0000CcXZ6f2QG,Rendery セキュリティオプション(ドメイン制限)_運用費用,5000,,true,true,毎月
+a0CRB0000CcXZ6g2QG,Rendery セキュリティオプション+_初期費用,350000,,false,true,初回のみ
+a0CRB0000CcXZ6h2QG,Rendery セキュリティオプション+_運用費用,100000,,true,true,毎月
+a0CRB0000Ck3ReH2QU,Rendery_Enterpriseプラン,15000,,false,false,毎月
+a0CRB0000CkDPuP2QW,Rendery_Enterpriseプラン＿セキュリティオプション+（月額）,100000,,false,false,毎月
+a0CRB0000DvLUX92QO,Rendery 初回レクチャー,150000,,false,false,初回のみ
